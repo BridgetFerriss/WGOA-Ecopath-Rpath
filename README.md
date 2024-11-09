@@ -1,2 +1,2 @@
 # WGOA-Ecopath-Rpath
-Western Gulf of Alaska files to support Ecopath with Ecosim and Rpath food web models
+Western Gulf of Alaska Ecopath with Ecosim and Rpath food web models
