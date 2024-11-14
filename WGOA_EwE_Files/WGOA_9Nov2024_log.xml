@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <Platform>Microsoft Windows NT 10.0.22631.0</Platform>
+  <Is64BitOS>True</Is64BitOS>
+  <ModelName>WGOA_9Nov2024</ModelName>
+  <Created>4:05:46 PM Thursday, November 14, 2024</Created>
+<Session_Started
+  Date="4:05:46 PM Thursday, November 14, 2024">
+  <Model>WGOA_9Nov2024</Model>
+  <LogFile>C:\Users\biadias\Documents\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_9Nov2024_log.xml</LogFile>
+  <Is64BitExe>True</Is64BitExe>
+  <CultureOS>English (United States)</CultureOS>
+  <CultureUI>English (United States)</CultureUI>
+  <DecimalSeparator>.</DecimalSeparator>
+</Session_Started>
+<Information_Message
+  Date="4:05:46 PM Thursday, November 14, 2024">
+  <Message>Ecopath model 'C:\Users\biadias\Documents\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_9Nov2024.eweaccdb' loaded.</Message>
+  <Message_Type>DataAddedOrRemoved</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Log_Message
+  Date="4:05:48 PM Thursday, November 14, 2024">
+  <Message>Unable to obtain server time</Message>
+</Log_Message>
+<Information_Message
+  Date="4:06:11 PM Thursday, November 14, 2024">
+  <Message>Ecopath run completed.</Message>
+  <Message_Type>Any</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Entry>
+  <Formcannotberesolved>frmEwE6 cmdNavigate OnInvoke</Formcannotberesolved>
+</Entry>
+</doc>
