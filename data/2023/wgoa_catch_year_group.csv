@@ -1,0 +1,699 @@
+"year","species_group_code","species_group_name","conf_flag","catch_mt"
+"1991","AMCK","Atka Mackerel",0,1229.33
+"1991","ARTH","Arrowtooth Flounder",0,16959.69
+"1991","DEM1","Demersal Shelf Rockfish",0,192.76
+"1991","DFL1","Deep Water Flatfish",0,10040.03
+"1991","FLOU","Flounder",1,NA
+"1991","FSOL","Flathead Sole",0,1232.49
+"1991","GTRB","Greenland Turbot",1,NA
+"1991","OTHR","Other",0,4002.05
+"1991","PCOD","Pacific Cod",0,72674.61
+"1991","PELS","Pelagic Shelf Rockfish",0,1295.15
+"1991","PLCK","Pollock",0,87919.42
+"1991","POPA","Pacific Ocean Perch",0,4395.13
+"1991","ROCK","Other Rockfish",0,96.18
+"1991","RSOL","Rock Sole",1,NA
+"1991","SABL","Sablefish",0,13109.01
+"1991","SFL1","Shallow Water Flatfish",0,5217.41
+"1991","SLR1","Slope Rockfish",0,2291.05
+"1991","SLR3","Other Slope Rockfish",0,4828.07
+"1991","SQID","Squid",0,4.16
+"1991","SRRE","Shortraker/Rougheye Rockfish",0,1307.82
+"1991","THDS","Thornyhead Rockfish",0,1285.1
+"1991",NA,NA,1,NA
+"1992","AMCK","Atka Mackerel",0,6380.66
+"1992","ARTH","Arrowtooth Flounder",0,20483.51
+"1992","DEM1","Demersal Shelf Rockfish",0,213.26
+"1992","DFL1","Deep Water Flatfish",0,8389.9
+"1992","FLOU","Flounder",1,NA
+"1992","FSOL","Flathead Sole",0,2302.04
+"1992","GTRB","Greenland Turbot",0,73.11
+"1992","NULL",NA,0,0
+"1992","OTHR","Other",0,11763.25
+"1992","PCOD","Pacific Cod",0,79442.82
+"1992","PELS","Pelagic Shelf Rockfish",0,2693.69
+"1992","PLCK","Pollock",0,90602.91
+"1992","POPA","Pacific Ocean Perch",0,4309.6
+"1992","ROCK","Other Rockfish",0,6.76
+"1992","RSOL","Rock Sole",1,NA
+"1992","SABL","Sablefish",0,12576.14
+"1992","SCNO","Sharpchin/Northern Rockfish",1,NA
+"1992","SFL1","Shallow Water Flatfish",0,8332.17
+"1992","SLR1","Slope Rockfish",0,8241.75
+"1992","SLR3","Other Slope Rockfish",1,NA
+"1992","SQID","Squid",0,20.06
+"1992","SRRE","Shortraker/Rougheye Rockfish",0,1652.97
+"1992","SRSN","Shortraker/Rougheye/Sharpchin/Northern Rockfish",1,NA
+"1992","THDS","Thornyhead Rockfish",0,1264.4
+"1992","USKT","Skate",1,NA
+"1992","USMN","Unspecified Salmon",1,NA
+"1992","YSOL","Yellowfin Sole",1,NA
+"1992",NA,NA,1,NA
+"1993","AMCK","Atka Mackerel",0,2156.46
+"1993","ARTH","Arrowtooth Flounder",0,18297.16
+"1993","DEM1","Demersal Shelf Rockfish",0,134.39
+"1993","DFL1","Deep Water Flatfish",0,6592.44
+"1993","FLOU","Flounder",1,NA
+"1993","FSOL","Flathead Sole",0,2823.42
+"1993","GTRB","Greenland Turbot",1,NA
+"1993","NORK","Northern Rockfish",0,4679.53
+"1993","OTHR","Other",0,9171.65
+"1993","PCOD","Pacific Cod",0,54777.87
+"1993","PELS","Pelagic Shelf Rockfish",0,2298.49
+"1993","PLCK","Pollock",0,108245.25
+"1993","POPA","Pacific Ocean Perch",0,1617.04
+"1993","ROCK","Other Rockfish",1,NA
+"1993","RSOL","Rock Sole",1,NA
+"1993","SABL","Sablefish",0,12694.43
+"1993","SCNO","Sharpchin/Northern Rockfish",1,NA
+"1993","SFL1","Shallow Water Flatfish",0,9107.3
+"1993","SLR3","Other Slope Rockfish",0,2631.25
+"1993","SQID","Squid",1,NA
+"1993","SRRE","Shortraker/Rougheye Rockfish",0,1281.84
+"1993","THDS","Thornyhead Rockfish",0,959.03
+"1993","YSOL","Yellowfin Sole",1,NA
+"1993",NA,NA,0,158.04
+"1994","AMCK","Atka Mackerel",0,3537.36
+"1994","ARTH","Arrowtooth Flounder",0,21996.24
+"1994","DEM1","Demersal Shelf Rockfish",0,97.04
+"1994","DFL4","Deep Water Flatfish",0,2805.99
+"1994","FSOL","Flathead Sole",0,2511.53
+"1994","NORK","Northern Rockfish",0,5913.18
+"1994","OTHR","Other",0,2532.76
+"1994","PCOD","Pacific Cod",0,45767.08
+"1994","PELS","Pelagic Shelf Rockfish",0,1986.51
+"1994","PLCK","Pollock",0,100468.93
+"1994","POPA","Pacific Ocean Perch",0,1074.09
+"1994","REXS","Rex Sole",0,3557.54
+"1994","SABL","Sablefish",0,9915.66
+"1994","SFL1","Shallow Water Flatfish",0,3831.74
+"1994","SLR3","Other Slope Rockfish",0,716.19
+"1994","SRRE","Shortraker/Rougheye Rockfish",0,1099.88
+"1994","THDS","Thornyhead Rockfish",0,895.66
+"1995","AMCK","Atka Mackerel",0,698.63
+"1995","ARTH","Arrowtooth Flounder",0,17425.53
+"1995","DEM1","Demersal Shelf Rockfish",0,105.07
+"1995","DFL4","Deep Water Flatfish",0,1991.91
+"1995","FSOL","Flathead Sole",0,2152.04
+"1995","NORK","Northern Rockfish",0,5589.59
+"1995","OTHR","Other",0,3071.28
+"1995","PCOD","Pacific Cod",0,67981.5
+"1995","PELS","Pelagic Shelf Rockfish",0,2354.72
+"1995","PLCK","Pollock",0,69225.61
+"1995","POPA","Pacific Ocean Perch",0,4019.82
+"1995","REXS","Rex Sole",0,3847.13
+"1995","SABL","Sablefish",0,9419.8
+"1995","SFL1","Shallow Water Flatfish",0,5430.14
+"1995","SLR3","Other Slope Rockfish",0,807.05
+"1995","SRRE","Shortraker/Rougheye Rockfish",0,1438.72
+"1995","THDS","Thornyhead Rockfish",0,760.18
+"1996","AMCK","Atka Mackerel",0,1586.56
+"1996","ARTH","Arrowtooth Flounder",0,21732.32
+"1996","DEM1","Demersal Shelf Rockfish",0,101.67
+"1996","DFL4","Deep Water Flatfish",0,1974.13
+"1996","FSOL","Flathead Sole",0,2973.17
+"1996","NORK","Northern Rockfish",0,3318.54
+"1996","OTHR","Other",0,4119.73
+"1996","PCOD","Pacific Cod",0,67328.55
+"1996","PELS","Pelagic Shelf Rockfish",0,2031.07
+"1996","PLCK","Pollock",0,49853.88
+"1996","POPA","Pacific Ocean Perch",0,6131.93
+"1996","REXS","Rex Sole",0,5754.22
+"1996","SABL","Sablefish",0,8421.81
+"1996","SFL1","Shallow Water Flatfish",0,9341.83
+"1996","SLR3","Other Slope Rockfish",0,536.16
+"1996","SRRE","Shortraker/Rougheye Rockfish",0,1067.82
+"1996","THDS","Thornyhead Rockfish",0,772.43
+"1997","AMCK","Atka Mackerel",0,328.54
+"1997","ARTH","Arrowtooth Flounder",0,15252.69
+"1997","BABU","Black/Blue Rockfish",1,NA
+"1997","DEM1","Demersal Shelf Rockfish",0,127.35
+"1997","DFL4","Deep Water Flatfish",0,2666.4
+"1997","FSOL","Flathead Sole",0,2382.3
+"1997","NORK","Northern Rockfish",0,2921.32
+"1997","OTHR","Other",0,4941.33
+"1997","PCOD","Pacific Cod",0,67610.61
+"1997","PEL7","Pelagic Shelf Rockfish",0,1938.56
+"1997","PLCK","Pollock",0,84240.02
+"1997","POPA","Pacific Ocean Perch",0,8540.95
+"1997","REXS","Rex Sole",0,3118.93
+"1997","ROCK","Other Rockfish",1,NA
+"1997","SABL","Sablefish",0,7608.69
+"1997","SFL1","Shallow Water Flatfish",0,7732.07
+"1997","SLR3","Other Slope Rockfish",0,880.19
+"1997","SRRE","Shortraker/Rougheye Rockfish",0,1069.95
+"1997","THDS","Thornyhead Rockfish",0,864.87
+"1998","AMCK","Atka Mackerel",0,316.81
+"1998","ARTH","Arrowtooth Flounder",0,12606.01
+"1998","BABU","Black/Blue Rockfish",1,NA
+"1998","DEM1","Demersal Shelf Rockfish",0,173.64
+"1998","DFL4","Deep Water Flatfish",0,2200.27
+"1998","FSOL","Flathead Sole",0,1723.92
+"1998","NORK","Northern Rockfish",0,3044.78
+"1998","OTHR","Other",0,3452.42
+"1998","PCOD","Pacific Cod",0,61250.95
+"1998","PEL7","Pelagic Shelf Rockfish",0,2536.45
+"1998","PLCK","Pollock",0,117436.29
+"1998","POPA","Pacific Ocean Perch",0,8298.29
+"1998","REXS","Rex Sole",0,2635.2
+"1998","SABL","Sablefish",0,7353.71
+"1998","SFL1","Shallow Water Flatfish",0,3475.94
+"1998","SLR3","Other Slope Rockfish",0,595.94
+"1998","SRRE","Shortraker/Rougheye Rockfish",0,996.66
+"1998","THDS","Thornyhead Rockfish",0,953.9
+"1999","AMCK","Atka Mackerel",0,260.83
+"1999","ARTH","Arrowtooth Flounder",0,15582.97
+"1999","BABU","Black/Blue Rockfish",0,140.62
+"1999","DEM1","Demersal Shelf Rockfish",0,122.39
+"1999","DFL4","Deep Water Flatfish",0,1886.85
+"1999","FSOL","Flathead Sole",0,872.72
+"1999","NONQ","Non TAC Species",0,1257.33
+"1999","NORK","Northern Rockfish",0,5400.21
+"1999","OTHR","Other",0,3549.65
+"1999","PCOD","Pacific Cod",0,67713.42
+"1999","PEL7","Pelagic Shelf Rockfish",0,3965.92
+"1999","PLCK","Pollock",0,91658.3
+"1999","POPA","Pacific Ocean Perch",0,9846.1
+"1999","REXS","Rex Sole",0,2996.37
+"1999","SABL","Sablefish",0,7362.4
+"1999","SFL1","Shallow Water Flatfish",0,2566.78
+"1999","SLR3","Other Slope Rockfish",0,531.49
+"1999","SRRE","Shortraker/Rougheye Rockfish",0,774.34
+"1999","THDS","Thornyhead Rockfish",0,866.17
+"2000","AMCK","Atka Mackerel",0,169.96
+"2000","ARTH","Arrowtooth Flounder",0,23827.1
+"2000","BABU","Black/Blue Rockfish",0,247.22
+"2000","DEM1","Demersal Shelf Rockfish",0,58.31
+"2000","DFL4","Deep Water Flatfish",0,843.08
+"2000","FSOL","Flathead Sole",0,1532.49
+"2000","NONQ","Non TAC Species",0,1741.84
+"2000","NORK","Northern Rockfish",0,3325.15
+"2000","OTHR","Other",0,5101.41
+"2000","PCOD","Pacific Cod",0,54055.64
+"2000","PEL7","Pelagic Shelf Rockfish",0,3263.65
+"2000","PLCK","Pollock",0,69764.37
+"2000","POPA","Pacific Ocean Perch",0,9539.09
+"2000","REXS","Rex Sole",0,3585.06
+"2000","SABL","Sablefish",0,7760.16
+"2000","SFL1","Shallow Water Flatfish",0,6879.95
+"2000","SLR3","Other Slope Rockfish",0,353.38
+"2000","SRRE","Shortraker/Rougheye Rockfish",0,1024.59
+"2000","THDS","Thornyhead Rockfish",0,890.79
+"2000",NA,NA,1,NA
+"2001","AMCK","Atka Mackerel",0,76.1
+"2001","ARTH","Arrowtooth Flounder",0,19561.46
+"2001","BABU","Black/Blue Rockfish",0,208.47
+"2001","DEM1","Demersal Shelf Rockfish",0,74.89
+"2001","DFL4","Deep Water Flatfish",0,685.56
+"2001","FSOL","Flathead Sole",0,1911.26
+"2001","NONQ","Non TAC Species",0,1075.51
+"2001","NORK","Northern Rockfish",0,3127.63
+"2001","OTHR","Other",0,4378.31
+"2001","PCOD","Pacific Cod",0,41485.78
+"2001","PEL7","Pelagic Shelf Rockfish",0,2556.1
+"2001","PLCK","Pollock",0,68134.89
+"2001","POPA","Pacific Ocean Perch",0,10193.61
+"2001","REXS","Rex Sole",0,2941.7
+"2001","SABL","Sablefish",0,7106.11
+"2001","SFL1","Shallow Water Flatfish",0,6162.42
+"2001","SLR3","Other Slope Rockfish",0,269.54
+"2001","SRRE","Shortraker/Rougheye Rockfish",0,1123.93
+"2001","THDS","Thornyhead Rockfish",0,799.47
+"2001",NA,NA,1,NA
+"2002","AMCK","Atka Mackerel",0,84.95
+"2002","ARTH","Arrowtooth Flounder",0,21050.45
+"2002","BABU","Black/Blue Rockfish",0,176.84
+"2002","DEM1","Demersal Shelf Rockfish",0,44.25
+"2002","DFL4","Deep Water Flatfish",0,550.41
+"2002","FSOL","Flathead Sole",0,2145.58
+"2002","NONQ","Non TAC Species",0,881.11
+"2002","NORK","Northern Rockfish",0,3337.08
+"2002","OTHR","Other",0,3802.17
+"2002","PCOD","Pacific Cod",0,42225.72
+"2002","PEL7","Pelagic Shelf Rockfish",0,2864.18
+"2002","PLCK","Pollock",0,48892.32
+"2002","POPA","Pacific Ocean Perch",0,10985.16
+"2002","REXS","Rex Sole",0,3016.76
+"2002","ROCK","Other Rockfish",0,84.83
+"2002","SABL","Sablefish",0,8044.93
+"2002","SFL1","Shallow Water Flatfish",0,7174.36
+"2002","SLR3","Other Slope Rockfish",0,574.81
+"2002","SRRE","Shortraker/Rougheye Rockfish",0,894.3
+"2002","THDS","Thornyhead Rockfish",0,877.17
+"2003","AMCK","Atka Mackerel",0,581.266
+"2003","ARTH","Arrowtooth Flounder",0,30169.778
+"2003","DFL4","GOA Deep Water Flatfish",0,946.342
+"2003","FSOL","Flathead Sole",0,2459.368
+"2003","NORK","Northern Rockfish",0,5256.072
+"2003","OTHR","Other Species",0,6061.276
+"2003","PCOD","Pacific Cod",0,52374.07
+"2003","PEL7","GOA Pelagic Shelf Rockfish",0,2435.56
+"2003","PLCK","Pollock",0,48590.086
+"2003","POPA","Pacific Ocean Perch",0,10240.203
+"2003","REXS","GOA Rex Sole",0,3497.783
+"2003","ROCK","Other Rockfish",0,884.985
+"2003","SABL","Sablefish",0,9111.958
+"2003","SFL1","GOA Shallow Water Flatfish",0,4644.579
+"2003","SRRE","Shortraker/Rougheye Rockfish",0,1194.527
+"2003","THDS","GOA Thornyhead Rockfish",0,1031.949
+"2004","AMCK","Atka Mackerel",0,821.635
+"2004","ARTH","Arrowtooth Flounder",0,15635.351
+"2004","BLSK","Central GOA Skate, Big and Longnose",0,1556.684
+"2004","BLSK","GOA Skate, Other",1,NA
+"2004","DFL4","GOA Deep Water Flatfish",0,627.192
+"2004","FSOL","Flathead Sole",0,2398.239
+"2004","NORK","Northern Rockfish",0,4810.786
+"2004","OTHR","Other Species",0,1566.183
+"2004","PCOD","Pacific Cod",0,56451.257
+"2004","PEL7","GOA Pelagic Shelf Rockfish",0,2477.648
+"2004","PLCK","Pollock",0,62491.588
+"2004","POPA","Pacific Ocean Perch",0,10762.814
+"2004","REXS","GOA Rex Sole",0,1466.953
+"2004","ROCK","Other Rockfish",0,779.1
+"2004","SABL","Sablefish",0,9482.791
+"2004","SFL1","GOA Shallow Water Flatfish",0,3093.048
+"2004","SRRE","GOA Shortraker/Rougheye Rockfish",0,626.011
+"2004","THDS","GOA Thornyhead Rockfish",0,685.129
+"2004","USKT","GOA Skate, Other",0,1241.146
+"2005","AMCK","Atka Mackerel",0,800.478
+"2005","ARTH","Arrowtooth Flounder",0,19923.573
+"2005","BSKT","GOA Skate, Big",0,837.477
+"2005","DFL4","GOA Deep Water Flatfish",0,406.546
+"2005","FSOL","Flathead Sole",0,2552.16
+"2005","LSKT","GOA Skate, Longnose",0,1029.738
+"2005","NORK","Northern Rockfish",0,4521.671
+"2005","OTHR","Other Species",0,2260.272
+"2005","PCOD","Pacific Cod",0,47524.083
+"2005","PEL7","GOA Pelagic Shelf Rockfish",0,2018.671
+"2005","PLCK","Pollock",0,78302.792
+"2005","POPA","Pacific Ocean Perch",0,10401.84
+"2005","REXS","GOA Rex Sole",0,2179.389
+"2005","REYE","Rougheye Rockfish",0,178.858
+"2005","ROCK","Other Rockfish",0,608.815
+"2005","SABL","Sablefish",0,8635.403
+"2005","SFL1","GOA Shallow Water Flatfish",0,4798.494
+"2005","SRKR","Shortraker Rockfish",0,295.6
+"2005","THDS","GOA Thornyhead Rockfish",0,580.613
+"2005","USKT","GOA Skate, Other",0,668.85
+"2006","AMCK","Atka Mackerel",0,878.921
+"2006","ARTH","Arrowtooth Flounder",0,27622.797
+"2006","BSKT","GOA Skate, Big",0,1344.11
+"2006","DFL4","GOA Deep Water Flatfish",0,380.507
+"2006","FSOL","Flathead Sole",0,3141.334
+"2006","LSKT","GOA Skate, Longnose",0,738.494
+"2006","NORK","Northern Rockfish",0,4957.706
+"2006","OTHR","Other Species",0,3437.233
+"2006","PCOD","Pacific Cod",0,47767.242
+"2006","PEL7","GOA Pelagic Shelf Rockfish",0,2277.288
+"2006","PLCK","Pollock",0,68928.308
+"2006","POPA","Pacific Ocean Perch",0,12335.857
+"2006","REXS","GOA Rex Sole",0,3294.586
+"2006","REYE","Rougheye Rockfish",0,199.22
+"2006","ROCK","Other Rockfish",0,915.756
+"2006","SABL","Sablefish",0,8071.413
+"2006","SFL1","GOA Shallow Water Flatfish",0,7650.231
+"2006","SRKR","Shortraker Rockfish",0,427.345
+"2006","THDS","GOA Thornyhead Rockfish",0,597.006
+"2006","USKT","GOA Skate, Other",0,1342.19
+"2007","AMCK","Atka Mackerel",0,1462.115
+"2007","ARTH","Arrowtooth Flounder",0,25347.669
+"2007","BSKT","GOA Skate, Big",0,1586.403
+"2007","DFL4","GOA Deep Water Flatfish",0,267.902
+"2007","FSOL","Flathead Sole",0,3127.361
+"2007","LSKT","GOA Skate, Longnose",0,1053.659
+"2007","NORK","Northern Rockfish",0,4186.649
+"2007","OTHR","Other Species",0,2674.276
+"2007","PCOD","Pacific Cod",0,51812.258
+"2007","PEL7","GOA Pelagic Shelf Rockfish",0,3086.375
+"2007","PLCK","Pollock",0,51572.387
+"2007","POPA","Pacific Ocean Perch",0,11712.817
+"2007","REXS","GOA Rex Sole",0,2849.531
+"2007","REYE","Rougheye Rockfish",0,266.066
+"2007","ROCK","Other Rockfish",0,595.301
+"2007","SABL","Sablefish",0,8105.601
+"2007","SFL1","GOA Shallow Water Flatfish",0,8691.431
+"2007","SRKR","Shortraker Rockfish",0,408.415
+"2007","THDS","GOA Thornyhead Rockfish",0,600.4
+"2007","USKT","GOA Skate, Other",0,1169.451
+"2008","AMCK","Atka Mackerel",0,2111.822
+"2008","ARTH","Arrowtooth Flounder",0,29206.296
+"2008","BSKT","GOA Skate, Big",0,1372.785
+"2008","DFL4","GOA Deep Water Flatfish",0,568.547
+"2008","FSOL","Flathead Sole",0,3446.21
+"2008","LSKT","GOA Skate, Longnose",0,999.031
+"2008","NORK","Northern Rockfish",0,4052.09
+"2008","OTHR","Other Species",0,2360.549
+"2008","PCOD","Pacific Cod",0,58386.972
+"2008","PEL7","GOA Pelagic Shelf Rockfish",0,3444.48
+"2008","PLCK","Pollock",0,50786.206
+"2008","POPA","Pacific Ocean Perch",0,11360.801
+"2008","REXS","GOA Rex Sole",0,2707.031
+"2008","REYE","Rougheye Rockfish",0,264.881
+"2008","ROCK","Other Rockfish",0,739.176
+"2008","SABL","Sablefish",0,7174.328
+"2008","SFL1","GOA Shallow Water Flatfish",0,9719.977
+"2008","SRKR","Shortraker Rockfish",0,371.919
+"2008","THDS","GOA Thornyhead Rockfish",0,569.76
+"2008","USKT","GOA Skate, Other",0,1305.068
+"2009","AMCK","Atka Mackerel",0,2223.521
+"2009","ARTH","Arrowtooth Flounder",0,24831.761
+"2009","BSKT","GOA Skate, Big",0,1982.223
+"2009","DFL4","GOA Deep Water Flatfish",0,469.432
+"2009","FSOL","Flathead Sole",0,3662.163
+"2009","LSKT","GOA Skate, Longnose",0,1175.122
+"2009","NORK","Northern Rockfish",0,3951.653
+"2009","OTHR","Other Species",0,3112.162
+"2009","PCOD","Pacific Cod",0,51788.98
+"2009","PEL7","GOA Pelagic Shelf Rockfish",0,2892.85
+"2009","PLCK","Pollock",0,41549.503
+"2009","POPA","Pacific Ocean Perch",0,11838.092
+"2009","REXS","GOA Rex Sole",0,4751.698
+"2009","REYE","Rougheye Rockfish",0,174.749
+"2009","ROCK","Other Rockfish",0,802.907
+"2009","SABL","Sablefish",0,6389.914
+"2009","SFL1","GOA Shallow Water Flatfish",0,8482.755
+"2009","SRKR","Shortraker Rockfish",0,341.183
+"2009","THDS","GOA Thornyhead Rockfish",0,510.904
+"2009","USKT","GOA Skate, Other",0,1435.068
+"2010","AMCK","Atka Mackerel",0,2417.6091380519
+"2010","ARTH","Arrowtooth Flounder",0,24339.6191958309
+"2010","BSKT","GOA Skate, Big",0,2383.7976802529
+"2010","DFL4","GOA Deep Water Flatfish",0,539.2473194773
+"2010","FSOL","Flathead Sole",0,3902.8989699692
+"2010","LSKT","GOA Skate, Longnose",0,974.1295320972
+"2010","NORK","Northern Rockfish",0,3902.3630671333
+"2010","OTHR","Other Species",0,1831.9891409577
+"2010","PCOD","Pacific Cod",0,76954.1545000845
+"2010","PEL7","GOA Pelagic Shelf Rockfish",0,3048.8461716117
+"2010","PLCK","Pollock",0,73443.3843008119
+"2010","POPA","Pacific Ocean Perch",0,13689.7697577539
+"2010","REXS","GOA Rex Sole",0,3667.8660385755
+"2010","REYE","Rougheye Rockfish",0,299.5751828893
+"2010","ROCK","Other Rockfish",0,796.5747154299
+"2010","SABL","Sablefish",0,5865.9854455803
+"2010","SFL1","GOA Shallow Water Flatfish",0,5826.8845353657
+"2010","SRKR","Shortraker Rockfish",0,202.9784667108
+"2010","THDS","GOA Thornyhead Rockfish",0,417.4284848854
+"2010","USKT","GOA Skate, Other",0,1412.6394353575
+"2011","AMCK","Atka Mackerel",0,1614.5461413988
+"2011","ARTH","Arrowtooth Flounder",0,30912.282327179
+"2011","BSKT","GOA Skate, Big",0,2219.3145374693
+"2011","DFL4","GOA Deep Water Flatfish",0,459.2547538647
+"2011","FSOL","Flathead Sole",0,2731.2789734566
+"2011","LSKT","GOA Skate, Longnose",0,968.1373284806
+"2011","NORK","Northern Rockfish",0,3443.9287178659
+"2011","OCTP","Octopus",0,948.9709379874
+"2011","PCOD","Pacific Cod",0,83710.4754714072
+"2011","PEL7","GOA Pelagic Shelf Rockfish",0,2479.7603895013
+"2011","PLCK","Pollock",0,77694.4796321538
+"2011","POPA","Pacific Ocean Perch",0,12351.9693745362
+"2011","REXS","GOA Rex Sole",0,2876.4970376179
+"2011","REYE","Rougheye Rockfish",0,397.3003669682
+"2011","ROCK","Other Rockfish",0,693.174401375
+"2011","SABL","Sablefish",0,6316.48822604
+"2011","SCLP","Sculpin",0,760.0590318563
+"2011","SFL1","GOA Shallow Water Flatfish",0,3995.8368088568
+"2011","SQID","Squid",0,228.4877210989
+"2011","SRKR","Shortraker Rockfish",0,338.2044962651
+"2011","THDS","GOA Thornyhead Rockfish",0,461.9361999961
+"2011","USKT","BSAI Skate and GOA Skate, Other",0,1321.6997462972
+"2011","USRK","Shark",0,290.314602094
+"2012","AMCK","Atka Mackerel",0,1187.7330191648
+"2012","ARTH","Arrowtooth Flounder",0,20762.1065113069
+"2012","BSKT","GOA Skate, Big",0,1967.2240611169
+"2012","DFL4","GOA Deep Water Flatfish",0,258.0626050325
+"2012","DUSK","GOA Dusky Rockfish",0,4002.2585669499
+"2012","FSOL","Flathead Sole",0,2167.0371344293
+"2012","LSKT","GOA Skate, Longnose",0,840.7986568262
+"2012","NORK","Northern Rockfish",0,5077.0064430065
+"2012","OCTP","Octopus",0,416.910605333
+"2012","PCOD","Pacific Cod",0,76871.1099293872
+"2012","PLCK","Pollock",0,98934.6913060536
+"2012","POPA","Pacific Ocean Perch",0,13232.4727511128
+"2012","REXS","GOA Rex Sole",0,2443.1989326231
+"2012","REYE","Rougheye Rockfish",0,408.5797438268
+"2012","ROCK","Other Rockfish",0,979.5588567733
+"2012","SABL","Sablefish",0,6680.5840999495
+"2012","SCLP","Sculpin",0,790.4455132652
+"2012","SFL1","GOA Shallow Water Flatfish",0,4012.900691115
+"2012","SQID","Squid",0,16.4737128963
+"2012","SRKR","Shortraker Rockfish",0,431.6367441405
+"2012","THDS","GOA Thornyhead Rockfish",0,516.9302574894
+"2012","USKT","BSAI Skate and GOA Skate, Other",0,1103.3999089447
+"2012","USRK","Shark",0,413.7947706654
+"2013","AMCK","Atka Mackerel",0,1277.0704606828
+"2013","ARTH","Arrowtooth Flounder",0,21809.3124154034
+"2013","BSKT","GOA Skate, Big",0,2442.0463836669
+"2013","DFL4","GOA Deep Water Flatfish",0,232.5259639257
+"2013","DUSK","GOA Dusky Rockfish",0,3146.2916745647
+"2013","FSOL","Flathead Sole",0,2818.4910709298
+"2013","HLBT","Halibut",0,14115.3799531117
+"2013","LSKT","GOA Skate, Longnose",0,1353.7526793738
+"2013","NORK","Northern Rockfish",0,4879.2848117295
+"2013","OCTP","Octopus",0,412.3811422869
+"2013","PCOD","Pacific Cod",0,66829.7816068093
+"2013","PLCK","Pollock",0,90796.631602089
+"2013","POPA","Pacific Ocean Perch",0,11644.6402395131
+"2013","REXS","GOA Rex Sole",0,3699.6302665417
+"2013","REYE","Rougheye Rockfish",0,400.4353230015
+"2013","ROCK","Other Rockfish",0,679.9386796957
+"2013","SABL","Sablefish",0,6545.3969226938
+"2013","SCLP","Sculpin",0,1731.0331693948
+"2013","SFL1","GOA Shallow Water Flatfish",0,5516.6035949689
+"2013","SQID","Squid",0,319.1876788665
+"2013","SRKR","Shortraker Rockfish",0,517.1330970029
+"2013","THDS","GOA Thornyhead Rockfish",0,811.57385855
+"2013","USKT","BSAI Skate and GOA Skate, Other",0,1709.4913859263
+"2013","USRK","Shark",0,1511.8049550022
+"2014","AMCK","Atka Mackerel",0,1041.7223061455
+"2014","ARTH","Arrowtooth Flounder",0,36525.7964843729
+"2014","BSKT","GOA Skate, Big",0,1555.2918533635
+"2014","DFL4","GOA Deep Water Flatfish",0,345.6736239102
+"2014","DUSK","GOA Dusky Rockfish",0,2970.5997187502
+"2014","FSOL","Flathead Sole",0,2555.8742361342
+"2014","HLBT","Halibut",0,8640.070924022
+"2014","LSKT","GOA Skate, Longnose",0,1218.3815988729
+"2014","NORK","Northern Rockfish",0,4278.2316331438
+"2014","OCTP","Octopus",0,1304.5786706486
+"2014","PCOD","Pacific Cod",0,83491.7282263605
+"2014","PLCK","Pollock",0,138948.062002689
+"2014","POPA","Pacific Ocean Perch",0,15840.6865488893
+"2014","REXS","GOA Rex Sole",0,3575.7872142542
+"2014","REYE","Rougheye Rockfish",0,577.3488634331
+"2014","ROCK","Other Rockfish",0,889.8004138708
+"2014","SABL","Sablefish",0,5930.5077109867
+"2014","SCLP","Sculpin",0,1186.0036645292
+"2014","SFL1","GOA Shallow Water Flatfish",0,4737.205021584
+"2014","SQID","Squid",0,91.7210212986
+"2014","SRKR","Shortraker Rockfish",0,446.1459757384
+"2014","THDS","GOA Thornyhead Rockfish",0,899.4806941865
+"2014","USKT","BSAI Skate and GOA Skate, Other",0,1667.0111490056
+"2014","USRK","Shark",0,1044.4249836522
+"2015","AMCK","Atka Mackerel",0,1217.8253751288
+"2015","ARTH","Arrowtooth Flounder",0,19296.6901261519
+"2015","BSKT","GOA Skate, Big",0,1446.724170276
+"2015","DFL4","GOA Deep Water Flatfish",0,250.3890439262
+"2015","DUSK","GOA Dusky Rockfish",0,2772.4615117179
+"2015","FSOL","Flathead Sole",0,2000.6763496617
+"2015","HLBT","Halibut",0,8783.3968508974
+"2015","LSKT","GOA Skate, Longnose",0,1310.4239906074
+"2015","NORK","Northern Rockfish",0,3944.5536234907
+"2015","OCTP","Octopus",0,962.0116448261
+"2015","PCOD","Pacific Cod",0,77689.9919282298
+"2015","PLCK","Pollock",0,162807.645940591
+"2015","POPA","Pacific Ocean Perch",0,16752.0808724135
+"2015","REXS","GOA Rex Sole",0,1957.3077196453
+"2015","REYE","Rougheye Rockfish",0,408.9346357756
+"2015","ROCK","Other Rockfish",0,1056.10099867
+"2015","SABL","Sablefish",0,5623.6695749787
+"2015","SCLP","Sculpin",0,1010.45879989
+"2015","SFL1","GOA Shallow Water Flatfish",0,3355.4652034999
+"2015","SQID","Squid",0,408.9416497571
+"2015","SRKR","Shortraker Rockfish",0,332.3331324348
+"2015","THDS","GOA Thornyhead Rockfish",0,797.8158184195
+"2015","USKT","BSAI Skate and GOA Skate, Other",0,1603.1653839931
+"2015","USRK","Shark",0,997.0214612932
+"2016","AMCK","Atka Mackerel",0,1092.9010948529
+"2016","ARTH","Arrowtooth Flounder",0,19976.3430659122
+"2016","BSKT","GOA Skate, Big",0,2021.4238601737
+"2016","DFL4","GOA Deep Water Flatfish",0,223.9619666522
+"2016","DUSK","GOA Dusky Rockfish",0,3311.6643033746
+"2016","FSOL","Flathead Sole",0,2419.3939047627
+"2016","HLBT","Halibut",0,8222.5148032209
+"2016","LSKT","GOA Skate, Longnose",0,1043.5298435784
+"2016","NORK","Northern Rockfish",0,3433.9938126132
+"2016","OCTP","Octopus",0,384.427778171
+"2016","PCOD","Pacific Cod",0,62867.3275181654
+"2016","PLCK","Pollock",0,173086.352447733
+"2016","POPA","Pacific Ocean Perch",0,20207.8591675284
+"2016","REXS","GOA Rex Sole",0,1746.4267990755
+"2016","REYE","Rougheye Rockfish",0,565.5154572387
+"2016","ROCK","Other Rockfish",0,1184.7205149656
+"2016","SABL","Sablefish",0,5246.5307456148
+"2016","SCLP","Sculpin",0,1316.902771096
+"2016","SFL1","GOA Shallow Water Flatfish",0,3804.5511648918
+"2016","SQID","Squid",0,238.3049365761
+"2016","SRKR","Shortraker Rockfish",0,544.6919081343
+"2016","THDS","GOA Thornyhead Rockfish",0,889.7787117043
+"2016","USKT","BSAI Skate and GOA Skate, Other",0,1483.063601495
+"2016","USRK","Shark",0,1315.2998056019
+"2017","AMCK","Atka Mackerel",0,1074.6315557182
+"2017","ARTH","Arrowtooth Flounder",0,27053.508967652
+"2017","BSKT","GOA Skate, Big",0,1646.6076014507
+"2017","DFL4","GOA Deep Water Flatfish",0,252.8750585323
+"2017","DUSK","GOA Dusky Rockfish",0,2595.2358595769
+"2017","FSOL","Flathead Sole",0,2050.3423328191
+"2017","HLBT","Halibut",0,8475.5204491469
+"2017","LSKT","GOA Skate, Longnose",0,955.158448461
+"2017","NORK","Northern Rockfish",0,1835.0952221533
+"2017","OCTP","Octopus",0,231.0107960937
+"2017","PCOD","Pacific Cod",0,48204.2145600561
+"2017","PLCK","Pollock",0,184220.028612071
+"2017","POPA","Pacific Ocean Perch",0,21103.5741054778
+"2017","REXS","GOA Rex Sole",0,1481.7878011293
+"2017","REYE","Rougheye Rockfish",0,379.1886093368
+"2017","ROCK","Other Rockfish",0,998.4993604891
+"2017","SABL","Sablefish",0,6018.9024641633
+"2017","SCLP","Sculpin",0,1369.1185208557
+"2017","SFL1","GOA Shallow Water Flatfish",0,2574.279289861
+"2017","SQID","Squid",0,37.0418859504
+"2017","SRKR","Shortraker Rockfish",0,317.3596875763
+"2017","THDS","GOA Thornyhead Rockfish",0,753.9199621812
+"2017","USKT","BSAI Skate and GOA Skate, Other",0,1536.8446765428
+"2017","USRK","Shark",0,1025.79741507
+"2018","AMCK","Atka Mackerel",0,1437.7102037221
+"2018","ARTH","Arrowtooth Flounder",0,18870.2587078913
+"2018","BSKT","GOA Skate, Big",0,1231.3590312558
+"2018","DFL4","GOA Deep Water Flatfish",0,174.605615789
+"2018","DUSK","GOA Dusky Rockfish",0,2893.1153082797
+"2018","FSOL","Flathead Sole",0,2201.9138538565
+"2018","HLBT","Halibut",0,6915.5486448605
+"2018","LSKT","GOA Skate, Longnose",0,649.5396388688
+"2018","NORK","Northern Rockfish",0,2358.7904024326
+"2018","OCTP","Octopus",0,203.5591919424
+"2018","PCOD","Pacific Cod",0,14681.2982844291
+"2018","PLCK","Pollock",0,150815.31564292
+"2018","POPA","Pacific Ocean Perch",0,21384.5311941449
+"2018","REXS","GOA Rex Sole",0,1747.7859125385
+"2018","REYE","Rougheye Rockfish",0,518.9148928713
+"2018","ROCK","Other Rockfish",0,1037.294713616
+"2018","SABL","Sablefish",0,7167.3569313284
+"2018","SCLP","Sculpin",0,583.4977377664
+"2018","SFL1","GOA Shallow Water Flatfish",0,2757.3926392356
+"2018","SQID","Squid",0,38.3049494383
+"2018","SRKR","Shortraker Rockfish",0,350.6672941002
+"2018","THDS","GOA Thornyhead Rockfish",0,856.3236574295
+"2018","USKT","BSAI Skate and GOA Skate, Other",0,599.3632384156
+"2018","USRK","Shark",0,1542.3755046972
+"2019","AMCK","Atka Mackerel",0,1254.3738532803
+"2019","ARTH","Arrowtooth Flounder",0,24567.4044473616
+"2019","BSKT","GOA Skate, Big",0,1248.6976392995
+"2019","DFL4","GOA Deep Water Flatfish",0,98.3221123776
+"2019","DUSK","GOA Dusky Rockfish",0,2394.1963508733
+"2019","FSOL","Flathead Sole",0,2667.4815976454
+"2019","HLBT","Halibut",0,7097.1028611015
+"2019","LSKT","GOA Skate, Longnose",0,690.5983073615
+"2019","NORK","Northern Rockfish",0,2748.1592723142
+"2019","OCTP","Octopus",0,333.3510558126
+"2019","PCOD","Pacific Cod",0,15200.4205463599
+"2019","PLCK","Pollock",0,110649.271510068
+"2019","POPA","Pacific Ocean Perch",0,22182.6636701639
+"2019","REXS","GOA Rex Sole",0,1610.0216500791
+"2019","REYE","Rougheye Rockfish",0,541.4475020464
+"2019","ROCK","Other Rockfish",0,692.5685024802
+"2019","SABL","Sablefish",0,7812.8647708189
+"2019","SCLP","Sculpin",0,634.9627745041
+"2019","SFL1","GOA Shallow Water Flatfish",0,2865.3369035269
+"2019","SRKR","Shortraker Rockfish",0,337.5003527053
+"2019","THDS","GOA Thornyhead Rockfish",0,499.8126322989
+"2019","USKT","BSAI Skate and GOA Skate, Other",0,760.4197852242
+"2019","USRK","Shark",0,1059.4211273778
+"2020","AMCK","Atka Mackerel",0,607.6438580628
+"2020","ARTH","Arrowtooth Flounder",0,21115.9764815363
+"2020","BSKT","GOA Skate, Big",0,842.4541750485
+"2020","DFL4","GOA Deep Water Flatfish",0,99.5503886792
+"2020","DUSK","GOA Dusky Rockfish",0,2114.4472401531
+"2020","FSOL","Flathead Sole",0,1911.3303606631
+"2020","HLBT","Halibut",0,5514.6712761464
+"2020","LSKT","GOA Skate, Longnose",0,383.8723804031
+"2020","NORK","Northern Rockfish",0,2384.9172000473
+"2020","OCTP","Octopus",0,77.0490107145
+"2020","PCOD","Pacific Cod",0,6085.3495954439
+"2020","PLCK","Pollock",0,99971.064968016
+"2020","POPA","Pacific Ocean Perch",0,23724.8784221139
+"2020","REXS","GOA Rex Sole",0,1237.4106341176
+"2020","REYE","Rougheye Rockfish",0,190.7734441956
+"2020","ROCK","Other Rockfish",0,652.5341581954
+"2020","SABL","Sablefish",0,7502.6802992402
+"2020","SCLP","Sculpin",0,543.8795954843
+"2020","SFL1","GOA Shallow Water Flatfish",0,4359.904943077
+"2020","SRKR","Shortraker Rockfish",0,197.5597034385
+"2020","THDS","GOA Thornyhead Rockfish",0,255.353756184
+"2020","USKT","BSAI Skate and GOA Skate, Other",0,275.7116184062
+"2020","USRK","Shark",0,730.6051073688
+"2021","AMCK","Atka Mackerel",0,939.325096141
+"2021","ARTH","Arrowtooth Flounder",0,9846.4353958698
+"2021","BSKT","GOA Skate, Big",0,555.3509149667
+"2021","DFL4","GOA Deep Water Flatfish",0,83.8344931073
+"2021","DUSK","GOA Dusky Rockfish",0,2897.3363616423
+"2021","FSOL","Flathead Sole",0,707.0780320568
+"2021","HLBT","Halibut",0,6111.0334758205
+"2021","LSKT","GOA Skate, Longnose",0,562.2961380034
+"2021","NORK","Northern Rockfish",0,2376.492255029
+"2021","OCTP","Octopus",0,53.6965165453
+"2021","PCOD","Pacific Cod",0,18686.8986170852
+"2021","PLCK","Pollock",0,93869.8587795033
+"2021","POPA","Pacific Ocean Perch",0,27237.551634616
+"2021","REXS","GOA Rex Sole",0,299.4951434621
+"2021","REYE","Rougheye Rockfish",0,203.7410727049
+"2021","ROCK","Other Rockfish",0,1053.7688918705
+"2021","SABL","Sablefish",0,9318.5576488888
+"2021","SFL1","GOA Shallow Water Flatfish",0,1851.8800976706
+"2021","SRKR","Shortraker Rockfish",0,217.9042750381
+"2021","THDS","GOA Thornyhead Rockfish",0,143.2171893662
+"2021","USKT","BSAI Skate and GOA Skate, Other",0,536.3248654959
+"2021","USRK","Shark",0,973.5832567696
+"2022","AMCK","Atka Mackerel",0,879.66486865
+"2022","ARTH","Arrowtooth Flounder",0,11531.8434173434
+"2022","BSKT","GOA Skate, Big",0,943.8159985415
+"2022","DFL4","GOA Deep Water Flatfish",0,121.2519730655
+"2022","DUSK","GOA Dusky Rockfish",0,2579.1915126476
+"2022","FSOL","Flathead Sole",0,563.4499736525
+"2022","HLBT","Halibut",0,6961.6724770133
+"2022","LSKT","GOA Skate, Longnose",0,583.5406874053
+"2022","NORK","Northern Rockfish",0,1898.4821976097
+"2022","OCTP","Octopus",0,146.404706439
+"2022","PCOD","Pacific Cod",0,25387.9969964596
+"2022","PLCK","Pollock",0,123493.842143941
+"2022","POPA","Pacific Ocean Perch",0,28085.4413036243
+"2022","REXS","GOA Rex Sole",0,695.4192709081
+"2022","REYE","Rougheye Rockfish",0,281.7225375285
+"2022","ROCK","Other Rockfish",0,1163.3123726392
+"2022","SABL","Sablefish",0,11192.7407027183
+"2022","SFL1","GOA Shallow Water Flatfish",0,1298.4155552319
+"2022","SRKR","Shortraker Rockfish",0,299.7665014159
+"2022","THDS","GOA Thornyhead Rockfish",0,282.7124880331
+"2022","USKT","BSAI Skate and GOA Skate, Other",0,787.5522406938
+"2022","USRK","Shark",0,1085.1393189674
+"2023","AMCK","Atka Mackerel",0,462.5799769414
+"2023","ARTH","Arrowtooth Flounder",0,9095.5957335192
+"2023","BSKT","GOA Skate, Big",0,1038.4034764103
+"2023","DFL4","GOA Deep Water Flatfish",0,96.3958052826
+"2023","DUSK","GOA Dusky Rockfish",0,3487.371240091
+"2023","FSOL","Flathead Sole",0,468.8473069571
+"2023","HLBT","Halibut",0,6320.0502808587
+"2023","LSKT","GOA Skate, Longnose",0,536.1550484158
+"2023","NORK","Northern Rockfish",0,1325.1021891213
+"2023","OCTP","Octopus",0,183.0057508807
+"2023","PCOD","Pacific Cod",0,21013.8478456535
+"2023","PLCK","Pollock",0,124964.716612955
+"2023","POPA","Pacific Ocean Perch",0,28397.7945535999
+"2023","REXS","GOA Rex Sole",0,410.2171102182
+"2023","REYE","Rougheye Rockfish",0,258.7113887571
+"2023","ROCK","Other Rockfish",0,989.7051734989
+"2023","SABL","Sablefish",0,9245.8917550819
+"2023","SFL1","GOA Shallow Water Flatfish",0,1003.7579057303
+"2023","SRKR","Shortraker Rockfish",0,283.211541044
+"2023","THDS","GOA Thornyhead Rockfish",0,150.1361765971
+"2023","USKT","BSAI Skate and GOA Skate, Other",0,500.7291803946
+"2023","USRK","Shark",0,691.4072931884
