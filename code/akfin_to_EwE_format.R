@@ -273,11 +273,12 @@ write.csv(wgoa_land_ts_w, "wgoa_land_ts_wide.csv")
 
 
 wgoa_catch_ts_w <- wgoa_catch_ts %>%
-  group_by(year, node, matched_name, agency_gear_code) %>%
-  summarise(catch_mt = sum(catch_mt, na.rm = TRUE), .groups = "drop") %>%
+  group_by(year, node, matched_name) %>%
+  summarise(catch_mt = sum(catch_mt, na.rm = TRUE)/234769, .groups = "drop") %>%
   pivot_wider(
-    names_from = c(matched_name, node, agency_gear_code),
+    names_from = c(matched_name, node),
     values_from = catch_mt,
     values_fill = 0 # Fill missing values with 0
   )
+  
 write.csv(wgoa_catch_ts_w, "wgoa_catch_ts_wide.csv")
