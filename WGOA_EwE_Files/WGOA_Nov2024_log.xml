@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <Platform>Microsoft Windows NT 10.0.19045.0</Platform>
+  <Is64BitOS>True</Is64BitOS>
+  <ModelName>WGOA_Nov2024</ModelName>
+  <Created>12:18:25 PM Wednesday, November 20, 2024</Created>
+<Session_Started
+  Date="12:18:25 PM Wednesday, November 20, 2024">
+  <Model>WGOA_Nov2024</Model>
+  <LogFile>C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024_log.xml</LogFile>
+  <Is64BitExe>True</Is64BitExe>
+  <CultureOS>English (United States)</CultureOS>
+  <CultureUI>English (United States)</CultureUI>
+  <DecimalSeparator>.</DecimalSeparator>
+</Session_Started>
+<Information_Message
+  Date="12:18:25 PM Wednesday, November 20, 2024">
+  <Message>Ecopath model 'C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024.eweaccdb' loaded.</Message>
+  <Message_Type>DataAddedOrRemoved</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Information_Message
+  Date="12:18:43 PM Wednesday, November 20, 2024">
+  <Message>Models exported successfully to C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024.eiixml</Message>
+  <Message_Type>DataExport</Message_Type>
+  <Message_Source>External</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Entry>
+  <Formcannotberesolved>frmEwE6 cmdNavigate OnInvoke</Formcannotberesolved>
+</Entry>
+<Log_Message
+  Date="3:13:11 PM Wednesday, November 20, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="3:13:11 PM Wednesday, November 20, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="3:13:11 PM Wednesday, November 20, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="3:13:11 PM Wednesday, November 20, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="3:13:11 PM Wednesday, November 20, 2024">
+  <Message>Ecosim scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="3:13:11 PM Wednesday, November 20, 2024">
+  <Message>Model closed</Message>
+</Log_Message>
+<Session_Started
+  Date="4:16:47 PM Wednesday, November 20, 2024">
+  <Model>WGOA_Nov2024</Model>
+  <LogFile>C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024_log.xml</LogFile>
+  <Is64BitExe>True</Is64BitExe>
+  <CultureOS>English (United States)</CultureOS>
+  <CultureUI>English (United States)</CultureUI>
+  <DecimalSeparator>.</DecimalSeparator>
+</Session_Started>
+<Information_Message
+  Date="4:16:47 PM Wednesday, November 20, 2024">
+  <Message>Ecopath model 'C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024.eweaccdb' loaded.</Message>
+  <Message_Type>DataAddedOrRemoved</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Entry>
+  <Formcannotberesolved>frmEwE6 cmdNavigate OnInvoke</Formcannotberesolved>
+</Entry>
+<Information_Message
+  Date="4:27:20 PM Wednesday, November 20, 2024">
+  <Message>Ecopath run completed.</Message>
+  <Message_Type>Any</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Log_Message
+  Date="4:27:21 PM Wednesday, November 20, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="4:27:21 PM Wednesday, November 20, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="4:27:21 PM Wednesday, November 20, 2024">
+  <Message>Ecosim scenario closed</Message>
+</Log_Message>
+<Information_Message
+  Date="4:27:21 PM Wednesday, November 20, 2024">
+  <Message>Ecosim scenario 'Thornyheadtest' loaded.</Message>
+  <Message_Type>DataAddedOrRemoved</Message_Type>
+  <Message_Source>Ecosim</Message_Source>
+  <Message_DataType>EcoSimScenario</Message_DataType>
+</Information_Message>
+<Entry>
+  <Formcannotberesolved>frmEwE6 cmdNavigate OnInvoke</Formcannotberesolved>
+</Entry>
+<Entry>
+  <Formcannotberesolved>frmEwE6 cmdNavigate OnInvoke</Formcannotberesolved>
+</Entry>
+<Log_Message
+  Date="7:03:06 AM Thursday, November 21, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="7:03:06 AM Thursday, November 21, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="7:03:06 AM Thursday, November 21, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="7:03:06 AM Thursday, November 21, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="7:03:06 AM Thursday, November 21, 2024">
+  <Message>Ecosim scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="7:03:07 AM Thursday, November 21, 2024">
+  <Message>Model closed</Message>
+</Log_Message>
+<Session_Started
+  Date="3:58:51 PM Thursday, November 21, 2024">
+  <Model>WGOA_Nov2024</Model>
+  <LogFile>C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024_log.xml</LogFile>
+  <Is64BitExe>True</Is64BitExe>
+  <CultureOS>English (United States)</CultureOS>
+  <CultureUI>English (United States)</CultureUI>
+  <DecimalSeparator>.</DecimalSeparator>
+</Session_Started>
+<Information_Message
+  Date="3:58:51 PM Thursday, November 21, 2024">
+  <Message>Ecopath model 'C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024.eweaccdb' loaded.</Message>
+  <Message_Type>DataAddedOrRemoved</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Log_Message
+  Date="11:20:59 AM Tuesday, November 26, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="11:20:59 AM Tuesday, November 26, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="11:20:59 AM Tuesday, November 26, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="11:20:59 AM Tuesday, November 26, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="11:20:59 AM Tuesday, November 26, 2024">
+  <Message>Ecosim scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="11:20:59 AM Tuesday, November 26, 2024">
+  <Message>Model closed</Message>
+</Log_Message>
+<Session_Started
+  Date="11:54:09 AM Tuesday, November 26, 2024">
+  <Model>WGOA_Nov2024</Model>
+  <LogFile>C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024_log.xml</LogFile>
+  <Is64BitExe>True</Is64BitExe>
+  <CultureOS>English (United States)</CultureOS>
+  <CultureUI>English (United States)</CultureUI>
+  <DecimalSeparator>.</DecimalSeparator>
+</Session_Started>
+<Information_Message
+  Date="11:54:09 AM Tuesday, November 26, 2024">
+  <Message>Ecopath model 'C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024.eweaccdb' loaded.</Message>
+  <Message_Type>DataAddedOrRemoved</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Information_Message
+  Date="3:37:13 PM Tuesday, November 26, 2024">
+  <Message>Ecopath run completed.</Message>
+  <Message_Type>Any</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Entry>
+  <Formcannotberesolved>frmEwE6 cmdNavigate OnInvoke</Formcannotberesolved>
+</Entry>
+</doc>

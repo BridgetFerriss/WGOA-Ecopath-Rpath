@@ -1,11 +1,12 @@
 library(xml2)
 library(janitor)
+library(Rpath)
 
 # Warn as you go, not at the end
   options(warn=1)
 
 # Read and parse xml file
-  dat <- read_xml("WGOA_EwE_Files/WGOA_Nov2024.eiixml")
+  dat <- read_xml(eiifile) #"WGOA_EwE_Files/WGOA_Nov2024.eiixml"
 
 # Create a list of Tables (main eiixml output data structure is "Table")
   tables <- xml_find_all(dat,".//Table")   
@@ -44,8 +45,10 @@ for (node in tables){
 # Not all tables work - some give warnings, and some have gaps in data
 # entry because of ',' and ':' in descriptive texts, need to fix those.
 
-library(Rpath)
+## ------ ALL RAW DATA from XML should be in R data frames at this point -------
 
+# Extract and order group, gear and stanza names to create Rpath object---------
+  
 # Function to replace negative values with NAs
   vec_na <- function(vec){return(ifelse(vec < (-0.1), NA, vec))}
 
@@ -61,10 +64,12 @@ library(Rpath)
   ordgroups <- ewe_EcopathGroup[ord, ]
   ordfleets <- ewe_EcopathFleet[ford,]
 
-  
-# Create an unbalanced model object with appropriate names
+# Get and clean names and Types for living groups and gear
   bio_names   <- make_clean_names(ordgroups$GroupName)
   gear_names  <- make_clean_names(ordfleets$FleetName)
+  if (sum(gear_names%in%bio_names)>0){
+    warning("Fleet ",gear_names[gear_names %in% bio_names]," has same name as a bio group, appending fleet to name")
+  }
   gear_names  <- ifelse(gear_names %in% bio_names, paste(gear_names,"fleet",sep='_'),gear_names)
   det_names   <- make_clean_names(ordgroups$GroupName[ordgroups$Type==2])
   live_names  <- make_clean_names(ordgroups$GroupName[ordgroups$Type!=2])  
@@ -72,9 +77,39 @@ library(Rpath)
   g_names <- c(bio_names, gear_names)
   g_types <- c(ordgroups$Type, rep(3,length(gear_names)))
   row.names(ordgroups) <- bio_names
+
+# Also make a couple of named vectors associating names with groupID  
+# (lookups for species and gear, using ID# as a character index)
+  pnames <- bio_names
+  names(pnames) <- ordgroups$GroupID
+  gnames <- gear_names
+  names(gnames) <- ordfleets$FleetID  
   
-  unbal <- create.rpath.params(g_names,g_types)
-  #row.names(unbal$model) <- g_names # Data table needs to die
+# Get and clean stanza names, order stanza table  
+# TODO: check for models without stanzas
+  sord         <- order(ewe_Stanza$StanzaID)
+  ordstanzas   <- ewe_Stanza[sord,]
+  ordstanzas$stanza_names <- make_clean_names(ordstanzas$StanzaName)
+  row.names(ordstanzas) <- as.character(ordstanzas$StanzaID)
+
+# Combine the life stages and stanza info into one table (making some duplication
+# as stanza parameters will have multiple copies).
+  ordstages <- cbind(ewe_StanzaLifeStage,ordstanzas[as.character(ewe_StanzaLifeStage$StanzaID),])
+  
+  ordstages$gname <- pnames[as.character(ordstages$GroupID)]
+  
+  stanza_column <- rep(NA, length(pnames))
+  names(stanza_column)<-names(pnames)
+  stanza_column[as.character(ordstages$GroupID)] <- ordstages$stanza_names
+  stanza_name_only<- c(as.character(stanza_column), rep(NA,length(gnames)))
+
+#-------------------------------------------------------------------------------    
+
+# Create the Unbalanced Rpath object here    
+  unbal <- create.rpath.params(group=g_names, type=g_types, stgroup=stanza_name_only)
+
+# ------------------------------------------------------------------------------
+# Populate unbal Rpath object with values
   
 # Fill group vectors  
   gear_na <- rep(NA,length(gear_names))
@@ -86,13 +121,13 @@ library(Rpath)
   unbal$model$BioAcc   <- c(vec_na(ordgroups$BiomAcc), gear_na)
   unbal$model$Unassim  <- c(vec_na(ordgroups$Unassim), gear_na)
   unbal$model$DetInput <- c(vec_na(ordgroups$DtImports), gear_na)
-  unbal$model$DetInput[ordgroups$Type!=2] <- NA
   
-# needed lookups for species and gear, using ID# as a character index
-  pnames <- bio_names
-  names(pnames) <- ordgroups$GroupID
-  gnames <- gear_names
-  names(gnames) <- ordfleets$FleetID
+  #EwE output seems to have a few 0s or other numbers saved that should
+  #be NAs, specifically with detritus.  Ensuring those don't sneak through.
+  unbal$model$DetInput[ordgroups$Type!=2] <- NA
+  unbal$model$EE[ordgroups$Type==2] <- NA
+  
+
 
 # DIET TABLE---------------------------------------
 # TODO: where are diet imports in EwE XML data?
@@ -157,6 +192,49 @@ library(Rpath)
   }
 
   unbal$model[(length(bio_names)+1):(length(bio_names)+length(gear_names)), det_names] <- fateframe
-  
 
+  
+# STANZAS ----------------------------------------------------------------------
+# Rename ordered tables to use cleaned names, not GroupIDs
+row.names(ordstanzas) <- ordstanzas$stanza_names
+  
+  unbal$stanzas$stgroups$Wmat     <-ordstanzas[unbal$stanzas$stgroups$StanzaGroup,"WmatWinf"]  
+  unbal$stanzas$stgroups$BAB      <-ordstanzas[unbal$stanzas$stgroups$StanzaGroup,"BABsplit"] 
+  unbal$stanzas$stgroups$RecPower <-ordstanzas[unbal$stanzas$stgroups$StanzaGroup,"RecPower"]
+  
+row.names(ordstages) <- ordstages$gname
+unbal$stanzas$stindiv$StanzaNum <- ordstages[unbal$stanzas$stindiv$Group,"Sequence"]
+unbal$stanzas$stindiv$Leading   <- ifelse(
+  ordstages[unbal$stanzas$stindiv$Group,"LeadingLifeStage"]==
+  ordstages[unbal$stanzas$stindiv$Group,"Sequence"], TRUE, FALSE)
+unbal$stanzas$stindiv$First <- ordstages[unbal$stanzas$stindiv$Group,"AgeStart"]
+
+# Not sure how Mort is stored outside of PB, or if it's different.
+pb <- unbal$model$PB; names(pb) <- unbal$model$Group
+unbal$stanzas$stindiv$Z         <- pb[unbal$stanzas$stindiv$Group]
+cat("Created unbal (unbalanced ecopath) from ",eiifile,"\n")
+
+# Looping through in this weird way doesn't change the data.tables data type
+# (default logical) for the Last column.  (more foolishness)
+unbal$stanzas$stindiv[ , Last := as.numeric(Last)] 
+unbal$stanzas$stgroups[, VBGF_Ksp := as.numeric(VBGF_Ksp)]
+
+for (gg in 1:max(unbal$stanzas$stindiv$StGroupNum)){
+  # Finding vonBK is a mess involving all three tables (stored on group table)
+  # Look up Leading Group and Stanza Group Number to get name on main table.
+  unbal$stanzas$stgroups[StGroupNum==gg,"VBGF_Ksp"] <-
+    ordgroups[as.character(unbal$stanzas$stindiv[StGroupNum==gg & Leading==T,"Group"]),]$vbK
+  
+  # Now loop through to add Last Month to first month
+  szs <- unbal$stanzas$stindiv[StGroupNum==gg,]
+  for (ss in 1:(max(szs$StanzaNum)-1)){
+    unbal$stanzas$stindiv[StGroupNum==gg & szs$StanzaNum==ss,"Last"] = szs[szs$StanzaNum==ss+1,"First"] - 1
+  }
+  ss <- ss+1
+  unbal$stanzas$stindiv[StGroupNum==gg & szs$StanzaNum==ss,"Last"] <- 999
+}
+
+
+#Not sure why Ksp is stored on the indiv table not the main group table
+#assuming the value for the leading stanzas is correct.
 
