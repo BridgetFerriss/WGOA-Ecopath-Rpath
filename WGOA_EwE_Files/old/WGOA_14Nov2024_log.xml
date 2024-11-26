@@ -72,4 +72,48 @@
   Date="8:41:46 AM Sunday, November 17, 2024">
   <Message>Model closed</Message>
 </Log_Message>
+<Session_Started
+  Date="9:28:24 AM Thursday, November 21, 2024">
+  <Model>WGOA_14Nov2024</Model>
+  <LogFile>C:\Users\biadias\Documents\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_14Nov2024_log.xml</LogFile>
+  <Is64BitExe>True</Is64BitExe>
+  <CultureOS>English (United States)</CultureOS>
+  <CultureUI>English (United States)</CultureUI>
+  <DecimalSeparator>.</DecimalSeparator>
+</Session_Started>
+<Information_Message
+  Date="9:28:24 AM Thursday, November 21, 2024">
+  <Message>Ecopath model 'C:\Users\biadias\Documents\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_14Nov2024.eiixml' loaded.</Message>
+  <Message_Type>DataAddedOrRemoved</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Log_Message
+  Date="9:28:26 AM Thursday, November 21, 2024">
+  <Message>Unable to obtain server time</Message>
+</Log_Message>
+<Log_Message
+  Date="9:28:44 AM Thursday, November 21, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="9:28:44 AM Thursday, November 21, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="9:28:44 AM Thursday, November 21, 2024">
+  <Message>Ecospace scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="9:28:44 AM Thursday, November 21, 2024">
+  <Message>Ecotracer scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="9:28:44 AM Thursday, November 21, 2024">
+  <Message>Ecosim scenario closed</Message>
+</Log_Message>
+<Log_Message
+  Date="9:28:45 AM Thursday, November 21, 2024">
+  <Message>Model closed</Message>
+</Log_Message>
 </doc>
