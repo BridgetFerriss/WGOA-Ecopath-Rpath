@@ -12,13 +12,9 @@ library(Rpath)
 # TODO WGOA names in general
   
 # WGOA hand-fixes from entry issues in the EwE model.  These should be
-# fixed eventually in the EwE files.
+# fixed eventually in the EwE files.  Odd lookup here (data.table quirks). 
   unbal$model[Type==2, "DetInput"] <- 0
-  
   det_names <- unbal$model[Type==2]$Group
-  # Ugly lookup here due to data.table use  
-  # stupidly different syntax for lookups versus assignments (the ..)
-  #unbal$model[Group%in%det_names, ..det_names]
   unbal$model[Group%in%det_names, det_names] <- 0
   #unbal$model[Group%in%det_names, "benthic_detritus"] <- 1
   
@@ -29,10 +25,19 @@ library(Rpath)
   unbal$model[Group%in%det_names, "Biomass"] <- NA
   unbal$model[Group%in%det_names, "PB"]      <- 1.0
   
-# IGNORE DETRITAL FLOW WARNINGS FOR NOW  
-check.rpath.params(unbal)
+# IGNORE DETRITAL FLOW WARNINGS IN check.rpath.params FOR NOW  
+  unbal <- rpath.stanzas(unbal)
+  check.rpath.params(unbal)
+  bal <- rpath(unbal)
 
-unbal <- rpath.stanzas(unbal)
+# To check Biomass, EEs etc.
+View(data.frame(bal$Biomass, bal$PB, bal$QB, bal$EE))
 
-bal <- rpath(unbal)
+# Testing rsim
+scene0 <- rsim.scenario(bal, unbal, years=1990:2089)
+run0   <- rsim.run(scene0, method="RK4", years = 1990:2089)
+rsim.plot(run0)
 
+scene1 <- adjust.fishing(scene0, "ForcedFRate", "sablefish_adult", sim.year=1995:2000, value=0.2)
+run1   <- rsim.run(scene1, method="RK4", years = 1990:2089)
+rsim.plot(run1)

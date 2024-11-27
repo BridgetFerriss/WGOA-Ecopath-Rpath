@@ -238,4 +238,27 @@
   <Message>Model closed</Message>
 </Log_Message>
 >>>>>>> ba0c91b78646ea227f8fbf8709f5005227def6bd
+<Session_Started
+  Date="6:51:11 AM Wednesday, November 27, 2024">
+  <Model>WGOA_Nov2024</Model>
+  <LogFile>C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024_log.xml</LogFile>
+  <Is64BitExe>True</Is64BitExe>
+  <CultureOS>English (United States)</CultureOS>
+  <CultureUI>English (United States)</CultureUI>
+  <DecimalSeparator>.</DecimalSeparator>
+</Session_Started>
+<Information_Message
+  Date="6:51:11 AM Wednesday, November 27, 2024">
+  <Message>Ecopath model 'C:\Users\kerim.aydin\Work\src\WGOA-Ecopath-Rpath\WGOA_EwE_Files\WGOA_Nov2024.eweaccdb' loaded.</Message>
+  <Message_Type>DataAddedOrRemoved</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
+<Information_Message
+  Date="6:51:38 AM Wednesday, November 27, 2024">
+  <Message>Ecopath run completed.</Message>
+  <Message_Type>Any</Message_Type>
+  <Message_Source>Ecopath</Message_Source>
+  <Message_DataType>NotSet</Message_DataType>
+</Information_Message>
 </doc>
