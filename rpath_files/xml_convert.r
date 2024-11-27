@@ -234,7 +234,8 @@ for (gg in 1:max(unbal$stanzas$stindiv$StGroupNum)){
   unbal$stanzas$stindiv[StGroupNum==gg & szs$StanzaNum==ss,"Last"] <- 999
 }
 
-
+# TODO RPATH - why does order matter here?
+unbal$stanzas$stindiv <- unbal$stanzas$stindiv[order(StGroupNum,StanzaNum)]
 #Not sure why Ksp is stored on the indiv table not the main group table
 #assuming the value for the leading stanzas is correct.
 
