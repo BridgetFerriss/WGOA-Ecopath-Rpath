@@ -2,9 +2,10 @@ library(xml2)
 library(janitor)
 library(Rpath)
 
+import.eiixml<- function(eiifile, verbose=F, export=F){
 # Warn as you go, not at the end
   options(warn=1)
-
+  
 # Read and parse xml file
   dat <- read_xml(eiifile) #"WGOA_EwE_Files/WGOA_Nov2024.eiixml"
 
@@ -27,12 +28,15 @@ for (node in tables){
   # Get rows of data and split into a data frame with that data
   rawdat <- xml_text(xml_find_all(node,"Row"))
   if (length(rawdat)>0){
-    cat(node_name,"")
+    if(verbose){cat(node_name,"")}
      #dtable <- data.frame(matrix(as.numeric(unlist(strsplit(rawdat,","))), ncol=length(cols), byrow=T))
-    dtable <- type.convert(data.frame(matrix((unlist(strsplit(rawdat,","))), ncol=length(cols), byrow=T)), as.is=T)
-    cat(length(rawdat),"rows\n")
+    unlisted_dat <- (unlist(strsplit(rawdat,",")))
+    if (length(unlisted_dat) %% length(cols) != 0){warning("Matrix alignment (comma issue?) in table ",node_name,":")}
+    dtable <- type.convert(data.frame(matrix(unlisted_dat, ncol=length(cols), byrow=T)), as.is=T)
+    if(verbose){cat(length(rawdat),"rows\n")}
     names(dtable) <- cols
-    assign(paste("ewe_",node_name,sep="") , dtable)
+    assign(paste0("ewe_",node_name) , dtable)
+    if(export){do.call("<<-",list(paste0("ewe_",node_name), dtable))}
   } else {
     dtable <- data.frame(matrix(ncol=length(cols),byrow=T))[-1,]
     #cat("0\n")
@@ -127,7 +131,7 @@ for (node in tables){
   unbal$model$DetInput[ordgroups$Type!=2] <- NA
   unbal$model$EE[ordgroups$Type==2] <- NA
   
-
+  ewe_ordgroups <<- ordgroups
 
 # DIET TABLE---------------------------------------
 # TODO: where are diet imports in EwE XML data?
@@ -146,7 +150,14 @@ for (node in tables){
   }
   # need to convert matrices to data frames or data.table is unhappy
   unbal$diet[,2:ncol(unbal$diet)] <- ppmat
-
+  
+  # add diet import
+    impdiet <- ordgroups$ImpVar; names(impdiet)<-rownames(ordgroups)    
+    predlist <- names(unbal$diet)[2:ncol(unbal$diet)]
+    for(p in predlist){
+      unbal$diet[Group=="Import", p] <- impdiet[p]
+    }
+  
 # DETRITUS FATE FOR NON-GEAR -------------------------------------------------    
   detframe <- data.frame(unbal$model)[,det_names]
   row.names(detframe) <- g_names
@@ -238,4 +249,8 @@ for (gg in 1:max(unbal$stanzas$stindiv$StGroupNum)){
 unbal$stanzas$stindiv <- unbal$stanzas$stindiv[order(StGroupNum,StanzaNum)]
 #Not sure why Ksp is stored on the indiv table not the main group table
 #assuming the value for the leading stanzas is correct.
+
+return(unbal)
+}
+
 
