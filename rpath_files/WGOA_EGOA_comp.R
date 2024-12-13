@@ -54,6 +54,9 @@ e.scene1 <- adjust.fishing(e.scene0, "ForcedFRate", "sablefish_adult", sim.year=
 e.run1   <- rsim.run(e.scene1, method="RK4", years = 1990:2089)
 rsim.plot(e.run1)
 
+source("rpath_files/rsim.plot.interactive.R")
+rsim.plot.interactive(w.run1, spname = "all", indplot = FALSE)
+
 
 
 

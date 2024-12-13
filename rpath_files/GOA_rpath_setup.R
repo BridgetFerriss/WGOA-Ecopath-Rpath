@@ -39,7 +39,7 @@ source("rpath_files/xml_convert.r")
 # Remove Biomass and add PB to detritus to estimate flows
 # TODO: discuss detrital balance (appropriate numbers)
   unbal$model[Group%in%det_names, "Biomass"] <- NA
-  unbal$model[Group%in%det_names, "PB"]      <- 1.0
+  unbal$model[Group%in%det_names, "PB"]      <- 1.0 # 1.0 means once a year 
   
 # Add full stanza calculations to unbalanced model, check parameter set,
 # then balance the model, copying over to western version.
@@ -90,3 +90,5 @@ source("rpath_files/xml_convert.r")
 # scene1 <- adjust.fishing(scene0, "ForcedFRate", "sablefish_adult", sim.year=1995:2000, value=0.2)
 # run1   <- rsim.run(scene1, method="RK4", years = 1990:2089)
 # rsim.plot(run1)
+
+  
