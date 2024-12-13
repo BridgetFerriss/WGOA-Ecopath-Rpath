@@ -7,8 +7,14 @@
 
 library(plotly)
 library(tidyverse)
+library(colorspace)
 
 rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE) {
+  rsim_name <- deparse(substitute(Rsim.output))
+  mrg <- list(l = 50, r = 50,
+              b = 50, t = 50,
+              pad = 20)
+  
   if ("all" %in% spname) {
     spname <- colnames(Rsim.output$out_Biomass)[2:ncol(Rsim.output$out_Biomass)]
   }
@@ -33,15 +39,21 @@ rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE) {
   df_long <- pivot_longer(df, cols = -time, names_to = "Species", values_to = "RelativeBiomass")
   
   # Plotly object
+  n_species <- length(unique(df_long$Species))
+  my_colors <- colorRampPalette(rainbow_hcl(n_species))(n_species)
+  df_long$Species <- factor(df_long$Species, levels = spname)
+  
   rsim.int.plotly <- plot_ly(data = df_long,
                x = ~time,
                y = ~RelativeBiomass,
                color = ~Species,
+               colors = my_colors,
                type = 'scatter',
                mode = 'lines') %>%
-    layout(title = "Relative Biomass Over Time",
+    layout(title = paste("Relative Biomass Over Time:" , rsim_name),
            xaxis = list(title = "Months"),
-           yaxis = list(title = "Relative Biomass"))
+           yaxis = list(title = "Relative Biomass"),
+           margin=mrg)
   
   return(rsim.int.plotly)
 }
