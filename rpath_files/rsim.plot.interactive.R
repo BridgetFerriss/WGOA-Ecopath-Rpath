@@ -8,8 +8,10 @@
 library(plotly)
 library(tidyverse)
 library(colorspace)
+library(grDevices)
 
-rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE) {
+
+rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE, palette= "b_palette") {
   rsim_name <- deparse(substitute(Rsim.output))
   mrg <- list(l = 50, r = 50,
               b = 50, t = 50,
@@ -36,13 +38,30 @@ rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE) {
   # Create a time vector
   time <- seq_len(nrow(rel.bio))
   df <- cbind(time, as.data.frame(rel.bio))
-  df_long <- pivot_longer(df, cols = -time, names_to = "Species", values_to = "RelativeBiomass")
-  
-  # Plotly object
-  n_species <- length(unique(df_long$Species))
-  my_colors <- colorRampPalette(rainbow_hcl(n_species))(n_species)
+  df_long <- tidyr::pivot_longer(df, cols = -time, names_to = "Species", values_to = "RelativeBiomass")
   df_long$Species <- factor(df_long$Species, levels = spname)
+  n_species <- length(spname)
+  b_palette <- colorspace::rainbow_hcl 
   
+  if (is.character(palette) && length(palette) == 1 && exists(palette, mode = "function")) {
+    # If the palette is pre-determined e.g. "rainbow" or "terrain.colors" 
+    # https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf 
+    pal_fun <- match.fun(palette)
+    my_colors <- pal_fun(n_species)
+  } else if (is.character(palette) && length(palette) > 1) {
+    # If you decide to give a vector of colors
+    if (length(palette) < n_species) {
+      # the function will interpolate if there not enough colors
+      my_colors <- grDevices::colorRampPalette(palette)(n_species)
+    } else {
+      # If enough colors or more
+      my_colors <- palette[1:n_species]
+    }
+  } else {
+    my_colors <- topo.colors(n_species)
+  }
+  
+  # Plotly object  
   rsim.int.plotly <- plot_ly(data = df_long,
                x = ~time,
                y = ~RelativeBiomass,
