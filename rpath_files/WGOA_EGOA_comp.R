@@ -57,8 +57,9 @@ rsim.plot(e.run1)
 # Interactive plots. Use the 
 
 source("rpath_files/rsim.plot.interactive.R")
-rsim.plot.interactive(w.run1, spname = "all", indplot = FALSE, palette="b_palette")
-
+b_palette <- colorspace::rainbow_hcl 
+b2_palette <- colorRamps::primary.colors
+rsim.plot.interactive(w.run1, spname = "all", indplot = FALSE, palette = "b2_palette" )
 
 
 

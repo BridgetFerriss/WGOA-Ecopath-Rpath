@@ -11,7 +11,8 @@ library(colorspace) # default color palette, but I can simplify this later
 library(grDevices)
 
 
-rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE, palette= "b_palette") {
+
+rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE, palette= "rainbow") {
   rsim_name <- deparse(substitute(Rsim.output))
   mrg <- list(l = 50, r = 50,
               b = 50, t = 50,
@@ -41,7 +42,7 @@ rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE, pa
   df_long <- tidyr::pivot_longer(df, cols = -time, names_to = "Species", values_to = "RelativeBiomass")
   df_long$Species <- factor(df_long$Species, levels = spname)
   n_species <- length(spname)
-  b_palette <- colorspace::rainbow_hcl 
+  #b_palette <- colorspace::rainbow_hcl 
   
   if (is.character(palette) && length(palette) == 1 && exists(palette, mode = "function")) {
     # If the palette is pre-determined e.g. "rainbow" or "terrain.colors" 
@@ -58,7 +59,7 @@ rsim.plot.interactive <- function(Rsim.output, spname="all", indplot = FALSE, pa
       my_colors <- palette[1:n_species]
     }
   } else {
-    my_colors <- topo.colors(n_species)
+    my_colors <- rainbow(n_species)
   }
   
   # Plotly object  
