@@ -23,7 +23,7 @@ source("rpath_files/xml_convert.r")
 # WGOA creation ###############
 # Create unbalanced rpath object, don't worry about table alignment warnings
 # if the tables aren't ones used in basic path or stanzas.
-  unbal <- import.eiixml(eiifile = "rpath_files/WGOA_11Dec2024_renamed.eiixml")
+  unbal <- import.eiixml(eiifile = WGOA_EwE_file)
 
 # WGOA hand-fixes from entry issues in the EwE model.  These should be
 # fixed eventually in the EwE files.  
@@ -49,7 +49,7 @@ source("rpath_files/xml_convert.r")
 
 # EGOA creation ###############  
   # Create unbalanced rpath object
-  unbal <- import.eiixml(eiifile = "rpath_files/EGOA-multi-stanza_2024_12_10_renamed.eiixml",export=T)
+  unbal <- import.eiixml(eiifile = EGOA_EwE_file, export=T)
   
   # WGOA hand-fixes from entry issues in the EwE model.  These should be
   # fixed eventually in the EwE files. 

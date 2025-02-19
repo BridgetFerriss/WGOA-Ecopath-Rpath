@@ -2,6 +2,9 @@ library(Rpath)
 library(dplyr)
 
 # load models into w.unbal, w.bal for west, e.unbal and e.bal for east.
+# File names are used in GOA_rpath_setup.R source call
+  WGOA_EwE_file <- "rpath_files/WGOA_16Dec2024.eiixml"
+  EGOA_EwE_file <- "rpath_files/EGOA-multi-stanza_13Dec2024.eiixml" 
   source("rpath_files/GOA_rpath_setup.R")
 
 # Checking group names #########################################################
@@ -22,7 +25,7 @@ library(dplyr)
   #plot(ew.groups$e.bal.PB/ew.groups$w.bal.PB)
   #text(ew.groups$e.bal.PB,ew.groups$w.bal.PB,ew.groups$e.bal.Group)
   
-  write.csv(ew.groups,"ewgroups_balance_comp.csv",row.names=F)
+  write.csv(ew.groups,"ewgroups_balance_comp_18Dec24.csv",row.names=F)
   
 # Some plots ###################################################################
   
@@ -59,7 +62,9 @@ rsim.plot(e.run1)
 source("rpath_files/rsim.plot.interactive.R")
 rsim.plot.interactive(w.run1, spname = "all", indplot = FALSE, palette="b_palette")
 
+test<-rsim.plot.interactive(w.run1, spname = "all", indplot = FALSE, palette=colorspace::rainbow_hcl)
 
+test
 
 
   
