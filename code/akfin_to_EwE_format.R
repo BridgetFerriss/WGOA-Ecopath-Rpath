@@ -1,3 +1,12 @@
+#------------------------------------------------------------------------------#
+#AUTHORS: Bia Dias
+#AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
+#E-MAIL OF CORRESPONDENCE AUTHOR: bia.dias@noaa.gov
+#
+# script to format AKFIN data into EwE and Rpath formats
+#------------------------------------------------------------------------------#
+
+
 library(tidyverse)
 library(here)
 wgoacatchsp <- read.csv("data/2023/wgoa_catch_year_group.csv")
@@ -200,8 +209,8 @@ Species_names <- c(
   "Benthic detritus"
 )
 
-lookout_data <- data.frame(node = Species_nodes,names = Species_names) %>% 
-  filter(!str_detect(names, c('adult|juv|Other'))) 
+lookout_data <- data.frame(node = Species_nodes, names = Species_names) %>%
+  filter(!str_detect(names, c('adult|juv|Other')))
 
 #write.csv(lookout_data, "data/WGOAfg_lookout.csv")
 
@@ -238,15 +247,13 @@ find_best_match <- function(group_name, lookup_names) {
 
 # Add a column to `catch_data` for matched names
 catch_data <- catch_data %>%
-  mutate(
-    matched_name = map_chr(species_group_name, ~ find_best_match(.x, lookout_data$names))
-  )
+  mutate(matched_name = map_chr(species_group_name, ~ find_best_match(.x, lookout_data$names)))
 
 # Perform a left join to add data from `lookout_data`
 wgoa_catch_ts <- catch_data %>%
-  left_join(lookout_data, by = c("matched_name" = "names")) %>% 
+  left_join(lookout_data, by = c("matched_name" = "names")) %>%
   na.omit()
-write.csv(wgoa_catch_ts,"wgoa_catch_ts_long.csv" )
+write.csv(wgoa_catch_ts, "wgoa_catch_ts_long.csv")
 
 # Inspect the resulting dataframe
 head(wgoa_catch_ts)
@@ -254,14 +261,25 @@ head(wgoa_catch_ts)
 
 # Transform the data to wide format
 wgoa_catch_ts_w <- wgoa_catch_ts %>%
-  select(year, node, matched_name,retained_or_discarded, agency_gear_code, catch_mt) %>% 
+  select(year,
+         node,
+         matched_name,
+         retained_or_discarded,
+         agency_gear_code,
+         catch_mt) %>%
   pivot_wider(
-    names_from = c(matched_name,node, agency_gear_code, retained_or_discarded),
-    values_from = c(catch_mt))
+    names_from = c(matched_name, node, agency_gear_code, retained_or_discarded),
+    values_from = c(catch_mt)
+  )
 
 wgoa_land_ts_w <- wgoa_catch_ts %>%
-  group_by(year, node, matched_name, retained_or_discarded, agency_gear_code) %>%
-  summarise(catch_mt = sum(catch_mt, na.rm = TRUE), .groups = "drop") %>%
+  group_by(year,
+           node,
+           matched_name,
+           retained_or_discarded,
+           agency_gear_code) %>%
+  summarise(catch_mt = sum(catch_mt, na.rm = TRUE),
+            .groups = "drop") %>%
   pivot_wider(
     names_from = c(matched_name, node, agency_gear_code, retained_or_discarded),
     values_from = catch_mt,
@@ -274,11 +292,12 @@ write.csv(wgoa_land_ts_w, "wgoa_land_ts_wide.csv")
 
 wgoa_catch_ts_w <- wgoa_catch_ts %>%
   group_by(year, node, matched_name) %>%
-  summarise(catch_mt = sum(catch_mt, na.rm = TRUE)/234769, .groups = "drop") %>%
+  summarise(catch_mt = sum(catch_mt, na.rm = TRUE) / 234769,
+            .groups = "drop") %>%
   pivot_wider(
     names_from = c(matched_name, node),
     values_from = catch_mt,
     values_fill = 0 # Fill missing values with 0
   )
-  
+
 write.csv(wgoa_catch_ts_w, "wgoa_catch_ts_wide.csv")
