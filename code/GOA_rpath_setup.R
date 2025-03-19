@@ -3,7 +3,7 @@ library(Rpath)
 # TODO RPATH PACKAGE:  COME BACK TO DETRITAL FLOWS AND WARNINGS (what should they be??)
 # TODO RPATH PACKAGE:  ALSO, add warning for Biomass versus PB for detritus?
 
-source("rpath_files/xml_convert.r")
+source("code/xml_convert.r")
 
 # import.eiixml function notes (from above script)
   # Read in eiiXML file at the location given by eiifile, and parse into an
