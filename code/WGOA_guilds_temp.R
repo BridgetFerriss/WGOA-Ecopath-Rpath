@@ -63,7 +63,7 @@ race_lookup_col <- c(
 #write.csv(race_lookup_combined,"lookups/race_lookup_combined.csv",row.names=F)
 
 
-# WGOA GUILDS -----------------------------------------------
+# WGOA GUILDS ------------------------------------------------------------------
 this.model  <- "WGOA"
 race_lookup      <- race_lookup_base %>% mutate(race_group  = .data[["final_wgoa"]])
 q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
@@ -86,14 +86,50 @@ check_RACE_codes(cpue_dat)
 cpue_dt <- na.omit(cpue_dat) %>%
   filter(number_fish > 0)
 
-avg_temps <- cpue_dt %>%
-  group_by(race_group, year, stratum_bin) %>%
+
+
+library(Hmisc) 
+
+station_summary <- cpue_dt %>%
+  group_by(race_group, stationid) %>%
   summarise(
-    avg_surf_temp = mean(Surface_temp, na.rm = TRUE),
-    avg_bot_temp  = mean(Bottom_temp, na.rm = TRUE),
-    n_stations    = n_distinct(stationid),
-    .groups = 'drop'
+    station_avg_st = mean(Surface_temp, na.rm = TRUE),
+    station_avg_bt  = mean(Bottom_temp, na.rm = TRUE),
+    station_catch    = sum(catch_kg, na.rm = TRUE),
+    .groups = "drop"
   )
+
+thermal_envelopes <- station_summary %>%
+  group_by(race_group) %>%
+  summarise(
+    # Surface temperature weighted average:
+    weighted_avg_surf = sum(station_avg_st * station_catch, na.rm = TRUE) / sum(station_catch, na.rm = TRUE),
+    # For min and max, weighted quantiles at 0% and 100% are essentially the extreme values:
+    weighted_minA_surf = as.numeric(wtd.quantile(station_avg_st, weights = station_catch, probs = 0, na.rm = TRUE)),
+    weighted_maxA_surf = as.numeric(wtd.quantile(station_avg_st, weights = station_catch, probs = 1, na.rm = TRUE)),
+    # Weighted 10th and 90th percentiles:
+    weighted_minPref_surf = as.numeric(wtd.quantile(station_avg_st, weights = station_catch, probs = 0.1, na.rm = TRUE)),
+    weighted_maxPref_surf = as.numeric(wtd.quantile(station_avg_st, weights = station_catch, probs = 0.9, na.rm = TRUE)),
+    
+    # Bottom temperature statistics:
+    weighted_avg_bot = sum(station_avg_bt * station_catch, na.rm = TRUE) / sum(station_catch, na.rm = TRUE),
+    weighted_minA_bot = as.numeric(wtd.quantile(station_avg_bt, weights = station_catch, probs = 0, na.rm = TRUE)),
+    weighted_maxA_bot = as.numeric(wtd.quantile(station_avg_bt, weights = station_catch, probs = 1, na.rm = TRUE)),
+    weighted_minPref_bot = as.numeric(wtd.quantile(station_avg_bt, weights = station_catch, probs = 0.1, na.rm = TRUE)),
+    weighted_maxPref_bot = as.numeric(wtd.quantile(station_avg_bt, weights = station_catch, probs = 0.9, na.rm = TRUE)),
+    
+    # Also record the number of stations and total catch for reference:
+    total_stations = n(),
+    total_catch = sum(station_catch, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+write.csv(thermal_envelopes, "WGOA_source_data/species_weighted_thermal_envelopes_WGOA.csv")
+
+#-------------------------------------------------------------------------------
+
+
+
 
 weighted_temps <- cpue_dt %>%
   group_by(race_group, year, stratum_bin) %>%
@@ -122,6 +158,8 @@ species_weighted_avg <- weighted_temps %>%
 write.csv(species_weighted_avg, "WGOA_source_data/species_weighted_temp_WGOA.csv")
 
 
+
+
 # EGOA GUILDS -----------------------------------------------
 this.model.egoa  <- "EGOA"
 race_lookup_egoa      <- race_lookup_base %>% mutate(race_group_egoa  = .data[["final_egoa"]])
@@ -141,12 +179,44 @@ cpue_dat_egoa  <- get_cpue_all(model = this.model.egoa)
 check_RACE_codes(cpue_dat_egoa)
 cpue_dt_egoa <- na.omit(cpue_dat_egoa)
 
-#avg_temps <- cpue_dt %>%
-#  group_by(race_group, year, stratum_bin) %>%
-#  summarise(avg_surf_temp = mean(Surface_temp, na.rm = TRUE),
-#            avg_bot_temp  = mean(Bottom_temp, na.rm = TRUE),
-#            n_stations    = n_distinct(stationid),
-#            .groups = 'drop')
+station_summary_egoa <- cpue_dt_egoa %>%
+  group_by(race_group, stationid) %>%
+  summarise(
+    station_avg_st = mean(Surface_temp, na.rm = TRUE),
+    station_avg_bt  = mean(Bottom_temp, na.rm = TRUE),
+    station_catch    = sum(catch_kg, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+thermal_envelopes_egoa <- station_summary_egoa %>%
+  group_by(race_group) %>%
+  summarise(
+    # Surface temperature weighted average:
+    weighted_avg_surf = sum(station_avg_st * station_catch, na.rm = TRUE) / sum(station_catch, na.rm = TRUE),
+    # For min and max, weighted quantiles at 0% and 100% are essentially the extreme values:
+    weighted_minA_surf = as.numeric(wtd.quantile(station_avg_st, weights = station_catch, probs = 0, na.rm = TRUE)),
+    weighted_maxA_surf = as.numeric(wtd.quantile(station_avg_st, weights = station_catch, probs = 1, na.rm = TRUE)),
+    # Weighted 10th and 90th percentiles:
+    weighted_minPref_surf = as.numeric(wtd.quantile(station_avg_st, weights = station_catch, probs = 0.1, na.rm = TRUE)),
+    weighted_maxPref_surf = as.numeric(wtd.quantile(station_avg_st, weights = station_catch, probs = 0.9, na.rm = TRUE)),
+    
+    # Bottom temperature statistics:
+    weighted_avg_bot = sum(station_avg_bt * station_catch, na.rm = TRUE) / sum(station_catch, na.rm = TRUE),
+    weighted_minA_bot = as.numeric(wtd.quantile(station_avg_bt, weights = station_catch, probs = 0, na.rm = TRUE)),
+    weighted_maxA_bot = as.numeric(wtd.quantile(station_avg_bt, weights = station_catch, probs = 1, na.rm = TRUE)),
+    weighted_minPref_bot = as.numeric(wtd.quantile(station_avg_bt, weights = station_catch, probs = 0.1, na.rm = TRUE)),
+    weighted_maxPref_bot = as.numeric(wtd.quantile(station_avg_bt, weights = station_catch, probs = 0.9, na.rm = TRUE)),
+    
+    # Also record the number of stations and total catch for reference:
+    total_stations = n(),
+    total_catch = sum(station_catch, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+write.csv(thermal_envelopes_egoa, "EGOA_source_data/species_weighted_thermal_envelopes_EGOA.csv")
+
+#-------------------------------------------------------------------------------
+
 
 weighted_temps_egoa <- cpue_dt_egoa %>%
   group_by(race_group, year, stratum_bin) %>%
@@ -173,3 +243,5 @@ species_weighted_avg_egoa <- weighted_temps_egoa %>%
   rename(total_catch_year_kg = total_catch_year)
 
 write.csv(species_weighted_avg_egoa, "EGOA_source_data/species_weighted_temp_EGOA.csv")
+
+
