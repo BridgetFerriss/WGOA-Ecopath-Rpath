@@ -199,6 +199,9 @@ for (region in regions) {
 #  )
   
   # Production ####
+  # For PP the results are in Carbon, since the forcing for Ecopath will be in anomaly centered at 1. 
+  # FLAG #### 
+  # check if in Rpath we will need the value in Carbon or wet weight
   
   # Filter data for varnames containing 'prod_Ph' (phytoplankton production only), depthclass 'All', and NMFS_AREA 640 and 650
   prod_data <- sum_biascorrected %>%
