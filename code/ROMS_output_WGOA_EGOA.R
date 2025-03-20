@@ -146,6 +146,9 @@ for (region in regions) {
   # Biomass ####
   
   # For biomass, filter data for depthclass "All" and NMFS_AREA 640,650 only
+  # Carbon to wet weight conversions (B_ww_mg) can be found at 
+  # Table 2. from Kiorboe 2013 for the zooplankton and 
+  # Table 1 (bottom explanation) from Pauly & Christensen 1995.
   
   biomass_data <- sum_biascorrected %>%
     filter(depthclass == "All",
@@ -156,11 +159,11 @@ for (region in regions) {
     left_join(area_df, by = "NMFS_AREA") %>%
     mutate(
       B_ww_mg = case_when(
-        varname == "Cop" ~ 10^((log10(value_dc) - (-0.93)) / 0.95),
-        varname == "NCa" ~ 10^((log10(value_dc) - (-0.93)) / 0.95),
-        varname == "Eup" ~ 10^((log10(value_dc) - (-1.02)) / 1.01),
-        varname == "MZL" ~ 10^((log10(value_dc) - (-1.37)) / 0.88),
-        varname == "MZS" ~ 10^((log10(value_dc) - (-1.37)) / 0.88),
+        varname == "Cop" ~ 10^((log10(value_dc) - (-0.93)) / 0.95), #Small copepods
+        varname == "NCa" ~ 10^((log10(value_dc) - (-0.93)) / 0.95), #Large copepods
+        varname == "Eup" ~ 10^((log10(value_dc) - (-1.02)) / 1.01), #Euphausiids
+        varname == "MZL" ~ 10^((log10(value_dc) - (-1.37)) / 0.88), #Protozoans
+        varname == "MZS" ~ 10^((log10(value_dc) - (-1.37)) / 0.88), #Protozoans
         varname == "PhL" ~ value_dc * 9,
         varname == "PhS" ~ value_dc * 9
       )
