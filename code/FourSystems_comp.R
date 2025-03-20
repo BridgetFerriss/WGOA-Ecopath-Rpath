@@ -13,8 +13,8 @@ library(dplyr)
 # s.bal for SEBS
 
 # File names are used in GOA_rpath_setup.R source call
-  WGOA_EwE_file <- "rpath_files/WGOA_17Mar2025.eiixml"
-  EGOA_EwE_file <- "rpath_files/EGOA_20250317.eiixml"
+  WGOA_EwE_file <- "rpath_files/WGOA_17March25_simpleDet.eiixml"
+  EGOA_EwE_file <- "rpath_files/EGOA_20250317_simpleDet.eiixml"
   Sbase <- "rpath_files/ebs_aclim3_76bio_base.csv"  # Base biomass, production, fishing, etc.
   Sdiet <- "rpath_files/ebs_aclim3_76bio_diet.csv"  # Diet matrix
   Sped  <- "rpath_files/ebs_aclim3_76bio_pedigree.csv"  # Data pedigree = quality of input data
@@ -49,49 +49,62 @@ library(dplyr)
   s.run1   <- rsim.run(s.scene1, method="AB", years = 1990:2089)
   rsim.plot(s.run1)  
   
-flowmat <- function(bal){
-  N <- bal$NUM_GROUPS+1
-  main_flows <- matrix(0,nrow=N, ncol=N)
-  rownames(main_flows) <- c(bal$Group,"Import")
-  colnames(main_flows) <- c(bal$Group,"Import")
   
-  tsteps <- 365
+  
+flowmat <- function(bal, timesteps=365){
+
+  main_flows <- matrix(0, nrow=bal$NUM_GROUPS+1, ncol=bal$NUM_GROUPS+1)
+  rownames(main_flows) <- c(bal$Group, "Import")
+  colnames(main_flows) <- c(bal$Group, "Import")
+
+# diet flows (QB scaled, no respiration/egestion)  
   sz <- dim(bal$DC)
   dmat <- t(matrix(bal$DC, nrow=sz[1], ncol=sz[2]))
-  pmat <- t(bal$QB[1:bal$NUM_LIVING] * bal$Biomass[1:bal$NUM_LIVING] * dmat / tsteps)
+  pmat <- t(bal$QB[1:bal$NUM_LIVING] * bal$Biomass[1:bal$NUM_LIVING] * dmat / timesteps)
   
   main_flows[1:(bal$NUM_LIVING+bal$NUM_DEAD),1:bal$NUM_LIVING] <- 
+    main_flows[1:(bal$NUM_LIVING+bal$NUM_DEAD),1:bal$NUM_LIVING] +
     pmat[1:(bal$NUM_LIVING+bal$NUM_DEAD),1:bal$NUM_LIVING]
-  main_flows["Import",1:bal$NUM_LIVING] <- pmat[nrow(pmat),]
- 
+  main_flows["Import",1:bal$NUM_LIVING] <- 
+    main_flows["Import",1:bal$NUM_LIVING] + pmat[nrow(pmat),]
+
+# Biomass flows   
   bmat <- diag(c(bal$Biomass[1:(bal$NUM_LIVING+bal$NUM_DEAD)],rep(1.0,bal$NUM_GEARS), 0.0))
   main_flows <- main_flows + bmat
+  
+# Fishing flows  
+  fmat <- (bal$Landings + bal$Discards)/timesteps
+  main_flows[1:bal$NUM_GROUPS, (bal$NUM_GROUPS-bal$NUM_GEARS+1):bal$NUM_GROUPS] <- 
+    main_flows[1:bal$NUM_GROUPS,(bal$NUM_GROUPS-bal$NUM_GEARS+1):bal$NUM_GROUPS] +
+    fmat
+
+# Mzero detritial flows
+  
+  
+# Convert flow vector into transition state (proportion by row)  
   transition <- main_flows/rowSums(main_flows)[row(main_flows)]
   transition[is.nan(transition) | is.na(transition)] <- 0
-  state <- rep(0, bal$NUM_GROUPS+1); names(state)<-c(bal$Group,"Import")
+  
+# Make state vector  
+  state <- matrix(rep(0, bal$NUM_GROUPS+1),nrow=1); colnames(state)<-c(bal$Group,"Import")
+  
   return(list(state=state,transition=transition))
 }  
 
-
-
-flowvec <- function(bal){
-  transvec <- matrix(rep(0,bal$NUM_LIVING+bal$NUM_DEAD),nrow=1)
-  colnames(transvec) <- bal$Group[1:(bal$NUM_LIVING+bal$NUM_DEAD)]
-  
-}   
 
 transvec <- rep(0,w.bal$NUM_GROUPS+1); names(transvec)<-c(w.bal$Group,"Import")
 transvec["small_phytoplankton"] <- 1
 
 
-steps <- 100
+steps <- 365
 
-w.mark <- flowmat(w.bal)
-
-
+w.markov <- flowmat(w.bal)
+w.markov$state[,"small_phytoplankton"] <- 1
+w.out <- matrix(0, nrow=steps, ncol=length(w.markov$state)); colnames(w.out) <- colnames(w.markov$state) 
+  
 for (i in 1:steps){
-   outmat[i,] <- transvec
-   transvec <- transvec %*% flowmat(w.bal)
+   w.out[i,] <- w.markov$state
+   w.markov$state <- w.markov$state %*% w.markov$transition
 }
   
     

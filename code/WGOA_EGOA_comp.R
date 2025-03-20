@@ -6,8 +6,8 @@ library(dplyr)
 
 # load models into w.unbal, w.bal for west, e.unbal and e.bal for east.
 # File names are used in GOA_rpath_setup.R source call
-  WGOA_EwE_file <- "rpath_files/WGOA_17Mar2025.eiixml"
-  EGOA_EwE_file <- "rpath_files/EGOA_20250317.eiixml" 
+  WGOA_EwE_file <- "rpath_files/WGOA_17March25_simpleDet.eiixml"
+  EGOA_EwE_file <- "rpath_files/EGOA_20250317_simpleDet.eiixml"
   source("code/GOA_rpath_setup.R")
 
 # Checking group names #########################################################
