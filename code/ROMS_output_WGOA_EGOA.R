@@ -146,9 +146,12 @@ for (region in regions) {
   # Biomass ####
   
   # For biomass, filter data for depthclass "All" and NMFS_AREA 640,650 only
-  # Carbon to wet weight conversions (B_ww_mg) can be found at 
-  # Table 2. from Kiorboe 2013 for the zooplankton and 
-  # Table 1 (bottom explanation) from Pauly & Christensen 1995.
+  # Carbon to wet weight conversions (B_ww_mg) can be found at: 
+  # Table 1 (bottom explanation) from Pauly & Christensen 1995 for phytoplankton
+  # 9: 1 ratio for the conversion of wet weight to carbon (Lockhart. A. & Cross. R. A. 1994. EMBO J. 13, 751-757)
+  # Table 2. from Kiorboe 2013 for the zooplankton 
+  # Log(C mass)= a+b*log(wet mass)
+  # C_to_ww <- 10^((log10(value) - a) / b)
   
   biomass_data <- sum_biascorrected %>%
     filter(depthclass == "All",
