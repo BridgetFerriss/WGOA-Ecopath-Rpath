@@ -5,12 +5,10 @@ library(Rpath)
 library(dplyr)
 
 # load models into:
-# w.unbal
-# w.bal for west GOA, 
-# e.unbal
-# e.bal for east GOA.
-# s.unbal
-# s.bal for SEBS
+# w.unbal, w.bal for west GOA, 
+# e.unbal, e.bal for east GOA.
+# s.unbal, s.bal for SEBS
+# n.unbal, n.bal for NBS
 
 # File names are used in GOA_rpath_setup.R source call
 #WGOA
@@ -44,14 +42,21 @@ library(dplyr)
   w.scene0 <- rsim.scenario(w.bal, w.unbal, years=1990:2089)
   e.scene0 <- rsim.scenario(e.bal, e.unbal, years=1990:2089)
   s.scene0 <- rsim.scenario(s.bal, s.unbal, years=1990:2089)  
-  
+  n.scene0 <- rsim.scenario(n.bal, n.unbal, years=1990:2089) 
+    
   w.run0   <- rsim.run(w.scene0, method="AB", years = 1990:2089)
   e.run0   <- rsim.run(e.scene0, method="AB", years = 1990:2089)  
   s.run0   <- rsim.run(s.scene0, method="AB", years = 1990:2089)
+  n.run0   <- rsim.run(n.scene0, method="AB", years = 1990:2089)
   
-  rsim.plot(w.run0)
+  source("code/rsim.plot.interactive.R")
+  
+  rsim.plot.interactive(w.run0)
   rsim.plot(e.run0)
   rsim.plot(s.run0)
+  rsim.plot(n.run0)
+    
+  rsim.plot.interactive(n.run0)
   
   w.scene1 <- adjust.forcing(w.scene0, "ForcedRecs", "walleye_pollock_adult", sim.year=1992, value=10)
   w.run1   <- rsim.run(w.scene1, method="AB", years = 1990:2089)
@@ -67,52 +72,18 @@ library(dplyr)
   
   
   
-flowmat <- function(bal, timesteps=365){
-
-  main_flows <- matrix(0, nrow=bal$NUM_GROUPS+1, ncol=bal$NUM_GROUPS+1)
-  rownames(main_flows) <- c(bal$Group, "Import")
-  colnames(main_flows) <- c(bal$Group, "Import")
-
-# diet flows (QB scaled, no respiration/egestion)  
-  sz <- dim(bal$DC)
-  dmat <- t(matrix(bal$DC, nrow=sz[1], ncol=sz[2]))
-  pmat <- t(bal$QB[1:bal$NUM_LIVING] * bal$Biomass[1:bal$NUM_LIVING] * dmat / timesteps)
+fup<-function(){source("code/FourSystems_functions.R")}
   
-  main_flows[1:(bal$NUM_LIVING+bal$NUM_DEAD),1:bal$NUM_LIVING] <- 
-    main_flows[1:(bal$NUM_LIVING+bal$NUM_DEAD),1:bal$NUM_LIVING] +
-    pmat[1:(bal$NUM_LIVING+bal$NUM_DEAD),1:bal$NUM_LIVING]
-  main_flows["Import",1:bal$NUM_LIVING] <- 
-    main_flows["Import",1:bal$NUM_LIVING] + pmat[nrow(pmat),]
-
-# Biomass flows   
-  bmat <- diag(c(bal$Biomass[1:(bal$NUM_LIVING+bal$NUM_DEAD)],rep(1.0,bal$NUM_GEARS), 0.0))
-  main_flows <- main_flows + bmat
-  
-# Fishing flows  
-  fmat <- (bal$Landings + bal$Discards)/timesteps
-  main_flows[1:bal$NUM_GROUPS, (bal$NUM_GROUPS-bal$NUM_GEARS+1):bal$NUM_GROUPS] <- 
-    main_flows[1:bal$NUM_GROUPS,(bal$NUM_GROUPS-bal$NUM_GEARS+1):bal$NUM_GROUPS] +
-    fmat
-
-# Mzero detritial flows
-  
-  
-# Convert flow vector into transition state (proportion by row)  
-  transition <- main_flows/rowSums(main_flows)[row(main_flows)]
-  transition[is.nan(transition) | is.na(transition)] <- 0
-  
-# Make state vector  
-  state <- matrix(rep(0, bal$NUM_GROUPS+1),nrow=1); colnames(state)<-c(bal$Group,"Import")
-  
-  return(list(state=state,transition=transition))
-}  
 
 
 transvec <- rep(0,w.bal$NUM_GROUPS+1); names(transvec)<-c(w.bal$Group,"Import")
 transvec["small_phytoplankton"] <- 1
 
+det_names <- w.unbal$model[Type==2]$Group
+w.bal$PB*w.bal$Biomass*(1.0-w.bal$EE) * w.bal$DetFate
 
-steps <- 365
+
+steps <- 36500
 
 w.markov <- flowmat(w.bal)
 w.markov$state[,"small_phytoplankton"] <- 1
@@ -123,7 +94,8 @@ for (i in 1:steps){
    w.markov$state <- w.markov$state %*% w.markov$transition
 }
   
-    
+ 
+   
 # Checking group names #########################################################
 # Groups in the west not the east
   w.unbal$model$Group[which(!(w.unbal$model$Group %in% e.unbal$model$Group))]
