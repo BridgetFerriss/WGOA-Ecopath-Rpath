@@ -33,7 +33,7 @@ source("code/xml_convert.r")
   
 # Set Inter-detrital flows the way Rpath prefers (no inter-flows)
 # TODO: discuss inter-detrital schemes in EwE versus Rpath
-  #det_names <- unbal$model[Type==2]$Group
+  det_names <- unbal$model[Type==2]$Group
   #unbal$model[Group%in%det_names, det_names] <- 0
 
   
@@ -57,7 +57,7 @@ source("code/xml_convert.r")
   
   # Set Inter-detrital flows the way Rpath prefers (no inter-flows)
   # TODO: discuss inter-detrital schemes in EwE versus Rpath
-  #det_names <- unbal$model[Type==2]$Group
+  det_names <- unbal$model[Type==2]$Group
   #unbal$model[Group%in%det_names, det_names] <- 0
   
   # Remove Biomass and add PB to detritus to estimate flows
