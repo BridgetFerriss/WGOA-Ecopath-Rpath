@@ -17,10 +17,18 @@
 
 # ---------------------------------------------------------------------------- #
 # insert bioenergetic forcing during hindcast here
-
+# Set-up bioenergetic forcing during hindcast 
+bioen_sp_noceph <- bioen_sp[! bioen_sp %in% c("octopus","squid")]
 # consumption multiplier
-
+# hindcast
+for(i in bioen_sp_noceph){
+  scene$forcing$ForcedSearch[1:372,i] <- tdc_hind_bt[,i]
+}
 # respiration multiplier
+# hindcast
+for(i in bioen_sp_noceph){
+  scene$forcing$ForcedActresp[1:372,i] <- tdr_hind_bt[,i]
+}
 
 # ---------------------------------------------------------------------------- #
 # run the hindcast years
