@@ -13,18 +13,34 @@ library(dplyr)
 # s.bal for SEBS
 
 # File names are used in GOA_rpath_setup.R source call
+#WGOA
   WGOA_EwE_file <- "rpath_files/WGOA_17March25_simpleDet.eiixml"
+
+#EGOA    
   EGOA_EwE_file <- "rpath_files/EGOA_20250317_simpleDet.eiixml"
+
+#EBS  
   Sbase <- "rpath_files/ebs_aclim3_76bio_base.csv"  # Base biomass, production, fishing, etc.
   Sdiet <- "rpath_files/ebs_aclim3_76bio_diet.csv"  # Diet matrix
   Sped  <- "rpath_files/ebs_aclim3_76bio_pedigree.csv"  # Data pedigree = quality of input data
   Sstz  <- "rpath_files/ebs_aclim3_76bio_stanzas.csv"  # Stanzas
   Sstg  <- "rpath_files/ebs_aclim3_76bio_stanza_groups.csv" # Stanza groups
+
+#NBS  
+  Nbase <- "rpath_files/nbs_2010_base.csv"  # Base biomass, production, fishing, etc.
+  Ndiet <- "rpath_files/nbs_2010_diet.csv"  # Diet matrix
+  Nped  <- "rpath_files/nbs_2010_pedigree.csv"  # Data pedigree = quality of input data
+  Nstz  <- "rpath_files/nbs_stanzas.csv"  # Stanzas
+  Nstg  <- "rpath_files/nbs_stanza_groups.csv" # Stanza groups
   
   source("code/GOA_rpath_setup.R")
   s.unbal <- rpath.stanzas(read.rpath.params(Sbase, Sdiet, Sped, Sstg, Sstz)) # unbalanced
   s.bal   <- rpath(s.unbal) # balanced
+
+  n.unbal <- rpath.stanzas(read.rpath.params(Nbase, Ndiet, Nped, Nstg, Nstz)) # unbalanced
+  n.bal   <- rpath(n.unbal) # balanced
   
+    
   w.scene0 <- rsim.scenario(w.bal, w.unbal, years=1990:2089)
   e.scene0 <- rsim.scenario(e.bal, e.unbal, years=1990:2089)
   s.scene0 <- rsim.scenario(s.bal, s.unbal, years=1990:2089)  
