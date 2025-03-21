@@ -24,8 +24,7 @@ source("code/Delta_correction.R")
 nep_vars <- read.csv("data/NEP_variable_names.csv")
 kable(nep_vars)
 
-
-
+ 
 # Define regions 
 regions <- c("WGOA", "EGOA")
 # Define the depth values you want to process
@@ -174,7 +173,14 @@ for (region in regions) {
     drop_na(B_ww_mg) %>%
     mutate(biomass_tonnes = B_ww_mg * 1e-3)
   
-  # Summarize biomass per varname, simulation, year, month
+  # Summarize biomass per varname, simulation, month
+  biomass_summary_mo <- biomass_data %>%
+    group_by(varname, simulation, year, month) %>%
+    summarise(biomass_tonnes = sum(biomass_tonnes),
+              .groups = 'drop')
+ 
+  
+   # Summarize biomass per varname, simulation, Year
   biomass_summary <- biomass_data %>%
     group_by(varname, simulation, year, month) %>%
     summarise(biomass_tonnes = sum(biomass_tonnes),
@@ -192,6 +198,19 @@ for (region in regions) {
 #      "/Long_",
 #      region,
 #      "_B_summary_",
+#      depth,
+#      "_v2_corrected.csv"
+#    ),
+#    row.names = FALSE
+#  )
+#  
+#  write.csv(
+#    biomass_summary_mo,
+#    paste0(
+#      out_folder,
+#      "/Long_",
+#      region,
+#      "_B_summary_month",
 #      depth,
 #      "_v2_corrected.csv"
 #    ),
