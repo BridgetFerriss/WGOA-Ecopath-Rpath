@@ -143,6 +143,8 @@ all_years       <- c(hind_years,fore_years)
 # ---------------------------------------------------------------------------- #
 # create base rsim.scenario object that will be the same for all 
 # climate-enhanced sims.
+# hard coding an Atka mackerel PB
+w.bal$PB["atka_mackerel"] <- 0.544
 basescene <- rsim.scenario(w.bal, w.unbal, years = all_years) # Ecosim params
 scene <- basescene
 # Set up hindcast fishing, turn off fishing effort
