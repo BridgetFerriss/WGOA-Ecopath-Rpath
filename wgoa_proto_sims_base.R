@@ -1,28 +1,34 @@
 # First attempt at WGOA sims for GOACLIM
 source("code/rpath_graphs.R")
 
-# WGOA_EGOA_comp.R
+# lines 5:11 from WGOA_EGOA_comp.R ------------------------------------------- #
 library(Rpath)
 library(dplyr)
-
 # load models into w.unbal, w.bal for west, e.unbal and e.bal for east.
 # File names are used in GOA_rpath_setup.R source call
 WGOA_EwE_file <- "rpath_files/WGOA_17Mar2025.eiixml"
 EGOA_EwE_file <- "rpath_files/EGOA_20250317.eiixml" 
 source("code/GOA_rpath_setup.R")
-
-
+# ---------------------------------------------------------------------------- #
+# unbalanced WGOA
+w.unbal
 # balanced WGOA
-e.bal
+w.bal
 
 # Make lists of types of model groups
 all_living   <- living_groups(w.bal)
 all_detritus <- detrital_groups(w.bal)
 all_gears    <- gear_groups(w.bal)
 
+# Biological reference points and other fisheries related quantities --------- #
+# Equilibrium F-rate
+F_equil <- (rowSums(w.bal$Landings)+rowSums(w.bal$Discards))/(w.bal$Biomass);  names(F_equil) <- w.bal$Group
+F_equil  <- F_equil[c(all_living,all_detritus)]
+# Equilibrium biomass
+B_equil  <- w.bal$Biomass; names(B_equil) <- w.bal$Group; 
+B_equil  <- B_equil[c(all_living,all_detritus)] 
 # WGOA catch data
 catch_dat <- read.csv("WGOA_source_data/wgoa_catch_ts_wide.csv")
-
 
 # federally managed groundfish stocks
 managed_sp <- c("arrowtooth_flounder_adult",
