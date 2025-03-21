@@ -16,7 +16,7 @@ library(viridisLite)
 
 
 bioen_pars <- read.csv("WGOA_source_data/WGOA_bioen.csv", header=TRUE, sep=',', 
-                       dec='.', row.names=1)
+                       dec='.', row.names=1) #this file is valid for both EGOA and WGOA
 # X parameter in Kitchell equation
 bioen_sp <- row.names(bioen_pars)
 # bioen_sp <- bioen_sp[ !bioen_sp == "octopus" & !bioen_sp == "squids"]
@@ -214,7 +214,7 @@ rc_scaled_b[is.nan(rc_scaled_b)] <- 1e-08
 # }
 # par(mfrow=c(1,1))
 
-# Forced search consumption modifier
+# Forced search consumption modifier ####
 # get species-specific consumption modifiers
 # temp time series from GOACLIM hindcast
 #**hindcast**: representing the final years of the spinup forced with observed oceanographic conditions to better represent historical conditions (1990 to 2020),
@@ -237,8 +237,7 @@ roms_hind_npz <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_B_summary_m
   pivot_wider(names_from = varname, values_from = biomass_tonnes) %>% 
   rename(cop=Cop, eup=Eup, mzl=MZL, mzs=MZS, nca=NCa, phl=PhL, phs=PhS)  
   #select(cop, eup, mzl, phl, phs) #to match aclim_rpath
-
-  roms_hind_npz$tstep <- 1:372
+roms_hind_npz$tstep <- 1:372
 
 goaclim_hind_raw <- roms_hind_temp %>% left_join(roms_hind_npz, by= join_by(tstep,year, month)) %>% 
   select(tstep, year, month, cop, eup, mzl, phl, phs, temp_b5, temp_s5)
