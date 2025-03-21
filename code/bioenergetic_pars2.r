@@ -345,7 +345,7 @@ TotResp_b <- matrix(nrow = dim(tau_scaled_b)[1], ncol = length(bioen_sp))
 colnames(TotResp_b) <- bioen_sp
 row.names(TotResp_b) <- row.names(tau_scaled_b)
 for (i in bioen_sp) {
-  TotResp_b[, i] <- tau_scaled_b[,i] * (TotResp_btmean[i] / tau_scaled_b[as.character(mean_bot_temps[i] + 273.15), i])
+  TotResp_b[, i] <- tau_scaled_b[,i] * (TotResp_btmean[i] / tau_scaled_b[as.character(mean_bot_temps[i] + 273.15), i]) #transformation to Kelvin
 }
 ## surface temperature
 #TotResp_s <-  matrix(nrow = dim(tau_scaled_s)[1], ncol = length(bioen_sp))
@@ -364,13 +364,13 @@ for(i in bioen_sp){
   ActiveRespFrac_b[,i] <- TotResp_b[,i]/TotCons_b[,i]
 }
 row.names(ActiveRespFrac_b) <- rc_rows
-# surface temperature
-ActiveRespFrac_s <- matrix(nrow=dim(TotResp_s)[1], ncol=dim(TotResp_s)[2])
-colnames(ActiveRespFrac_s) <- bioen_sp
-for(i in bioen_sp){
-  ActiveRespFrac_s[,i] <- TotResp_s[,i]/TotCons_s[,i]
-}
-row.names(ActiveRespFrac_s) <- rc_rows
+## surface temperature
+#ActiveRespFrac_s <- matrix(nrow=dim(TotResp_s)[1], ncol=dim(TotResp_s)[2])
+#colnames(ActiveRespFrac_s) <- bioen_sp
+#for(i in bioen_sp){
+#  ActiveRespFrac_s[,i] <- TotResp_s[,i]/TotCons_s[,i]
+#}
+#row.names(ActiveRespFrac_s) <- rc_rows
 
 # plot ActiveRespFrac
 # par(mfrow = c(4, 8))
@@ -401,17 +401,17 @@ for(i in bioen_sp){
   ForcedActResp_b[,i] <- ActiveRespFrac_b[,i]/scene$params$ActiveRespFrac[i]
 }
 row.names(ForcedActResp_b) <- rc_rows
-# surface temperature
-ForcedActResp_s <- matrix(nrow=dim(ActiveRespFrac_s)[1], ncol=dim(ActiveRespFrac_s)[2])
-colnames(ForcedActResp_s) <- bioen_sp
-for(i in bioen_sp){
-  ForcedActResp_s[,i] <- ActiveRespFrac_s[,i]/scene$params$ActiveRespFrac[i]
-}
-row.names(ForcedActResp_s) <- rc_rows
+## surface temperature
+#ForcedActResp_s <- matrix(nrow=dim(ActiveRespFrac_s)[1], ncol=dim(ActiveRespFrac_s)[2])
+#colnames(ForcedActResp_s) <- bioen_sp
+#for(i in bioen_sp){
+#  ForcedActResp_s[,i] <- ActiveRespFrac_s[,i]/scene$params$ActiveRespFrac[i]
+#}
+#row.names(ForcedActResp_s) <- rc_rows
 
 # replace NaN with a really large value
 ForcedActResp_b[is.nan(ForcedActResp_b)] <- 1e04
-ForcedActResp_s[is.nan(ForcedActResp_s)] <- 1e04
+#ForcedActResp_s[is.nan(ForcedActResp_s)] <- 1e04
 
 # Plot
 # par(mfrow = c(4, 8))
@@ -438,23 +438,25 @@ ForcedActResp_s[is.nan(ForcedActResp_s)] <- 1e04
 # ForcedActResp modifier
 # get species-specific respiration modifiers
 # bottom temperature 
-tdr_hind_bt <- matrix(nrow=dim(aclim_hind_bt)[1], ncol=length(bioen_sp))
+tdr_hind_bt <- matrix(nrow=dim(goaclim_hind_bt)[1], ncol=length(bioen_sp))
 colnames(tdr_hind_bt) <- bioen_sp 
-for(i in 1:dim(aclim_hind_bt)[1]){
+for(i in 1:dim(goaclim_hind_bt)[1]){
   for(j in bioen_sp){
-    tdr_hind_bt[i,j] <- ForcedActResp_b[sprintf("%.2f", round(aclim_hind_bt[i], digits=2)),j]
+    tdr_hind_bt[i,j] <- ForcedActResp_b[sprintf("%.2f", round(goaclim_hind_bt[i], digits=2)),j]
   }
 }
-row.names(tdr_hind_bt) <- row.names(aclim_hind_bt)
+row.names(tdr_hind_bt) <- row.names(goaclim_hind_bt)
 
-# surface temperature (hind_st from conusmption modifier above)
-tdr_hind_st <- matrix(nrow=dim(aclim_hind_st)[1], ncol=length(bioen_sp))
-colnames(tdr_hind_st) <- bioen_sp 
-for(i in 1:dim(aclim_hind_st)[1]){
-  for(j in bioen_sp){
-    tdr_hind_st[i,j] <- ForcedActResp_s[sprintf("%.2f", round(aclim_hind_st[i], digits=2)),j]
-  }
-}
-row.names(tdr_hind_st) <- row.names(aclim_hind_st)
+#tdr_hind_bt is the final file ####
+
+## surface temperature (hind_st from conusmption modifier above)
+#tdr_hind_st <- matrix(nrow=dim(goaclim_hind_st)[1], ncol=length(bioen_sp))
+#colnames(tdr_hind_st) <- bioen_sp 
+#for(i in 1:dim(aclim_hind_st)[1]){
+#  for(j in bioen_sp){
+#    tdr_hind_st[i,j] <- ForcedActResp_s[sprintf("%.2f", round(aclim_hind_st[i], digits=2)),j]
+#  }
+#}
+#row.names(tdr_hind_st) <- row.names(aclim_hind_st)
 
 
