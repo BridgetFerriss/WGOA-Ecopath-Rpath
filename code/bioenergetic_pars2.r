@@ -16,7 +16,7 @@ library(viridisLite)
 
 
 bioen_pars <- read.csv("WGOA_source_data/WGOA_bioen.csv", header=TRUE, sep=',', 
-                       dec='.', row.names=1)
+                       dec='.', row.names=1) #this file is valid for both EGOA and WGOA
 # X parameter in Kitchell equation
 bioen_sp <- row.names(bioen_pars)
 # bioen_sp <- bioen_sp[ !bioen_sp == "octopus" & !bioen_sp == "squids"]
@@ -116,31 +116,31 @@ rc_scaled_b[is.nan(rc_scaled_b)] <- 1e-08
 #rc_scaled_s[is.nan(rc_scaled_s)] <- 1e-08
 
 # Kitchell curve plots -------------------------------------------------------
- par(mfrow = c(3, 1))
+ par(mfrow = c(2, 1))
  # rc unscaled
  plot(
    Ctemp,
-   rc[, "Arrowtooth flounder adult"],
+   rc[, "arrowtooth_flounder_adult"],
    type = 'n',
    xlab = "Celcius",
    ylab = "rc (proportion max consumption)",
    ylim = c(0, 1.1)
  )
- for (i in 1:26) {
-   lines(Ctemp, rc[, i], col = viridis(26)[i], lwd = 2)
+ for (i in 1:18) {
+   lines(Ctemp, rc[, i], col = viridis(18)[i], lwd = 2)
  }
  # rc scaled to mean bottom temp 1991–1994
  plot(
    Ctemp,
-   rc_scaled_b[, "Arrowtooth flounder adult"],
+   rc_scaled_b[, "arrowtooth_flounder_adult"],
    type = 'n',
    xlab = "Celcius",
    ylab = "rc_scaled_b (proportion max consumption)",
    ylim = c(0, max(rc_scaled_b, na.rm = TRUE)),
    main = "rc_scaled to mean bottom temp"
  )
- for (i in 1:26) {
-   lines(Ctemp, rc_scaled_b[, i], col = viridis(26)[i], lwd = 2)
+ for (i in 1:18) {
+   lines(Ctemp, rc_scaled_b[, i], col = viridis(18)[i], lwd = 2)
    abline(v = mean_bot_temps[i], lty = 2, col = "gray50")
  }
  abline(h=1)
@@ -214,7 +214,7 @@ rc_scaled_b[is.nan(rc_scaled_b)] <- 1e-08
 # }
 # par(mfrow=c(1,1))
 
-# Forced search consumption modifier
+# Forced search consumption modifier ####
 # get species-specific consumption modifiers
 # temp time series from GOACLIM hindcast
 #**hindcast**: representing the final years of the spinup forced with observed oceanographic conditions to better represent historical conditions (1990 to 2020),
@@ -237,8 +237,7 @@ roms_hind_npz <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_B_summary_m
   pivot_wider(names_from = varname, values_from = biomass_tonnes) %>% 
   rename(cop=Cop, eup=Eup, mzl=MZL, mzs=MZS, nca=NCa, phl=PhL, phs=PhS)  
   #select(cop, eup, mzl, phl, phs) #to match aclim_rpath
-
-  roms_hind_npz$tstep <- 1:372
+roms_hind_npz$tstep <- 1:372
 
 goaclim_hind_raw <- roms_hind_temp %>% left_join(roms_hind_npz, by= join_by(tstep,year, month)) %>% 
   select(tstep, year, month, cop, eup, mzl, phl, phs, temp_b5, temp_s5)
@@ -305,39 +304,39 @@ row.names(tau_scaled_b) <- Ktemp
 #colnames(tau_scaled_s) <- bioen_sp
 #row.names(tau_scaled_s) <- Ktemp
 
-# YOU ARE HERE ####
 #------------------------------------------------------------------------------#
 # Total Consumption scaled by bottom temp (TotCons = rc_scaled * bal$QB * bal$Biomass)
 TotCons_b <- matrix(nrow = dim(rc_scaled_b)[1], ncol = dim(rc_scaled_b)[2])
 colnames(TotCons_b) <- bioen_sp
 for (i in bioen_sp) {
-  TotCons_b[, i] <- rc_scaled_b[, i] * bal$QB[i] * bal$Biomass[i]
+  TotCons_b[, i] <- rc_scaled_b[, i] * w.bal$QB[i] * w.bal$Biomass[i]
 }
 # row.names(TotCons_b) <- Ctemp
 row.names(TotCons_b) <- rc_rows
 # Total Consumption scaled by surface temp (TotCons = rc_scaled * bal$QB * bal$Biomass)
-TotCons_s <- matrix(nrow = dim(rc_scaled_s)[1], ncol = dim(rc_scaled_s)[2])
-colnames(TotCons_s) <- bioen_sp
-for (i in bioen_sp) {
-  TotCons_s[, i] <- rc_scaled_s[, i] * bal$QB[i] * bal$Biomass[i]
-}
-# row.names(TotCons_s) <- Ctemp
-row.names(TotCons_s) <- rc_rows
+#TotCons_s <- matrix(nrow = dim(rc_scaled_s)[1], ncol = dim(rc_scaled_s)[2])
+#colnames(TotCons_s) <- bioen_sp
+#for (i in bioen_sp) {
+#  TotCons_s[, i] <- rc_scaled_s[, i] * w.bal$QB[i] * w.bal$Biomass[i]
+#}
+## row.names(TotCons_s) <- Ctemp
+#row.names(TotCons_s) <- rc_rows
 
+# YOU ARE HERE ####
 #------------------------------------------------------------------------------#
 # Total respiration at sp.-specific mean temps from survey time series
 # bottom temp
 TotResp_btmean <- vector(mode = "numeric", length = length(bioen_sp))
 names(TotResp_btmean) <- bioen_sp
 for (i in bioen_sp) {
-  TotResp_btmean[i] <- TotCons_b[sprintf("%.2f", mean_bot_temps[i]), i] * scene$params$ActiveRespFrac[i]
+  TotResp_btmean[i] <- TotCons_b[sprintf("%.2f", mean_bot_temps[i]), i] * scene$params$ActiveRespFrac[i] # proportion of consumption lost to respirartion
 }
-# surface temp
-TotResp_stmean <- vector(mode = "numeric", length = length(bioen_sp))
-names(TotResp_stmean) <- bioen_sp
-for (i in bioen_sp) {
-  TotResp_stmean[i] <- TotCons_s[sprintf("%.2f", mean_sur_temps[i]), i] * scene$params$ActiveRespFrac[i]
-}
+## surface temp
+#TotResp_stmean <- vector(mode = "numeric", length = length(bioen_sp))
+#names(TotResp_stmean) <- bioen_sp
+#for (i in bioen_sp) {
+#  TotResp_stmean[i] <- TotCons_s[sprintf("%.2f", mean_sur_temps[i]), i] * scene$params$ActiveRespFrac[i]
+#}
 
 #------------------------------------------------------------------------------#
 # Total respiration by temperature curve
@@ -346,15 +345,15 @@ TotResp_b <- matrix(nrow = dim(tau_scaled_b)[1], ncol = length(bioen_sp))
 colnames(TotResp_b) <- bioen_sp
 row.names(TotResp_b) <- row.names(tau_scaled_b)
 for (i in bioen_sp) {
-  TotResp_b[, i] <- tau_scaled_b[,i] * (TotResp_btmean[i] / tau_scaled_b[as.character(mean_bot_temps[i] + 273.15), i])
+  TotResp_b[, i] <- tau_scaled_b[,i] * (TotResp_btmean[i] / tau_scaled_b[as.character(mean_bot_temps[i] + 273.15), i]) #transformation to Kelvin
 }
-# surface temperature
-TotResp_s <-  matrix(nrow = dim(tau_scaled_s)[1], ncol = length(bioen_sp))
-colnames(TotResp_s) <- bioen_sp
-row.names(TotResp_s) <- row.names(tau_scaled_s)
-for (i in bioen_sp) {
-  TotResp_s[, i] <- tau_scaled_s[,i] * (TotResp_stmean[i] / tau_scaled_s[as.character(mean_sur_temps[i] + 273.15), i])
-}
+## surface temperature
+#TotResp_s <-  matrix(nrow = dim(tau_scaled_s)[1], ncol = length(bioen_sp))
+#colnames(TotResp_s) <- bioen_sp
+#row.names(TotResp_s) <- row.names(tau_scaled_s)
+#for (i in bioen_sp) {
+#  TotResp_s[, i] <- tau_scaled_s[,i] * (TotResp_stmean[i] / tau_scaled_s[as.character(mean_sur_temps[i] + 273.15), i])
+#}
 
 #------------------------------------------------------------------------------#
 # ActiveRespFrac by temperature
@@ -365,13 +364,13 @@ for(i in bioen_sp){
   ActiveRespFrac_b[,i] <- TotResp_b[,i]/TotCons_b[,i]
 }
 row.names(ActiveRespFrac_b) <- rc_rows
-# surface temperature
-ActiveRespFrac_s <- matrix(nrow=dim(TotResp_s)[1], ncol=dim(TotResp_s)[2])
-colnames(ActiveRespFrac_s) <- bioen_sp
-for(i in bioen_sp){
-  ActiveRespFrac_s[,i] <- TotResp_s[,i]/TotCons_s[,i]
-}
-row.names(ActiveRespFrac_s) <- rc_rows
+## surface temperature
+#ActiveRespFrac_s <- matrix(nrow=dim(TotResp_s)[1], ncol=dim(TotResp_s)[2])
+#colnames(ActiveRespFrac_s) <- bioen_sp
+#for(i in bioen_sp){
+#  ActiveRespFrac_s[,i] <- TotResp_s[,i]/TotCons_s[,i]
+#}
+#row.names(ActiveRespFrac_s) <- rc_rows
 
 # plot ActiveRespFrac
 # par(mfrow = c(4, 8))
@@ -402,17 +401,17 @@ for(i in bioen_sp){
   ForcedActResp_b[,i] <- ActiveRespFrac_b[,i]/scene$params$ActiveRespFrac[i]
 }
 row.names(ForcedActResp_b) <- rc_rows
-# surface temperature
-ForcedActResp_s <- matrix(nrow=dim(ActiveRespFrac_s)[1], ncol=dim(ActiveRespFrac_s)[2])
-colnames(ForcedActResp_s) <- bioen_sp
-for(i in bioen_sp){
-  ForcedActResp_s[,i] <- ActiveRespFrac_s[,i]/scene$params$ActiveRespFrac[i]
-}
-row.names(ForcedActResp_s) <- rc_rows
+## surface temperature
+#ForcedActResp_s <- matrix(nrow=dim(ActiveRespFrac_s)[1], ncol=dim(ActiveRespFrac_s)[2])
+#colnames(ForcedActResp_s) <- bioen_sp
+#for(i in bioen_sp){
+#  ForcedActResp_s[,i] <- ActiveRespFrac_s[,i]/scene$params$ActiveRespFrac[i]
+#}
+#row.names(ForcedActResp_s) <- rc_rows
 
 # replace NaN with a really large value
 ForcedActResp_b[is.nan(ForcedActResp_b)] <- 1e04
-ForcedActResp_s[is.nan(ForcedActResp_s)] <- 1e04
+#ForcedActResp_s[is.nan(ForcedActResp_s)] <- 1e04
 
 # Plot
 # par(mfrow = c(4, 8))
@@ -439,23 +438,25 @@ ForcedActResp_s[is.nan(ForcedActResp_s)] <- 1e04
 # ForcedActResp modifier
 # get species-specific respiration modifiers
 # bottom temperature 
-tdr_hind_bt <- matrix(nrow=dim(aclim_hind_bt)[1], ncol=length(bioen_sp))
+tdr_hind_bt <- matrix(nrow=dim(goaclim_hind_bt)[1], ncol=length(bioen_sp))
 colnames(tdr_hind_bt) <- bioen_sp 
-for(i in 1:dim(aclim_hind_bt)[1]){
+for(i in 1:dim(goaclim_hind_bt)[1]){
   for(j in bioen_sp){
-    tdr_hind_bt[i,j] <- ForcedActResp_b[sprintf("%.2f", round(aclim_hind_bt[i], digits=2)),j]
+    tdr_hind_bt[i,j] <- ForcedActResp_b[sprintf("%.2f", round(goaclim_hind_bt[i], digits=2)),j]
   }
 }
-row.names(tdr_hind_bt) <- row.names(aclim_hind_bt)
+row.names(tdr_hind_bt) <- row.names(goaclim_hind_bt)
 
-# surface temperature (hind_st from conusmption modifier above)
-tdr_hind_st <- matrix(nrow=dim(aclim_hind_st)[1], ncol=length(bioen_sp))
-colnames(tdr_hind_st) <- bioen_sp 
-for(i in 1:dim(aclim_hind_st)[1]){
-  for(j in bioen_sp){
-    tdr_hind_st[i,j] <- ForcedActResp_s[sprintf("%.2f", round(aclim_hind_st[i], digits=2)),j]
-  }
-}
-row.names(tdr_hind_st) <- row.names(aclim_hind_st)
+#tdr_hind_bt is the final file ####
+
+## surface temperature (hind_st from conusmption modifier above)
+#tdr_hind_st <- matrix(nrow=dim(goaclim_hind_st)[1], ncol=length(bioen_sp))
+#colnames(tdr_hind_st) <- bioen_sp 
+#for(i in 1:dim(aclim_hind_st)[1]){
+#  for(j in bioen_sp){
+#    tdr_hind_st[i,j] <- ForcedActResp_s[sprintf("%.2f", round(aclim_hind_st[i], digits=2)),j]
+#  }
+#}
+#row.names(tdr_hind_st) <- row.names(aclim_hind_st)
 
 

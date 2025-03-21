@@ -38,7 +38,7 @@ B0_Fmeanlast5 <- vector(mode = "numeric", length = length(managed_sp))
 names(B0_Fmeanlast5) <- managed_sp
 # set F in projection period to F_equil for all species (incl. non-targets, etc.)
 for (i in 32:110) {
-  scene$fishing$ForcedFRate[i, 2:88] <- F_equil
+  scene$fishing$ForcedFRate[i, 2:86] <- F_equil
 }
 # set F to F_meanlast5 for the managed stocks in the projection period
 for (i in 32:110) {
