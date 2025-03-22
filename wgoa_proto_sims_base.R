@@ -149,6 +149,7 @@ bioen_pars <- read.csv("WGOA_source_data/WGOA_bioen.csv", header=TRUE, sep=',',
                        dec='.', row.names=1) #this file is valid for both EGOA and WGOA
 # X parameter in Kitchell equation
 bioen_sp <- row.names(bioen_pars)
+bioen_sp_noceph <- bioen_sp[!bioen_sp %in% c("octopus", "squid")]
 
 # ---------------------------------------------------------------------------- #
 # create base rsim.scenario object that will be the same for all 
