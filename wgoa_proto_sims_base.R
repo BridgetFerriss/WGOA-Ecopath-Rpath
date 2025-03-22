@@ -144,6 +144,12 @@ all_years       <- c(hind_years,fore_years)
 B_target <- read.csv("WGOA_source_data/B_target.csv", row.names = 1)
 F_target <- read.csv("WGOA_source_data/F40_opt.csv", row.names = 1)
 colnames(F_target) <- "F40"
+
+bioen_pars <- read.csv("WGOA_source_data/WGOA_bioen.csv", header=TRUE, sep=',', 
+                       dec='.', row.names=1) #this file is valid for both EGOA and WGOA
+# X parameter in Kitchell equation
+bioen_sp <- row.names(bioen_pars)
+
 # ---------------------------------------------------------------------------- #
 # create base rsim.scenario object that will be the same for all 
 # climate-enhanced sims.
