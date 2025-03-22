@@ -4,7 +4,7 @@ source("wgoa_proto_sims_base.r")
 clim_sim_hcr_obs_err <- function(scene, ssp, hcr, cons, resp, buf) {
   # scene <- scene
   
-  print(ssp) # or rcp
+  print(paste0("climate_scenario_",ssp)) # or rcp
   if (ssp == 126) {
     ssp <- 126
   }
@@ -16,7 +16,7 @@ clim_sim_hcr_obs_err <- function(scene, ssp, hcr, cons, resp, buf) {
   }
   
   hcr <- hcr
-  print(hcr)
+  print(paste0("HCR_",hcr))
   
   scene <- scene
   
@@ -488,13 +488,13 @@ for (yr in fore_years) {
   goaclim.sim <-
     rsim.step(scene, goaclim.sim, method = 'AB', year.end = yr)
 }
-# return(goaclim.sim)
+return(goaclim.sim)
 # }
 # outputs
-sim_out <- list(goaclim.sim, ss_mat, abc_mat)
+# sim_out <- list(goaclim.sim, ss_mat, abc_mat)
 # names(sim_out) <- c("sim_out", "ss_mat", "abc_mat")
 
-return(sim_out)
+# return(sim_out)
 
 # return(aclim.sim)
 }
