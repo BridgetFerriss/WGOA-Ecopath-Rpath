@@ -88,15 +88,17 @@ clim_sim_hcr_obs_err <- function(scene, ssp, hcr, cons, resp, buf) {
     BaseB        <- scene$params$B_BaseRef
     names(BaseB) <- scene$params$spname
     # Set groups to force
-    # scene$forcing$ForcedBio[121:1440, "euphausiids"]        <- c((BaseB["euphausiids"]      * climate_proj[, "eup"]), (BaseB["euphausiids"] * climate_proj[936, "eup"]))
-    # scene$forcing$ForcedBio[121:1440, "copepods"]           <- c((BaseB["copepods"]         * climate_proj[, "cop"]), (BaseB["copepods"] * climate_proj[936, "cop"]))
-    # scene$forcing$ForcedBio[121:1440, "pelagic_microbes"]   <- c((BaseB["pelagic_microbes"] * climate_proj[, "mzl"]), (BaseB["pelagic_microbes"] * climate_proj[936, "mzl"]))
-    # scene$forcing$ForcedBio[121:1440, "benthic_microbes"]   <- c((BaseB["benthic_microbes"] * climate_proj[, "mzl"]), (BaseB["benthic_microbes"] * climate_proj[936, "mzl"]))
-    scene$forcing$ForcedBio[121:1440, "large_phytoplankton"]   <-
-      c((BaseB["large_phytoplankton"] * climate_proj[, "prod_PhL"]), (BaseB["large_phytoplankton"] * climate_proj[936, "prod_PhL"]))
-    scene$forcing$ForcedBio[121:1440, "small_phytoplankton"]   <-
-      c((BaseB["small_phytoplankton"] * climate_proj[, "prod_PhS"]), (BaseB["small_phytoplankton"] * climate_proj[936, "prod_PhS"]))
-    
+    # scene$forcing$ForcedBio[1:1320, "euphausiids"]        <- c((BaseB["euphausiids"]      * climate_proj[, "eup"]), (BaseB["euphausiids"] * climate_proj[936, "eup"]))
+    # scene$forcing$ForcedBio[1:1320, "copepods"]           <- c((BaseB["copepods"]         * climate_proj[, "cop"]), (BaseB["copepods"] * climate_proj[936, "cop"]))
+    # scene$forcing$ForcedBio[1:1320, "pelagic_microbes"]   <- c((BaseB["pelagic_microbes"] * climate_proj[, "mzl"]), (BaseB["pelagic_microbes"] * climate_proj[936, "mzl"]))
+    # scene$forcing$ForcedBio[1:1320, "benthic_microbes"]   <- c((BaseB["benthic_microbes"] * climate_proj[, "mzl"]), (BaseB["benthic_microbes"] * climate_proj[936, "mzl"]))
+    # scene$forcing$ForcedBio[1:1320, "large_phytoplankton"]   <-
+    #   c((BaseB["large_phytoplankton"] * climate_proj[, "prod_PhL"]), (BaseB["large_phytoplankton"] * climate_proj[936, "prod_PhL"]))
+    # scene$forcing$ForcedBio[1:1320, "small_phytoplankton"]   <-
+    #   c((BaseB["small_phytoplankton"] * climate_proj[, "prod_PhS"]), (BaseB["small_phytoplankton"] * climate_proj[936, "prod_PhS"]))
+    scene$forcing$ForcedBio[1:1320, "large_phytoplankton"]   <- BaseB["large_phytoplankton"] * climate_proj[121:1440, "prod_PhL"]
+    scene$forcing$ForcedBio[1:1320, "small_phytoplankton"]   <- BaseB["small_phytoplankton"] * climate_proj[121:1440, "prod_PhS"]
+
   }
   
   
@@ -127,7 +129,7 @@ clim_sim_hcr_obs_err <- function(scene, ssp, hcr, cons, resp, buf) {
       scene$forcing$ForcedBio[, "small_phytoplankton"]
     )
   
-}
+
 
 # -------------------------------------------------------------------------- #
 # Set-up bioenergetic forcing
@@ -142,7 +144,7 @@ if (cons == TRUE) {
   # projection
   bioen_proj <- bioen_params(ssp)
   for (i in bioen_sp_noceph) {
-    scene$forcing$ForcedSearch[373:1440, i] <- bioen_proj[[1]][, i]
+    scene$forcing$ForcedSearch[373:1320, i] <- bioen_proj[[1]][, i]
   }
 
 
@@ -157,7 +159,7 @@ if (resp == TRUE) {
   # projection
   bioen_proj <- bioen_params(ssp)
   for (i in bioen_sp_noceph) {
-    scene$forcing$ForcedActresp[373:1440, i] <- bioen_proj[[2]][, i]
+    scene$forcing$ForcedActresp[373:1320, i] <- bioen_proj[[2]][, i]
   }
 }
 
@@ -381,7 +383,7 @@ for (yr in fore_years) {
   # Institute control rule for ssl prey species (pollock, p.cod, and atka)
   sp <- ssl_sp
   # assessment <- end_biomass(goaclim.sim) #* rnorm(length(end_biomass(goaclim.sim)), mean=1, sd=0.2)
-  # Bratio     <- assessment / Btarget
+  Bratio     <- assessment / Btarget
   if (hcr == 2) {
     for (i in 1:length(ssl_sp)) {
       if (Bratio[ssl_sp[i]] <  fbeta_ssl) {
@@ -459,7 +461,7 @@ for (yr in fore_years) {
   
   # store ABCs
   # store assessed stock status
-  abc_mat[as.character(yr), ] <- C_ABC[groundfish]
+  abc_mat[as.character(yr), ] <- C_ABC[managed_sp]
   
   # Now that we have C_ABC, feed it to catchfunction
   # Scenarios
@@ -485,7 +487,7 @@ for (yr in fore_years) {
   # Run an rsim year
   goaclim.sim <-
     rsim.step(scene, goaclim.sim, method = 'AB', year.end = yr)
-# }
+}
 # return(goaclim.sim)
 # }
 # outputs
