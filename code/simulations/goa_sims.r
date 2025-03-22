@@ -14,6 +14,7 @@ set.seed(13)
 # test_run_245 <- clim_sim_hcr_obs_err(scene, 245, 1, TRUE, TRUE, TRUE)
 # test_run_585 <- clim_sim_hcr_obs_err(scene, 585, 1, TRUE, TRUE, TRUE)
 
+# This loop took about 20 minutes on my machine
 ptm <- proc.time()
 for(i in 1:num_runs){
   print(paste0("num_run_",i))
