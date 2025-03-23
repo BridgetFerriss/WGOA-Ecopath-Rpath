@@ -2,7 +2,9 @@ library('viridis')
 library('here')
 source("code/simulations/goaclim_sim_v4.r")
 source("code/bioenergetic_projections.r")
-<<<<<<< HEAD
+
+
+
 num_runs <- 100
 sim_126_f1 <- as.list(rep(NA,num_runs))
 sim_245_f1 <- as.list(rep(NA,num_runs))
@@ -28,7 +30,8 @@ proc.time() - ptm
 
 # to access sim outputs, for example
 sim_126_f1[[1]]$annual_Catch[,"walleye_pollock_adult"]
-=======
+
+
 # arguments: scene, ssp, hcr, cons, resp, buf
 test_run_126 <- clim_sim_hcr_obs_err(scene, 126, 1, TRUE, TRUE, TRUE)
 test_run_245 <- clim_sim_hcr_obs_err(scene, 245, 1, TRUE, TRUE, TRUE)
@@ -59,4 +62,4 @@ WGOA_CLIM_results <- bind_rows(
 )
 
 write.csv(WGOA_CLIM_results, "results/WGOA_JOINT_CLIM_results.csv")
->>>>>>> eef52f68ff9f9e773903c2d9728f39ab87c9ff0d
+
