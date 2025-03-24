@@ -1,5 +1,5 @@
 StGroupNum,StanzaNum,GroupNum,Group,First,Last,Z,Leading
-1,1,19,pollock_juv,0,23,1.453282,FALSE
+1,1,19,pollock_juv,0,23,2.653282,FALSE
 1,2,20,pollock_adu,24,400,0.6672099,TRUE
 2,1,21,pcod_juv,0,23,1.782069,FALSE
 2,2,22,pcod_adu,24,400,0.4118969,TRUE
