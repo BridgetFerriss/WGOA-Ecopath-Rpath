@@ -3,55 +3,58 @@
 
 library(Rpath)
 library(dplyr)
+source("code/xml_convert.r")
 
-# load models into:
-# w.unbal
-# w.bal for west GOA, 
-# e.unbal
-# e.bal for east GOA.
-# s.unbal
-# s.bal for SEBS
+xml_unbal <- function(eiifile){
+  unbal <- import.eiixml(eiifile)
+  # Remove Biomass and add PB to detritus to estimate flows
+  det_names <- unbal$model[Type==2]$Group
+  unbal$model[Group%in%det_names, "Biomass"] <- NA
+  unbal$model[Group%in%det_names, "PB"]      <- 1.0 # 1.0 means once a year
+  unbal <- rpath.stanzas(unbal)
+  check.rpath.params(unbal)
+  return(unbal)
+}
 
-# File names are used in GOA_rpath_setup.R source call
-#WGOA
+# File names for models
   WGOA_EwE_file <- "rpath_files/WGOA_17March25_simpleDet.eiixml"
-
-#EGOA    
   EGOA_EwE_file <- "rpath_files/EGOA_20250317_simpleDet.eiixml"
-
-#EBS  
-  Sbase <- "rpath_files/ebs_aclim3_76bio_base.csv"  # Base biomass, production, fishing, etc.
-  Sdiet <- "rpath_files/ebs_aclim3_76bio_diet.csv"  # Diet matrix
-  Sped  <- "rpath_files/ebs_aclim3_76bio_pedigree.csv"  # Data pedigree = quality of input data
-  Sstz  <- "rpath_files/ebs_aclim3_76bio_stanzas.csv"  # Stanzas
-  Sstg  <- "rpath_files/ebs_aclim3_76bio_stanza_groups.csv" # Stanza groups
-
-#NBS  
-  Nbase <- "rpath_files/nbs_2010_base.csv"  # Base biomass, production, fishing, etc.
-  Ndiet <- "rpath_files/nbs_2010_diet.csv"  # Diet matrix
-  Nped  <- "rpath_files/nbs_2010_pedigree.csv"  # Data pedigree = quality of input data
-  Nstz  <- "rpath_files/nbs_stanzas.csv"  # Stanzas
-  Nstg  <- "rpath_files/nbs_stanza_groups.csv" # Stanza groups
-  
-  source("code/GOA_rpath_setup.R")
-  s.unbal <- rpath.stanzas(read.rpath.params(Sbase, Sdiet, Sped, Sstg, Sstz)) # unbalanced
-  s.bal   <- rpath(s.unbal) # balanced
-
-  n.unbal <- rpath.stanzas(read.rpath.params(Nbase, Ndiet, Nped, Nstg, Nstz)) # unbalanced
-  n.bal   <- rpath(n.unbal) # balanced
-  
+  NBS_EwE_file  <- "rpath_files/aclim_nbs.eiixml"
+  # EBS  
+    Sbase <- "rpath_files/ebs_aclim3_76bio_base.csv"  # Base biomass, production, fishing, etc.
+    Sdiet <- "rpath_files/ebs_aclim3_76bio_diet.csv"  # Diet matrix
+    Sped  <- "rpath_files/ebs_aclim3_76bio_pedigree.csv"  # Data pedigree = quality of input data
+    Sstz  <- "rpath_files/ebs_aclim3_76bio_stanzas.csv"  # Stanzas
+    Sstg  <- "rpath_files/ebs_aclim3_76bio_stanza_groups.csv" # Stanza groups
     
+  w.unbal <- xml_unbal(WGOA_EwE_file)
+  e.unbal <- xml_unbal(EGOA_EwE_file)
+  n.unbal <- xml_unbal(NBS_EwE_file)
+  s.unbal <- rpath.stanzas(read.rpath.params(Sbase, Sdiet, Sped, Sstg, Sstz)) # unbalanced
+  check.rpath.params(s.unbal)
+  
+  n.bal   <- rpath(n.unbal) # balanced
+  e.bal   <- rpath(e.unbal) # balanced
+  s.bal   <- rpath(s.unbal) # balanced  
+  w.bal   <- rpath(w.unbal) # balanced
+
   w.scene0 <- rsim.scenario(w.bal, w.unbal, years=1990:2089)
   e.scene0 <- rsim.scenario(e.bal, e.unbal, years=1990:2089)
   s.scene0 <- rsim.scenario(s.bal, s.unbal, years=1990:2089)  
-  
+  n.scene0 <- rsim.scenario(n.bal, n.unbal, years=1990:2089)
+    
   w.run0   <- rsim.run(w.scene0, method="AB", years = 1990:2089)
   e.run0   <- rsim.run(e.scene0, method="AB", years = 1990:2089)  
   s.run0   <- rsim.run(s.scene0, method="AB", years = 1990:2089)
+  n.run0   <- rsim.run(n.scene0, method="AB", years = 1990:2089)  
   
   rsim.plot(w.run0)
   rsim.plot(e.run0)
   rsim.plot(s.run0)
+  X11()
+  rsim.plot(n.run0,spname=c("arrowtooth_juv","arrowtooth_adu"))
+  
+  rsim.plot(n.run0)
   
   w.scene1 <- adjust.forcing(w.scene0, "ForcedRecs", "walleye_pollock_adult", sim.year=1992, value=10)
   w.run1   <- rsim.run(w.scene1, method="AB", years = 1990:2089)
@@ -143,8 +146,9 @@ rsim.plot(e.run1)
 
 # Interactive plots. Use the 
 
-source("rpath_files/rsim.plot.interactive.R")
-rsim.plot.interactive(w.run1, spname = "all", indplot = FALSE, palette="b_palette")
+source("code/rsim.plot.interactive.R")
+rsim.plot.interactive(n.run0, spname = "all", indplot = FALSE, palette="b_palette")
+
 
 test<-rsim.plot.interactive(w.run1, spname = "all", indplot = FALSE, palette=colorspace::rainbow_hcl)
 b_palette <- colorspace::rainbow_hcl 
