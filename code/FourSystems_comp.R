@@ -68,6 +68,9 @@ xml_unbal <- function(eiifile){
   s.run1   <- rsim.run(s.scene1, method="AB", years = 1990:2089)
   rsim.plot(s.run1)  
   
+  n.scene1 <- adjust.forcing(n.scene0, "ForcedRecs", "pollock_adu", sim.year=1992, value=10)
+  n.run1   <- rsim.run(n.scene1, method="AB", years = 1990:2089)
+  rsim.plot(n.run1)  
   
   
 fup<-function(){source("code/FourSystems_functions.R")}
