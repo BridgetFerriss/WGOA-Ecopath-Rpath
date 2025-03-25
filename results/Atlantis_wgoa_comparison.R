@@ -2,6 +2,7 @@
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+library(ggrepel)
 
 # Read the CSV file
 goaclim <- read.csv("C:/Users/biadias/Desktop/GOACLIM.csv") %>% 
@@ -36,20 +37,20 @@ ggplot(goaclim_long_biomass, aes(x = Year, y = Value, color = Model)) +
 
 # Filter data for the historical period: years 2000 to 2024
 goaclim_hist_b <- goaclim_long_biomass %>%
-  filter(Year >= 2000, Year <= 2024)
+  filter(Year >= 2000, Year <= 2020)
 
 # Filter data for SSP projections: year 2100
 goaclim_ssp_b <- goaclim_long_biomass %>%
-  filter(Year == 2100)
+  filter(Year >= 2021, Year <= 2100)
 
 
 # Filter data for the historical period: years 2000 to 2024
 goaclim_hist_c <- goaclim_long_catch %>%
-  filter(Year >= 2000, Year <= 2024)
+  filter(Year >= 2000, Year <= 2020)
 
 # Filter data for SSP projections: year 2100
 goaclim_ssp_c <- goaclim_long_catch %>%
-  filter(Year == 2100)
+  filter(Year >= 2021, Year <= 2100)
 
 # Create the plot:
 biomass <- ggplot() +
@@ -75,12 +76,12 @@ biomass <- ggplot() +
         axis.title.y = element_text(colour = "black", size = 7))+
   facet_wrap(~ Species) +
   #scale_x_continuous(breaks = c(seq(2000, 2024, by = 4), 2100)) +
-  labs(title = "Historical Data (2000-2024) and SSP Projections for 2100",
+  labs(title = "Historical Data (2000-2020) and SSP Projections (2024-2100)",
        x = "Year",
        y = "Biomass (mt)",
        color = "Model",
        shape = "SSP Scenario") 
-ggsave("figures/biom_goaclim.png", biomass, width=8, height=4.6)
+ggsave("figures/biom_goaclim_v2.png", biomass, width=8, height=4.6)
 
 # Create the plot:
 catch <- ggplot() +
@@ -112,4 +113,4 @@ catch <- ggplot() +
        color = "Model",
        shape = "SSP Scenario") 
 
-ggsave("figures/catch_goaclim.png", catch,width=8, height=4.6)
+ggsave("figures/catch_goaclim_v2.png", catch,width=8, height=4.6)

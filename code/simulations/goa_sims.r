@@ -1,8 +1,15 @@
+#------------------------------------------------------------------------------#
+#AUTHORS: Andy Whitehouse and Bia Dias
+#AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
+#E-MAIL OF CORRESPONDENCE AUTHORS: andy.whitehouse@noaa.gov and bia.dias@noaa.gov
+#
+#------------------------------------------------------------------------------#
+
+
 library('viridis')
 library('here')
 source("code/simulations/goaclim_sim_v4.r")
 source("code/bioenergetic_projections.r")
-
 
 
 num_runs <- 100
@@ -37,18 +44,18 @@ test_run_126 <- clim_sim_hcr_obs_err(scene, 126, 1, TRUE, TRUE, TRUE)
 test_run_245 <- clim_sim_hcr_obs_err(scene, 245, 1, TRUE, TRUE, TRUE)
 test_run_585 <- clim_sim_hcr_obs_err(scene, 585, 1, TRUE, TRUE, TRUE)
 
-annual_biomass_126 <- as.data.frame(test_run_126[[1]]$annual_Biomass) %>% 
+annual_biomass_126 <- as.data.frame(sim_126_f1[[1]]$annual_Biomass) %>% 
   select(c(pacific_cod_adult, walleye_pollock_adult, arrowtooth_flounder_adult))
-annual_biomass_245 <- as.data.frame(test_run_245[[1]]$annual_Biomass)%>% 
+annual_biomass_245 <- as.data.frame(sim_245_f1[[1]]$annual_Biomass)%>% 
   select(c(pacific_cod_adult, walleye_pollock_adult, arrowtooth_flounder_adult))
-annual_biomass_585 <- as.data.frame(test_run_585[[1]]$annual_Biomass)%>% 
+annual_biomass_585 <- as.data.frame(sim_585_f1[[1]]$annual_Biomass)%>% 
   select(c(pacific_cod_adult, walleye_pollock_adult, arrowtooth_flounder_adult))
 
-annual_catch_126 <- as.data.frame(test_run_126[[1]]$annual_Catch)%>% 
+annual_catch_126 <- as.data.frame(sim_126_f1[[1]]$annual_Catch)%>% 
   select(c(pacific_cod_adult, walleye_pollock_adult, arrowtooth_flounder_adult))
-annual_catch_245 <- as.data.frame(test_run_245[[1]]$annual_Catch)%>% 
+annual_catch_245 <- as.data.frame(sim_245_f1[[1]]$annual_Catch)%>% 
   select(c(pacific_cod_adult, walleye_pollock_adult, arrowtooth_flounder_adult))
-annual_catch_585 <- as.data.frame(test_run_585[[1]]$annual_Catch)%>% 
+annual_catch_585 <- as.data.frame(sim_585_f1[[1]]$annual_Catch)%>% 
   select(c(pacific_cod_adult, walleye_pollock_adult, arrowtooth_flounder_adult))
 
 WGOA_CLIM_results <- bind_rows(
@@ -61,5 +68,5 @@ WGOA_CLIM_results <- bind_rows(
   .id = "run_type"
 )
 
-write.csv(WGOA_CLIM_results, "results/WGOA_JOINT_CLIM_results.csv")
+write.csv(WGOA_CLIM_results, "results/WGOA_JOINT_CLIM_results_v2.csv")
 

@@ -1,4 +1,7 @@
 #' Function to run delta correction on data
+#' AUTHORS: Grant Adams and Alberto Rovelinni
+#' AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
+#' https://github.com/GOA-CLIM/ROMS_to_Index/
 #'
 #' @param hindcast hindcast time series
 #' @param historical historical time series

@@ -1,3 +1,11 @@
+#------------------------------------------------------------------------------#
+#AUTHORS: Andy Whitehouse
+#AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
+#E-MAIL OF CORRESPONDENCE AUTHOR: andy.whitehouse@noaa.gov
+#
+#------------------------------------------------------------------------------#
+
+
 # Sum of squares HCR1: minimize difference between end biomass and B_target
 # sumsq <- function(sim) {
 #   ss <- sum(log(Btarg_Fmeanlast5[managed_sp]/end_biomass(sim)[managed_sp])^2)
