@@ -1,3 +1,9 @@
+#------------------------------------------------------------------------------#
+#REVIEWED: Bia Dias
+#ORIGINAL AUTHORS: Kerim Aydin
+#AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
+#E-MAIL OF CORRESPONDENCE AUTHOR: bia.dias@noaa.gov
+#------------------------------------------------------------------------------#
 #source("R/function_get_cpue_byLength.R")
 #source("R/function_get_cpue_NoLength.R")
 #source("R/function_get_biomass_stratum_Length.R")

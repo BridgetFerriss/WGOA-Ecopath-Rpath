@@ -1,3 +1,14 @@
+#------------------------------------------------------------------------------#
+#REVIEWED: Bia Dias
+#ORIGINAL AUTHORS: Andy Whitehouse
+#AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
+#E-MAIL OF CORRESPONDENCE AUTHOR: bia.dias@noaa.gov and andy.whitehouse@noaa.gov
+#
+# Interactive rsim.plot transalated from rsim.plot function from Rpath
+#------------------------------------------------------------------------------#
+
+
+
 require(plotly)
 
 effort_to_F<-function(bal,scene){

@@ -1,3 +1,11 @@
+#------------------------------------------------------------------------------#
+#AUTHORS: Kerim Aydin
+#AFFILIATIONS: Alaska Fisheries Science Center
+#E-MAIL OF CORRESPONDENCE AUTHOR: kerim.aydin@noaa.gov
+#
+# Rpath model setup
+#------------------------------------------------------------------------------#
+
 library(Rpath)
 
 # TODO RPATH PACKAGE:  COME BACK TO DETRITAL FLOWS AND WARNINGS (what should they be??)

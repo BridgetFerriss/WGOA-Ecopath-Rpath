@@ -1,5 +1,5 @@
 # get_biomass_stratum
-
+#' AUTHORS: Matt Callahan
 #' Calculate index of total biomass per stratum
 #'
 #' @param racebase_tables a list of the cruisedat, haul, and catch tables from RACEBASE (all regions, all years)

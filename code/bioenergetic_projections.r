@@ -1,4 +1,12 @@
-# bioenergetic forcing
+#------------------------------------------------------------------------------#
+#REVIEWED: Bia Dias
+#ORIGINAL AUTHORS: Andy Whitehouse
+#AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
+#E-MAIL OF CORRESPONDENCE AUTHOR: bia.dias@noaa.gov and andy.whitehouse@noaa.gov
+#
+# bioenergetic projections
+#------------------------------------------------------------------------------#
+
 source("code/bioenergetic_pars2.r")
 
 bioen_params <- function(ssp) {
