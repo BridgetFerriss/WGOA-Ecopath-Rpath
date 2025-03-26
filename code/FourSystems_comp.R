@@ -48,55 +48,137 @@ xml_unbal <- function(eiifile){
   s.run0   <- rsim.run(s.scene0, method="AB", years = 1990:2089)
   n.run0   <- rsim.run(n.scene0, method="AB", years = 1990:2089)  
   
+# FLATLINES
+  png("results/w_test.png",width=1067,height=600, type="cairo")  
   rsim.plot(w.run0)
+  title("WGOA", cex.main=3, line=-1, adj=0.85)
+  dev.off()
+  png("results/e_test.png",width=1067,height=600, type="cairo")
   rsim.plot(e.run0)
+  title("EGOA", cex.main=3, line=-1, adj=0.85)
+  dev.off()
+  png("results/s_test.png",width=1067,height=600, type="cairo")
   rsim.plot(s.run0)
-  X11()
-  rsim.plot(n.run0,spname=c("arrowtooth_juv","arrowtooth_adu"))
-  
+  title("EBS", cex.main=3, line=-1, adj=0.85)
+  dev.off()
+  png("results/n_test.png",width=1067,height=600, type="cairo")
   rsim.plot(n.run0)
-  
+  title("NBS", cex.main=3, line=-1, adj=0.85)
+  dev.off()
+
+# POLLOCK BUMP    
   w.scene1 <- adjust.forcing(w.scene0, "ForcedRecs", "walleye_pollock_adult", sim.year=1992, value=10)
-  w.run1   <- rsim.run(w.scene1, method="AB", years = 1990:2089)
-  rsim.plot(w.run1)  
+  w.run1   <- rsim.run(w.scene1, method="AB", years = 1990:2039)
+  png("results/w_pol.png",width=1067, height=600, type="cairo")
+  rsim.plot(w.run1)
+  title("WGOA", cex.main=3, line=-1, adj=0.85)
+  dev.off()
   
   e.scene1 <- adjust.forcing(e.scene0, "ForcedRecs", "walleye_pollock_adult", sim.year=1992, value=10)
-  e.run1   <- rsim.run(e.scene1, method="AB", years = 1990:2089)
-  rsim.plot(e.run1)  
+  e.run1   <- rsim.run(e.scene1, method="AB", years = 1990:2039)
+  png("results/e_pol.png",width=1067, height=600, type="cairo")
+  rsim.plot(e.run1)
+  title("EGOA", cex.main=3, line=-1, adj=0.85)
+  dev.off()
 
   s.scene1 <- adjust.forcing(s.scene0, "ForcedRecs", "pollock_adu", sim.year=1992, value=10)
-  s.run1   <- rsim.run(s.scene1, method="AB", years = 1990:2089)
-  rsim.plot(s.run1)  
+  s.run1   <- rsim.run(s.scene1, method="AB", years = 1990:2039)
+  png("results/s_pol.png",width=1067, height=600, type="cairo")
+  rsim.plot(s.run1)
+  title("EBS", cex.main=3, line=-1, adj=0.85)
+  dev.off()
   
   n.scene1 <- adjust.forcing(n.scene0, "ForcedRecs", "pollock_adu", sim.year=1992, value=10)
-  n.run1   <- rsim.run(n.scene1, method="AB", years = 1990:2089)
-  rsim.plot(n.run1)  
+  n.run1   <- rsim.run(n.scene1, method="AB", years = 1990:2039)
+  png("results/n_pol.png",width=1067, height=600, type="cairo")
+  rsim.plot(n.run1)
+  title("NBS", cex.main=3, line=-1, adj=0.85)
+  dev.off()
   
+  source("code/rsim.plot.interactive.R")
+  rsim.plot.interactive(w.run1)
+  rsim.plot.interactive(e.run1)  
+  rsim.plot.interactive(s.run1) 
+  rsim.plot.interactive(n.run1) 
+
   
 fup<-function(){source("code/FourSystems_functions.R")}
-  
+fup()  
 
-
-transvec <- rep(0,w.bal$NUM_GROUPS+1); names(transvec)<-c(w.bal$Group,"Import")
-transvec["small_phytoplankton"] <- 1
-
-det_names <- w.unbal$model[Type==2]$Group
-w.bal$PB*w.bal$Biomass*(1.0-w.bal$EE) * w.bal$DetFate
-
-
-steps <- 36500
+steps <- 3650
 
 w.markov <- flowmat(w.bal)
 w.markov$state[,"small_phytoplankton"] <- 1
 w.out <- matrix(0, nrow=steps, ncol=length(w.markov$state)); colnames(w.out) <- colnames(w.markov$state) 
-  
 for (i in 1:steps){
    w.out[i,] <- w.markov$state
    w.markov$state <- w.markov$state %*% w.markov$transition
 }
   
- 
-   
+e.markov <- flowmat(e.bal)
+e.markov$state[,"small_phytoplankton"] <- 1
+e.out <- matrix(0, nrow=steps, ncol=length(e.markov$state)); colnames(e.out) <- colnames(e.markov$state) 
+for (i in 1:steps){
+  e.out[i,] <- e.markov$state
+  e.markov$state <- e.markov$state %*% e.markov$transition
+}
+
+s.markov <- flowmat(s.bal)
+s.markov$state[,"sm_phytoplankton"] <- 1
+s.out <- matrix(0, nrow=steps, ncol=length(s.markov$state)); colnames(s.out) <- colnames(s.markov$state) 
+for (i in 1:steps){
+  s.out[i,] <- s.markov$state
+  s.markov$state <- s.markov$state %*% s.markov$transition
+}
+
+n.markov <- flowmat(n.bal)
+n.markov$state[,"sm_phytoplankton"] <- 1
+n.out <- matrix(0, nrow=steps, ncol=length(n.markov$state)); colnames(n.out) <- colnames(n.markov$state) 
+for (i in 1:steps){
+  n.out[i,] <- n.markov$state
+  n.markov$state <- n.markov$state %*% n.markov$transition
+}
+
+png("results/dye_eup.png",width=1067, height=600, type="cairo")
+plot(w.out[1:365,"euphausiids"],type="l",lwd=3,col="purple",
+     xlab="months",ylab="Proportion dye in Euphausiids",cex.axis=1.5,cex.lab=1.5)
+lines(e.out[1:365,"euphausiids"],lwd=3,col="red")
+lines(s.out[1:365,"euphausiids"],lwd=3,col="green")
+lines(n.out[1:365,"euphausiids"],lwd=3,col="blue")
+legend("topright",legend=c("WGOA","EGOA","EBS","NBS"),lwd=3,col=c("purple","red","green","blue"),lty=1,cex=3)
+dev.off()
+
+png("results/dye_pol.png",width=1067, height=600, type="cairo")
+plot(w.out[1:3650,"walleye_pollock_adult"],type="l",lwd=3,col="purple",ylim=c(0,0.06),
+     xlab="months",ylab="Proportion dye in Adult Pollock",cex.axis=1.5,cex.lab=1.5)
+lines(e.out[1:3650,"walleye_pollock_adult"],lwd=3,col="red")
+lines(s.out[1:3650,"pollock_adu"],lwd=3,col="green")
+lines(n.out[1:3650,"pollock_adu"],lwd=3,col="blue")
+legend("topright",legend=c("WGOA","EGOA","EBS","NBS"),lwd=3,col=c("purple","red","green","blue"),lty=1,cex=3)
+dev.off()
+
+plot(w.out[1:3650,"pacific_cod_adult"],type="l",col="purple",ylim=c(0,.04))
+lines(e.out[1:3650,"pacific_cod_adult"],col="red")
+lines(s.out[1:3650,"pcod_adu"],col="green")
+lines(n.out[1:3650,"pcod_adu"],col="blue")
+legend("topright",legend=c("WGOA","EGOA","EBS","NBS"),col=c("purple","red","green","blue"),lty=1)
+
+
+plot(w.out[1:365,"large_copepods"]+w.out[1:365,"small_copepods"],type="l",col="purple")
+lines(e.out[1:365,"large_copepods"]+e.out[1:365,"small_copepods"],col="red")
+lines(s.out[1:365,"copepods"],col="green")
+lines(n.out[1:365,"copepods"],col="blue")
+legend("topright",legend=c("WGOA","EGOA","EBS","NBS"),col=c("purple","red","green","blue"),lty=1)
+
+
+w.out[,"euphausiids"]
+
+
+write.csv(w.out,"wout.csv",row.names=F) 
+write.csv(e.out,"eout.csv",row.names=F) 
+write.csv(s.out,"sout.csv",row.names=F) 
+write.csv(n.out,"nout.csv",row.names=F) 
+
 # Checking group names #########################################################
 # Groups in the west not the east
   w.unbal$model$Group[which(!(w.unbal$model$Group %in% e.unbal$model$Group))]
