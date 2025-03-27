@@ -24,7 +24,10 @@ source("code/Delta_correction.R")
 nep_vars <- read.csv("data/NEP_variable_names.csv")
 kable(nep_vars)
 
- 
+region <- "EGOA"
+depth <- "300"
+
+
 # Define regions 
 regions <- c("WGOA", "EGOA")
 # Define the depth values you want to process
@@ -144,19 +147,25 @@ for (region in regions) {
   
   # Biomass ####
   
-  # For biomass, filter data for depthclass "All" and NMFS_AREA 640,650 only
+  # For biomass, filter data for depthclass "All" and NMFS_AREA 640,650 EGOA and 610-630 WGOA only
+  # 
   # Carbon to wet weight conversions (B_ww_mg) can be found at: 
   # Table 1 (bottom explanation) from Pauly & Christensen 1995 for phytoplankton
   # 9: 1 ratio for the conversion of wet weight to carbon (Lockhart. A. & Cross. R. A. 1994. EMBO J. 13, 751-757)
   # Table 2. from Kiorboe 2013 for the zooplankton 
   # Log(C mass)= a+b*log(wet mass)
   # C_to_ww <- 10^((log10(value) - a) / b)
+  # - Units of Cop in the *sum* files are mg C m^-2 of water column
+  # Since the unit is already by area the conversion from mg*m^-2 to mt*km^-2 will be *1e-3. BD triple checked this, so it is right!
+  
+  
+  #area_df <- area_df %>%
+  #  mutate(area_km2 = area_m2 / 1e6)
   
   biomass_data <- sum_biascorrected %>%
     filter(depthclass == "All",
            NMFS_AREA %in% region_areas,
            !grepl("prod_", varname)) %>%
-    left_join(area_df, by = "NMFS_AREA") %>%
     # Join appropriate area data based on the chosen depth
     left_join(area_df, by = "NMFS_AREA") %>%
     mutate(
@@ -171,23 +180,24 @@ for (region in regions) {
       )
     ) %>%
     drop_na(B_ww_mg) %>%
-    mutate(biomass_tonnes = B_ww_mg * 1e-3)
+    #mutate(biomass_tonnes = B_ww_mg *area_m2 * 1e-9) %>% 
+    mutate(biomass_tonnes_km2 = B_ww_mg * 1e-3)
   
   # Summarize biomass per varname, simulation, month
   biomass_summary_mo <- biomass_data %>%
     group_by(varname, simulation, year, month) %>%
-    summarise(biomass_tonnes = sum(biomass_tonnes),
+    summarise(biomass_tonnes_km2 = sum(biomass_tonnes_km2),
               .groups = 'drop')
  
   
    # Summarize biomass per varname, simulation, Year
   biomass_summary <- biomass_data %>%
     group_by(varname, simulation, year, month) %>%
-    summarise(biomass_tonnes = sum(biomass_tonnes),
+    summarise(biomass_tonnes_km2 = sum(biomass_tonnes_km2),
               .groups = 'drop') %>%
     # Calculate mean annual biomass per varname and simulation
     group_by(varname, simulation, year) %>%
-    summarise(mean_biomass = mean(biomass_tonnes),
+    summarise(biomass_tonnes_km2 = mean(biomass_tonnes_km2),
               .groups = 'drop')
   
 #  # Write biomass output
