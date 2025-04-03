@@ -216,7 +216,7 @@ lookout_data <- data.frame(node = Species_nodes, names = Species_names) %>%
 
 # match data frames ####
 
-# Ensure columns are character type for matching
+# put columns are character type for matching
 catch_data$species_group_name <- as.character(catch_data$species_group_name)
 lookout_data$names <- as.character(lookout_data$names)
 
@@ -224,15 +224,7 @@ library(dplyr)
 library(stringr)
 library(purrr)
 
-
-# Ensure columns are character type
-catch_data <- catch_data %>%
-  mutate(species_group_name = as.character(species_group_name))
-
-lookout_data <- lookout_data %>%
-  mutate(names = as.character(names))
-
-# Define a helper function for partial matching with NA handling
+# Helper function for partial matching with NA handling
 find_best_match <- function(group_name, lookup_names) {
   if (is.na(group_name)) {
     return(NA_character_) # Return NA if the group name is NA
