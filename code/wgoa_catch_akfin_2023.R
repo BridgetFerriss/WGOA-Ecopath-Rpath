@@ -168,7 +168,7 @@ wgoa_catch5 <- dbGetQuery(
   con,
   paste0(
     "with dat as (select
-             year,
+             akfin_year,
              species_name,
              sum(cfec_whole_pounds) catch_lb,
              fmp_gear,
@@ -176,24 +176,24 @@ wgoa_catch5 <- dbGetQuery(
              CASE WHEN COUNT(DISTINCT vessel_id) <= 2 OR COUNT(DISTINCT processor_permit_id) <= 2 THEN 1 ELSE 0 END as conf_flag
              from council.comprehensive_ft
              where reporting_area_code in ('610', '620', '630')
-             and year",
+             and akfin_year <= ",
     end_year,
     "
-group by year,
+group by akfin_year,
 species_name,
 fmp_gear,
 harvest_description)
-select year,
+select akfin_year,
 species_name,
 fmp_gear,
 harvest_description,
 conf_flag,
 CASE WHEN conf_flag = 0 then catch_lb else NULL END as catch_lb
 from dat
-order by year"
+order by akfin_year"
   )
 ) %>%
-  reanme_with(tolower)
+  rename_with(tolower)
 
 
 # species group lookup table
@@ -205,7 +205,8 @@ agency_species <-  dbGetQuery(con,
   rename_with(tolower)
 
 
-
+#convert state catch from pounds to metric tons
+wgoa_catch5 <- wgoa_catch5 %>%mutate(catch_mt= catch_lb*0.000453592)
 
 # save
 # sorry for the long species names, you can rename whichever of these you use to whatever you want.
@@ -233,7 +234,7 @@ write.csv(wgoa_catch4,
           row.names = FALSE)
 
 write.csv(wgoa_catch5,
-  paste0("data/",end_year,"/wgoa_catch_year_group_spec_ret_gear.csv"),
+  paste0("data/",end_year,"/wgoa_catch_year_group_spec_ret_gear_state.csv"),
   row.names = FALSE)
 
 write.csv(species_group_content,

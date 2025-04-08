@@ -7826,11 +7826,11 @@
 "2020","USRK","Shark","shark, spiny dogfish","R","HAL",1,NA
 "2020","USRK","Shark","shark, spiny dogfish","R","NPT",0,4.1231546433
 "2020","USRK","Shark","shark, spiny dogfish","R","PTR",0,23.437027038
-"2021","AMCK","Atka Mackerel","greenling, atka mackerel","D","HAL",0,0.0312200361
+"2021","AMCK","Atka Mackerel","greenling, atka mackerel","D","HAL",0,0.0312159581
 "2021","AMCK","Atka Mackerel","greenling, atka mackerel","D","NPT",0,107.0379131201
 "2021","AMCK","Atka Mackerel","greenling, atka mackerel","R","NPT",0,828.2892977093
 "2021","AMCK","Atka Mackerel","greenling, atka mackerel","R","PTR",0,3.9666652755
-"2021","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","HAL",0,69.4001470409
+"2021","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","HAL",0,69.4010581197
 "2021","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","NPT",0,1469.5656207353
 "2021","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","POT",0,196.7417210378
 "2021","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","PTR",0,0.4646383422
@@ -7838,7 +7838,7 @@
 "2021","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","NPT",0,7698.6573403394
 "2021","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","POT",1,NA
 "2021","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","PTR",0,410.9189577455
-"2021","BSKT","GOA Skate, Big","skate, big","D","HAL",0,395.4776577942
+"2021","BSKT","GOA Skate, Big","skate, big","D","HAL",0,395.4762261004
 "2021","BSKT","GOA Skate, Big","skate, big","D","NPT",0,42.0748861488
 "2021","BSKT","GOA Skate, Big","skate, big","D","POT",1,NA
 "2021","BSKT","GOA Skate, Big","skate, big","D","PTR",1,NA
@@ -7846,20 +7846,20 @@
 "2021","BSKT","GOA Skate, Big","skate, big","R","JIG",1,NA
 "2021","BSKT","GOA Skate, Big","skate, big","R","NPT",0,67.9734681248
 "2021","BSKT","GOA Skate, Big","skate, big","R","PTR",0,3.8754932088
-"2021","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","HAL",0,0.3069347571
+"2021","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","HAL",0,0.306934304
 "2021","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","NPT",0,7.3937284982
 "2021","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","POT",0,1.7250720135
 "2021","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","R","NPT",0,10.0469176597
-"2021","DFL4","GOA Deep Water Flatfish","sole, dover","D","HAL",0,0.4921671287
+"2021","DFL4","GOA Deep Water Flatfish","sole, dover","D","HAL",0,0.4921671264
 "2021","DFL4","GOA Deep Water Flatfish","sole, dover","D","NPT",0,47.4093438782
 "2021","DFL4","GOA Deep Water Flatfish","sole, dover","D","POT",0,1.954251039
 "2021","DFL4","GOA Deep Water Flatfish","sole, dover","R","NPT",0,5.9872759481
 "2021","DFL4","GOA Deep Water Flatfish","sole, dover","R","PTR",1,NA
-"2021","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","HAL",0,6.7344522508
+"2021","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","HAL",0,6.7344522419
 "2021","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","NPT",0,0.9968285599
 "2021","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","POT",1,NA
 "2021","DFL4","GOA Deep Water Flatfish","turbot, Greenland","R","NPT",1,NA
-"2021","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","HAL",0,1.922023358
+"2021","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","HAL",0,1.922023356
 "2021","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","NPT",0,102.1558751854
 "2021","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","POT",0,0.7382291429
 "2021","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","PTR",0,0.0574995834
@@ -7868,17 +7868,17 @@
 "2021","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","NPT",0,2554.0479009822
 "2021","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","POT",0,0.0298908115
 "2021","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","PTR",0,233.038574283
-"2021","FSOL","Flathead Sole","sole, flathead","D","HAL",0,9.6231201085
+"2021","FSOL","Flathead Sole","sole, flathead","D","HAL",0,9.6231201081
 "2021","FSOL","Flathead Sole","sole, flathead","D","NPT",0,135.1685623679
 "2021","FSOL","Flathead Sole","sole, flathead","R","NPT",0,498.3193927895
 "2021","FSOL","Flathead Sole","sole, flathead","R","POT",1,NA
 "2021","FSOL","Flathead Sole","sole, flathead","R","PTR",0,63.9538026121
-"2021","HLBT","Halibut","halibut, Pacific","D","HAL",0,1992.1127516571
+"2021","HLBT","Halibut","halibut, Pacific","D","HAL",0,1992.1000676388
 "2021","HLBT","Halibut","halibut, Pacific","D","POT",0,26.5031644164
 "2021","HLBT","Halibut","halibut, Pacific","R","HAL",0,4061.6706108611
 "2021","HLBT","Halibut","halibut, Pacific","R","JIG",1,NA
 "2021","HLBT","Halibut","halibut, Pacific","R","POT",0,30.3703511934
-"2021","LSKT","GOA Skate, Longnose","skate, longnose","D","HAL",0,430.3462113086
+"2021","LSKT","GOA Skate, Longnose","skate, longnose","D","HAL",0,430.3456562713
 "2021","LSKT","GOA Skate, Longnose","skate, longnose","D","NPT",0,42.0814631721
 "2021","LSKT","GOA Skate, Longnose","skate, longnose","R","HAL",0,48.4423712565
 "2021","LSKT","GOA Skate, Longnose","skate, longnose","R","JIG",1,NA
@@ -7889,7 +7889,7 @@
 "2021","NORK","Northern Rockfish","rockfish, northern","D","POT",0,1.1675916158
 "2021","NORK","Northern Rockfish","rockfish, northern","R","NPT",0,2316.153185833
 "2021","NORK","Northern Rockfish","rockfish, northern","R","PTR",0,22.787763399
-"2021","OCTP","Octopus","octopus, North Pacific","D","HAL",0,6.3614317891
+"2021","OCTP","Octopus","octopus, North Pacific","D","HAL",0,6.361410253
 "2021","OCTP","Octopus","octopus, North Pacific","D","NPT",0,6.7998885836
 "2021","OCTP","Octopus","octopus, North Pacific","D","POT",0,13.8202804166
 "2021","OCTP","Octopus","octopus, North Pacific","D","PTR",0,0.0403747656
@@ -7898,7 +7898,7 @@
 "2021","OCTP","Octopus","octopus, North Pacific","R","NPT",1,NA
 "2021","OCTP","Octopus","octopus, North Pacific","R","POT",0,23.2387371739
 "2021","OCTP","Octopus","octopus, North Pacific","R","PTR",1,NA
-"2021","PCOD","Pacific Cod","cod, Pacific (gray)","D","HAL",0,332.6201364676
+"2021","PCOD","Pacific Cod","cod, Pacific (gray)","D","HAL",0,332.6194979404
 "2021","PCOD","Pacific Cod","cod, Pacific (gray)","D","NPT",0,913.3568475553
 "2021","PCOD","Pacific Cod","cod, Pacific (gray)","D","POT",0,30.2712978107
 "2021","PCOD","Pacific Cod","cod, Pacific (gray)","D","PTR",1,NA
@@ -7907,7 +7907,7 @@
 "2021","PCOD","Pacific Cod","cod, Pacific (gray)","R","NPT",0,4920.1790836656
 "2021","PCOD","Pacific Cod","cod, Pacific (gray)","R","POT",0,7619.5781096044
 "2021","PCOD","Pacific Cod","cod, Pacific (gray)","R","PTR",0,151.7277771151
-"2021","PLCK","Pollock","pollock, walleye","D","HAL",0,23.2771620897
+"2021","PLCK","Pollock","pollock, walleye","D","HAL",0,23.2771620881
 "2021","PLCK","Pollock","pollock, walleye","D","NPT",0,734.1616411113
 "2021","PLCK","Pollock","pollock, walleye","D","POT",0,0.2820586662
 "2021","PLCK","Pollock","pollock, walleye","D","PTR",0,549.8086973977
@@ -7924,13 +7924,13 @@
 "2021","POPA","Pacific Ocean Perch","perch, Pacific ocean","R","NPT",0,13231.472179531
 "2021","POPA","Pacific Ocean Perch","perch, Pacific ocean","R","POT",0,0.0033204813
 "2021","POPA","Pacific Ocean Perch","perch, Pacific ocean","R","PTR",0,13504.5621048736
-"2021","REXS","GOA Rex Sole","sole, rex","D","HAL",0,0.014000249
+"2021","REXS","GOA Rex Sole","sole, rex","D","HAL",0,0.0140002489
 "2021","REXS","GOA Rex Sole","sole, rex","D","NPT",0,42.2514808177
 "2021","REXS","GOA Rex Sole","sole, rex","D","POT",1,NA
 "2021","REXS","GOA Rex Sole","sole, rex","R","HAL",1,NA
 "2021","REXS","GOA Rex Sole","sole, rex","R","NPT",0,242.7720991525
 "2021","REXS","GOA Rex Sole","sole, rex","R","PTR",0,14.4112847825
-"2021","REYE","Rougheye Rockfish","rockfish, rougheye","D","HAL",0,5.6085123932
+"2021","REYE","Rougheye Rockfish","rockfish, rougheye","D","HAL",0,5.6085105085
 "2021","REYE","Rougheye Rockfish","rockfish, rougheye","D","NPT",0,8.3939408881
 "2021","REYE","Rougheye Rockfish","rockfish, rougheye","D","POT",0,4.2000290559
 "2021","REYE","Rougheye Rockfish","rockfish, rougheye","R","HAL",0,10.5728700121
@@ -7940,7 +7940,7 @@
 "2021","ROCK","Other Rockfish","rockfish, canary","R","HAL",0,0.1356426325
 "2021","ROCK","Other Rockfish","rockfish, canary","R","JIG",1,NA
 "2021","ROCK","Other Rockfish","rockfish, canary","R","POT",1,NA
-"2021","ROCK","Other Rockfish","rockfish, china","D","HAL",0,0.1168304937
+"2021","ROCK","Other Rockfish","rockfish, china","D","HAL",0,0.1168304929
 "2021","ROCK","Other Rockfish","rockfish, china","R","HAL",0,0.1132684946
 "2021","ROCK","Other Rockfish","rockfish, china","R","JIG",1,NA
 "2021","ROCK","Other Rockfish","rockfish, copper","R","HAL",0,0.0279838722
@@ -7952,18 +7952,18 @@
 "2021","ROCK","Other Rockfish","rockfish, harlequin","D","NPT",0,159.5735391506
 "2021","ROCK","Other Rockfish","rockfish, harlequin","R","NPT",0,218.9536453145
 "2021","ROCK","Other Rockfish","rockfish, harlequin","R","PTR",0,3.6145734918
-"2021","ROCK","Other Rockfish","rockfish, other","D","HAL",0,34.4863080814
+"2021","ROCK","Other Rockfish","rockfish, other","D","HAL",0,34.4862999874
 "2021","ROCK","Other Rockfish","rockfish, other","D","NPT",1,NA
 "2021","ROCK","Other Rockfish","rockfish, other","D","POT",0,2.0306399718
 "2021","ROCK","Other Rockfish","rockfish, other","D","PTR",0,0.4469411882
 "2021","ROCK","Other Rockfish","rockfish, other","R","NPT",1,NA
-"2021","ROCK","Other Rockfish","rockfish, quillback","D","HAL",0,6.3835353351
+"2021","ROCK","Other Rockfish","rockfish, quillback","D","HAL",0,6.3835353244
 "2021","ROCK","Other Rockfish","rockfish, quillback","D","NPT",0,0.0845918927
 "2021","ROCK","Other Rockfish","rockfish, quillback","R","HAL",0,8.217655293
 "2021","ROCK","Other Rockfish","rockfish, quillback","R","JIG",0,0.040129039
 "2021","ROCK","Other Rockfish","rockfish, quillback","R","NPT",1,NA
 "2021","ROCK","Other Rockfish","rockfish, quillback","R","POT",1,NA
-"2021","ROCK","Other Rockfish","rockfish, redbanded","D","HAL",0,6.0785242667
+"2021","ROCK","Other Rockfish","rockfish, redbanded","D","HAL",0,6.0785183838
 "2021","ROCK","Other Rockfish","rockfish, redbanded","D","NPT",0,4.8779488644
 "2021","ROCK","Other Rockfish","rockfish, redbanded","D","POT",0,0.0173197099
 "2021","ROCK","Other Rockfish","rockfish, redbanded","R","HAL",0,2.7432336208
@@ -7982,13 +7982,13 @@
 "2021","ROCK","Other Rockfish","rockfish, sharpchin","D","NPT",0,34.0013610674
 "2021","ROCK","Other Rockfish","rockfish, sharpchin","R","NPT",0,48.1929301575
 "2021","ROCK","Other Rockfish","rockfish, sharpchin","R","PTR",0,1.3813596037
-"2021","ROCK","Other Rockfish","rockfish, silvergray","D","HAL",0,0.0809257108
+"2021","ROCK","Other Rockfish","rockfish, silvergray","D","HAL",0,0.0809257107
 "2021","ROCK","Other Rockfish","rockfish, silvergray","D","NPT",0,22.4412672299
 "2021","ROCK","Other Rockfish","rockfish, silvergray","R","HAL",0,0.4270248171
 "2021","ROCK","Other Rockfish","rockfish, silvergray","R","JIG",1,NA
 "2021","ROCK","Other Rockfish","rockfish, silvergray","R","NPT",0,112.0524156366
 "2021","ROCK","Other Rockfish","rockfish, silvergray","R","PTR",0,3.7722936724
-"2021","ROCK","Other Rockfish","rockfish, tiger","D","HAL",0,0.2401856934
+"2021","ROCK","Other Rockfish","rockfish, tiger","D","HAL",0,0.2401856927
 "2021","ROCK","Other Rockfish","rockfish, tiger","D","NPT",0,1.2845356916
 "2021","ROCK","Other Rockfish","rockfish, tiger","R","HAL",0,0.6989016031
 "2021","ROCK","Other Rockfish","rockfish, tiger","R","JIG",1,NA
@@ -7998,7 +7998,7 @@
 "2021","ROCK","Other Rockfish","rockfish, widow","D","NPT",0,3.6571000613
 "2021","ROCK","Other Rockfish","rockfish, widow","R","NPT",0,30.4730334677
 "2021","ROCK","Other Rockfish","rockfish, widow","R","PTR",0,26.167658786
-"2021","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","HAL",0,28.9038371261
+"2021","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","HAL",0,28.9038350407
 "2021","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","NPT",0,10.540518489
 "2021","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","POT",0,3.0127321696
 "2021","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","HAL",0,47.4923204973
@@ -8009,7 +8009,7 @@
 "2021","ROCK","Other Rockfish","rockfish, yellowtail","R","JIG",0,0.1980069551
 "2021","ROCK","Other Rockfish","rockfish, yellowtail","R","NPT",1,NA
 "2021","ROCK","Other Rockfish","rockfish, yellowtail","R","PTR",1,NA
-"2021","SABL","Sablefish","sablefish (blackcod)","D","HAL",0,152.8721982426
+"2021","SABL","Sablefish","sablefish (blackcod)","D","HAL",0,152.8720405026
 "2021","SABL","Sablefish","sablefish (blackcod)","D","NPT",0,454.3091278852
 "2021","SABL","Sablefish","sablefish (blackcod)","D","POT",0,179.7756127311
 "2021","SABL","Sablefish","sablefish (blackcod)","D","PTR",1,NA
@@ -8023,25 +8023,25 @@
 "2021","SFL1","GOA Shallow Water Flatfish","flounder, general","D","POT",0,0.0703824181
 "2021","SFL1","GOA Shallow Water Flatfish","flounder, general","R","NPT",1,NA
 "2021","SFL1","GOA Shallow Water Flatfish","flounder, general","R","POT",1,NA
-"2021","SFL1","GOA Shallow Water Flatfish","flounder, starry","D","HAL",0,0.2063689763
+"2021","SFL1","GOA Shallow Water Flatfish","flounder, starry","D","HAL",0,0.206368976
 "2021","SFL1","GOA Shallow Water Flatfish","flounder, starry","D","NPT",0,71.6092572267
 "2021","SFL1","GOA Shallow Water Flatfish","flounder, starry","D","POT",0,0.0130048021
 "2021","SFL1","GOA Shallow Water Flatfish","flounder, starry","R","NPT",0,4.1492083852
 "2021","SFL1","GOA Shallow Water Flatfish","flounder, starry","R","PTR",1,NA
-"2021","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","HAL",0,5.5619892918
+"2021","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","HAL",0,5.5619883563
 "2021","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","NPT",0,0.5371326533
 "2021","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","POT",0,9.0293907596
 "2021","SFL1","GOA Shallow Water Flatfish","sole, English","D","NPT",0,60.6096978399
 "2021","SFL1","GOA Shallow Water Flatfish","sole, English","D","POT",0,0.0087781108
 "2021","SFL1","GOA Shallow Water Flatfish","sole, English","R","NPT",0,82.8980943784
 "2021","SFL1","GOA Shallow Water Flatfish","sole, English","R","PTR",0,1.2913774775
-"2021","SFL1","GOA Shallow Water Flatfish","sole, butter","D","HAL",0,0.0296531685
+"2021","SFL1","GOA Shallow Water Flatfish","sole, butter","D","HAL",0,0.0296531683
 "2021","SFL1","GOA Shallow Water Flatfish","sole, butter","D","NPT",0,23.9772518364
 "2021","SFL1","GOA Shallow Water Flatfish","sole, butter","R","NPT",0,266.4659901118
 "2021","SFL1","GOA Shallow Water Flatfish","sole, butter","R","PTR",1,NA
 "2021","SFL1","GOA Shallow Water Flatfish","sole, petrale","D","NPT",1,NA
 "2021","SFL1","GOA Shallow Water Flatfish","sole, petrale","R","NPT",1,NA
-"2021","SFL1","GOA Shallow Water Flatfish","sole, rock","D","HAL",0,2.5035503329
+"2021","SFL1","GOA Shallow Water Flatfish","sole, rock","D","HAL",0,2.5035492627
 "2021","SFL1","GOA Shallow Water Flatfish","sole, rock","D","NPT",0,163.4444780764
 "2021","SFL1","GOA Shallow Water Flatfish","sole, rock","D","POT",0,0.2520374713
 "2021","SFL1","GOA Shallow Water Flatfish","sole, rock","D","PTR",1,NA
@@ -8050,11 +8050,11 @@
 "2021","SFL1","GOA Shallow Water Flatfish","sole, rock","R","PTR",0,3.0005135278
 "2021","SFL1","GOA Shallow Water Flatfish","sole, sand","D","NPT",1,NA
 "2021","SFL1","GOA Shallow Water Flatfish","sole, sand","R","NPT",1,NA
-"2021","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","HAL",0,0.0643170141
+"2021","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","HAL",0,0.0643170139
 "2021","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","NPT",0,0.5688449822
 "2021","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","POT",0,0.1151015665
 "2021","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","R","NPT",1,NA
-"2021","SRKR","Shortraker Rockfish","rockfish, shortraker","D","HAL",0,20.9025815444
+"2021","SRKR","Shortraker Rockfish","rockfish, shortraker","D","HAL",0,20.9025657383
 "2021","SRKR","Shortraker Rockfish","rockfish, shortraker","D","NPT",0,46.3437090222
 "2021","SRKR","Shortraker Rockfish","rockfish, shortraker","D","POT",0,2.5608361323
 "2021","SRKR","Shortraker Rockfish","rockfish, shortraker","D","PTR",1,NA
@@ -8062,7 +8062,7 @@
 "2021","SRKR","Shortraker Rockfish","rockfish, shortraker","R","NPT",0,102.110348432
 "2021","SRKR","Shortraker Rockfish","rockfish, shortraker","R","POT",0,1.9423010427
 "2021","SRKR","Shortraker Rockfish","rockfish, shortraker","R","PTR",0,24.136103599
-"2021","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","HAL",0,2.4092952757
+"2021","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","HAL",0,2.4092946426
 "2021","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","NPT",0,8.6022631016
 "2021","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","POT",0,0.7940587217
 "2021","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","R","HAL",0,13.1644084119
@@ -8073,18 +8073,18 @@
 "2021","USKT","BSAI Skate and GOA Skate, Other","skate, Alaskan","R","NPT",1,NA
 "2021","USKT","BSAI Skate and GOA Skate, Other","skate, Aleutian","R","HAL",1,NA
 "2021","USKT","BSAI Skate and GOA Skate, Other","skate, Aleutian","R","NPT",1,NA
-"2021","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","HAL",0,471.8644532261
+"2021","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","HAL",0,471.8625447938
 "2021","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","NPT",0,37.5947095155
 "2021","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","PTR",1,NA
 "2021","USKT","BSAI Skate and GOA Skate, Other","skate, other","R","HAL",1,NA
 "2021","USKT","BSAI Skate and GOA Skate, Other","skate, other","R","NPT",0,1.4546909344
 "2021","USKT","BSAI Skate and GOA Skate, Other","skate, other","R","PTR",0,2.3845350892
-"2021","USRK","Shark","Pacific sleeper shark","D","HAL",0,11.7896110056
+"2021","USRK","Shark","Pacific sleeper shark","D","HAL",0,11.7896109584
 "2021","USRK","Shark","Pacific sleeper shark","D","NPT",0,43.480146104
 "2021","USRK","Shark","Pacific sleeper shark","D","PTR",0,23.5986806572
 "2021","USRK","Shark","Pacific sleeper shark","R","NPT",1,NA
 "2021","USRK","Shark","Pacific sleeper shark","R","PTR",1,NA
-"2021","USRK","Shark","shark, other","D","HAL",0,9.8354209845
+"2021","USRK","Shark","shark, other","D","HAL",0,9.8354209662
 "2021","USRK","Shark","shark, other","D","PTR",1,NA
 "2021","USRK","Shark","shark, other","R","NPT",1,NA
 "2021","USRK","Shark","shark, other","R","PTR",0,0.3542556409
@@ -8092,7 +8092,7 @@
 "2021","USRK","Shark","shark, salmon","D","PTR",0,38.1720621879
 "2021","USRK","Shark","shark, salmon","R","NPT",1,NA
 "2021","USRK","Shark","shark, salmon","R","PTR",0,4.312756254
-"2021","USRK","Shark","shark, spiny dogfish","D","HAL",0,782.7732497541
+"2021","USRK","Shark","shark, spiny dogfish","D","HAL",0,782.7708756107
 "2021","USRK","Shark","shark, spiny dogfish","D","NPT",0,37.5482238307
 "2021","USRK","Shark","shark, spiny dogfish","D","POT",0,1.2777042772
 "2021","USRK","Shark","shark, spiny dogfish","R","NPT",0,6.0246138585
@@ -8104,7 +8104,7 @@
 "2022","AMCK","Atka Mackerel","greenling, atka mackerel","R","PTR",0,0.5939449665
 "2022","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","HAL",0,154.6362519966
 "2022","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","NPT",0,910.5991216232
-"2022","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","POT",0,175.7814987982
+"2022","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","POT",0,175.7697724287
 "2022","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","PTR",0,10.0555869376
 "2022","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","HAL",0,0.3764215756
 "2022","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","NPT",0,9771.0023205094
@@ -8118,11 +8118,11 @@
 "2022","BSKT","GOA Skate, Big","skate, big","R","PTR",0,9.2691600804
 "2022","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","HAL",0,3.542748165
 "2022","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","NPT",0,0.7327411956
-"2022","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","POT",0,3.6559198792
+"2022","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","POT",0,3.6553555611
 "2022","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","R","NPT",0,4.0497060519
 "2022","DFL4","GOA Deep Water Flatfish","sole, dover","D","HAL",0,1.1256479389
 "2022","DFL4","GOA Deep Water Flatfish","sole, dover","D","NPT",0,88.5786096418
-"2022","DFL4","GOA Deep Water Flatfish","sole, dover","D","POT",0,4.827245753
+"2022","DFL4","GOA Deep Water Flatfish","sole, dover","D","POT",0,4.8265277187
 "2022","DFL4","GOA Deep Water Flatfish","sole, dover","D","PTR",0,0.2463729868
 "2022","DFL4","GOA Deep Water Flatfish","sole, dover","R","NPT",0,13.8575242417
 "2022","DFL4","GOA Deep Water Flatfish","sole, dover","R","PTR",1,NA
@@ -8130,7 +8130,7 @@
 "2022","DFL4","GOA Deep Water Flatfish","turbot, Greenland","R","HAL",1,NA
 "2022","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","HAL",0,4.4148510208
 "2022","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","NPT",0,28.9680985179
-"2022","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","POT",0,2.1323287906
+"2022","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","POT",0,2.1375638913
 "2022","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","PTR",0,7.9955815479
 "2022","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","HAL",0,1.6042907259
 "2022","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","JIG",0,2.6811752415
@@ -8139,7 +8139,7 @@
 "2022","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","PTR",0,533.1554646403
 "2022","FSOL","Flathead Sole","sole, flathead","D","HAL",0,3.2411399998
 "2022","FSOL","Flathead Sole","sole, flathead","D","NPT",0,79.2189726332
-"2022","FSOL","Flathead Sole","sole, flathead","D","POT",0,1.0043234497
+"2022","FSOL","Flathead Sole","sole, flathead","D","POT",0,1.0113805825
 "2022","FSOL","Flathead Sole","sole, flathead","R","NPT",0,427.2907140455
 "2022","FSOL","Flathead Sole","sole, flathead","R","POT",1,NA
 "2022","FSOL","Flathead Sole","sole, flathead","R","PTR",0,52.6866588616
@@ -8156,30 +8156,30 @@
 "2022","LSKT","GOA Skate, Longnose","skate, longnose","R","PTR",0,4.696645085
 "2022","NORK","Northern Rockfish","rockfish, northern","D","HAL",0,0.5107890753
 "2022","NORK","Northern Rockfish","rockfish, northern","D","NPT",0,27.929628235
-"2022","NORK","Northern Rockfish","rockfish, northern","D","POT",0,0.0922604863
+"2022","NORK","Northern Rockfish","rockfish, northern","D","POT",0,0.0916785766
 "2022","NORK","Northern Rockfish","rockfish, northern","D","PTR",0,0.7822526661
 "2022","NORK","Northern Rockfish","rockfish, northern","R","HAL",0,0.3969446049
 "2022","NORK","Northern Rockfish","rockfish, northern","R","NPT",0,1854.2336521946
 "2022","NORK","Northern Rockfish","rockfish, northern","R","PTR",0,14.5366703475
 "2022","OCTP","Octopus","octopus, North Pacific","D","HAL",0,39.488236572
 "2022","OCTP","Octopus","octopus, North Pacific","D","NPT",0,2.0916454242
-"2022","OCTP","Octopus","octopus, North Pacific","D","POT",0,42.9254208539
+"2022","OCTP","Octopus","octopus, North Pacific","D","POT",0,42.8568584805
 "2022","OCTP","Octopus","octopus, North Pacific","R","HAL",0,1.3890670501
 "2022","OCTP","Octopus","octopus, North Pacific","R","NPT",0,0.4346982877
 "2022","OCTP","Octopus","octopus, North Pacific","R","POT",0,59.9803838534
 "2022","OCTP","Octopus","octopus, North Pacific","R","PTR",0,0.0952543977
 "2022","PCOD","Pacific Cod","cod, Pacific (gray)","D","HAL",0,848.7407188327
 "2022","PCOD","Pacific Cod","cod, Pacific (gray)","D","NPT",0,673.9665784736
-"2022","PCOD","Pacific Cod","cod, Pacific (gray)","D","POT",0,33.793380093
+"2022","PCOD","Pacific Cod","cod, Pacific (gray)","D","POT",0,33.5016291617
 "2022","PCOD","Pacific Cod","cod, Pacific (gray)","D","PTR",0,0.7719596743
 "2022","PCOD","Pacific Cod","cod, Pacific (gray)","R","HAL",0,4768.0167793836
-"2022","PCOD","Pacific Cod","cod, Pacific (gray)","R","JIG",0,997.6892757688
+"2022","PCOD","Pacific Cod","cod, Pacific (gray)","R","JIG",0,997.689275769
 "2022","PCOD","Pacific Cod","cod, Pacific (gray)","R","NPT",0,7324.6025431969
-"2022","PCOD","Pacific Cod","cod, Pacific (gray)","R","POT",0,10533.6773883956
+"2022","PCOD","Pacific Cod","cod, Pacific (gray)","R","POT",0,10533.6773883957
 "2022","PCOD","Pacific Cod","cod, Pacific (gray)","R","PTR",0,206.7383726411
 "2022","PLCK","Pollock","pollock, walleye","D","HAL",0,14.3823150064
 "2022","PLCK","Pollock","pollock, walleye","D","NPT",0,444.0486614062
-"2022","PLCK","Pollock","pollock, walleye","D","POT",0,1.3559007255
+"2022","PLCK","Pollock","pollock, walleye","D","POT",0,1.5479437807
 "2022","PLCK","Pollock","pollock, walleye","D","PTR",0,698.2307591082
 "2022","PLCK","Pollock","pollock, walleye","R","HAL",0,29.6209892731
 "2022","PLCK","Pollock","pollock, walleye","R","JIG",0,0.0930327207
@@ -8226,12 +8226,13 @@
 "2022","ROCK","Other Rockfish","rockfish, harlequin","R","PTR",0,7.2846096812
 "2022","ROCK","Other Rockfish","rockfish, other","D","HAL",0,67.8414270903
 "2022","ROCK","Other Rockfish","rockfish, other","D","NPT",0,2.6872427857
-"2022","ROCK","Other Rockfish","rockfish, other","D","POT",0,0.1976029663
+"2022","ROCK","Other Rockfish","rockfish, other","D","POT",0,0.1931052967
 "2022","ROCK","Other Rockfish","rockfish, other","D","PTR",1,NA
 "2022","ROCK","Other Rockfish","rockfish, other","R","HAL",1,NA
 "2022","ROCK","Other Rockfish","rockfish, other","R","NPT",1,NA
 "2022","ROCK","Other Rockfish","rockfish, quillback","D","HAL",0,11.4512426574
 "2022","ROCK","Other Rockfish","rockfish, quillback","D","NPT",0,0.2109570447
+"2022","ROCK","Other Rockfish","rockfish, quillback","D","POT",0,0.0158479328
 "2022","ROCK","Other Rockfish","rockfish, quillback","R","HAL",0,6.34975858
 "2022","ROCK","Other Rockfish","rockfish, quillback","R","JIG",0,0.0172809436
 "2022","ROCK","Other Rockfish","rockfish, quillback","R","NPT",1,NA
@@ -8272,27 +8273,27 @@
 "2022","ROCK","Other Rockfish","rockfish, vermilion","D","HAL",0,0.4555838491
 "2022","ROCK","Other Rockfish","rockfish, widow","D","HAL",0,0.2543690062
 "2022","ROCK","Other Rockfish","rockfish, widow","D","NPT",0,4.7374064092
-"2022","ROCK","Other Rockfish","rockfish, widow","D","POT",0,0.0148355015
+"2022","ROCK","Other Rockfish","rockfish, widow","D","POT",0,0.0140891335
 "2022","ROCK","Other Rockfish","rockfish, widow","D","PTR",0,0.0398795118
 "2022","ROCK","Other Rockfish","rockfish, widow","R","NPT",0,39.6829092553
 "2022","ROCK","Other Rockfish","rockfish, widow","R","PTR",0,41.205496232
 "2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","HAL",0,82.9813494555
 "2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","NPT",0,41.3701360418
-"2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","POT",0,0.3390404632
+"2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","POT",0,0.3513465515
 "2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","HAL",0,77.2818848665
 "2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","JIG",0,2.260102668
 "2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","NPT",0,15.7841582798
 "2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","POT",0,3.7400186833
 "2022","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","PTR",0,0.3202852312
 "2022","ROCK","Other Rockfish","rockfish, yellowtail","D","HAL",0,0.0004732578
-"2022","ROCK","Other Rockfish","rockfish, yellowtail","D","POT",0,0.0353913877
+"2022","ROCK","Other Rockfish","rockfish, yellowtail","D","POT",0,0.03434418
 "2022","ROCK","Other Rockfish","rockfish, yellowtail","R","HAL",1,NA
 "2022","ROCK","Other Rockfish","rockfish, yellowtail","R","JIG",1,NA
 "2022","ROCK","Other Rockfish","rockfish, yellowtail","R","NPT",1,NA
 "2022","ROCK","Other Rockfish","rockfish, yellowtail","R","PTR",1,NA
 "2022","SABL","Sablefish","sablefish (blackcod)","D","HAL",0,262.2682149829
 "2022","SABL","Sablefish","sablefish (blackcod)","D","NPT",0,526.557902188
-"2022","SABL","Sablefish","sablefish (blackcod)","D","POT",0,29.4399874561
+"2022","SABL","Sablefish","sablefish (blackcod)","D","POT",0,29.4337209877
 "2022","SABL","Sablefish","sablefish (blackcod)","D","PTR",0,0.1293348254
 "2022","SABL","Sablefish","sablefish (blackcod)","R","HAL",0,664.8096932197
 "2022","SABL","Sablefish","sablefish (blackcod)","R","NPT",0,1170.5412290992
@@ -8308,7 +8309,7 @@
 "2022","SFL1","GOA Shallow Water Flatfish","flounder, starry","R","PTR",0,0.3678634122
 "2022","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","HAL",0,14.2402765851
 "2022","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","NPT",0,2.8665170398
-"2022","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","POT",0,1.3134815687
+"2022","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","POT",0,1.3187533147
 "2022","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","PTR",0,0.0088427415
 "2022","SFL1","GOA Shallow Water Flatfish","sole, English","D","NPT",0,63.4287343002
 "2022","SFL1","GOA Shallow Water Flatfish","sole, English","R","NPT",0,18.5395067328
@@ -8320,7 +8321,7 @@
 "2022","SFL1","GOA Shallow Water Flatfish","sole, petrale","R","NPT",1,NA
 "2022","SFL1","GOA Shallow Water Flatfish","sole, rock","D","HAL",0,2.4257242067
 "2022","SFL1","GOA Shallow Water Flatfish","sole, rock","D","NPT",0,155.3336823054
-"2022","SFL1","GOA Shallow Water Flatfish","sole, rock","D","POT",0,0.0225467051
+"2022","SFL1","GOA Shallow Water Flatfish","sole, rock","D","POT",0,0.0243432354
 "2022","SFL1","GOA Shallow Water Flatfish","sole, rock","R","NPT",0,869.35122688
 "2022","SFL1","GOA Shallow Water Flatfish","sole, rock","R","POT",1,NA
 "2022","SFL1","GOA Shallow Water Flatfish","sole, rock","R","PTR",0,11.8099577414
@@ -8328,7 +8329,7 @@
 "2022","SFL1","GOA Shallow Water Flatfish","sole, sand","R","PTR",1,NA
 "2022","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","HAL",0,0.1833810983
 "2022","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","NPT",1,NA
-"2022","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","POT",0,0.7696812716
+"2022","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","POT",0,0.9111321937
 "2022","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","R","HAL",1,NA
 "2022","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","R","PTR",1,NA
 "2022","SRKR","Shortraker Rockfish","rockfish, shortraker","D","HAL",0,33.9315737804
@@ -8342,7 +8343,7 @@
 "2022","SRKR","Shortraker Rockfish","rockfish, shortraker","R","PTR",0,68.0484031966
 "2022","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","HAL",0,2.3011702072
 "2022","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","NPT",0,22.5498687179
-"2022","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","POT",0,1.5004559733
+"2022","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","POT",0,1.5003902985
 "2022","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","R","HAL",0,8.1635219447
 "2022","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","R","NPT",0,242.9803254367
 "2022","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","R","POT",0,2.0710290751
@@ -8375,7 +8376,7 @@
 "2022","USRK","Shark","shark, salmon","R","PTR",0,1.529967064
 "2022","USRK","Shark","shark, spiny dogfish","D","HAL",0,925.1305036674
 "2022","USRK","Shark","shark, spiny dogfish","D","NPT",0,18.9060221066
-"2022","USRK","Shark","shark, spiny dogfish","D","POT",0,0.4454428031
+"2022","USRK","Shark","shark, spiny dogfish","D","POT",0,0.4394883534
 "2022","USRK","Shark","shark, spiny dogfish","D","PTR",1,NA
 "2022","USRK","Shark","shark, spiny dogfish","R","HAL",1,NA
 "2022","USRK","Shark","shark, spiny dogfish","R","NPT",0,2.0017031288
@@ -8384,107 +8385,107 @@
 "2023","AMCK","Atka Mackerel","greenling, atka mackerel","D","NPT",0,16.7205907799
 "2023","AMCK","Atka Mackerel","greenling, atka mackerel","R","NPT",0,445.6496017474
 "2023","AMCK","Atka Mackerel","greenling, atka mackerel","R","PTR",0,0.0997903213
-"2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","HAL",0,121.4858828944
-"2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","NPT",0,669.0472433475
-"2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","POT",0,107.6744018311
-"2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","PTR",0,16.0121434824
+"2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","HAL",0,121.6366526871
+"2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","NPT",0,687.5535721007
+"2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","POT",0,108.6338676352
+"2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","D","PTR",0,16.0121435556
 "2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","HAL",0,0.6481834965
 "2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","NPT",0,7773.2224297313
 "2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","POT",1,NA
 "2023","ARTH","Arrowtooth Flounder","flounder, arrowtooth","R","PTR",0,407.1806765993
-"2023","BSKT","GOA Skate, Big","skate, big","D","HAL",0,780.6951901484
-"2023","BSKT","GOA Skate, Big","skate, big","D","NPT",0,11.3473700909
-"2023","BSKT","GOA Skate, Big","skate, big","D","PTR",0,0.2359633509
+"2023","BSKT","GOA Skate, Big","skate, big","D","HAL",0,780.8122179172
+"2023","BSKT","GOA Skate, Big","skate, big","D","NPT",0,11.3473650143
+"2023","BSKT","GOA Skate, Big","skate, big","D","PTR",0,0.2367061552
 "2023","BSKT","GOA Skate, Big","skate, big","R","HAL",0,94.8604111037
 "2023","BSKT","GOA Skate, Big","skate, big","R","NPT",0,141.6556409506
 "2023","BSKT","GOA Skate, Big","skate, big","R","PTR",0,9.6089007658
-"2023","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","HAL",0,2.1267981822
+"2023","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","HAL",0,2.1285107838
 "2023","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","NPT",0,0.5232939454
 "2023","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","D","POT",0,0.2721935691
 "2023","DFL4","GOA Deep Water Flatfish","Kamchatka flounder","R","NPT",1,NA
-"2023","DFL4","GOA Deep Water Flatfish","sole, dover","D","HAL",0,0.8760876802
-"2023","DFL4","GOA Deep Water Flatfish","sole, dover","D","NPT",0,42.0203513177
-"2023","DFL4","GOA Deep Water Flatfish","sole, dover","D","POT",0,6.1403497673
+"2023","DFL4","GOA Deep Water Flatfish","sole, dover","D","HAL",0,0.87664265
+"2023","DFL4","GOA Deep Water Flatfish","sole, dover","D","NPT",0,42.3031235352
+"2023","DFL4","GOA Deep Water Flatfish","sole, dover","D","POT",0,5.99509213
 "2023","DFL4","GOA Deep Water Flatfish","sole, dover","R","NPT",0,4.5070287186
 "2023","DFL4","GOA Deep Water Flatfish","sole, dover","R","PTR",1,NA
 "2023","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","HAL",0,0.0057536715
-"2023","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","NPT",0,5.5569642632
-"2023","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","POT",0,0.0755563991
+"2023","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","NPT",0,5.5569642623
+"2023","DFL4","GOA Deep Water Flatfish","turbot, Greenland","D","POT",0,0.0650317812
 "2023","DFL4","GOA Deep Water Flatfish","turbot, Greenland","R","PTR",1,NA
-"2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","HAL",0,1.9769520344
-"2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","NPT",0,32.8652895
-"2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","POT",0,0.1624958147
-"2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","PTR",0,4.2326735572
+"2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","HAL",0,1.9797950916
+"2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","NPT",0,33.3791415048
+"2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","POT",0,0.1624957434
+"2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","D","PTR",0,4.2326895293
 "2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","HAL",0,1.7866631609
 "2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","JIG",0,1.4470499165
 "2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","NPT",0,2950.6164353488
 "2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","POT",1,NA
 "2023","DUSK","GOA Dusky Rockfish","rockfish, dusky","R","PTR",0,494.2765065935
 "2023","FSOL","Flathead Sole","sole, flathead","D","HAL",0,4.562608464
-"2023","FSOL","Flathead Sole","sole, flathead","D","NPT",0,24.4162914318
-"2023","FSOL","Flathead Sole","sole, flathead","D","POT",0,1.6050184233
+"2023","FSOL","Flathead Sole","sole, flathead","D","NPT",0,24.5560311486
+"2023","FSOL","Flathead Sole","sole, flathead","D","POT",0,1.6050183555
 "2023","FSOL","Flathead Sole","sole, flathead","D","PTR",0,1.2461143202
 "2023","FSOL","Flathead Sole","sole, flathead","R","NPT",0,352.3451866126
 "2023","FSOL","Flathead Sole","sole, flathead","R","POT",1,NA
 "2023","FSOL","Flathead Sole","sole, flathead","R","PTR",0,84.6149350665
-"2023","HLBT","Halibut","halibut, Pacific","D","HAL",0,2134.1163192052
-"2023","HLBT","Halibut","halibut, Pacific","D","POT",0,10.9334987126
+"2023","HLBT","Halibut","halibut, Pacific","D","HAL",0,2137.3495112087
+"2023","HLBT","Halibut","halibut, Pacific","D","POT",0,10.9011945156
 "2023","HLBT","Halibut","halibut, Pacific","R","HAL",0,4154.7517235883
 "2023","HLBT","Halibut","halibut, Pacific","R","JIG",0,0.9770703794
 "2023","HLBT","Halibut","halibut, Pacific","R","POT",0,19.2716689732
-"2023","LSKT","GOA Skate, Longnose","skate, longnose","D","HAL",0,404.6377132298
-"2023","LSKT","GOA Skate, Longnose","skate, longnose","D","NPT",0,48.7920629331
+"2023","LSKT","GOA Skate, Longnose","skate, longnose","D","HAL",0,404.8178684017
+"2023","LSKT","GOA Skate, Longnose","skate, longnose","D","NPT",0,49.9927320673
 "2023","LSKT","GOA Skate, Longnose","skate, longnose","R","HAL",0,64.5386650897
 "2023","LSKT","GOA Skate, Longnose","skate, longnose","R","NPT",0,14.0926638689
 "2023","LSKT","GOA Skate, Longnose","skate, longnose","R","PTR",0,4.0939432943
 "2023","NORK","Northern Rockfish","rockfish, northern","D","HAL",0,2.6778101063
-"2023","NORK","Northern Rockfish","rockfish, northern","D","NPT",0,21.6414691335
-"2023","NORK","Northern Rockfish","rockfish, northern","D","POT",0,0.0269642468
-"2023","NORK","Northern Rockfish","rockfish, northern","D","PTR",0,0.0588158489
+"2023","NORK","Northern Rockfish","rockfish, northern","D","NPT",0,21.6458078817
+"2023","NORK","Northern Rockfish","rockfish, northern","D","POT",0,0.0269642043
+"2023","NORK","Northern Rockfish","rockfish, northern","D","PTR",0,0.0588160995
 "2023","NORK","Northern Rockfish","rockfish, northern","R","HAL",1,NA
 "2023","NORK","Northern Rockfish","rockfish, northern","R","NPT",0,1290.5762524534
 "2023","NORK","Northern Rockfish","rockfish, northern","R","PTR",0,9.8688533138
-"2023","OCTP","Octopus","octopus, North Pacific","D","HAL",0,79.5043047761
-"2023","OCTP","Octopus","octopus, North Pacific","D","NPT",0,3.8419967064
-"2023","OCTP","Octopus","octopus, North Pacific","D","POT",0,55.7807377777
+"2023","OCTP","Octopus","octopus, North Pacific","D","HAL",0,79.9811117983
+"2023","OCTP","Octopus","octopus, North Pacific","D","NPT",0,3.8419967061
+"2023","OCTP","Octopus","octopus, North Pacific","D","POT",0,55.7383846889
 "2023","OCTP","Octopus","octopus, North Pacific","R","HAL",0,2.5430124826
 "2023","OCTP","Octopus","octopus, North Pacific","R","JIG",1,NA
 "2023","OCTP","Octopus","octopus, North Pacific","R","NPT",0,0.8182806354
 "2023","OCTP","Octopus","octopus, North Pacific","R","POT",0,39.9240524835
 "2023","OCTP","Octopus","octopus, North Pacific","R","PTR",0,0.4808079123
-"2023","PCOD","Pacific Cod","cod, Pacific (gray)","D","HAL",0,1082.7359070387
-"2023","PCOD","Pacific Cod","cod, Pacific (gray)","D","NPT",0,568.651945909
-"2023","PCOD","Pacific Cod","cod, Pacific (gray)","D","POT",0,49.4005758046
-"2023","PCOD","Pacific Cod","cod, Pacific (gray)","D","PTR",0,0.1944337043
+"2023","PCOD","Pacific Cod","cod, Pacific (gray)","D","HAL",0,1087.4602768208
+"2023","PCOD","Pacific Cod","cod, Pacific (gray)","D","NPT",0,568.6567389314
+"2023","PCOD","Pacific Cod","cod, Pacific (gray)","D","POT",0,49.4005744447
+"2023","PCOD","Pacific Cod","cod, Pacific (gray)","D","PTR",0,0.1944337199
 "2023","PCOD","Pacific Cod","cod, Pacific (gray)","R","HAL",0,3974.0955947539
-"2023","PCOD","Pacific Cod","cod, Pacific (gray)","R","JIG",0,1789.2242146604
+"2023","PCOD","Pacific Cod","cod, Pacific (gray)","R","JIG",0,1788.9441907991
 "2023","PCOD","Pacific Cod","cod, Pacific (gray)","R","NPT",0,5569.7395802556
-"2023","PCOD","Pacific Cod","cod, Pacific (gray)","R","POT",0,7648.354030847
+"2023","PCOD","Pacific Cod","cod, Pacific (gray)","R","POT",0,7648.3540308466
 "2023","PCOD","Pacific Cod","cod, Pacific (gray)","R","PTR",0,331.45156268
-"2023","PLCK","Pollock","pollock, walleye","D","HAL",0,13.075408342
-"2023","PLCK","Pollock","pollock, walleye","D","NPT",0,322.0178174623
-"2023","PLCK","Pollock","pollock, walleye","D","POT",0,0.787765704
-"2023","PLCK","Pollock","pollock, walleye","D","PTR",0,948.3766557959
+"2023","PLCK","Pollock","pollock, walleye","D","HAL",0,13.1063457415
+"2023","PLCK","Pollock","pollock, walleye","D","NPT",0,322.0224449759
+"2023","PLCK","Pollock","pollock, walleye","D","POT",0,0.7877656989
+"2023","PLCK","Pollock","pollock, walleye","D","PTR",0,948.4699628869
 "2023","PLCK","Pollock","pollock, walleye","R","HAL",0,26.2353768251
 "2023","PLCK","Pollock","pollock, walleye","R","JIG",0,0.7430491008
 "2023","PLCK","Pollock","pollock, walleye","R","NPT",0,1000.364162279
 "2023","PLCK","Pollock","pollock, walleye","R","POT",0,0.6989256715
 "2023","PLCK","Pollock","pollock, walleye","R","PTR",0,122652.417451774
 "2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","D","HAL",1,NA
-"2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","D","NPT",0,408.1377585271
-"2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","D","PTR",0,703.1649983215
+"2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","D","NPT",0,412.6323934803
+"2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","D","PTR",0,703.1671996005
 "2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","R","HAL",1,NA
 "2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","R","JIG",1,NA
 "2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","R","NPT",0,13036.3524824076
 "2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","R","POT",1,NA
 "2023","POPA","Pacific Ocean Perch","perch, Pacific ocean","R","PTR",0,14249.9525291153
 "2023","REXS","GOA Rex Sole","sole, rex","D","HAL",0,0.1166269645
-"2023","REXS","GOA Rex Sole","sole, rex","D","NPT",0,28.190137081
+"2023","REXS","GOA Rex Sole","sole, rex","D","NPT",0,29.4626125795
 "2023","REXS","GOA Rex Sole","sole, rex","R","NPT",0,354.0765575738
 "2023","REXS","GOA Rex Sole","sole, rex","R","PTR",0,27.8337885989
-"2023","REYE","Rougheye Rockfish","rockfish, rougheye","D","HAL",0,5.1161068548
-"2023","REYE","Rougheye Rockfish","rockfish, rougheye","D","NPT",0,35.6233542343
-"2023","REYE","Rougheye Rockfish","rockfish, rougheye","D","POT",0,0.9594725077
+"2023","REYE","Rougheye Rockfish","rockfish, rougheye","D","HAL",0,5.1192627153
+"2023","REYE","Rougheye Rockfish","rockfish, rougheye","D","NPT",0,35.6712131012
+"2023","REYE","Rougheye Rockfish","rockfish, rougheye","D","POT",0,0.9116125647
 "2023","REYE","Rougheye Rockfish","rockfish, rougheye","D","PTR",1,NA
 "2023","REYE","Rougheye Rockfish","rockfish, rougheye","R","HAL",0,14.4975391271
 "2023","REYE","Rougheye Rockfish","rockfish, rougheye","R","NPT",0,177.9912655198
@@ -8498,7 +8499,7 @@
 "2023","ROCK","Other Rockfish","rockfish, china","R","JIG",1,NA
 "2023","ROCK","Other Rockfish","rockfish, china","R","POT",1,NA
 "2023","ROCK","Other Rockfish","rockfish, china","R","PTR",1,NA
-"2023","ROCK","Other Rockfish","rockfish, copper","D","HAL",0,0.101770973
+"2023","ROCK","Other Rockfish","rockfish, copper","D","HAL",0,0.1024356411
 "2023","ROCK","Other Rockfish","rockfish, copper","R","HAL",0,0.2835322595
 "2023","ROCK","Other Rockfish","rockfish, copper","R","JIG",1,NA
 "2023","ROCK","Other Rockfish","rockfish, copper","R","POT",1,NA
@@ -8506,20 +8507,20 @@
 "2023","ROCK","Other Rockfish","rockfish, darkblotched","R","PTR",1,NA
 "2023","ROCK","Other Rockfish","rockfish, harlequin","D","HAL",0,0.0156749883
 "2023","ROCK","Other Rockfish","rockfish, harlequin","D","NPT",0,165.2881259311
-"2023","ROCK","Other Rockfish","rockfish, harlequin","D","PTR",0,0.0106565061
+"2023","ROCK","Other Rockfish","rockfish, harlequin","D","PTR",0,0.0106565525
 "2023","ROCK","Other Rockfish","rockfish, harlequin","R","HAL",1,NA
 "2023","ROCK","Other Rockfish","rockfish, harlequin","R","NPT",0,24.2842226668
 "2023","ROCK","Other Rockfish","rockfish, harlequin","R","PTR",0,1.2846806097
-"2023","ROCK","Other Rockfish","rockfish, other","D","HAL",0,40.7462533951
+"2023","ROCK","Other Rockfish","rockfish, other","D","HAL",0,40.713298304
 "2023","ROCK","Other Rockfish","rockfish, other","D","NPT",0,0.5378424078
-"2023","ROCK","Other Rockfish","rockfish, other","D","POT",0,0.2120693933
+"2023","ROCK","Other Rockfish","rockfish, other","D","POT",0,0.2096330061
 "2023","ROCK","Other Rockfish","rockfish, other","R","HAL",1,NA
-"2023","ROCK","Other Rockfish","rockfish, quillback","D","HAL",0,7.0997219
+"2023","ROCK","Other Rockfish","rockfish, quillback","D","HAL",0,7.1673307156
 "2023","ROCK","Other Rockfish","rockfish, quillback","D","NPT",1,NA
 "2023","ROCK","Other Rockfish","rockfish, quillback","R","HAL",0,5.2032769007
 "2023","ROCK","Other Rockfish","rockfish, quillback","R","JIG",0,0.0296427247
 "2023","ROCK","Other Rockfish","rockfish, quillback","R","POT",1,NA
-"2023","ROCK","Other Rockfish","rockfish, redbanded","D","HAL",0,1.7647340767
+"2023","ROCK","Other Rockfish","rockfish, redbanded","D","HAL",0,1.7420536602
 "2023","ROCK","Other Rockfish","rockfish, redbanded","D","NPT",0,7.794179814
 "2023","ROCK","Other Rockfish","rockfish, redbanded","D","POT",0,0.243663228
 "2023","ROCK","Other Rockfish","rockfish, redbanded","R","HAL",0,1.9721030695
@@ -8527,7 +8528,7 @@
 "2023","ROCK","Other Rockfish","rockfish, redbanded","R","POT",0,0.1826403564
 "2023","ROCK","Other Rockfish","rockfish, redbanded","R","PTR",1,NA
 "2023","ROCK","Other Rockfish","rockfish, redstripe","D","NPT",0,71.7787091
-"2023","ROCK","Other Rockfish","rockfish, redstripe","D","PTR",0,0.7419185933
+"2023","ROCK","Other Rockfish","rockfish, redstripe","D","PTR",0,0.7419217524
 "2023","ROCK","Other Rockfish","rockfish, redstripe","R","HAL",1,NA
 "2023","ROCK","Other Rockfish","rockfish, redstripe","R","JIG",1,NA
 "2023","ROCK","Other Rockfish","rockfish, redstripe","R","NPT",0,50.7648980281
@@ -8537,18 +8538,18 @@
 "2023","ROCK","Other Rockfish","rockfish, rosethorn","R","HAL",1,NA
 "2023","ROCK","Other Rockfish","rockfish, rosethorn","R","POT",1,NA
 "2023","ROCK","Other Rockfish","rockfish, sharpchin","D","NPT",0,22.2728491
-"2023","ROCK","Other Rockfish","rockfish, sharpchin","D","PTR",0,0.0006651536
+"2023","ROCK","Other Rockfish","rockfish, sharpchin","D","PTR",0,0.0006651574
 "2023","ROCK","Other Rockfish","rockfish, sharpchin","R","NPT",0,14.2946046038
 "2023","ROCK","Other Rockfish","rockfish, sharpchin","R","PTR",0,1.0826214008
-"2023","ROCK","Other Rockfish","rockfish, silvergray","D","HAL",0,0.4315637987
+"2023","ROCK","Other Rockfish","rockfish, silvergray","D","HAL",0,0.431644904
 "2023","ROCK","Other Rockfish","rockfish, silvergray","D","NPT",0,3.8298199
-"2023","ROCK","Other Rockfish","rockfish, silvergray","D","PTR",0,1.4991601228
+"2023","ROCK","Other Rockfish","rockfish, silvergray","D","PTR",0,1.5050663516
 "2023","ROCK","Other Rockfish","rockfish, silvergray","R","HAL",0,0.5132351382
 "2023","ROCK","Other Rockfish","rockfish, silvergray","R","JIG",1,NA
 "2023","ROCK","Other Rockfish","rockfish, silvergray","R","NPT",0,12.4373603247
 "2023","ROCK","Other Rockfish","rockfish, silvergray","R","POT",1,NA
 "2023","ROCK","Other Rockfish","rockfish, silvergray","R","PTR",0,26.9968463284
-"2023","ROCK","Other Rockfish","rockfish, tiger","D","HAL",0,0.4934717139
+"2023","ROCK","Other Rockfish","rockfish, tiger","D","HAL",0,0.4934721126
 "2023","ROCK","Other Rockfish","rockfish, tiger","D","NPT",0,1.21301
 "2023","ROCK","Other Rockfish","rockfish, tiger","R","HAL",0,0.3511177337
 "2023","ROCK","Other Rockfish","rockfish, tiger","R","JIG",1,NA
@@ -8558,13 +8559,13 @@
 "2023","ROCK","Other Rockfish","rockfish, widow","D","HAL",0,0.0289146839
 "2023","ROCK","Other Rockfish","rockfish, widow","D","NPT",0,18.5190504
 "2023","ROCK","Other Rockfish","rockfish, widow","D","POT",1,NA
-"2023","ROCK","Other Rockfish","rockfish, widow","D","PTR",0,0.3288215511
+"2023","ROCK","Other Rockfish","rockfish, widow","D","PTR",0,0.3288229496
 "2023","ROCK","Other Rockfish","rockfish, widow","R","NPT",0,48.4570237432
 "2023","ROCK","Other Rockfish","rockfish, widow","R","PTR",0,107.6884634938
-"2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","HAL",0,55.7967789654
+"2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","HAL",0,55.8390216485
 "2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","NPT",0,3.1897297
 "2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","POT",1,NA
-"2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","PTR",0,0.0431225143
+"2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","D","PTR",0,0.0432940871
 "2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","HAL",0,109.5707733397
 "2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","JIG",0,0.4786933856
 "2023","ROCK","Other Rockfish","rockfish, yelloweye (red snapper)","R","NPT",0,45.2411084011
@@ -8575,10 +8576,10 @@
 "2023","ROCK","Other Rockfish","rockfish, yellowtail","R","JIG",1,NA
 "2023","ROCK","Other Rockfish","rockfish, yellowtail","R","NPT",1,NA
 "2023","ROCK","Other Rockfish","rockfish, yellowtail","R","PTR",1,NA
-"2023","SABL","Sablefish","sablefish (blackcod)","D","HAL",0,178.6745525376
-"2023","SABL","Sablefish","sablefish (blackcod)","D","NPT",0,289.9297019819
-"2023","SABL","Sablefish","sablefish (blackcod)","D","POT",0,37.0956598678
-"2023","SABL","Sablefish","sablefish (blackcod)","D","PTR",0,0.1093845966
+"2023","SABL","Sablefish","sablefish (blackcod)","D","HAL",0,176.7846317323
+"2023","SABL","Sablefish","sablefish (blackcod)","D","NPT",0,295.2328381343
+"2023","SABL","Sablefish","sablefish (blackcod)","D","POT",0,33.4939614597
+"2023","SABL","Sablefish","sablefish (blackcod)","D","PTR",0,0.1093850628
 "2023","SABL","Sablefish","sablefish (blackcod)","R","HAL",0,634.4878155473
 "2023","SABL","Sablefish","sablefish (blackcod)","R","NPT",0,1044.2025900473
 "2023","SABL","Sablefish","sablefish (blackcod)","R","POT",0,7021.8940688801
@@ -8589,41 +8590,41 @@
 "2023","SFL1","GOA Shallow Water Flatfish","flounder, general","D","NPT",0,0.0627765006
 "2023","SFL1","GOA Shallow Water Flatfish","flounder, general","D","POT",0,0.015932163
 "2023","SFL1","GOA Shallow Water Flatfish","flounder, starry","D","HAL",0,0.0409341974
-"2023","SFL1","GOA Shallow Water Flatfish","flounder, starry","D","NPT",0,33.6636796735
+"2023","SFL1","GOA Shallow Water Flatfish","flounder, starry","D","NPT",0,33.6692087303
 "2023","SFL1","GOA Shallow Water Flatfish","flounder, starry","R","NPT",0,5.890804109
 "2023","SFL1","GOA Shallow Water Flatfish","flounder, starry","R","PTR",1,NA
-"2023","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","HAL",0,5.0608848391
+"2023","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","HAL",0,5.0608849193
 "2023","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","NPT",1,NA
-"2023","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","POT",0,5.9496767765
-"2023","SFL1","GOA Shallow Water Flatfish","sole, English","D","NPT",0,16.6438412189
+"2023","SFL1","GOA Shallow Water Flatfish","groundfish, general","D","POT",0,5.9434392254
+"2023","SFL1","GOA Shallow Water Flatfish","sole, English","D","NPT",0,16.6438412187
 "2023","SFL1","GOA Shallow Water Flatfish","sole, English","R","NPT",0,194.3466789397
 "2023","SFL1","GOA Shallow Water Flatfish","sole, English","R","PTR",0,3.0853353005
 "2023","SFL1","GOA Shallow Water Flatfish","sole, butter","D","NPT",1,NA
-"2023","SFL1","GOA Shallow Water Flatfish","sole, butter","D","POT",0,0.081167754
+"2023","SFL1","GOA Shallow Water Flatfish","sole, butter","D","POT",0,0.0811677258
 "2023","SFL1","GOA Shallow Water Flatfish","sole, butter","R","NPT",0,32.2077798243
 "2023","SFL1","GOA Shallow Water Flatfish","sole, butter","R","PTR",1,NA
 "2023","SFL1","GOA Shallow Water Flatfish","sole, petrale","D","NPT",1,NA
 "2023","SFL1","GOA Shallow Water Flatfish","sole, petrale","R","PTR",1,NA
-"2023","SFL1","GOA Shallow Water Flatfish","sole, rock","D","HAL",0,4.3573966848
-"2023","SFL1","GOA Shallow Water Flatfish","sole, rock","D","NPT",0,77.8484232658
-"2023","SFL1","GOA Shallow Water Flatfish","sole, rock","D","POT",0,0.0509646579
-"2023","SFL1","GOA Shallow Water Flatfish","sole, rock","D","PTR",0,5.2719016609
+"2023","SFL1","GOA Shallow Water Flatfish","sole, rock","D","HAL",0,4.3587472647
+"2023","SFL1","GOA Shallow Water Flatfish","sole, rock","D","NPT",0,81.6428549942
+"2023","SFL1","GOA Shallow Water Flatfish","sole, rock","D","POT",0,0.0509646577
+"2023","SFL1","GOA Shallow Water Flatfish","sole, rock","D","PTR",0,5.2719468703
 "2023","SFL1","GOA Shallow Water Flatfish","sole, rock","R","NPT",0,579.4664496999
 "2023","SFL1","GOA Shallow Water Flatfish","sole, rock","R","PTR",0,36.1168116528
 "2023","SFL1","GOA Shallow Water Flatfish","sole, sand","R","NPT",1,NA
-"2023","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","HAL",0,0.0808494252
-"2023","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","POT",0,0.2272052596
-"2023","SRKR","Shortraker Rockfish","rockfish, shortraker","D","HAL",0,17.0079423252
-"2023","SRKR","Shortraker Rockfish","rockfish, shortraker","D","NPT",0,12.3811227668
-"2023","SRKR","Shortraker Rockfish","rockfish, shortraker","D","POT",0,0.6831288233
+"2023","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","HAL",0,0.081016751
+"2023","SFL1","GOA Shallow Water Flatfish","sole, yellowfin","D","POT",0,0.2272052546
+"2023","SRKR","Shortraker Rockfish","rockfish, shortraker","D","HAL",0,17.0112575001
+"2023","SRKR","Shortraker Rockfish","rockfish, shortraker","D","NPT",0,12.3937831732
+"2023","SRKR","Shortraker Rockfish","rockfish, shortraker","D","POT",0,0.6774752865
 "2023","SRKR","Shortraker Rockfish","rockfish, shortraker","D","PTR",0,4.7935755198
 "2023","SRKR","Shortraker Rockfish","rockfish, shortraker","R","HAL",0,16.4491176158
 "2023","SRKR","Shortraker Rockfish","rockfish, shortraker","R","NPT",0,122.2457540985
 "2023","SRKR","Shortraker Rockfish","rockfish, shortraker","R","POT",0,1.8242651993
 "2023","SRKR","Shortraker Rockfish","rockfish, shortraker","R","PTR",0,107.8266346953
-"2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","HAL",0,8.7540574277
-"2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","NPT",0,7.9720173436
-"2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","POT",0,1.2228513912
+"2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","HAL",0,8.7543403369
+"2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","NPT",0,8.0012536928
+"2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","POT",0,1.2193958459
 "2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","D","PTR",0,0.0005016257
 "2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","R","HAL",0,8.8171224969
 "2023","THDS","GOA Thornyhead Rockfish","rockfish, thornyhead (idiots)","R","NPT",0,118.6037322114
@@ -8633,18 +8634,18 @@
 "2023","USKT","BSAI Skate and GOA Skate, Other","skate, Alaskan","R","NPT",1,NA
 "2023","USKT","BSAI Skate and GOA Skate, Other","skate, Aleutian","R","HAL",1,NA
 "2023","USKT","BSAI Skate and GOA Skate, Other","skate, Aleutian","R","NPT",1,NA
-"2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","HAL",0,423.7746205604
-"2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","NPT",0,25.0709581793
+"2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","HAL",0,424.587160745
+"2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","NPT",0,25.1619571713
 "2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","D","POT",0,0.1979232994
 "2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","R","HAL",0,9.7082159801
 "2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","R","NPT",1,NA
 "2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","R","POT",1,NA
 "2023","USKT","BSAI Skate and GOA Skate, Other","skate, other","R","PTR",0,3.6577688711
-"2023","USRK","Shark","Pacific sleeper shark","D","HAL",0,18.1184868275
-"2023","USRK","Shark","Pacific sleeper shark","D","NPT",0,66.542563633
+"2023","USRK","Shark","Pacific sleeper shark","D","HAL",0,18.1526986831
+"2023","USRK","Shark","Pacific sleeper shark","D","NPT",0,66.5662673371
 "2023","USRK","Shark","Pacific sleeper shark","D","PTR",0,23.4275923178
 "2023","USRK","Shark","Pacific sleeper shark","R","PTR",0,0.3129787354
-"2023","USRK","Shark","shark, other","D","HAL",0,52.3230210984
+"2023","USRK","Shark","shark, other","D","HAL",0,52.371965916
 "2023","USRK","Shark","shark, other","R","NPT",1,NA
 "2023","USRK","Shark","shark, other","R","PTR",0,0.8826907518
 "2023","USRK","Shark","shark, salmon","D","HAL",0,0.0117806154
@@ -8652,8 +8653,8 @@
 "2023","USRK","Shark","shark, salmon","D","PTR",0,16.8980582621
 "2023","USRK","Shark","shark, salmon","R","NPT",1,NA
 "2023","USRK","Shark","shark, salmon","R","PTR",0,1.2804912605
-"2023","USRK","Shark","shark, spiny dogfish","D","HAL",0,485.292380082
-"2023","USRK","Shark","shark, spiny dogfish","D","NPT",0,17.1293573846
-"2023","USRK","Shark","shark, spiny dogfish","D","POT",0,1.2191151233
+"2023","USRK","Shark","shark, spiny dogfish","D","HAL",0,488.5813453602
+"2023","USRK","Shark","shark, spiny dogfish","D","NPT",0,17.6298310107
+"2023","USRK","Shark","shark, spiny dogfish","D","POT",0,1.2199360583
 "2023","USRK","Shark","shark, spiny dogfish","R","NPT",0,0.1097693535
 "2023","USRK","Shark","shark, spiny dogfish","R","PTR",0,6.9603749177
