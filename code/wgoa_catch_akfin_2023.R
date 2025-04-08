@@ -162,6 +162,40 @@ order by year"
 ) %>%
   rename_with(tolower)
 
+# FLAG ####
+# # wgoa state catch 
+wgoa_catch5 <- dbGetQuery(
+  con,
+  paste0(
+    "with dat as (select
+             year,
+             species_name,
+             sum(cfec_whole_pounds) catch_lb,
+             fmp_gear,
+             harvest_description,
+             CASE WHEN COUNT(DISTINCT vessel_id) <= 2 OR COUNT(DISTINCT processor_permit_id) <= 2 THEN 1 ELSE 0 END as conf_flag
+             from council.comprehensive_ft
+             where reporting_area_code in ('610', '620', '630')
+             and year",
+    end_year,
+    "
+group by year,
+species_name,
+fmp_gear,
+harvest_description)
+select year,
+species_name,
+fmp_gear,
+harvest_description,
+conf_flag,
+CASE WHEN conf_flag = 0 then catch_lb else NULL END as catch_lb
+from dat
+order by year"
+  )
+) %>%
+  reanme_with(tolower)
+
+
 # species group lookup table
 species_group_content <- dbGetQuery(con, paste0("select * from akr.species_group_content")) %>%
   rename_with(tolower)
@@ -169,6 +203,9 @@ species_group_content <- dbGetQuery(con, paste0("select * from akr.species_group
 agency_species <-  dbGetQuery(con,
                               paste0("select * from akr.agency_specie where agency = 'AKR'")) %>%
   rename_with(tolower)
+
+
+
 
 # save
 # sorry for the long species names, you can rename whichever of these you use to whatever you want.
@@ -194,6 +231,11 @@ write.csv(
 write.csv(wgoa_catch4,
           paste0("data/", end_year, "/wgoa_catch_year_group.csv"),
           row.names = FALSE)
+
+write.csv(wgoa_catch5,
+  paste0("data/",end_year,"/wgoa_catch_year_group_spec_ret_gear.csv"),
+  row.names = FALSE)
+
 write.csv(species_group_content,
           "data/metadata/akr_species_group_content.csv",
           row.names = FALSE)
