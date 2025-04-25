@@ -164,6 +164,8 @@ order by year"
 
 # FLAG ####
 # # wgoa state catch 
+# ADFG_I_SPECIES_CODE
+# AKFIN_SPECIES_CODE
 wgoa_catch5 <- dbGetQuery(
   con,
   paste0(
