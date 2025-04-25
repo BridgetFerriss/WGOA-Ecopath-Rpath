@@ -1,0 +1,261 @@
+#------------------------------------------------------------------------------#
+#AUTHORS: Bia Dias
+#AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
+#E-MAIL OF CORRESPONDENCE AUTHOR: bia.dias@noaa.gov
+#
+# script to format AKFIN data into EwE and Rpath formats
+#------------------------------------------------------------------------------#
+
+
+library(tidyverse)
+library(here)
+
+
+#wgoacatchsp <- as_tibble(read.csv("data/2023/wgoa_catch_year_group.csv"))
+
+
+#LOOKUP ####
+
+# loading lookup file and making it ready for the case match
+lookup_tbl <- read_csv("lookups/model_species_for_ft_cas_akfin.csv",
+                       show_col_types = FALSE) %>%
+  drop_na(common_name) %>%
+  mutate(
+    # strip off life‐stage suffi, here we only have adults (from the lookup), but I decided to include juvenile in the code as well
+    wgoa_group_name = str_remove(wgoa_group_name, regex(" (adult|juv)$", ignore_case = TRUE)),
+    # normalized strings
+    grp_norm = wgoa_group_name %>%
+      str_replace_all("[[:punct:]]+", " ") %>%
+      str_to_lower() %>% str_squish(),
+    cmn_norm = common_name %>%
+      str_replace_all("[[:punct:]]+", " ") %>%
+      str_to_lower() %>% str_squish()
+  )
+
+#FEDERAL ####
+catch_data <- as_tibble(read.csv("data/2023/wgoa_catch_year_group_spec_ret_gear.csv")) %>%
+  filter(conf_flag == "0")
+# preparing the catch_data, here I am taking the punctuation (stringr::) from akfin's query final df
+df <- catch_data %>%
+  mutate(
+    grp_low = species_group_name %>%
+      str_replace_all("[[:punct:]]+", " ") %>%
+      str_to_lower() %>%
+      str_squish(),
+    sp_low  = species_name %>%
+      str_replace_all("[[:punct:]]+", " ") %>%
+      str_to_lower() %>%
+      str_squish(),
+    assigned_group = NA_character_
+  )
+
+n <- nrow(df)
+
+#group‑level matching with singular fallback
+for (i in seq_len(nrow(lookup_tbl))) {
+  pat       <- lookup_tbl$grp_norm[i]
+  pat_sing  <- str_remove(pat, "s$")      # drop trailing "s" if present
+  # vector mask: full or singular match
+  mask_full <- str_detect(df$grp_low, fixed(pat, ignore_case = TRUE))
+  mask_sing <- if (pat_sing != pat) {
+    str_detect(df$grp_low, fixed(pat_sing, ignore_case = TRUE))
+  } else {
+    rep(FALSE, n)
+  }
+  mask <- (mask_full | mask_sing) & is.na(df$assigned_group)
+  df$assigned_group[mask] <- lookup_tbl$wgoa_group_name[i]
+}
+
+#creating a token list with all the combination of works (e.g. 'flounder', 'arrowtooth' can be searched in in and out of order)
+sp_tokens <- str_split(df$sp_low, "\\s+")
+
+for (i in seq_len(nrow(lookup_tbl))) {
+  pat_words <- str_split(lookup_tbl$cmn_norm[i], "\\s+")[[1]]
+  mask <- vapply(sp_tokens, function(tok)
+    all(pat_words %in% tok), logical(1)) & is.na(df$assigned_group)
+  df$assigned_group[mask] <- lookup_tbl$wgoa_group_name[i]
+}
+
+# getting rid of my Rfriendly columns
+wgoa_catch_ts <- df %>% select(-grp_low, -sp_low) %>%
+  na.omit()
+
+
+# extracting unique values for the lookup_tbl
+lookup_unique <- lookup_tbl %>%
+  select(c(node, wgoa_group_name)) %>%
+  distinct(node, .keep_all = TRUE)
+
+
+wgoa_catch_ts_v2 <- wgoa_catch_ts %>%
+  left_join(lookup_unique, by = c("assigned_group" = "wgoa_group_name")) %>%
+  mutate(
+    agency_gear_code = case_when(
+      agency_gear_code == "NPT" ~ "TRW",
+      agency_gear_code == "BTR" ~ "TRW",
+      agency_gear_code == "PTR" ~ "TRW",
+      agency_gear_code == "HAL" ~ "HAL",
+      agency_gear_code == "POT" ~ "POT",
+      agency_gear_code == "TRW" ~ "TRW",
+      agency_gear_code == "JIG" ~ "JIG"
+    )
+  ) %>%
+  group_by(year,
+           assigned_group,
+           retained_or_discarded,
+           agency_gear_code,
+           node) %>%
+  summarise(catch_mt = sum(catch_mt))
+
+#write.csv(wgoa_catch_ts, "WGOA_source_data/wgoa_catch_ts_long_v2.csv", row.names = FALSE)
+
+# Transform the data to wide format
+wgoa_catch_ts_w_mt <- wgoa_catch_ts_v2 %>%
+  select(year,
+         node,
+         assigned_group,
+         retained_or_discarded,
+         agency_gear_code,
+         catch_mt) %>%
+  pivot_wider(
+    names_from = c(assigned_group, node, retained_or_discarded, agency_gear_code),
+    values_from = c(catch_mt)
+  )
+#write.csv(wgoa_catch_ts_w_mt, "WGOA_source_data/wgoa_fed_catch_ts_wide_mt.csv", row.names = FALSE)
+
+wgoa_catch_ts_w_mtkm2 <- wgoa_catch_ts_v2 %>%
+  group_by(year,
+           assigned_group,
+           retained_or_discarded,
+           agency_gear_code,
+           node) %>%
+  summarise(catch_mtkm2 = catch_mt / 234769, .groups = "drop") %>%
+  select(year,
+         node,
+         assigned_group,
+         retained_or_discarded,
+         agency_gear_code,
+         catch_mtkm2) %>%
+  pivot_wider(
+    names_from = c(assigned_group, node, retained_or_discarded, agency_gear_code),
+    values_from = c(catch_mtkm2),
+    names_sort = TRUE
+  )
+
+#write.csv(wgoa_catch_ts_w_mtkm2, "WGOA_source_data/wgoa_fed_catch_ts_wide_mtkm2.csv")
+
+
+
+# STATE ####
+catch_data_state <- as_tibble(read.csv("data/2023/wgoa_catch_year_group_spec_ret_gear_state.csv")) %>%
+  filter(harvest_description == "State managed fishery") %>%
+  filter(conf_flag == "0") %>%  na.omit() %>%
+  filter(!species_name %in% c("salmon roe, chum"))
+
+
+# Pre-split each lookup pattern into its word‐token sto remove plural
+common_tokens <- map(lookup_tbl$cmn_norm, ~ str_split(.x, "\\s+")[[1]])
+group_tokens  <- map(lookup_tbl$grp_norm, ~ str_split(.x, "\\s+")[[1]])
+
+#similar than above
+df2 <- catch_data_state %>%
+  mutate(
+    sp_low   = species_name %>%
+      str_replace_all("[[:punct:]]+", " ") %>%
+      str_to_lower() %>%
+      str_squish(),
+    # we'll build this next:
+    wgoa_group_name = NA_character_,
+    # token‐list for each row
+    sp_tokens       = str_split(sp_low, "\\s+")
+  )
+
+# function for the state (since it has only one column to be matched it required a little more work).
+assign_one <- function(tokens) {
+  #trying every species‐level (common_name) pattern first
+  for (i in seq_along(common_tokens)) {
+    if (all(common_tokens[[i]] %in% tokens)) {
+      return(lookup_tbl$wgoa_group_name[i])
+    }
+  }
+  #trying every group‐level pattern
+  for (i in seq_along(group_tokens)) {
+    pat_tok     <- group_tokens[[i]]
+    # a) exact group words
+    if (all(pat_tok %in% tokens)) {
+      return(lookup_tbl$wgoa_group_name[i])
+    }
+    #singular fallback: drop trailing "s" from each lookup word
+    pat_sing_tok <- sub("s$", "", pat_tok)
+    if (all(pat_sing_tok %in% tokens)) {
+      return(lookup_tbl$wgoa_group_name[i])
+    }
+  }
+  NA_character_
+}
+
+wgoa_catch_state_ts <- df2 %>%
+  mutate(wgoa_group_name = map_chr(sp_tokens, assign_one)) %>%
+  select(-sp_low, -sp_tokens) %>%
+  na.omit()
+
+wgoa_catch_state_ts_v2 <- wgoa_catch_state_ts %>%
+  left_join(lookup_unique, by = c("wgoa_group_name" = "wgoa_group_name")) %>%
+  mutate(harvest_description = case_when(harvest_description == "State managed fishery" ~
+                                           "state"))
+
+colnames(wgoa_catch_state_ts_v2) <- c(
+  "year",
+  "species_name",
+  "agency_gear_code",
+  "harvest_description",
+  "conf_flag",
+  "catch_lb",
+  "catch_mt",
+  "assigned_group",
+  "node"
+)
+
+wgoa_catch_state_ts_w_mtkm2 <- wgoa_catch_state_ts_v2 %>%
+  group_by(year,
+           assigned_group,
+           harvest_description,
+           agency_gear_code,
+           node) %>%
+  summarise(catch_mt = sum(catch_mt)) %>%
+  mutate(catch_mtkm2 = catch_mt / 234769) %>%
+  select(year,
+         node,
+         assigned_group,
+         harvest_description,
+         agency_gear_code,
+         catch_mtkm2) %>%
+  pivot_wider(
+    names_from = c(assigned_group, node, harvest_description, agency_gear_code),
+    values_from = c(catch_mtkm2),
+    names_sort = TRUE
+  )
+#write.csv(wgoa_catch_state_ts_w_mtkm2, "WGOA_source_data/wgoa_state_catch_ts_wide_mtkm2.csv", row.names = FALSE)
+
+
+
+# COMBINE FEDERAL AND STATE ####
+wgoa_catch_ts_w_mtkm2 <- read.csv("WGOA_source_data/wgoa_fed_catch_ts_wide_mtkm2.csv") %>%
+  select(-X) %>%
+  mutate(year = as.numeric(year))
+
+wgoa_catch_state_ts_w_mtkm2 <- read.csv("WGOA_source_data/wgoa_state_catch_ts_wide_mtkm2.csv") %>%
+  select(-X) %>%
+  mutate(year = as.numeric(year))
+
+wgoa_catch_ts_w_mtkm2_combined <- wgoa_catch_ts_w_mtkm2 %>%
+  full_join(wgoa_catch_state_ts_w_mtkm2, by = c("year")) %>%
+  mutate(year = as.numeric(year)) %>%
+  select(year, everything()) %>%
+  rename_all( ~ str_replace(., "X", "")) %>%
+  rename_all( ~ str_replace(., " ", "_")) %>%
+  rename_all( ~ str_replace(., "\\.", "_")) %>%
+  rename_all( ~ str_replace(., "__", "_")) %>%
+  rename_all( ~ str_replace(., "_$", "")) %>%
+  rename_all( ~ str_replace(., "^_", ""))
+#write.csv(wgoa_catch_ts_w_mtkm2_combined, "WGOA_source_data/wgoa_catch_ts_wide_mtkm2_combined.csv", row.names = FALSE)
