@@ -1,0 +1,2468 @@
+node,wgoa_group_name,common_name,scientific_name
+1,Transient killer whales,transient killer whale,transient killer whale
+2,Resident killer whales,resident killer whale,resident killer whale
+3,Offshore killer whales,offshore killer whale,offshore killer whale
+4,Other toothed whales,thoothed whales,thoothed whales
+5,Humpback whale,Humpback whale,Humpback whale
+6,Other baleen whales,baleen whales,baleen whales
+7,Dolphins & porpoises,Dolphins porpoises,Dolphins porpoises
+8,Northern elephant seal,Steller sea lion,Steller sea lion
+9,Northern fur seal adult,fur seal,fur seal
+11,Steller sea lion,Steller sea lion,Steller sea lion
+12,Harbor seal,Harbor seal,Harbor seal
+13,Sea otter,Sea otter,Sea otter
+14,Piscivorous surface birds,Piscivorous surface birds,Piscivorous surface birds
+15,Planktivorous surface birds,Planktivorous surface birds,Planktivorous surface birds
+16,Piscivorous diving birds,Piscivorous diving birds,Piscivorous diving birds
+17,Planktivorous diving birds,Planktivorous diving birds,Planktivorous diving birds
+18,Salmon returning,chinook ,Oncorhynchus tshawytscha
+18,Salmon returning,coho,Oncorhynchus kisutch
+18,Salmon returning,pink,Oncorhynchus gorbuscha
+18,Salmon returning,chum,Oncorhynchus keta
+18,Salmon returning,sockeye,Oncorhynchus nerka
+20,Pacific hake,hake,Merluccius productus
+21,Pacific herring adult,herring,Clupea pallasii
+23,Pacific sandlance,Arctic sand lance,Ammodytes hexapterus
+23,Pacific sandlance,Pacific sand lance,Ammodytes personatus
+24,Pacific capelin,Pacific capelin,Mallotus villosus
+25,Shelf forage fish,argentine,Argentinidae
+25,Shelf forage fish,bluethroat argentine,Nansenia candida
+25,Shelf forage fish,Pacific argentine,Argentina sialis
+25,Shelf forage fish,Pacific sardine,Sardinops sagax
+25,Shelf forage fish,Pacific sandfish,Trichodon trichodon
+25,Shelf forage fish,threespine stickleback,Gasterosteus aculeatus
+25,Shelf forage fish,smelt,Osmeridae
+25,Shelf forage fish,eulachon,Thaleichthys pacificus
+25,Shelf forage fish,surf smelt,Hypomesus pretiosus
+25,Shelf forage fish,whitebait smelt,Allosmerus elongatus
+25,Shelf forage fish,rainbow smelt,Osmerus mordax
+25,Shelf forage fish,night smelt,Spirinchus starksi
+25,Shelf forage fish,longfin smelt,Spirinchus thaleichthys
+25,Shelf forage fish,pond smelt,Hypomesus olidus
+25,Shelf forage fish,dwarf wrymouth,Cryptacanthodes aleutensis
+25,Shelf forage fish,prickleback,Stichaeidae
+25,Shelf forage fish,NA,Lumpenus sp.
+25,Shelf forage fish,bluebarred prickleback,Plectobranchus evides
+25,Shelf forage fish,fourline snakeblenny,Eumesogrammus praecisus
+25,Shelf forage fish,Arctic shanny,Stichaeus punctatus
+25,Shelf forage fish,daubed shanny,Leptoclinus maculatus
+25,Shelf forage fish,stout eelblenny,Anisarchus medius
+25,Shelf forage fish,slender eelblenny,Lumpenus fabricii
+25,Shelf forage fish,snake prickleback,Lumpenus sagitta
+25,Shelf forage fish,pighead prickleback,Acantholumpenus mackayi
+25,Shelf forage fish,longsnout prickleback,Lumpenella longirostris
+25,Shelf forage fish,NA,Chirolophis sp.
+25,Shelf forage fish,decorated warbonnet,Chirolophis decoratus
+25,Shelf forage fish,bearded warbonnet,Chirolophis snyderi
+25,Shelf forage fish,matcheek warbonnet,Chirolophis tarsodes
+25,Shelf forage fish,whitebarred prickleback,Poroclinus rothrocki
+25,Shelf forage fish,mosshead warbonnet,Chirolophis nugator
+25,Shelf forage fish,nutcracker prickleback,Bryozoichthys lysimus
+25,Shelf forage fish,pearly prickleback,Bryozoichthys marjorius
+25,Shelf forage fish,gunnel,Pholidae
+25,Shelf forage fish,crescent gunnel,Pholis laeta
+26,Slope forage fish,deepsea smelt ,Bathylagidae
+26,Slope forage fish,Pacific blacksmelt,Bathylagus pacificus
+26,Slope forage fish,robust blacksmelt,Pseudobathylagus milleri
+26,Slope forage fish,northern smoothtongue,Leuroglossus schmidti
+26,Slope forage fish,popeye blacksmelt,Lipolagus ochotensis
+26,Slope forage fish,NA,Leuroglossus sp.
+26,Slope forage fish,California smoothtongue,Leuroglossus stilbius
+26,Slope forage fish,goby,Gobiidae
+26,Slope forage fish,bristlemouth,Gonostomatidae
+26,Slope forage fish,slender fangjaw,Sigmops gracilis
+26,Slope forage fish,NA,Cyclothone sp.
+26,Slope forage fish,black bristlemouth,Cyclothone atraria
+26,Slope forage fish,slender bristlemouth,Cyclothone pseudopallida
+26,Slope forage fish,showy bristlemouth,Cyclothone signata
+26,Slope forage fish,benttooth bristlemouth,Cyclothone acclinidens
+26,Slope forage fish,bigscale,Melamphaidae
+26,Slope forage fish,crested bigscale,Poromitra curilensis
+26,Slope forage fish,NA,Poromitra cristiceps
+26,Slope forage fish,highsnout bigscale,Melamphaes lugubris
+26,Slope forage fish,lanternfish,Myctophidae
+26,Slope forage fish,NA,Stenobrachius sp.
+26,Slope forage fish,northern lampfish,Stenobrachius leucopsarus
+26,Slope forage fish,garnet lampfish,Stenobrachius nannochir
+26,Slope forage fish,NA,Diaphus sp.
+26,Slope forage fish,California headlightfish,Diaphus theta
+26,Slope forage fish,NA,Lampanyctus sp.
+26,Slope forage fish,broadfin lanternfish,Lampanyctus ritteri
+26,Slope forage fish,pinpoint lampfish,Lampanyctus regalis
+26,Slope forage fish,brokenline lampfish,Lampanyctus jordani
+26,Slope forage fish,NA,Nannobrachium sp.
+26,Slope forage fish,black lanternfish,Lampanyctus niger
+26,Slope forage fish,NA,Ceratoscopelus townsendi
+26,Slope forage fish,slender lanternfish,Hygophum reinhardtii
+26,Slope forage fish,patchwork lampfish,Notoscopelus resplendens
+26,Slope forage fish,California flashlightfish,Protomyctophum crockeri
+26,Slope forage fish,NA,Protomyctophum sp.
+26,Slope forage fish,northern flashlightfish,Protomyctophum thompsoni
+26,Slope forage fish,NA,Tarletonbeania sp.
+26,Slope forage fish,blue lanternfish,Tarletonbeania crenularis
+26,Slope forage fish,California lanternfish,Symbolophorus californiensis
+27,Pacific dogfish,dogfish,Squalus suckleyi
+28,Salmon shark,Salmon shark,Lamna ditropis
+29,Pacific sleeper shark,Pacific sleeper shark,Somniosus pacificus
+29,Pacific sleeper shark,brown cat shark,Apristurus brunneus
+29,Pacific sleeper shark,sixgill shark,Hexanchus griseus
+30,Big skate,Big skate,Beringraja binoculata
+31,Longnose skate,Longnose skate,Beringraja rhina
+32,Other skates,skate,Rajidae
+32,Other skates,NA,Raja sp.
+32,Other skates,NA,Bathyraja sp.
+32,Other skates,deepsea skate,Bathyraja abyssicola
+32,Other skates,Bering skate,Bathyraja interrupta
+32,Other skates,starry skate,Raja stellulata
+32,Other skates,mud skate,Bathyraja taranetzi
+32,Other skates,roughtail skate,Bathyraja trachura
+32,Other skates,Alaska skate,Arctoraja parmifera
+32,Other skates,Aleutian skate,Bathyraja aleutica
+32,Other skates,Commander skate,Bathyraja lindbergi
+32,Other skates,whiteblotched skate,Bathyraja maculata
+32,Other skates,butterfly skate,Bathyraja mariposa
+32,Other skates,whitebrow skate,Bathyraja minispinosa
+33,Pacific halibut adult,Pacific halibut,Hippoglossus stenolepis
+35,Arrowtooth flounder adult,Arrowtooth flounder,Atheresthes stomias
+37,Rex sole adult,Rex sole,Glyptocephalus zachirus
+39,Flathead sole adult,flathead sole,Hippoglossoides elassodon
+41,Shallow-water flatfish,flatfish larvae,Pleuronectiform larvae
+41,Shallow-water flatfish,Pacific sanddab,Citharichthys sordidus
+41,Shallow-water flatfish,speckled sanddab,Citharichthys stigmaeus
+41,Shallow-water flatfish,righteye flounder,Pleuronectidae
+41,Shallow-water flatfish,Greenland turbot,Reinhardtius hippoglossoides
+41,Shallow-water flatfish,slender sole,Lyopsetta exilis
+41,Shallow-water flatfish,petrale sole,Eopsetta jordani
+41,Shallow-water flatfish,English sole,Parophrys vetulus
+41,Shallow-water flatfish,yellowfin sole,Limanda aspera
+41,Shallow-water flatfish,starry flounder,Platichthys stellatus
+41,Shallow-water flatfish,Alaska plaice,Pleuronectes quadrituberculatus
+41,Shallow-water flatfish,sand sole,Psettichthys melanostictus
+41,Shallow-water flatfish,rock sole,Lepidopsetta sp.
+41,Shallow-water flatfish,northern rock sole,Lepidopsetta polyxystra
+41,Shallow-water flatfish,southern rock sole,Lepidopsetta bilineata
+41,Shallow-water flatfish,butter sole,Isopsetta isolepis
+41,Shallow-water flatfish,curlfin sole,Pleuronichthys decurrens
+41,Shallow-water flatfish,Alaska plaice,Pleuronectes quadrituberculatus
+42,Deep-water flatfish,Dover sole,Microstomus pacificus
+42,Deep-water flatfish,deepsea sole,Embassichthys bathybius
+43,Pacific ocean perch adult,Pacific ocean perch,Sebastes alutus
+45,Slope rockfish,rougheye rockfish,Sebastes aleutianus
+45,Slope rockfish,blackspotted rockfish,Sebastes melanostictus
+45,Slope rockfish,aurora rockfish,Sebastes aurora
+45,Slope rockfish,silvergray rockfish,Sebastes brevispinis
+45,Slope rockfish,darkblotched rockfish,Sebastes crameri
+45,Slope rockfish,splitnose rockfish,Sebastes diploproa
+45,Slope rockfish,greenstriped rockfish,Sebastes elongatus
+45,Slope rockfish,blackgill rockfish,Sebastes melanostomus
+45,Slope rockfish,vermilion rockfish,Sebastes miniatus
+45,Slope rockfish,bocaccio,Sebastes paucispinis
+45,Slope rockfish,northern rockfish,Sebastes polyspinis
+45,Slope rockfish,redstripe rockfish,Sebastes proriger
+45,Slope rockfish,redbanded rockfish,Sebastes babcocki
+45,Slope rockfish,stripetail rockfish,Sebastes saxicola
+45,Slope rockfish,harlequin rockfish,Sebastes variegatus
+45,Slope rockfish,pygmy rockfish,Sebastes wilsoni
+45,Slope rockfish,sharpchin rockfish,Sebastes zacentrus
+45,Slope rockfish,shortraker rockfish,Sebastes borealis
+45,Slope rockfish,yellowmouth rockfish,Sebastes reedi
+46,Demersal shelf rockfish,copper rockfish,Sebastes caurinus
+46,Demersal shelf rockfish,Puget Sound rockfish,Sebastes emphaeus
+46,Demersal shelf rockfish,rosethorn rockfish,Sebastes helvomaculatus
+46,Demersal shelf rockfish,quillback rockfish,Sebastes maliger
+46,Demersal shelf rockfish,tiger rockfish,Sebastes nigrocinctus
+46,Demersal shelf rockfish,canary rockfish,Sebastes pinniger
+46,Demersal shelf rockfish,yelloweye rockfish,Sebastes ruberrimus
+46,Demersal shelf rockfish,olive rockfish,Sebastes serranoides
+46,Demersal shelf rockfish,bank rockfish,Sebastes rufus
+46,Demersal shelf rockfish,red rockfish,Sebastes sp.
+46,Demersal shelf rockfish,white spotted red rockfish,Sebastes (Sebastomus) sp.
+47,Pelagic shelf rockfish,dark rockfish,Sebastes ciliatus
+47,Pelagic shelf rockfish,dusky rockfish,Sebastes variabilis
+47,Pelagic shelf rockfish,widow rockfish,Sebastes entomelas
+47,Pelagic shelf rockfish,yellowtail rockfish,Sebastes flavidus
+48,Thornyheads,shortspine thornyhead,Sebastolobus alascanus
+48,Thornyheads,broadfin thornyhead,Sebastolobus macrochir
+48,Thornyheads,longspine thornyhead,Sebastolobus altivelis
+49,Sablefish adult,sablefish,Anoplopoma fimbria
+51,Pacific cod adult,cod,Gadus macrocephalus
+53,Walleye pollock adult,walleye pollock,Gadus chalcogrammus
+55,Large sculpins,Irish lord,Hemilepidotus sp.
+55,Large sculpins,banded Irish lord,Hemilepidotus gilberti
+55,Large sculpins,brown Irish lord,Hemilepidotus spinosus
+55,Large sculpins,longfin Irish lord,Hemilepidotus zapus
+55,Large sculpins,red Irish lord,Hemilepidotus hemilepidotus
+55,Large sculpins,yellow Irish lord,Hemilepidotus jordani
+55,Large sculpins,butterfly sculpin,Hemilepidotus papilio
+55,Large sculpins,shorthorn (=warty) sculpin,Myoxocephalus scorpius
+55,Large sculpins,warthead sculpin,Myoxocephalus niger
+55,Large sculpins,great sculpin,Myoxocephalus polyacanthocephalus
+55,Large sculpins,plain sculpin,Myoxocephalus jaok
+55,Large sculpins,frog sculpin,Myoxocephalus stelleri
+55,Large sculpins,NA,Myoxocephalus sp.
+55,Large sculpins,fourhorn sculpin,Myoxocephalus quadricornis
+55,Large sculpins,Arctic sculpin,Myoxocephalus scorpioides
+55,Large sculpins,bigmouth sculpin,Hemitripterus bolini
+55,Large sculpins,sea raven,Hemitripterus villosus
+55,Large sculpins,bigmouth sculpin egg,Hemitripterus bolini egg
+56,Lingcod,lingcod,Ophiodon elongatus
+57,Atka mackerel,Atka mackerel,Pleurogrammus monopterygius
+58,Shelf demersal fish,lamprey,Petromyzontidae
+58,Shelf demersal fish,Pacific lamprey,Entosphenus tridentatus
+58,Shelf demersal fish,spotted ratfish,Hydrolagus colliei
+58,Shelf demersal fish,spotted ratfish egg case,Hydrolagus colliei egg case
+58,Shelf demersal fish,poacher,Agonidae
+58,Shelf demersal fish,tubenose poacher,Pallasina barbata
+58,Shelf demersal fish,dragon poacher,Percis japonicus
+58,Shelf demersal fish,NA,Leptagonus sp.
+58,Shelf demersal fish,longnose poacher,Sarritor leptorhynchus
+58,Shelf demersal fish,sawback poacher,Sarritor frenatus
+58,Shelf demersal fish,Atlantic poacher,Leptagonus decagonus
+58,Shelf demersal fish,northern spearnose poacher,Agonopsis vulsa
+58,Shelf demersal fish,pygmy poacher,Odontopyxis trispinosa
+58,Shelf demersal fish,blacktip poacher,Xeneretmus latifrons
+58,Shelf demersal fish,bluespotted poacher,Xeneretmus triacanthus
+58,Shelf demersal fish,smootheye poacher,Xeneretmus leiops
+58,Shelf demersal fish,NA,Xeneretmus sp.
+58,Shelf demersal fish,starsnout poacher,Bathyagonus sp.
+58,Shelf demersal fish,gray starsnout,Bathyagonus alascanus
+58,Shelf demersal fish,spinycheek starsnout,Bathyagonus infraspinatus
+58,Shelf demersal fish,bigeye poacher,Bathyagonus pentacanthus
+58,Shelf demersal fish,blackfin poacher,Bathyagonus nigripinnis
+58,Shelf demersal fish,NA,Podothecus sp.
+58,Shelf demersal fish,sturgeon poacher,Podothecus accipenserinus
+58,Shelf demersal fish,veteran poacher,Podothecus veternus
+58,Shelf demersal fish,Aleutian alligatorfish,Aspidophoroides monopterygius
+58,Shelf demersal fish,Arctic alligatorfish,Aspidophoroides olrikii
+58,Shelf demersal fish,smooth alligatorfish,Anoplagonus inermis
+58,Shelf demersal fish,warty poacher,Chesnonia verrucosa
+58,Shelf demersal fish,Bering poacher,Occella dodecaedron
+58,Shelf demersal fish,fourhorn poacher,Hypsagonus quadricornis
+58,Shelf demersal fish,pricklebreast poacher,Stellerina xyosterna
+58,Shelf demersal fish,wolf-eel,Anarrhichthys ocellatus
+58,Shelf demersal fish,Bering wolffish,Anarhichas orientalis
+58,Shelf demersal fish,ronquil,Bathymasteridae
+58,Shelf demersal fish,northern ronquil,Ronquilus jordani
+58,Shelf demersal fish,Alaskan ronquil,Bathymaster caeruleofasciatus
+58,Shelf demersal fish,smallmouth ronquil,Bathymaster leurolepis
+58,Shelf demersal fish,searcher,Bathymaster signatus
+58,Shelf demersal fish,sculpin,Cottidae
+58,Shelf demersal fish,flabby sculpin,Zesticelus profundorum
+58,Shelf demersal fish,NA,Icelinus sp.
+58,Shelf demersal fish,sponge sculpin,Thyriscus anoplus
+58,Shelf demersal fish,frogmouth sculpin,Icelinus oculatus
+58,Shelf demersal fish,threadfin sculpin,Icelinus filamentosus
+58,Shelf demersal fish,northern sculpin,Icelinus borealis
+58,Shelf demersal fish,spotfin sculpin,Icelinus tenuis
+58,Shelf demersal fish,NA,Gymnocanthus sp.
+58,Shelf demersal fish,threaded sculpin,Gymnocanthus pistilliger
+58,Shelf demersal fish,Arctic staghorn sculpin,Gymnocanthus tricuspis
+58,Shelf demersal fish,armorhead sculpin,Gymnocanthus galeatus
+58,Shelf demersal fish,fringed sculpin,Icelinus fimbriatus
+58,Shelf demersal fish,slim sculpin,Radulinus asprellus
+58,Shelf demersal fish,sharpnose sculpin,Clinocottus acuticeps
+58,Shelf demersal fish,Kamchatka hookear sculpin,Artediellus camchaticus
+58,Shelf demersal fish,purplegray sculpin,Gymnocanthus detrisus
+58,Shelf demersal fish,cabezon,Scorpaenichthys marmoratus
+58,Shelf demersal fish,NA,Artediellus sp.
+58,Shelf demersal fish,bride sculpin,Artediellus miacanthus
+58,Shelf demersal fish,hookhorn sculpin,Artediellus pacificus
+58,Shelf demersal fish,hamecon,Artediellus scaber
+58,Shelf demersal fish,Arctic hookear sculpin,Artediellus uncinatus
+58,Shelf demersal fish,spinyhook sculpin,Artediellus gomojunovi
+58,Shelf demersal fish,broadfin sculpin,Bolinia euryptera
+58,Shelf demersal fish,whitetail sculpin,Malacocottus aleuticus
+58,Shelf demersal fish,NA,Malacocottus sp.
+58,Shelf demersal fish,blackfin sculpin,Malacocottus kincaidi
+58,Shelf demersal fish,darkfin sculpin,Malacocottus zonurus
+58,Shelf demersal fish,plumed sculpin,Archistes plumarius
+58,Shelf demersal fish,NA,Triglops sp.
+58,Shelf demersal fish,bigeye sculpin,Triglops nybelini
+58,Shelf demersal fish,scissortail sculpin,Triglops forficatus
+58,Shelf demersal fish,highbrow sculpin,Triglops metopias
+58,Shelf demersal fish,spectacled sculpin,Triglops scepticus
+58,Shelf demersal fish,ribbed sculpin,Triglops pingelii
+58,Shelf demersal fish,roughspine sculpin,Triglops macellus
+58,Shelf demersal fish,scaled sculpin,Archistes biseriatus
+58,Shelf demersal fish,brightbelly sculpin,Microcottus sellaris
+58,Shelf demersal fish,padded sculpin,Artedius fenestralis
+58,Shelf demersal fish,smoothhead sculpin,Artedius lateralis
+58,Shelf demersal fish,roughback sculpin,Chitonotus pugetensis
+58,Shelf demersal fish,belligerent sculpin,Megalocottus platycephalus
+58,Shelf demersal fish,hairhead sculpin,Trichocottus brashnikovi
+58,Shelf demersal fish,Pacific staghorn sculpin,Leptocottus armatus
+58,Shelf demersal fish,soft sculpin,Psychrolutes sigalutes
+58,Shelf demersal fish,NA,Enophrys sp.
+58,Shelf demersal fish,buffalo sculpin,Enophrys bison
+58,Shelf demersal fish,leister sculpin,Enophrys lucasi
+58,Shelf demersal fish,antlered sculpin,Enophrys diceraus
+58,Shelf demersal fish,bull sculpin,Enophrys taurina
+58,Shelf demersal fish,spinyhead sculpin,Dasycottus setiger
+58,Shelf demersal fish,NA,Psychrolutidae
+58,Shelf demersal fish,NA,Psychrolutes sp.
+58,Shelf demersal fish,tadpole sculpin,Psychrolutes paradoxus
+58,Shelf demersal fish,blob sculpin,Psychrolutes phrictus
+58,Shelf demersal fish,crested sculpin,Blepsias bilobus
+58,Shelf demersal fish,silverspotted sculpin,Blepsias cirrhosus
+58,Shelf demersal fish,NA,Nautichthys sp.
+58,Shelf demersal fish,eyeshade sculpin,Nautichthys pribilovius
+58,Shelf demersal fish,sailfin sculpin,Nautichthys oculofasciatus
+58,Shelf demersal fish,shortmast sculpin,Nautichthys robustus
+58,Shelf demersal fish,grunt sculpin,Rhamphocottus richardsonii
+58,Shelf demersal fish,smoothcheek sculpin,Eurymen gyrinus
+58,Shelf demersal fish,scalybreasted sculpin,Triglops xenostethus
+58,Shelf demersal fish,Puget Sound sculpin,Ruscarius meanyi
+58,Shelf demersal fish,dusky sculpin,Icelinus burchami
+58,Shelf demersal fish,thorny sculpin,Icelus spiniger
+58,Shelf demersal fish,blacknose sculpin,Icelus canaliculatus
+58,Shelf demersal fish,wide-eye sculpin,Icelus euryops
+58,Shelf demersal fish,spatulate sculpin,Icelus spatula
+58,Shelf demersal fish,uncinate sculpin,Icelus uncinalis
+58,Shelf demersal fish,roughskin sculpin,Rastrinus scutiger
+58,Shelf demersal fish,longfin sculpin,Jordania zonope
+58,Shelf demersal fish,NA,Icelus sp.
+58,Shelf demersal fish,thornback sculpin,Paricelinus hopliticus
+58,Shelf demersal fish,cod,Gadidae
+58,Shelf demersal fish,Pacific tomcod,Microgadus proximus
+58,Shelf demersal fish,Pacific flatnose,Antimora microlepis
+58,Shelf demersal fish,saffron cod,Eleginus gracilis
+58,Shelf demersal fish,greenling,Hexagrammidae
+58,Shelf demersal fish,NA,Hexagrammos sp.
+58,Shelf demersal fish,masked greenling,Hexagrammos octogrammus
+58,Shelf demersal fish,whitespotted greenling,Hexagrammos stelleri
+58,Shelf demersal fish,rock greenling,Hexagrammos lagocephalus
+58,Shelf demersal fish,kelp greenling,Hexagrammos decagrammus
+58,Shelf demersal fish,longspine combfish,Zaniolepis latipinnis
+58,Shelf demersal fish,shortspine combfish,Zaniolepis frenata
+58,Shelf demersal fish,lumpsucker,Cyclopteridae
+58,Shelf demersal fish,NA,Lethotremus sp.
+58,Shelf demersal fish,smooth lumpsucker,Aptocyclus ventricosus
+58,Shelf demersal fish,docked snailfish,Lethotremus muticus
+58,Shelf demersal fish,round lumpsucker,Eumicrotremus asperrimus
+58,Shelf demersal fish,Pacific spiny lumpsucker,Eumicrotremus orbis
+58,Shelf demersal fish,leatherfin lumpsucker,Eumicrotremus derjugini
+58,Shelf demersal fish,Alaskan lumpsucker,Eumicrotremus gyrinops
+58,Shelf demersal fish,pimpled lumpsucker,Eumicrotremus andriashevi
+58,Shelf demersal fish,spiny lumpsuckers,Eumicrotremus sp.
+58,Shelf demersal fish,papillose lumpsucker,Eumicrotremus barbatus
+58,Shelf demersal fish,toad lumpsucker,Eumicrotremus phrynoides
+58,Shelf demersal fish,snailfish,Liparidae
+58,Shelf demersal fish,NA,Liparis sp.
+58,Shelf demersal fish,slipskin snailfish,Liparis fucensis
+58,Shelf demersal fish,Bristol snailfish,Liparis bristolensis
+58,Shelf demersal fish,marbled snailfish,Liparis dennyi
+58,Shelf demersal fish,variegated snailfish,Liparis gibbus
+58,Shelf demersal fish,blotched snailfish,Crystallichthys cyclospilus
+58,Shelf demersal fish,bighead snailfish,Liparis megacephalus
+58,Shelf demersal fish,showy snailfish,Liparis pulchellus
+58,Shelf demersal fish,spotted snailfish,Liparis callyodon
+58,Shelf demersal fish,Okhotsk snailfish,Liparis ochotensis
+58,Shelf demersal fish,ribbon snailfish,Liparis cyclopus
+58,Shelf demersal fish,gelatinous seasnail,Liparis fabricii
+58,Shelf demersal fish,ringtail snailfish,Liparis rutteri
+58,Shelf demersal fish,NA,Elassodiscus sp.
+58,Shelf demersal fish,humpback snailfish,Elassodiscus caudatus
+58,Shelf demersal fish,blacklip snailfish,Elassodiscus tremebundus
+58,Shelf demersal fish,cherry snailfish,Allocareproctus jordani
+58,Shelf demersal fish,peach snailfish,Allocareproctus tanix
+58,Shelf demersal fish,NA,Careproctus sp.
+58,Shelf demersal fish,blacktail snailfish,Careproctus melanurus
+58,Shelf demersal fish,Kuril snailfish,Careproctus curilanus
+58,Shelf demersal fish,Bowers Bank snailfish,Careproctus bowersianus
+58,Shelf demersal fish,proboscis snailfish,Careproctus simus
+58,Shelf demersal fish,shovelhead snailfish,Careproctus ectenes
+58,Shelf demersal fish,gray snailfish,Careproctus canus
+58,Shelf demersal fish,monster snailfish,Careproctus phasma
+58,Shelf demersal fish,saddleback snailfish,Careproctus nelsoni
+58,Shelf demersal fish,blackfin snailfish,Careproctus cypselurus
+58,Shelf demersal fish,emarginate snailfish,Careproctus furcellus
+58,Shelf demersal fish,short snailfish,Careproctus abbreviatus
+58,Shelf demersal fish,broadfin snailfish,Paraliparis ulochir
+58,Shelf demersal fish,peachskin snailfish,Careproctus scottae
+58,Shelf demersal fish,smalldisk snailfish,Careproctus gilberti
+58,Shelf demersal fish,dominator snailfish,Careproctus sp. cf. gilberti (Orr)
+58,Shelf demersal fish,Alaska snailfish,Careproctus colletti
+58,Shelf demersal fish,salmon snailfish,Careproctus rastrinus
+58,Shelf demersal fish,abyssal snailfish,Careproctus ovigerus
+58,Shelf demersal fish,kelp snailfish,Liparis tunicatus
+58,Shelf demersal fish,paintbrush snailfish,Careproctus zachirus
+58,Shelf demersal fish,bigeye snailfish,Temnocora candida
+58,Shelf demersal fish,red snailfish,Paraliparis dactylosus
+58,Shelf demersal fish,rosy snailfish,Paraliparis rosaceus
+58,Shelf demersal fish,prickly snailfish,Paraliparis deani
+58,Shelf demersal fish,swellhead snailfish,Paraliparis cephalus
+58,Shelf demersal fish,tomato snailfish,Careproctus lycopersicus
+58,Shelf demersal fish,comic snailfish,Careproctus comus
+58,Shelf demersal fish,Oregon snailfish,Careproctus oregonensis
+58,Shelf demersal fish,smallmouth snailfish,Careproctus microstomus
+58,Shelf demersal fish,pectoral snailfish,Paraliparis pectoralis
+58,Shelf demersal fish,NA,Paraliparis sp.
+58,Shelf demersal fish,microdisk snailfish,Careproctus ostentum
+58,Shelf demersal fish,toothless snailfish,Paraliparis paucidens
+58,Shelf demersal fish,pygmy snailfish,Lipariscus nanus
+58,Shelf demersal fish,nebulous snailfish,Liparis bathyarcticus
+58,Shelf demersal fish,tadpole snailfish,Nectoliparis pelagicus
+58,Shelf demersal fish,wry snailfish,Careproctus staufferi
+58,Shelf demersal fish,smallpore snailfish,Gyrinichthys minytremus
+58,Shelf demersal fish,dusty snailfish,Careproctus lerikimae
+58,Shelf demersal fish,two-tone snailfish,Careproctus sp. F
+58,Shelf demersal fish,NA,Rhinoliparis sp.
+58,Shelf demersal fish,longnose snailfish,Rhinoliparis barbulifer
+58,Shelf demersal fish,slim snailfish,Rhinoliparis attenuatus
+58,Shelf demersal fish,wrinkle-jaw snailfish,Prognatholiparis ptychomandibularis
+58,Shelf demersal fish,hardhead snailfish,Lopholiparis flerxi
+58,Shelf demersal fish,festive snailfish,Liparis marmoratus
+58,Shelf demersal fish,teardrop snailfish,Careproctus sp. J (Orr)
+58,Shelf demersal fish,racoon snailfish,Elassodiscus nyctereutes
+58,Shelf demersal fish,pimpled snailfish,Careproctus sp. A2 (Orr)
+58,Shelf demersal fish,Katherine snailfish,Careproctus sp. A1 (Orr)
+58,Shelf demersal fish,NA,Allocareproctus sp.
+58,Shelf demersal fish,spiny snailfish,Acantholiparis opercularis
+58,Shelf demersal fish,combed snailfish,Allocareproctus kallaion
+58,Shelf demersal fish,whiskered snailfish,Allocareproctus ungak
+58,Shelf demersal fish,goldeneye snailfish,Allocareproctus unangas
+58,Shelf demersal fish,mischievous snailfish,Careproctus faunus
+58,Shelf demersal fish,bluntnose snailfish,Paraliparis sp. cf. dactylosus (Orr and Baldwin)
+58,Shelf demersal fish,NA,Paraliparis sp. cf. ulochir (Orr and Baldwin)
+58,Shelf demersal fish,surly snailfish,Paraliparis sp. cf. grandis (Orr and Baldwin)
+58,Shelf demersal fish,brown snailfish,Paraliparis adustus
+58,Shelf demersal fish,bubblehead snailfish,Paraliparis bullacephalus
+58,Shelf demersal fish,grand snailfish,Paraliparis grandis
+58,Shelf demersal fish,rusty snailfish,Paraliparis sp. cf. pectoralis (Orr and Baldwin)
+58,Shelf demersal fish,comet snailfish,Paraliparis penicillus
+58,Shelf demersal fish,ebony snailfish,Paraliparis holomelas
+58,Shelf demersal fish,white snailfish,Paraliparis albeolus
+58,Shelf demersal fish,NA,Paraliparis mento
+58,Shelf demersal fish,blackmouth snailfish,Paraliparis melanobranchus
+58,Shelf demersal fish,NA,Elassodiscus obscurus
+58,Shelf demersal fish,hardhead snailfishes,Lopholiparis sp.
+58,Shelf demersal fish,scorched snailfish,Careproctus ambustus
+58,Shelf demersal fish,NA,Careproctus sp. M (Orr)
+58,Shelf demersal fish,boisterous snailfish,Careproctus bromius
+58,Shelf demersal fish,giant wrymouth,Cryptacanthodes giganteus
+58,Shelf demersal fish,prowfish,Zaprora silenus
+58,Shelf demersal fish,quillfish,Ptilichthys goodei
+59,Slope demersal fish,grenadier,Macrouridae
+59,Slope demersal fish,NA,Coryphaenoides sp.
+59,Slope demersal fish,Pacific grenadier,Coryphaenoides acrolepis
+59,Slope demersal fish,giant grenadier,Albatrossia pectoralis
+59,Slope demersal fish,popeye grenadier,Coryphaenoides cinereus
+59,Slope demersal fish,filamented grenadier,Coryphaenoides filifer
+59,Slope demersal fish,eelpout,Zoarcidae
+59,Slope demersal fish,NA,Bothrocara sp. cf. brunneum group
+59,Slope demersal fish,twoline eelpout,Bothrocara brunneum
+59,Slope demersal fish,Alaska eelpout,Bothrocara pusillum
+59,Slope demersal fish,western eelpout,Bothrocara zestum
+59,Slope demersal fish,shadow eelpout,Bothrocara nyx
+59,Slope demersal fish,Japan-sea eelpout,Bothrocara hollandi
+59,Slope demersal fish,twoline eelpout (juvenile),Bothrocara brunneum (juvenile)
+59,Slope demersal fish,soft eelpout,Bothrocara molle
+59,Slope demersal fish,snakehead eelpout,Lycenchelys crotalinus
+59,Slope demersal fish,bigfin eelpout,Lycodes cortezianus
+59,Slope demersal fish,NA,Lycenchelys sp.
+59,Slope demersal fish,shortjaw eelpout,Lycenchelys jordani
+59,Slope demersal fish,Kamchatka eelpout,Lycenchelys camchatica
+59,Slope demersal fish,NA,Lycenchelys ratmanovi
+59,Slope demersal fish,deepwater eelpout,Lycodapus endemoscotus
+59,Slope demersal fish,blackmouth eelpout,Lycodapus fierasfer
+59,Slope demersal fish,looseskin eelpout,Lycodapus dermatinus
+59,Slope demersal fish,specklemouth eelpout,Lycodapus psarostomatus
+59,Slope demersal fish,stout eelpout,Lycodapus pachysoma
+59,Slope demersal fish,pallid eelpout,Lycodapus mandibularis
+59,Slope demersal fish,NA,Lycodes sp.
+59,Slope demersal fish,threespot eelpout,Lycodes rossi
+59,Slope demersal fish,dipline eelpout,Lycodes soldatovi
+59,Slope demersal fish,bicolor eelpout,Lycodes akuugun
+59,Slope demersal fish,marbled eelpout,Lycodes raridens
+59,Slope demersal fish,wattled eelpout,Lycodes palearis
+59,Slope demersal fish,saddled eelpout,Lycodes mucosus
+59,Slope demersal fish,ebony eelpout,Lycodes concolor
+59,Slope demersal fish,Canadian eelpout,Lycodes polaris
+59,Slope demersal fish,polar eelpout,Lycodes turneri
+59,Slope demersal fish,black eelpout,Lycodes diapterus
+59,Slope demersal fish,shortfin eelpout,Lycodes brevipes
+59,Slope demersal fish,fish doctor,Gymnelus viridis
+59,Slope demersal fish,NA,Gymnelus sp.
+59,Slope demersal fish,halfbarred eelpout,Gymnelus hemifasciatus
+59,Slope demersal fish,Bering eelpout,Lycodes beringi
+59,Slope demersal fish,longear eelpout,Lycodes seminudus
+59,Slope demersal fish,Arctic eelpout,Lycodes reticulatus
+59,Slope demersal fish,blackbelly eelpout,Lycodes pacificus
+59,Slope demersal fish,NA,Bothrocara sp.
+59,Slope demersal fish,scalynape eelpout,Pachycara lepinium
+59,Slope demersal fish,NA,Lycodapus sp.
+59,Slope demersal fish,variform eelpout,Lycodapus poecilus
+59,Slope demersal fish,smallhead eelpout,Lycodapus parviceps
+59,Slope demersal fish,bigtooth eelpout,Lycodapus grossidens
+59,Slope demersal fish,slender eelpout,Lycodapus leptus
+59,Slope demersal fish,bearded eelpout,Lycodema barbatum
+59,Slope demersal fish,midwater eelpout,Melanostigma pammelas
+59,Slope demersal fish,coral eelpout,Puzanovia rubra
+59,Slope demersal fish,thinskin eelpout,Nalbantichthys elongatus
+60,Miscellaneous deep-sea fish,slickhead,Alepocephalidae
+60,Miscellaneous deep-sea fish,caerulean slickhead,Asquamiceps caeruleus
+60,Miscellaneous deep-sea fish,NA,Alepocephalus sp.
+60,Miscellaneous deep-sea fish,California slickhead,Alepocephalus tenebrosus
+60,Miscellaneous deep-sea fish,sharpchin slickhead,Bajacalifornia burragei
+60,Miscellaneous deep-sea fish,NA,Bajacalifornia megalops
+60,Miscellaneous deep-sea fish,softskin slickhead,Rouleina attrita
+60,Miscellaneous deep-sea fish,threadfin slickhead,Talismania bifurcata
+60,Miscellaneous deep-sea fish,NA,Maulisia sp.
+60,Miscellaneous deep-sea fish,NA,Maulisia mauli
+60,Miscellaneous deep-sea fish,pitted tubeshoulder,Maulisia argipalla
+60,Miscellaneous deep-sea fish,seadevils,Ceratiidae
+60,Miscellaneous deep-sea fish,viperfish,Chauliodontinae
+60,Miscellaneous deep-sea fish,Pacific viperfish,Chauliodus macouni
+60,Miscellaneous deep-sea fish,hatchetfish,Sternoptychidae
+60,Miscellaneous deep-sea fish,NA,Argyropelecus sp.
+60,Miscellaneous deep-sea fish,ragfish,Icosteus aenigmaticus
+60,Miscellaneous deep-sea fish,oxeye oreo,Allocyttus folletti
+60,Miscellaneous deep-sea fish,scaleless dragonfish,Melanostomiinae
+60,Miscellaneous deep-sea fish,longfin dragonfish,Tactostoma macropus
+60,Miscellaneous deep-sea fish,manefish,Caristius macropus
+60,Miscellaneous deep-sea fish,North Pacific daggertooth,Anotopterus nikparini
+60,Miscellaneous deep-sea fish,snipe eel,Nemichthyidae
+60,Miscellaneous deep-sea fish,slender snipe eel,Nemichthys scolopaceus
+60,Miscellaneous deep-sea fish,NA,Avocettina sp.
+60,Miscellaneous deep-sea fish,blackline snipe eel,Avocettina infans
+60,Miscellaneous deep-sea fish,pale snipe eel,Nemichthys larseni
+60,Miscellaneous deep-sea fish,sawtooth eel,Serrivomer sector
+60,Miscellaneous deep-sea fish,NA,Linophrynidae
+60,Miscellaneous deep-sea fish,spiny eel,Notacanthidae
+60,Miscellaneous deep-sea fish,NA,Polyacanthonotus challengeri
+60,Miscellaneous deep-sea fish,snubnosed spiny eel,Notacanthus chemnitzii
+60,Miscellaneous deep-sea fish,dreamer,Oneirodidae
+60,Miscellaneous deep-sea fish,NA,Bertella idiomorpha
+60,Miscellaneous deep-sea fish,NA,Oneirodes sp.
+60,Miscellaneous deep-sea fish,spiny dreamer,Oneirodes acanthias
+60,Miscellaneous deep-sea fish,hairy-lure dreamer,Oneirodes bulbosus
+60,Miscellaneous deep-sea fish,NA,Oneirodes thompsoni
+60,Miscellaneous deep-sea fish,NA,Chaenophryne longiceps
+60,Miscellaneous deep-sea fish,NA,Chaenophryne melanorhabdus
+60,Miscellaneous deep-sea fish,smooth dreamer,Chaenophryne draco
+60,Miscellaneous deep-sea fish,whipnose,Gigantactis vanhoeffeni
+60,Miscellaneous deep-sea fish,NA,Gigantactis microdontis
+60,Miscellaneous deep-sea fish,fanfin angler,Caulophryne jordani
+60,Miscellaneous deep-sea fish,NA,Caulophryne pelagica
+60,Miscellaneous deep-sea fish,barracudina,Paralepididae
+60,Miscellaneous deep-sea fish,duckbill barracudina,Magnisudis atlantica
+60,Miscellaneous deep-sea fish,slender barracudina,Lestidiops ringens
+60,Miscellaneous deep-sea fish,ribbon barracudina,Arctozenus risso
+60,Miscellaneous deep-sea fish,NA,Benthalbella sp.
+60,Miscellaneous deep-sea fish,northern pearleye,Benthalbella dentata
+60,Miscellaneous deep-sea fish,scaly paperbone,Scopelosaurus harryi
+60,Miscellaneous deep-sea fish,Adler waryfish,Scopelosaurus adleri
+60,Miscellaneous deep-sea fish,longnose lancetfish,Alepisaurus ferox
+60,Miscellaneous deep-sea fish,shining tubeshoulder,Sagamichthys abei
+60,Miscellaneous deep-sea fish,king-of-the-salmon,Trachipterus altivelis
+60,Miscellaneous deep-sea fish,Pacific black scabbardfish,Aphanopus arigato
+60,Miscellaneous deep-sea fish,spookfish,Opisthoproctidae
+60,Miscellaneous deep-sea fish,barreleye,Macropinna microstoma
+60,Miscellaneous deep-sea fish,loosejaw,Malacosteinae
+60,Miscellaneous deep-sea fish,shining loosejaw,Aristostomias scintillans
+60,Miscellaneous deep-sea fish,Sherborn cardinalfish,Howella sherborni
+61,Squid,cephalopod,Cephalopoda
+61,Squid,squid,Decapodiformes
+61,Squid,rhomboid squid,Taningia danae
+61,Squid,eastern Pacific bobtail,Rossia pacifica
+61,Squid,NA,Rossia pacifica eggs
+61,Squid,California market squid,Doryteuthis opalescens
+61,Squid,NA,Gonatidae
+61,Squid,NA,Gonatus sp.
+61,Squid,clawed armhook squid,Gonatus onyx
+61,Squid,Berry armhook squid,Gonatus berryi
+61,Squid,fiery armhook squid,Gonatus pyros
+61,Squid,California armhook squid,Gonatus californiensis
+61,Squid,NA,Gonatus madokai
+61,Squid,NA,Gonatus kamtschaticus
+61,Squid,NA,Eogonatus tinro
+61,Squid,NA,Gonatus middendorffi
+61,Squid,magistrate armhook squid,Berryteuthis magister
+61,Squid,NA,Berryteuthis anonychus
+61,Squid,NA,Gonatopsis sp.
+61,Squid,boreopacific armhook squid,Gonatopsis borealis
+61,Squid,NA,Gonatopsis sp. cf. japonica (Kubodera and Okutani)
+61,Squid,makko armhook squid,Gonatopsis makko
+61,Squid,NA,Gonatopsis sp. A (Jorgensen)
+61,Squid,NA,Ommastrephidae
+61,Squid,red flying squid,Ommastrephes bartrami
+61,Squid,Humboldt squid,Dosidicus gigas
+61,Squid,robust clubhook squid,Moroteuthis robusta
+61,Squid,NA,Onychoteuthidae
+61,Squid,common clubhook squid,Onychoteuthis banksii
+61,Squid,boreal clubhook squid,Onychoteuthis borealijaponicus
+61,Squid,NA,Galiteuthis phyllura
+61,Squid,NA,Abraliopsis sp.
+61,Squid,NA,Abraliopsis felis
+61,Squid,NA,Chiroteuthis sp.
+61,Squid,NA,Chiroteuthis calyx
+61,Squid,sandpaper squid,Cranchia scabra
+61,Squid,NA,Cranchiidae
+61,Squid,NA,Taoniinae
+61,Squid,NA,Taonius pavo
+61,Squid,NA,Belonella borealis
+61,Squid,NA,Octopoteuthis deletron
+61,Squid,jewel squids,Histioteuthis sp.
+61,Squid,NA,Histioteuthis heteropsis
+61,Squid,NA,Histioteuthis dofleini
+61,Squid,NA,Histioteuthis hoylei
+61,Squid,NA,Stigmatoteuthis dofleini
+62,Octopus,octopus,Octopodidae
+62,Octopus,pelagic octopus,NA
+62,Octopus,smoothskin octopus,Benthoctopus leioderma
+62,Octopus,NA,Benthoctopus sibiricus
+62,Octopus,NA,Muusoctopus sp.
+62,Octopus,NA,Octopus sp.
+62,Octopus,yellowring octopus,Japetella heathi
+62,Octopus,NA,Japetella diaphana
+62,Octopus,NA,Japetella sp.
+62,Octopus,flapjack devilfish,Opisthoteuthis californiana
+62,Octopus,NA,Grimpoteuthis albatrossi
+62,Octopus,North Pacific bigeye octopus,Octopus californicus
+62,Octopus,NA,Bolitaenidae
+62,Octopus,NA,Opisthoteuthis sp. cf. californiana (Jorgensen)
+62,Octopus,NA,Graneledone boreopacifica
+62,Octopus,NA,Graneledone sp. cf. boreopacifica (Nesis)
+62,Octopus,giant octopus,Enteroctopus dofleini
+62,Octopus,NA,Octopus rubescens
+62,Octopus,NA,Benthoctopus sp.
+62,Octopus,pygmy benthoctopus,Sasakiopus salebrosus
+62,Octopus,NA,Benthoctopus oregonensis
+62,Octopus,vampire squid,Vampyroteuthis infernalis
+63,Tanner crab,grooved Tanner crab,Chionoecetes tanneri
+63,Tanner crab,Tanner crab,Chionoecetes bairdi
+63,Tanner crab,triangle Tanner crab,Chionoecetes angulatus
+63,Tanner crab,Japanese Tanner crab,Chionoecetes japonicus
+64,King crab,NA,Lithodes sp.
+64,King crab,scarlet king crab,Lithodes couesi
+64,King crab,golden king crab,Lithodes aequispinus
+64,King crab,Hanasaki king crab,Paralithodes brevipes
+64,King crab,NA,Paralithodes sp.
+64,King crab,red king crab,Paralithodes camtschaticus
+64,King crab,blue king crab,Paralithodes platypus
+64,King crab,California king crab,Paralithodes californiensis
+65,Pandalid shrimp,pandalid shrimp ,Pandalidae
+65,Pandalid shrimp,NA,Pandalus sp.
+65,Pandalid shrimp,dock shrimp,Pandalus danae
+65,Pandalid shrimp,ocean shrimp,Pandalus jordani
+65,Pandalid shrimp,Alaskan pink shrimp,Pandalus eous
+65,Pandalid shrimp,Aleutian coastal shrimp,Heptacarpus maxillipes
+65,Pandalid shrimp,yellowleg pandalid,Pandalus tridens
+65,Pandalid shrimp,NA,Pandalus sp. cf. tridens (CAS)
+65,Pandalid shrimp,spot shrimp,Pandalus platyceros
+65,Pandalid shrimp,humpy shrimp,Pandalus goniurus
+65,Pandalid shrimp,coonstripe shrimp,Pandalus hypsinotus
+65,Pandalid shrimp,roughpatch shrimp,Pandalus stenolepis
+65,Pandalid shrimp,NA,Pandalopsis sp.
+65,Pandalid shrimp,Aleutian bigeye,Pandalopsis aleutica
+65,Pandalid shrimp,northern longbeak,Pandalopsis longirostris
+65,Pandalid shrimp,NA,Pandalopsis sp. cf. lamelligera
+65,Pandalid shrimp,sidestripe shrimp,Pandalopsis dispar
+65,Pandalid shrimp,stripeleg pandalid,Pandalopsis ampla
+66,Nonpandalid shrimp,shrimp,NA
+66,Nonpandalid shrimp,skeleton shrimps,Caprella sp.
+66,Nonpandalid shrimp,sergestid shrimp,Sergestidae
+66,Nonpandalid shrimp,NA,Sergestes sp.
+66,Nonpandalid shrimp,Pacific sergestid,Eusergestes similis
+66,Nonpandalid shrimp,penaeid shrimp,Penaeidae
+66,Nonpandalid shrimp,caridid shrimp,Caridea
+66,Nonpandalid shrimp,hippolytid shrimp,Hippolytidae
+66,Nonpandalid shrimp,Dana blade shrimp,Spirontocaris lamellicornis
+66,Nonpandalid shrimp,NA,Eualus sp.
+66,Nonpandalid shrimp,barbed eualid,Eualus barbatus
+66,Nonpandalid shrimp,Townsend eualid,Eualus townsendi
+66,Nonpandalid shrimp,circumpolar eualid,Eualus gaimardii
+66,Nonpandalid shrimp,Greenland shrimp,Eualus macilentus
+66,Nonpandalid shrimp,bigeye eualid,Eualus macrophthalmus
+66,Nonpandalid shrimp,deepsea eualid,Eualus biunguis
+66,Nonpandalid shrimp,shortscale eualid,Eualus suckleyi
+66,Nonpandalid shrimp,NA,Lebbeus sp.
+66,Nonpandalid shrimp,spiny lebbeid,Lebbeus groenlandicus
+66,Nonpandalid shrimp,NA,Lebbeus polaris
+66,Nonpandalid shrimp,crangonid shrimp,Crangonidae
+66,Nonpandalid shrimp,NA,Crangon sp.
+66,Nonpandalid shrimp,abyssal Crangon,Crangon abyssorum
+66,Nonpandalid shrimp,shell shrimp,Crangon alaskensis
+66,Nonpandalid shrimp,twospine Crangon,Crangon communis
+66,Nonpandalid shrimp,California bay shrimp,Crangon franciscorum
+66,Nonpandalid shrimp,ridged Crangon,Crangon dalli
+66,Nonpandalid shrimp,NA,Metacrangon sp.
+66,Nonpandalid shrimp,deepsea spinyhead,Metacrangon variabilis
+66,Nonpandalid shrimp,sevenspine bay shrimp,Crangon septemspinosa
+66,Nonpandalid shrimp,NA,Argis sp.
+66,Nonpandalid shrimp,common argid,Argis alaskensis
+66,Nonpandalid shrimp,Arctic argid,Argis dentata
+66,Nonpandalid shrimp,sculptured shrimp,Sclerocrangon boreas
+66,Nonpandalid shrimp,spiked shrimp,Rhynocrangon sharpi
+66,Nonpandalid shrimp,kuro argid,Argis lar
+66,Nonpandalid shrimp,rough argid,Argis crassa
+66,Nonpandalid shrimp,Nelson argid,Argis levior
+66,Nonpandalid shrimp,split-eye argid,Argis ovifer
+66,Nonpandalid shrimp,horned shrimp,Paracrangon echinata
+66,Nonpandalid shrimp,NA,Argis sp. cf. ovifer (CAS)
+66,Nonpandalid shrimp,pasiphaeid shrimp,Pasiphaeidae
+66,Nonpandalid shrimp,Pacific glass shrimp,Pasiphaea pacifica
+66,Nonpandalid shrimp,crimson pasiphaeid,Pasiphaea tarda
+66,Nonpandalid shrimp,spinyridge shrimp,Notostomus japonicus
+66,Nonpandalid shrimp,Pacific ambereye,Hymenodora frontalis
+67,Motile epifauna,Murdoch blade shrimp,Spirontocaris murdochi
+67,Motile epifauna,NA,Spirontocaris sp.
+67,Motile epifauna,Rathbun blade shrimp,Spirontocaris arcuata
+67,Motile epifauna,deep-bladed shrimp,Spirontocaris prionota
+67,Motile epifauna,punctate blade shrimp,Spirontocaris phippsii
+67,Motile epifauna,NA,Spirontocaris snyderi
+67,Motile epifauna,parrot shrimp,Spirontocaris spinus
+67,Motile epifauna,NA,Spirontocaris sp. cf. lamellicornis
+67,Motile epifauna,oval blade shrimp,Spirontocaris ochotensis
+67,Motile epifauna,NA,Spirontocaris intermedia
+67,Motile epifauna,beaked eualid,Eualus avinus
+67,Motile epifauna,Arctic eualid,Eualus fabricii
+67,Motile epifauna,sponge eualid,Eualus butleri
+67,Motile epifauna,doll eualid,Eualus pusiolus
+67,Motile epifauna,NA,Eualus stoneyi
+67,Motile epifauna,slender bladed shrimp,Spirontocaris holmesi
+67,Motile epifauna,candy stripe shrimp,Lebbeus grandimanus
+67,Motile epifauna,false candy-stripe shrimp,Lebbeus acudactylus
+67,Motile epifauna,cleaner lebbeid,Lebbeus mundus
+67,Motile epifauna,slope lebbeid,Lebbeus washingtonianus
+67,Motile epifauna,NA,Heptacarpus sp.
+67,Motile epifauna,slenderbeak coastal shrimp,Heptacarpus flexus
+67,Motile epifauna,Alaska coastal shrimp,Heptacarpus moseri
+67,Motile epifauna,stiletto coastal shrimp,Heptacarpus stylus
+67,Motile epifauna,slender coastal shrimp,Heptacarpus tenuissimus
+67,Motile epifauna,northern coastal shrimp,Heptacarpus camtschaticus
+67,Motile epifauna,stout Crangon,Crangon alba
+67,Motile epifauna,NA,Crangon sp. cf. communis
+67,Motile epifauna,NA,Crangon resima
+67,Motile epifauna,coastal spinyhead,Metacrangon munita
+67,Motile epifauna,northern spinyhead,Mesocrangon intermedia
+67,Motile epifauna,smooth Crangon,Lissocrangon stylirostris
+67,Motile epifauna,blacktail bay shrimp,Crangon nigricauda
+67,Motile epifauna,NA,Sclerocrangon sp.
+67,Motile epifauna,saddleback shrimp,Rhynocrangon alata
+67,Motile epifauna,NA,Sabinea septemcarinata
+67,Motile epifauna,NA,Rhynocrangon sp.
+67,Motile epifauna,NA,Argis sp. cf. crassa (CAS)
+67,Motile epifauna,NA,Paracrangon sp.
+67,Motile epifauna,grooved-back shrimp,Parapasiphae sulcatifrons
+67,Motile epifauna,oplophorid shrimps,Oplophoridae
+67,Motile epifauna,NA,Notostomus sp.
+67,Motile epifauna,NA,Hymenodora sp.
+67,Motile epifauna,NA,Bentheogennema borealis
+67,Motile epifauna,NA,Acanthephyra sp.
+67,Motile epifauna,peaked shrimp,Acanthephyra curtirostris
+67,Motile epifauna,Quale spinytail,Systellaspis braueri
+67,Motile epifauna,crab,NA
+67,Motile epifauna,cancer crab,Cancer sp.
+67,Motile epifauna,furrowed rock crab,Romaleon branneri
+67,Motile epifauna,yellow cancer crab,Cancer anthonyi
+67,Motile epifauna,Dungeness crab,Metacarcinus magister
+67,Motile epifauna,Oregon rock crab,Glebocarcinus oregonensis
+67,Motile epifauna,green crab,Carcinus maenas
+67,Motile epifauna,red rock crab,Cancer productus
+67,Motile epifauna,graceful rock crab,Metacarcinus gracilis
+67,Motile epifauna,NA,Xanthidae
+67,Motile epifauna,pea crab,Pinnixa occidentalis
+67,Motile epifauna,NA,Mursia gaudichaudii
+67,Motile epifauna,spider crabs,Majidae
+67,Motile epifauna,NA,Oregonia sp.
+67,Motile epifauna,split-nose decorator crab,Oregonia bifurca
+67,Motile epifauna,graceful decorator crab,Oregonia gracilis
+67,Motile epifauna,giant spider crab,Macroregonia macrochira
+67,Motile epifauna,spider crab,Loxorhynchus crispatus
+67,Motile epifauna,longhorned decorator crab,Chorilia longipes
+67,Motile epifauna,NA,Chorilia sp.
+67,Motile epifauna,circumboreal toad crab,Hyas coarctatus
+67,Motile epifauna,Pacific lyre crab,Hyas lyratus
+67,Motile epifauna,snow crab,Chionoecetes opilio
+67,Motile epifauna,hybrid Tanner crab,Chionoecetes hybrid
+67,Motile epifauna,helmet crab,Telmessus cheiragonus
+67,Motile epifauna,NA,Anomura
+67,Motile epifauna,hermit crab,Paguridae
+67,Motile epifauna,NA,Discorsopagurus schmitti
+67,Motile epifauna,NA,Paguristes turgidus
+67,Motile epifauna,NA,Pagurus sp.
+67,Motile epifauna,blackeyed hermit,Pagurus armatus
+67,Motile epifauna,sponge hermit,Pagurus brandti
+67,Motile epifauna,Townsend hermit crab,Pagurus townsendi
+67,Motile epifauna,Aleutian hermit,Pagurus aleuticus
+67,Motile epifauna,splendid hermit,Labidochirus splendescens
+67,Motile epifauna,knobbyhand hermit,Pagurus confragosus
+67,Motile epifauna,greenmark hermit,Pagurus caurinus
+67,Motile epifauna,grainyhand hermit,Pagurus granosimanus
+67,Motile epifauna,maroon hermit,Pagurus hemphilli
+67,Motile epifauna,true hairy hermit,Pagurus hirsutiusculus
+67,Motile epifauna,bluehand hermit,Pagurus samuelis
+67,Motile epifauna,hornyhand hermit,Pagurus cornutus
+67,Motile epifauna,whiteknee hermit,Pagurus dalli
+67,Motile epifauna,bluespine hermit,Pagurus kennerlyi
+67,Motile epifauna,fuzzy hermit crab,Pagurus trigonocheirus
+67,Motile epifauna,Bering hermit,Pagurus beringanus
+67,Motile epifauna,Alaskan hermit,Pagurus ochotensis
+67,Motile epifauna,NA,Pagurus quaylei
+67,Motile epifauna,longfinger hermit,Pagurus rathbuni
+67,Motile epifauna,Stevens hermit crab,Pagurus stevensae
+67,Motile epifauna,setose hermit,Pagurus setosus
+67,Motile epifauna,Priblof hermit,Pagurus undosus
+67,Motile epifauna,longhand hermit,Pagurus tanneri
+67,Motile epifauna,widehand hermit crab,Elassochirus tenuimanus
+67,Motile epifauna,hairy hermit crab,Pagurus capillatus
+67,Motile epifauna,purple hermit,Elassochirus cavimanus
+67,Motile epifauna,Pacific red hermit,Elassochirus gilli
+67,Motile epifauna,NA,Elassochirus sp.
+67,Motile epifauna,NA,Parapagurus sp.
+67,Motile epifauna,NA,Parapagurus pliosimanus
+67,Motile epifauna,stone crab,Lithodidae
+67,Motile epifauna,box crab,Lopholithodes sp.
+67,Motile epifauna,brown box crab,Lopholithodes foraminatus
+67,Motile epifauna,red box crab,Lopholithodes mandtii
+67,Motile epifauna,NA,Acantholithodes sp.
+67,Motile epifauna,fuzzy crab,Acantholithodes hispidus
+67,Motile epifauna,wrinkled crab,Dermaturus mandtii
+67,Motile epifauna,NA,Hapalogaster mertensii
+67,Motile epifauna,NA,Hapalogaster sp.
+67,Motile epifauna,soft crab,Hapalogaster grebnitzkii
+67,Motile epifauna,rhinoceros crab,Rhinolithodes wosnessenskii
+67,Motile epifauna,flatspine triangle crab,Phyllolithodes papillosus
+67,Motile epifauna,NA,Phyllolithodes sp.
+67,Motile epifauna,NA,Paralithodes rathbuni
+67,Motile epifauna,umbrella crab,Cryptolithodes sitchensis
+67,Motile epifauna,butterfly crab,Cryptolithodes typicus
+67,Motile epifauna,NA,Cryptolithodes sp.
+67,Motile epifauna,NA,Paralomis sp.
+67,Motile epifauna,NA,Paralomis verrilli
+67,Motile epifauna,spiny spider crab,Paralomis sp. A (Clark 2006)
+67,Motile epifauna,short spine spider crab,Paralomis sp. B (Clark 2006)
+67,Motile epifauna,NA,Paralomis manningi
+67,Motile epifauna,many spine spider crab,Paralomis multispina
+67,Motile epifauna,scaled crab,Placetron wosnessenskii
+67,Motile epifauna,NA,Neolithodes diomedeae
+67,Motile epifauna,horsehair crab,Erimacrus isenbeckii
+67,Motile epifauna,NA,Erimacrus sp.
+67,Motile epifauna,NA,Hyas sp.
+67,Motile epifauna,kelp crab,Pugettia sp.
+67,Motile epifauna,graceful kelp crab,Pugettia gracilis
+67,Motile epifauna,NA,Pugettia producta
+67,Motile epifauna,NA,Scyra acutifrons
+67,Motile epifauna,galatheid crab,Galatheidae
+67,Motile epifauna,Verrill pinch bug,Munidopsis verrilli
+67,Motile epifauna,NA,Munidopsis sp.
+67,Motile epifauna,long-armed pinch bug,Munidopsis quadrata
+67,Motile epifauna,NA,Chirostylus sp.
+67,Motile epifauna,thorny pinch bug,Gastroptychus iaspis
+67,Motile epifauna,pinchbug,Munida quadrispina
+67,Motile epifauna,mole crab,Albuneidae
+67,Motile epifauna,NA,Polycheles sp.
+67,Motile epifauna,deep-sea lobster,Stereomastis sculpta
+67,Motile epifauna,NA,Calastacus investigatoris
+67,Motile epifauna,NA,Callianassa sp.
+67,Motile epifauna,giant ghost shrimp,Neotrypaea gigas
+67,Motile epifauna,NA,Callianassa goniophthalma
+67,Motile epifauna,ghost shrimp,Callianassa californiensis
+67,Motile epifauna,blue mud shrimp,Upogebia pugettensis
+67,Motile epifauna,sea spider,Pycnogonida
+67,Motile epifauna,NA,Hedgpethia sp.
+67,Motile epifauna,NA,Colossendeis sp.
+67,Motile epifauna,NA,Colossendeis dofleini
+67,Motile epifauna,NA,Colossendeis microsetosa
+67,Motile epifauna,NA,Nymphon sp.
+67,Motile epifauna,NA,Pycnogonum sp.
+67,Motile epifauna,mollusk,Mollusca
+67,Motile epifauna,NA,Aplacophora
+67,Motile epifauna,solenogaster,Neomeniomorpha
+67,Motile epifauna,NA,Neomenia sp.
+67,Motile epifauna,NA,Neomenia cf. yamamoti (Clark 2006)
+67,Motile epifauna,chiton,Polyplacophora
+67,Motile epifauna,giant Pacific chiton,Cryptochiton stelleri
+67,Motile epifauna,NA,Stenosemus golikovi
+67,Motile epifauna,grooved chiton,Tripoplax trifida
+67,Motile epifauna,deepsea chiton,Tripoplax beringiana
+67,Motile epifauna,Bering chiton,Tripoplax abyssicola
+67,Motile epifauna,NA,Lepidozona sp.
+67,Motile epifauna,NA,Lepidozona retiporosa
+67,Motile epifauna,NA,Amicula vestita
+67,Motile epifauna,NA,Placiphorella sp.
+67,Motile epifauna,NA,Placiphorella pacifica
+67,Motile epifauna,NA,Placiphorella rufa
+67,Motile epifauna,NA,Leptochiton sp.
+67,Motile epifauna,NA,Leptochiton alveolus
+67,Motile epifauna,NA,Mopalia swanii
+67,Motile epifauna,NA,Leptochiton belknapi
+67,Motile epifauna,NA,Leptochiton mesogonus
+67,Motile epifauna,Tonicella chitons,Tonicella sp.
+67,Motile epifauna,NA,Tonicella insignis
+67,Motile epifauna,NA,Mopalia egretta
+67,Motile epifauna,northern white chiton,Stenosemus albus
+67,Motile epifauna,NA,Stenosemus sharpii
+67,Motile epifauna,NA,Neptunea gyroscopoides
+67,Motile epifauna,snail egg,gastropod egg
+67,Motile epifauna,NA,Buccinum sp. egg
+67,Motile epifauna,NA,Fusitriton oregonensis egg
+67,Motile epifauna,NA,Neptunea sp. egg
+67,Motile epifauna,NA,Neptunea borealis egg
+67,Motile epifauna,NA,Neptunea heros egg
+67,Motile epifauna,bubbleshells,Cephalaspidea
+67,Motile epifauna,NA,Opisthobranchia
+67,Motile epifauna,nudibranch,Nudibranchia
+67,Motile epifauna,barnacle-eating Onchidoris,Onchidoris bilamellata
+67,Motile epifauna,giant orange tochui,Tochuina gigantea
+67,Motile epifauna,thick-horned aeolid,Hermissenda crassicornis
+67,Motile epifauna,Nanaimo dorid,Acanthodoris nanaimoensis
+67,Motile epifauna,yellow-edged Cadlina,Cadlina luteomarginata
+67,Motile epifauna,NA,Diaulula sandiegensis
+67,Motile epifauna,cedar-scented dorid,Acanthodoris brunnea
+67,Motile epifauna,NA,Dendronotus sp.
+67,Motile epifauna,NA,Acanthodoris sp.
+67,Motile epifauna,Dall dendronotid,Dendronotus dalli
+67,Motile epifauna,frond-aeolis,Dendronotus frondosus
+67,Motile epifauna,stubby frond-aeolis,Dendronotus subramosus
+67,Motile epifauna,Pacific batwing seaslug,Gastropteron pacificum
+67,Motile epifauna,pink tritonia,Tritonia exsulans
+67,Motile epifauna,NA,Tritonia sp.
+67,Motile epifauna,festive Tritonia,Tritonia festiva
+67,Motile epifauna,NA,Calycidoris guentheri
+67,Motile epifauna,rosy Tritonia,Tritonia diomedea
+67,Motile epifauna,onchidoridid nudibranchs,Onchidorididae
+67,Motile epifauna,NA,Acteocina sp.
+67,Motile epifauna,sea-clown Triopha,Triopha catalinae
+67,Motile epifauna,NA,Cuthona concinna
+67,Motile epifauna,archidorid nudibranchs,Archidorididae
+67,Motile epifauna,Monterey dorid,Archidoris montereyensis
+67,Motile epifauna,California Armina,Armina californica
+67,Motile epifauna,Pacific Colga,Colga pacifica
+67,Motile epifauna,cadlina nudibranchs,Cadlina sp.
+67,Motile epifauna,NA,Cadlina modesta
+67,Motile epifauna,NA,Flabellina sp.
+67,Motile epifauna,red flabellina,Flabellina trophina
+67,Motile epifauna,NA,Flabellinidae
+67,Motile epifauna,NA,Chlamylla sp.
+67,Motile epifauna,dironid nudibranchs,Dironidae
+67,Motile epifauna,NA,Dirona pellucida
+67,Motile epifauna,Pacific sea lemon,Peltodoris nobilis
+67,Motile epifauna,mottled pale sea-lemon,Peltodoris lentiginosa
+67,Motile epifauna,dorid nudibranch,Dorididae
+67,Motile epifauna,Archidoris nudibranch,Archidoris sp.
+67,Motile epifauna,white night doris,Doris odhneri
+67,Motile epifauna,NA,Diaulula sp. A (Clark 2006)
+67,Motile epifauna,NA,Adalaria proxima
+67,Motile epifauna,pleurobranchid sea slugs,Pleurobranchidae
+67,Motile epifauna,California sea slug,Pleurobranchaea californica
+67,Motile epifauna,sea gooseberry,Pleurobrachia bachei
+67,Motile epifauna,NA,Thieleella baxteri
+67,Motile epifauna,crispate scissurelle,Anatoma crispata
+67,Motile epifauna,puncturella,Cranopsis sp.
+67,Motile epifauna,great puncturella,Cranopsis major
+67,Motile epifauna,NA,Puncturella rothi
+67,Motile epifauna,NA,Puncturella cooperi
+67,Motile epifauna,helmet Puncturella,Puncturella galeata
+67,Motile epifauna,many-ribbed Puncturella,Puncturella multistriata
+67,Motile epifauna,hood puncturella,Cranopsis cucullata
+67,Motile epifauna,elegant emarginula,Scelidotoma bella
+67,Motile epifauna,NA,Diodora aspera
+67,Motile epifauna,long-slot Puncturella,Puncturella longifissa
+67,Motile epifauna,NA,Acmaea sp.
+67,Motile epifauna,limpet,NA
+67,Motile epifauna,thumbnails,Lottiidae
+67,Motile epifauna,snail,Gastropoda
+67,Motile epifauna,NA,Carinariidae
+67,Motile epifauna,NA,Gastropteron pacifica
+67,Motile epifauna,NA,Asterophila japonica
+67,Motile epifauna,moonsnail,Naticidae
+67,Motile epifauna,fragile moonsnail,Bulbus fragilis
+67,Motile epifauna,NA,Euspira monterona
+67,Motile epifauna,eulimas,Eulima sp.
+67,Motile epifauna,purple moon snail,Amauropsis purpurea
+67,Motile epifauna,NA,Cryptonatica sp.
+67,Motile epifauna,NA,Natica sp.
+67,Motile epifauna,Arctic moonsnail,Cryptonatica affinis
+67,Motile epifauna,NA,Natica clausa
+67,Motile epifauna,Aleutian moonsnail,Cryptonatica aleutica
+67,Motile epifauna,rusty moonsnail,Cryptonatica russa
+67,Motile epifauna,NA,Muricidae
+67,Motile epifauna,channelled dogwinkle,Nucella canaliculata
+67,Motile epifauna,frilled dogwinkle,Nucella lamellosa
+67,Motile epifauna,wrinkled Amphissa,Amphissa colmbiana
+67,Motile epifauna,NA,Amphissa reticulata
+67,Motile epifauna,variegate Amphissa,Amphissa versicolor
+67,Motile epifauna,NA,Alia gausapata
+67,Motile epifauna,elegant dove snail,Astyris elegens
+67,Motile epifauna,Lewis moonsnail,Lunatia lewisii
+67,Motile epifauna,NA,Euspira sp.
+67,Motile epifauna,pale moonsnail,Lunatia pallida
+67,Motile epifauna,lamellarid,Lamellariidae
+67,Motile epifauna,NA,Lamellaria sp.
+67,Motile epifauna,icy lamellaria,Onchidiopsis glacialis
+67,Motile epifauna,widemouth lamellaria,Capulacmaea commoda
+67,Motile epifauna,NA,Onchidiopsis sp. A (Clark and McLean)
+67,Motile epifauna,NA,Onchidiopsis brevipes
+67,Motile epifauna,warty blobsnail,Onchidiopsis clarki
+67,Motile epifauna,NA,Onchidiopsis sp.
+67,Motile epifauna,NA,Lamellaria sp. A (Clark and McLean)
+67,Motile epifauna,NA,Lamellaria sp. B (Clark and McLean)
+67,Motile epifauna,NA,Lamellaria sp. C (Clark and McLean)
+67,Motile epifauna,NA,Lamellaria sp. D (Clark and McLean)
+67,Motile epifauna,NA,Lamellaria sp. E (Clark and McLean)
+67,Motile epifauna,white lamellarid,Lamellaria sp. F (McLean and Clark)
+67,Motile epifauna,NA,Onchidiopsis carnea
+67,Motile epifauna,NA,Onchidiopsis maculata
+67,Motile epifauna,NA,Tachyrhynchus sp.
+67,Motile epifauna,eroded turretsnail,Tachyrhynchus erosus
+67,Motile epifauna,reticulated turretsnail,Tachyrhynchus reticulatus
+67,Motile epifauna,NA,Turritella sp.
+67,Motile epifauna,slippersnails,Calyptraeidae
+67,Motile epifauna,slipper shell,Crepidula sp.
+67,Motile epifauna,great slippersnail,Grandicrepidula grandis
+67,Motile epifauna,whelk,NA
+67,Motile epifauna,Aleutian sulcated whelk,Sulcosinus sp. A (McLean and Clark)
+67,Motile epifauna,NA,Colus sp.
+67,Motile epifauna,NA,Colus capponius
+67,Motile epifauna,NA,Colus acosmius
+67,Motile epifauna,NA,Colus calathus
+67,Motile epifauna,NA,Colus martensi
+67,Motile epifauna,garter whelk,Colus periscelidus
+67,Motile epifauna,NA,Colus jordani
+67,Motile epifauna,NA,Colus sabini
+67,Motile epifauna,thin-ribbed whelk,Colus herendeenii
+67,Motile epifauna,NA,Colus hypolispus
+67,Motile epifauna,shady whelk,Colus ombronius
+67,Motile epifauna,rosy whelk,Retifusus roseus
+67,Motile epifauna,NA,Colus esychus
+67,Motile epifauna,thick-ribbed whelk,Colus spitzbergensis
+67,Motile epifauna,NA,Colus georgianus
+67,Motile epifauna,NA,Colus tahwitanus
+67,Motile epifauna,oblique whelk,Colus aphelus
+67,Motile epifauna,shrew whelk,Colus halli
+67,Motile epifauna,NA,Colus datuzenbergii
+67,Motile epifauna,NA,Colus bristolensis
+67,Motile epifauna,NA,Colus trophius
+67,Motile epifauna,attenuate melon whelk,Habevolutopsius attenuatus
+67,Motile epifauna,NA,Japelion aleutica
+67,Motile epifauna,NA,Japelion sp.
+67,Motile epifauna,NA,Japelion sp. A
+67,Motile epifauna,NA,Japelion sp. B
+67,Motile epifauna,NA,Volutopsius sp. D (Clark and McLean)
+67,Motile epifauna,NA,Volutopsius sp. C (Clark and McLean)
+67,Motile epifauna,NA,Pyrulofusus sp.
+67,Motile epifauna,NA,Habevolutopsius hirasei
+67,Motile epifauna,NA,Pyrulofusus dexius
+67,Motile epifauna,NA,Volutopsius sp.
+67,Motile epifauna,NA,Volutopsius sp. eggs
+67,Motile epifauna,NA,Pyrulofusus sp. eggs
+67,Motile epifauna,warped whelk,Pyrulofusus deformis
+67,Motile epifauna,warped whelk egg,Pyrulofusus deformis egg
+67,Motile epifauna,left-hand whelk,Pyrulofusus harpa
+67,Motile epifauna,fragile whelk,Volutopsius fragilis
+67,Motile epifauna,regular whelk,Volutopsius regularis
+67,Motile epifauna,fragile whelk egg,Volutopsius fragilis egg
+67,Motile epifauna,threaded whelk,Lussivolutopsius filosus
+67,Motile epifauna,volute whelk,Volutopsius castanea
+67,Motile epifauna,NA,Pyrulofusus melonis
+67,Motile epifauna,simple whelk,Volutopsius simplex
+67,Motile epifauna,shouldered whelk,Volutopsius stefanssoni
+67,Motile epifauna,tulip whelk,Volutopsius middendorffi
+67,Motile epifauna,frilled whelk,Volutopsius trophonius
+67,Motile epifauna,NA,Volutopsius pallidus
+67,Motile epifauna,NA,Volutopsius sp. A (McLean and Clark)
+67,Motile epifauna,NA,Volutopsius sp. B (McLean and Clark)
+67,Motile epifauna,NA,Beringius sp.
+67,Motile epifauna,NA,Beringius kennicottii
+67,Motile epifauna,NA,Neoberingius frielei
+67,Motile epifauna,Bering beringius,Beringius behringi
+67,Motile epifauna,NA,Beringius aleuticus
+67,Motile epifauna,NA,Beringius stimpsoni
+67,Motile epifauna,thick-cord whelk,Beringius crebricostatus
+67,Motile epifauna,NA,Beringius undatus
+67,Motile epifauna,NA,Beringius sp. eggs
+67,Motile epifauna,Baxter Beringius,Beringius sp. A (McLean and Clark)
+67,Motile epifauna,two-channeled Beringius,Beringius sp. B (McLean and Clark)
+67,Motile epifauna,NA,Beringius eyerdami
+67,Motile epifauna,NA,Beringius incisus
+67,Motile epifauna,NA,Beringius sp. C (McLean and Clark)
+67,Motile epifauna,NA,Beringius sp. D (McLean and Clark)
+67,Motile epifauna,NA,Beringius sp. E (McLean and Clark)
+67,Motile epifauna,NA,Beringius sp. F (McLean and Clark)
+67,Motile epifauna,NA,Beringius sp. G (McLean and Clark)
+67,Motile epifauna,NA,Beringius sp. H (McLean and Clark)
+67,Motile epifauna,NA,Beringius sp. I (McLean and Clark)
+67,Motile epifauna,NA,Neoberingius sp.
+67,Motile epifauna,NA,Beringius sp. J (McLean and Clark)
+67,Motile epifauna,NA,Beringius sp. K (McLean and Clark)
+67,Motile epifauna,Marshall's neptune,Beringius marshalli
+67,Motile epifauna,NA,Calinaticina oldroyi
+67,Motile epifauna,paper whelk,Volutharpa ampullacea
+67,Motile epifauna,NA,Neptunea sp.
+67,Motile epifauna,fat whelk egg,Neptunea ventricosa egg
+67,Motile epifauna,NA,Neptunea phoenicea
+67,Motile epifauna,NA,Neptunea meridionalis
+67,Motile epifauna,white neptune,Neptunea amianta
+67,Motile epifauna,NA,Neptunea smirnia
+67,Motile epifauna,NA,Cartilagovelutina beringensis
+67,Motile epifauna,Pribilof whelk,Neptunea pribiloffensis
+67,Motile epifauna,tabled whelk,Neptunea tabulata
+67,Motile epifauna,NA,Neptunea borealis
+67,Motile epifauna,NA,Neptunea middendorffii
+67,Motile epifauna,NA,Neptunea eulimata
+67,Motile epifauna,NA,Neptunea stilesi
+67,Motile epifauna,lyre whelk,Neptunea lyrata
+67,Motile epifauna,NA,Neptunea ithia
+67,Motile epifauna,fat whelk,Neptunea ventricosa
+67,Motile epifauna,NA,Neptunea insularis
+67,Motile epifauna,NA,Neptunea heros
+67,Motile epifauna,NA,Neptunea sp. E (Clark and McLean)
+67,Motile epifauna,helmet whelk,Clinopegma magnum
+67,Motile epifauna,NA,Neptunea sp. A (McLean and Clark)
+67,Motile epifauna,NA,Neptunea sp. B (McLean and Clark)
+67,Motile epifauna,NA,Neptunea sp. C (McLean and Clark)
+67,Motile epifauna,NA,Plicifusus sp.
+67,Motile epifauna,NA,Plicifusus kroyeri
+67,Motile epifauna,NA,Plicifusus incisus
+67,Motile epifauna,brown whelk,Plicifusus brunneus
+67,Motile epifauna,NA,Plicifusus verkruzeni
+67,Motile epifauna,NA,Colus callorhinus
+67,Motile epifauna,seahorse whelk,Colus oceandromae
+67,Motile epifauna,NA,Colus virens
+67,Motile epifauna,NA,Colus stejnegeri
+67,Motile epifauna,NA,Plicifusus sp. A (Clark and McLean)
+67,Motile epifauna,gray whelk,Colus griseus
+67,Motile epifauna,sulcated whelk,Sulcosinus taphrius
+67,Motile epifauna,NA,Plicifusus johanseni
+67,Motile epifauna,NA,Exilioidea rectirostris
+67,Motile epifauna,NA,Exilioidea kelseyi
+67,Motile epifauna,NA,Mohnia robusta
+67,Motile epifauna,NA,Liomesus sp.
+67,Motile epifauna,egg whelk,Pseudoliomesus ooides
+67,Motile epifauna,NA,Pseudoliomesus canaliculatus
+67,Motile epifauna,basket whelk,Liomesus nassula
+67,Motile epifauna,NA,Neptunea sp. D (Clark and McLean)
+67,Motile epifauna,sinuous neptune,Neptunea alexeyevi
+67,Motile epifauna,NA,Neptunea sp. G (Clark and McLean)
+67,Motile epifauna,NA,Colus sp. A (Clark and McLean)
+67,Motile epifauna,NA,Colus sp. B (Clark and McLean)
+67,Motile epifauna,NA,Ancistrolepis sp.
+67,Motile epifauna,NA,Antiplanes sp.
+67,Motile epifauna,NA,Antiplanes catalinae
+67,Motile epifauna,NA,Antiplanes thalea
+67,Motile epifauna,NA,Antiplanes piona
+67,Motile epifauna,NA,Antiplanes vinosus
+67,Motile epifauna,NA,Antiplanes sp. A (Clark and McLean)
+67,Motile epifauna,NA,Rectiplanes sp.
+67,Motile epifauna,NA,Rectiplanes sp. A (Clark and McLean)
+67,Motile epifauna,NA,Plicifusus bambusus
+67,Motile epifauna,NA,Suavodrillia kennicotti
+67,Motile epifauna,turrid snails,Turridae
+67,Motile epifauna,NA,Aforia sp.
+67,Motile epifauna,NA,Aforia goodei
+67,Motile epifauna,Kinkaid Aforia,Aforia kinkaidi
+67,Motile epifauna,keeled Aforia,Aforia circinata
+67,Motile epifauna,NA,Epitonium sp.
+67,Motile epifauna,Greenland wentletrap,Boreoscala greenlandica
+67,Motile epifauna,NA,Epitonium indianorum
+67,Motile epifauna,NA,Boreoscala sp.
+67,Motile epifauna,NA,Carinoturris fortis
+67,Motile epifauna,Aleutian wentletrap,Acirsa sp. A (McLean and Clark)
+67,Motile epifauna,money wentletrap,Epitoneum indianorum
+67,Motile epifauna,NA,Oenopota sp.
+67,Motile epifauna,NA,Oenopota harpa
+67,Motile epifauna,NA,Propebela nobilis
+67,Motile epifauna,NA,Propebela fidicula
+67,Motile epifauna,NA,Oenopota elegans
+67,Motile epifauna,NA,Mangelia carlottae
+67,Motile epifauna,NA,Obesotoma simplex
+67,Motile epifauna,NA,Obesotoma tenuilirata
+67,Motile epifauna,NA,Curtitoma decussata
+67,Motile epifauna,NA,Trichotropidae
+67,Motile epifauna,NA,Trichotropis sp. 1 (Clark and McLean)
+67,Motile epifauna,NA,Trichotropis borealis
+67,Motile epifauna,gray hairysnail,Trichotropis insignis
+67,Motile epifauna,crowned hairysnail,Neoiphinoe coronata
+67,Motile epifauna,two-keel hairysnail,Trichotropis bicarinata
+67,Motile epifauna,NA,Trichotropis cancellata
+67,Motile epifauna,NA,Trichotropis conica
+67,Motile epifauna,NA,Trichotropis sp.
+67,Motile epifauna,Kroyer hairy snail,Neoiphinoe kroyeri
+67,Motile epifauna,NA,Neoiphinoe permabilis
+67,Motile epifauna,NA,Neoiphinoe echinata
+67,Motile epifauna,rams-horn snail,Torellivelutina ammonia
+67,Motile epifauna,hairysnails,Torellia sp.
+67,Motile epifauna,NA,Torellia lineata
+67,Motile epifauna,NA,Scabrotrophon sp. A (Clark and McLean)
+67,Motile epifauna,NA,Scabrotrophon sp. B (Clark and McLean)
+67,Motile epifauna,NA,Scabrotrophon sp. C (Clark and McLean)
+67,Motile epifauna,NA,Scabrotrophon sp. D (Clark and McLean)
+67,Motile epifauna,NA,Scabrotrophon sp. E (Clark and McLean)
+67,Motile epifauna,NA,Scabrotrophon maltzani
+67,Motile epifauna,NA,Scabrotrophon clarki
+67,Motile epifauna,spiny trophon,Nipponotrophon scitulus
+67,Motile epifauna,NA,Scabrotrophon rossicus
+67,Motile epifauna,NA,Scabrotrophon densicostatus
+67,Motile epifauna,NA,Scabrotrophon scarlatoi
+67,Motile epifauna,NA,Scabrotrophon sp.
+67,Motile epifauna,Bering trophon,Boreotrophon beringi
+67,Motile epifauna,Alaskan trophon,Boreotrophon alaskanus
+67,Motile epifauna,NA,Nodulotrophon coronatus
+67,Motile epifauna,rotund trophon,Boreotrophon rotundatus
+67,Motile epifauna,NA,Boreotrophon elegantulus
+67,Motile epifauna,clathrate trophon,Boreotrophon clathratus
+67,Motile epifauna,winged trophon,Nipponotrophon stuarti
+67,Motile epifauna,Kamchatka trophon,Scabrotrophon kamchatkanus
+67,Motile epifauna,ribbed trophon,Boreotrophon multicostatus
+67,Motile epifauna,NA,Boreotrophon sp.
+67,Motile epifauna,NA,Boreotrophon pacificus
+67,Motile epifauna,foliate thornmouth,Ceratostoma foliatum
+67,Motile epifauna,NA,Nipponotrophon sp. A (Clark and McLean)
+67,Motile epifauna,Oregon triton,Fusitriton oregonensis
+67,Motile epifauna,NA,Fusitriton sp.
+67,Motile epifauna,trochid,Trochidae
+67,Motile epifauna,NA,Calliostoma sp.
+67,Motile epifauna,silvery topsnail,Calliostoma platinum
+67,Motile epifauna,NA,Calliostoma titanium
+67,Motile epifauna,NA,Calliostoma variegatum
+67,Motile epifauna,NA,Tegula pulligo
+67,Motile epifauna,channeled topsnail,Calliostoma canaliculatum
+67,Motile epifauna,NA,Bathybembix bairdii
+67,Motile epifauna,NA,Calliotropis carlotta
+67,Motile epifauna,NA,Cidarina cidaris
+67,Motile epifauna,thick Lacuna,Lacuna crassior
+67,Motile epifauna,NA,Margarites sp.
+67,Motile epifauna,little margarite,Margarites pupillus
+67,Motile epifauna,giant margarite,Margarites giganteus
+67,Motile epifauna,NA,Margarites argentatus
+67,Motile epifauna,boreal rosy margarite,Margarites costalis
+67,Motile epifauna,three ribbed margarite,Margarites sp. A (Clark and McLean)
+67,Motile epifauna,tabled margarite,Margarites sp. B (Clark and McLean)
+67,Motile epifauna,silvery margarite,Margarites sp. C (Clark and McLean)
+67,Motile epifauna,NA,Margarites beringensis
+67,Motile epifauna,NA,Solariella sp.
+67,Motile epifauna,obscure solarelle,Solariella obscura
+67,Motile epifauna,fine-groove solarelle,Solariella micraulax
+67,Motile epifauna,varicose solarelle,Solariella varicosa
+67,Motile epifauna,naked solarelle,Solariella nuda
+67,Motile epifauna,NA,Solariella peramabilis
+67,Motile epifauna,NA,Solariella sp. A (Clark and McLean)
+67,Motile epifauna,Bering topsnail,Otukaia beringensis
+67,Motile epifauna,blue topsnail,Calliostoma ligatum
+67,Motile epifauna,NA,Calliostoma annulatum
+67,Motile epifauna,conical seguenzid,Oligomeria conoidea
+67,Motile epifauna,NA,Amphissa sp.
+67,Motile epifauna,NA,Buccinidae
+67,Motile epifauna,NA,Buccinum normale
+67,Motile epifauna,NA,Buccinum obsoletum
+67,Motile epifauna,NA,Buccinum bulimuloideum
+67,Motile epifauna,NA,Buccinum picturatum
+67,Motile epifauna,NA,Buccinum sp.
+67,Motile epifauna,NA,Buccinum polium
+67,Motile epifauna,Okhotsk whelk,Buccinum ochotense
+67,Motile epifauna,angular whelk,Buccinum angulosum
+67,Motile epifauna,finch whelk,Buccinum fringillum
+67,Motile epifauna,wavy whelk,Buccinum sigmatopleura
+67,Motile epifauna,NA,Buccinum simulatum
+67,Motile epifauna,swollen whelk,Buccinum oedematum
+67,Motile epifauna,lirate whelk,Buccinum eugrammatum
+67,Motile epifauna,turban whelk,Buccinum viridum
+67,Motile epifauna,NA,Buccinum strigillatum
+67,Motile epifauna,sinuous whelk,Buccinum plectrum
+67,Motile epifauna,ladder whelk,Buccinum scalariforme
+67,Motile epifauna,Aleut whelk,Buccinum aleuticum
+67,Motile epifauna,scratched whelk,Buccinum cnismatum
+67,Motile epifauna,polar whelk,Buccinum polare
+67,Motile epifauna,NA,Buccinum solenum
+67,Motile epifauna,NA,Buccinum ciliatum
+67,Motile epifauna,glacial whelk,Buccinum glaciale
+67,Motile epifauna,NA,Buccinum tenellum
+67,Motile epifauna,chestnut whelk,Buccinum castaneum
+67,Motile epifauna,dire whelk,Searlesia dira
+67,Motile epifauna,Roger buccinid,Bathybuccinum clarki
+67,Motile epifauna,NA,Bathybuccinum sp.
+67,Motile epifauna,NA,Bathybuccinum ovulum
+67,Motile epifauna,Katherine whelk,Buccinum sp. A (McLean and Clark)
+67,Motile epifauna,NA,Buccinum ectomycina
+67,Motile epifauna,NA,Retifusus sp.
+67,Motile epifauna,two-ribbed whelk,Ancistrolepis bicinctus
+67,Motile epifauna,three-ribbed whelk,Ancistrolepis eucosmius
+67,Motile epifauna,dovesnails,Columbella sp.
+67,Motile epifauna,NA,Buccinum physematum
+67,Motile epifauna,costate whelk,Buccinum costatum
+67,Motile epifauna,mega-ribbed chestnut whelk,Buccinum sp. B (McLean and Clark)
+67,Motile epifauna,one-ribbed whelk,Buccinum sp. C (McLean and Clark)
+67,Motile epifauna,many-ribbed chestnut whelk,Buccinum sp. D (McLean and Clark)
+67,Motile epifauna,three-ribbed chestnut whelk,Buccinum triplostephanum
+67,Motile epifauna,two-ribbed chestnut whelk,Buccinum sp. E (McLean and Clark)
+67,Motile epifauna,crenulated whelk,Buccinum sp. F (McLean and Clark)
+67,Motile epifauna,NA,Buccinum sp. G (McLean and Clark)
+67,Motile epifauna,NA,Buccinum sp. H (McLean and Clark)
+67,Motile epifauna,NA,Buccinum sp. I (McLean and Clark)
+67,Motile epifauna,NA,Buccinum moarchianum
+67,Motile epifauna,transect whelk,Buccinum transliratum
+67,Motile epifauna,eroded whelk,Buccinum rondinum
+67,Motile epifauna,NA,Volutomitra sp.
+67,Motile epifauna,NA,Volutomitra sp. B (Clark and McLean)
+67,Motile epifauna,NA,Arctomelon sp.
+67,Motile epifauna,Alaska volute,Arctomelon stearnsii
+67,Motile epifauna,NA,Arctomelon borealis
+67,Motile epifauna,NA,Arctomelon tamikoae
+67,Motile epifauna,inflated volute,Arctomelon ryosukei
+67,Motile epifauna,NA,Arctomelon sp. cf. stearnsii (Clark and McLean)
+67,Motile epifauna,NA,Volutomitra alaskana
+67,Motile epifauna,NA,Volutomitra sp. A (Clark and McLean)
+67,Motile epifauna,beatic dwarf olive,Olivella beatica
+67,Motile epifauna,wavy lamellaria,Velutina undata
+67,Motile epifauna,NA,Velutina nana
+67,Motile epifauna,oblique lamellaria,Velutina plicatilis
+67,Motile epifauna,conical lamellaria,Limneria prolongata
+67,Motile epifauna,elongate lamellaria,Velutina prolongata
+67,Motile epifauna,smooth lamellaria,Velutina velutina
+67,Motile epifauna,NA,Velutina sp.
+67,Motile epifauna,NA,Velutina sp. A (Clark and McLean)
+67,Motile epifauna,NA,Velutina sp. B (Clark and McLean)
+67,Motile epifauna,NA,Velutina sp. C (Clark and McLean)
+67,Motile epifauna,NA,Velutina rubra
+67,Motile epifauna,NA,Velutina bartschi
+67,Motile epifauna,NA,Clinopegma
+67,Motile epifauna,unique whelk,Clinopegma unicum
+67,Motile epifauna,northern Admete,Admete virdula
+67,Motile epifauna,smooth nutmeg shell,Admete laevior
+67,Motile epifauna,noble Admete,Admete solida
+67,Motile epifauna,NA,Admete gracilior
+67,Motile epifauna,NA,Neadmete circumcenta
+67,Motile epifauna,NA,Neadmete modesta
+67,Motile epifauna,purple olive,Olivella biplicata
+67,Motile epifauna,horn shell,Cerithiopsidae sp. A
+67,Motile epifauna,NA,Cerithiopsidae
+67,Motile epifauna,white chalice-bubble,Cylichna alba
+67,Motile epifauna,sea star,Asteroidea
+67,Motile epifauna,NA,Ceramaster leptoceramus
+67,Motile epifauna,NA,Evasterias sp.
+67,Motile epifauna,NA,Evasterias retifera
+67,Motile epifauna,mottled sea star,Evasterias troschelii
+67,Motile epifauna,NA,Diamphiodia occidentalis
+67,Motile epifauna,giant sea star,Evasterias echinosoma
+67,Motile epifauna,NA,Urasterias lincki
+67,Motile epifauna,NA,Orthasterias sp.
+67,Motile epifauna,redbanded sea star,Orthasterias koehleri
+67,Motile epifauna,NA,Leptasterias groenlandica
+67,Motile epifauna,NA,Leptasterias hexactis
+67,Motile epifauna,Aleutian sea star,Leptasterias hylodes
+67,Motile epifauna,NA,Leptasterias stolocantha
+67,Motile epifauna,NA,Leptasterias coei
+67,Motile epifauna,giant Aleutian six-rayed star,Leptasterias truculenta
+67,Motile epifauna,NA,Leptasterias leptodoma
+67,Motile epifauna,NA,Leptasterias sp. A (Clark)
+67,Motile epifauna,NA,Leptasterias sp. B (Clark)
+67,Motile epifauna,NA,Rathbunaster californicus
+67,Motile epifauna,NA,Asteriidae
+67,Motile epifauna,sunflower sea star,Pycnopodia helianthoides
+67,Motile epifauna,NA,Astrometis sp.
+67,Motile epifauna,long-rayed star,Stylasterias forreri
+67,Motile epifauna,NA,Stylasterias sp.
+67,Motile epifauna,NA,Ampheraster sp.
+67,Motile epifauna,NA,Ampheraster marianus
+67,Motile epifauna,NA,Tarsaster alaskanus
+67,Motile epifauna,blackspined sea star,Lethasterias nanimensis
+67,Motile epifauna,NA,Lethasterias sp.
+67,Motile epifauna,NA,Pedicellaster sp.
+67,Motile epifauna,majestic sea star,Pedicellaster magister
+67,Motile epifauna,NA,Stephanasterias albula
+67,Motile epifauna,NA,Pisaster sp.
+67,Motile epifauna,giant pink star,Pisaster brevispinus
+67,Motile epifauna,purple star,Pisaster ochraceus
+67,Motile epifauna,thorny sea star,Poraniopsis inflata
+67,Motile epifauna,NA,Poraniopsis flexilius
+67,Motile epifauna,lined blood star,Henricia lineata
+67,Motile epifauna,white Henricia,Henricia sp. B (Clark 2006)
+67,Motile epifauna,mottled Henricia,Henricia rhytisma
+67,Motile epifauna,NA,Henricia derjugini
+67,Motile epifauna,NA,Henricia sp.
+67,Motile epifauna,NA,Henricia clarki
+67,Motile epifauna,sanguine sea star,Henricia sanguinolenta
+67,Motile epifauna,ridged blood star,Henricia aspera
+67,Motile epifauna,blood sea star,Henricia leviuscula
+67,Motile epifauna,NA,Henricia aleutica
+67,Motile epifauna,tumid sea star,Henricia tumida
+67,Motile epifauna,NA,Henricia asthenactis
+67,Motile epifauna,NA,Henricia longispina
+67,Motile epifauna,spiny Henricia,Henricia multispina
+67,Motile epifauna,NA,Odontohenricia fisheri
+67,Motile epifauna,NA,Odontohenricia sp.
+67,Motile epifauna,NA,Odontohenricia sp. A (Clark)
+67,Motile epifauna,NA,Odontohenricia sp. B (Clark)
+67,Motile epifauna,NA,Odontohenricia ahearnae
+67,Motile epifauna,NA,Odontohenricia violacea
+67,Motile epifauna,giant toothed Henricia,Odontohenricia sp. E (Clark 2006)
+67,Motile epifauna,NA,Aleutihenricia federi
+67,Motile epifauna,fuzzy henricia,Henricia sp. D (Clark 2006)
+67,Motile epifauna,slender pale Henricia,Henricia sp. E (Clark 2006)
+67,Motile epifauna,NA,Leptasterias polaris
+67,Motile epifauna,NA,Leptasterias katharinae
+67,Motile epifauna,NA,Leptasterias arctica
+67,Motile epifauna,NA,Leptasterias sp.
+67,Motile epifauna,NA,Leptasterias camtschatica
+67,Motile epifauna,Bering Henricia,Aleutihenricia beringiana
+67,Motile epifauna,short-spined Henricia,Henricia dyscrita
+67,Motile epifauna,Ahearns star,Aleutiaster sp.
+67,Motile epifauna,Swift sea star,Gephyreaster swifti
+67,Motile epifauna,NA,Gephyreaster sp.
+67,Motile epifauna,lens star,NA
+67,Motile epifauna,NA,Pseudarchaster sp.
+67,Motile epifauna,NA,Pseudarchaster alascensis
+67,Motile epifauna,NA,Pseudarchaster pussillus
+67,Motile epifauna,NA,Pseudarchaster dissonus
+67,Motile epifauna,NA,Odontaster sp.
+67,Motile epifauna,NA,Odontaster sp. B (Clark)
+67,Motile epifauna,NA,Hippasteria sp.
+67,Motile epifauna,NA,Hippasteria kurilensis
+67,Motile epifauna,NA,Hippasteria armata
+67,Motile epifauna,Aleutian spiny star,Hippasteria aleutica
+67,Motile epifauna,pale spiny star,Hippasteria sp. B (Clark)
+67,Motile epifauna,Bering spiny star,Hippasteria sp. C (Clark)
+67,Motile epifauna,Commander spiny star,Hippasteria sp. D (Clark)
+67,Motile epifauna,Alaskan spiny star,Hippasteria sp. E (Clark)
+67,Motile epifauna,NA,Hippasteria californica
+67,Motile epifauna,NA,Hippasteria heathi
+67,Motile epifauna,NA,Hippasteria leiopelta
+67,Motile epifauna,NA,Hippasteria pedicellaris
+67,Motile epifauna,spiny red sea star,Hippasteria phrygiana (=spinosa)
+67,Motile epifauna,scarlet sea star,Pseudarchaster parelii
+67,Motile epifauna,NA,Hippasteria lepidonotus
+67,Motile epifauna,NA,Mediaster sp.
+67,Motile epifauna,NA,Mediaster tenellus
+67,Motile epifauna,vermilion sea star,Mediaster aequalis
+67,Motile epifauna,NA,Ceramaster sp.
+67,Motile epifauna,red bat star,Ceramaster japonicus
+67,Motile epifauna,orange bat sea star,Ceramaster patagonicus
+67,Motile epifauna,Arctic bat sea star,Ceramaster arcticus
+67,Motile epifauna,NA,Ceramaster clarki
+67,Motile epifauna,NA,Ceramaster stellatus
+67,Motile epifauna,goniasterid sea stars,Goniasteridae
+67,Motile epifauna,NA,Luidia sp.
+67,Motile epifauna,sand sea star,Luidia foliolata
+67,Motile epifauna,NA,Astropectinidae
+67,Motile epifauna,leather sea star,Dermasterias imbricata
+67,Motile epifauna,bat star,Patiria miniata
+67,Motile epifauna,NA,Solaster sp.
+67,Motile epifauna,northern sun sea star,Solaster endeca
+67,Motile epifauna,NA,Solaster hypothrissus
+67,Motile epifauna,NA,Solaster hexactis
+67,Motile epifauna,morning sun sea star,Solaster dawsoni
+67,Motile epifauna,striped sun sea star,Solaster stimpsoni
+67,Motile epifauna,NA,Solaster exiguus
+67,Motile epifauna,NA,Solaster sp. A (Clark 1997)
+67,Motile epifauna,beautiful sun star,Solaster spectabilis
+67,Motile epifauna,serpent sun star,Solaster sp. D (Clark)
+67,Motile epifauna,Kessler sun star,Solaster sp. E (Clark)
+67,Motile epifauna,Fisher sun star,Solaster sp. F (Clark)
+67,Motile epifauna,ocher sun star,Solaster sp. G (Clark)
+67,Motile epifauna,NA,Solaster arcticus
+67,Motile epifauna,solasterid sea star,Solasteridae
+67,Motile epifauna,evening sun sea star,Solaster paxillatus
+67,Motile epifauna,NA,Crossaster sp.
+67,Motile epifauna,grooved sea star,Crossaster borealis
+67,Motile epifauna,white rose star,Crossaster sp. A (Clark)
+67,Motile epifauna,pink rose star,Crossaster sp. B (Clark)
+67,Motile epifauna,rose sea star,Crossaster papposus
+67,Motile epifauna,cannonball sun star,Heterozonias alternatus
+67,Motile epifauna,NA,Heterozonias sp.
+67,Motile epifauna,NA,Lophaster sp.
+67,Motile epifauna,NA,Lophaster sp. A (Clark)
+67,Motile epifauna,NA,Lophaster sp. B (Clark)
+67,Motile epifauna,crested star,Lophaster vexator
+67,Motile epifauna,crested sea star,Lophaster furcilliger
+67,Motile epifauna,NA,Asthenactis fisheri
+67,Motile epifauna,NA,Peribolaster biserialis
+67,Motile epifauna,NA,Pteraster sp.
+67,Motile epifauna,NA,Pteraster sp. cf. temnochiton (Clark 1999)
+67,Motile epifauna,cushion sea star,Pteraster temnochiton
+67,Motile epifauna,NA,Pteraster sp. A (Clark 1999)
+67,Motile epifauna,NA,Pteraster sp. B (Clark 1997)
+67,Motile epifauna,NA,Pteraster tesselatus
+67,Motile epifauna,NA,Pteraster jordani
+67,Motile epifauna,NA,Pteraster willsi
+67,Motile epifauna,NA,Pteraster sp. D (Clark)
+67,Motile epifauna,NA,Pteraster sp. E (Clark)
+67,Motile epifauna,wrinkled star,Pteraster militaris
+67,Motile epifauna,NA,Pteraster marssipus
+67,Motile epifauna,NA,Pteraster octaster
+67,Motile epifauna,NA,Pteraster sp. F (Clark)
+67,Motile epifauna,NA,Pteraster tesselatus arcuatus
+67,Motile epifauna,NA,Pteraster trigonodon
+67,Motile epifauna,deepwater Pteraster,Pteraster coscinopeplus
+67,Motile epifauna,obscure sea star,Pteraster obscurus
+67,Motile epifauna,NA,Pteraster pulvillus
+67,Motile epifauna,pincushion sea star,Diplopteraster multipes
+67,Motile epifauna,NA,Diplopteraster sp.
+67,Motile epifauna,pancake star,Hymenaster sp.
+67,Motile epifauna,NA,Thrissacanthias penicillatus
+67,Motile epifauna,NA,Asterias sp.
+67,Motile epifauna,purple-orange sea star,Asterias amurensis
+67,Motile epifauna,NA,Astropecten californicus
+67,Motile epifauna,NA,Ctenodiscus sp.
+67,Motile epifauna,common mud star,Ctenodiscus crispatus
+67,Motile epifauna,NA,Leptychaster sp.
+67,Motile epifauna,NA,Leptychaster anomalus
+67,Motile epifauna,NA,Leptychaster pacificus
+67,Motile epifauna,NA,Leptychaster propinquus
+67,Motile epifauna,North Pacific sea star,Leptychaster arcticus
+67,Motile epifauna,NA,Cladaster validus
+67,Motile epifauna,NA,Cladaster sp.
+67,Motile epifauna,NA,Dipsacaster sp.
+67,Motile epifauna,NA,Dipsacaster anoplus
+67,Motile epifauna,northern sea star,Dipsacaster borealis
+67,Motile epifauna,NA,Dipsacaster eximus
+67,Motile epifauna,NA,Psilaster pectinatus
+67,Motile epifauna,NA,Benthopectinidae
+67,Motile epifauna,NA,Cheiraster sp.
+67,Motile epifauna,Aleutian fragile sea star,Cheiraster sp. A (Clark 2006)
+67,Motile epifauna,fragile sea star,Cheiraster dawsoni
+67,Motile epifauna,NA,Nearchaster variabilis
+67,Motile epifauna,NA,Nearchaster sp.
+67,Motile epifauna,NA,Nearchaster aciculosus
+67,Motile epifauna,NA,Nearchaster pedicellaris
+67,Motile epifauna,NA,Astronebris tatafilius
+67,Motile epifauna,NA,Brisingella pusilla
+67,Motile epifauna,NA,Brisingella exilis
+67,Motile epifauna,NA,Brisingella sp.
+67,Motile epifauna,brisingid sea star,Brisingidae
+67,Motile epifauna,NA,Zoroasteridae
+67,Motile epifauna,Evermann seastar,Sagenaster evermanni
+67,Motile epifauna,NA,Zoroaster ophiurus
+67,Motile epifauna,NA,Myxoderma platyacanthum
+67,Motile epifauna,NA,Myxoderma sacculatum
+67,Motile epifauna,NA,Anteliaster sp.
+67,Motile epifauna,NA,Anteliaster nannodes
+67,Motile epifauna,sea urchin,Echinacea
+67,Motile epifauna,green sea urchin,Strongylocentrotus droebachiensis
+67,Motile epifauna,NA,Strongylocentrotus sp.
+67,Motile epifauna,NA,Strongylocentrotus echinoides
+67,Motile epifauna,red sea urchin,Strongylocentrotus franciscanus
+67,Motile epifauna,NA,Strongylocentrotus polyacanthus
+67,Motile epifauna,purple sea urchin,Strongylocentrotus purpuratus
+67,Motile epifauna,white sea urchin,Strongylocentrotus pallidus
+67,Motile epifauna,NA,Strongylocentrotus sp. A
+67,Motile epifauna,NA,Strongylocentrotus sp. B
+67,Motile epifauna,orange-pink sea urchin,Allocentrotus fragilis
+67,Motile epifauna,NA,Allocentrotus sp.
+67,Motile epifauna,heart urchin,NA
+67,Motile epifauna,NA,Brisaster sp.
+67,Motile epifauna,NA,Brisaster townsendi
+67,Motile epifauna,large green heart urchin,NA
+67,Motile epifauna,oval heart urchin,NA
+67,Motile epifauna,heart urchin,Brisaster latifrons
+67,Motile epifauna,NA,Brisaster owstoni
+67,Motile epifauna,NA,Spatangus californicus
+67,Motile epifauna,NA,Brissopsis pacifica
+67,Motile epifauna,NA,Marginoproctus sp.
+67,Motile epifauna,NA,Marginoproctus djakonovi
+67,Motile epifauna,sand dollar,NA
+67,Motile epifauna,parma sand dollar,Echinarachnius parma
+67,Motile epifauna,NA,Dendraster excentricus
+67,Motile epifauna,crinoid,NA
+67,Motile epifauna,yellow sea lily,Ptilocrinus pinnatus
+67,Motile epifauna,NA,Heliometra glacialis
+67,Motile epifauna,Alaskan crinoid,Retiometra alascana
+67,Motile epifauna,NA,Florometra sp.
+67,Motile epifauna,NA,Florometra inexpectata
+67,Motile epifauna,featherstar crinoid,Florometra serratissima
+67,Motile epifauna,common northern feather star,Florometra asperrima
+67,Motile epifauna,NA,Psathyrometra fragilis
+67,Motile epifauna,NA,Psathyrometra profundorum
+67,Motile epifauna,dwarf feather star,Fariometra sp.
+67,Motile epifauna,brittlestar,Ophiuroidea
+67,Motile epifauna,NA,Ophiuridae
+67,Motile epifauna,basketstar,Gorgonocephalus eucnemis
+67,Motile epifauna,NA,Gorgonocephalus sp. cf. arcticus
+67,Motile epifauna,NA,Gorgonocephalus sp.
+67,Motile epifauna,NA,Astrophyton pardalis
+67,Motile epifauna,NA,Asteronychidae
+67,Motile epifauna,NA,Asteronyx sp.
+67,Motile epifauna,NA,Asteroschema sp.
+67,Motile epifauna,NA,Asteroschema sublaeve
+67,Motile epifauna,serpent sea star,Asteronyx loveni
+67,Motile epifauna,NA,Asteronyx longifissus
+67,Motile epifauna,NA,Astrochele laevis
+67,Motile epifauna,NA,Astrochele sp. A (Clark 2006)
+67,Motile epifauna,NA,Astrochele sp.
+67,Motile epifauna,NA,Ophiura sp.
+67,Motile epifauna,NA,Ophiura cryptolepis
+67,Motile epifauna,four spined brittle star,Ophiura quadrispina
+67,Motile epifauna,NA,Ophiura maculata
+67,Motile epifauna,gray brittle star,Ophiura luetkenii
+67,Motile epifauna,notched brittlestar,Ophiura sarsii
+67,Motile epifauna,NA,Stegophiura nodosa
+67,Motile epifauna,NA,Amphiophiura sp. A (Clark 2006)
+67,Motile epifauna,NA,Amphiophiura superba
+67,Motile epifauna,NA,Amphiophiura sp.
+67,Motile epifauna,NA,Stegophiura ponderosa
+67,Motile epifauna,NA,Ophiophthalmus normani
+67,Motile epifauna,NA,Ophiacantha sp.
+67,Motile epifauna,NA,Ophiacantha enneactis
+67,Motile epifauna,NA,Ophiacantha diplasia
+67,Motile epifauna,NA,Ophiophthalmus cataleimmoidus
+67,Motile epifauna,NA,Ophiacantha sp. cf. rhachophora
+67,Motile epifauna,NA,Ophiacantha sp. A
+67,Motile epifauna,NA,Ophiacantha bidentata
+67,Motile epifauna,NA,Ophiopholis sp.
+67,Motile epifauna,NA,Ophiopholis longispina
+67,Motile epifauna,NA,Ophiopholis japonica
+67,Motile epifauna,NA,Ophiopholis kennerleyi
+67,Motile epifauna,ubiquitous brittle star,Ophiopholis aculeata
+67,Motile epifauna,NA,Ophioscolex sp.
+67,Motile epifauna,NA,Ophioscolex corynetes
+67,Motile epifauna,NA,Ophiothrix sp.
+67,Motile epifauna,NA,Ophiothrix spiculata
+67,Motile epifauna,NA,Ophiomusium jolliensis
+67,Motile epifauna,NA,Ophiosphalma sp. cf. jolliensis
+67,Motile epifauna,NA,Ophiomusium sp.
+67,Motile epifauna,NA,Ophiolebes sp.
+67,Motile epifauna,thick spined brittle star,Ophiosemnotes pachybactra
+67,Motile epifauna,short spined brittle star,Ophiosemnotes brevispina
+67,Motile epifauna,NA,Ophiosemnotes tylota
+67,Motile epifauna,NA,Ophiosemnotes paucispina
+67,Motile epifauna,NA,Ophiolebes sp. A (Clark 2006)
+67,Motile epifauna,NA,Ophiolebes sp. B (Clark 2006)
+67,Motile epifauna,NA,Ophiolebes sp. C (Clark 2006)
+67,Motile epifauna,NA,Ophiolebes sp. D (Clark 2006)
+67,Motile epifauna,NA,Ophiolebes sp. E (Clark 2006)
+67,Motile epifauna,NA,Ophiolebes sp. F (Clark 2006)
+67,Motile epifauna,NA,Ophiomusium lymani
+67,Motile epifauna,NA,Astrophiura sp.
+67,Motile epifauna,burrowing brittle star,Amphiuridae
+67,Motile epifauna,NA,Amphiura diomedeae
+67,Motile epifauna,NA,Amphiodia rossica
+67,Motile epifauna,NA,Amphiodia sp.
+67,Motile epifauna,sea cucumber,Holothuroidea
+67,Motile epifauna,NA,Cucumaria japonica
+67,Motile epifauna,pale sea cucumber,Cucumaria pallida
+67,Motile epifauna,NA,Ocnus sp.
+67,Motile epifauna,NA,Ocnus glacialis
+67,Motile epifauna,NA,Parastichopus sp.
+67,Motile epifauna,giant orange cucumber,Apostichopus leukothele
+67,Motile epifauna,California sea cucumber,Apostichopus californicus
+67,Motile epifauna,NA,Pseudostichopus sp.
+67,Motile epifauna,sandy sea cucumber,Pseudostichopus mollis
+67,Motile epifauna,NA,Chiridota sp.
+67,Motile epifauna,NA,Chiridota albatrossii
+67,Motile epifauna,NA,Myriotrochus rinkii
+67,Motile epifauna,NA,Molpadia arenicola
+67,Motile epifauna,NA,Molpadia sp.
+67,Motile epifauna,sweet sea potato,Molpadia intermedia
+67,Motile epifauna,NA,Eupentacta sp.
+67,Motile epifauna,NA,Eupentacta quinquesemita
+67,Motile epifauna,crescent sea cucumber,Pentamera lissoplaca
+67,Motile epifauna,NA,Pentamera sp.
+67,Motile epifauna,NA,Pentamera sp. A (Clark 2006)
+67,Motile epifauna,rattail sea cucumber,Paracaudina chilensis
+67,Motile epifauna,NA,Bathyplotes sp.
+67,Motile epifauna,NA,Cucumaria sp.
+67,Motile epifauna,sea football,Cucumaria fallax
+67,Motile epifauna,NA,Cucumaria frondosa
+67,Motile epifauna,cucumarid sea cucumbers,Cucumariidae
+67,Motile epifauna,NA,Apostichopus japonicus
+67,Motile epifauna,NA,Psolidae
+67,Motile epifauna,NA,Psolus sp.
+67,Motile epifauna,NA,Psolus phantapus
+67,Motile epifauna,NA,Psolus chitonoides
+67,Motile epifauna,NA,Psolus sp. A (Clark 2006)
+67,Motile epifauna,brownscaled sea cucumber,Psolus fabricii
+67,Motile epifauna,whitescaled sea cucumber,Psolus squamatus
+67,Motile epifauna,NA,Psolus peroni
+67,Motile epifauna,NA,Psolus japonicus
+67,Motile epifauna,NA,Psolidium bullatum
+67,Motile epifauna,NA,Thyonidium sp.
+67,Motile epifauna,furry sea cucumber,Thyonidium kurilensis
+67,Motile epifauna,NA,Pannychia sp.
+67,Motile epifauna,deep sea papillate cucumber,Pannychia moseleyi
+67,Motile epifauna,NA,Synallactes sp. A (Clark 2006)
+67,Motile epifauna,NA,Synallactes sp.
+67,Motile epifauna,NA,Synallactes challengeri
+67,Motile epifauna,swimming sea cucumber,Paelopatides confundens
+67,Motile epifauna,NA,Scotoplanes theeli
+67,Motile epifauna,NA,Scotoplanes sp.
+68,Benthic zooplankton,Benthic zooplankton,Benthic zooplankton
+69,Sessile epifauna,coelenterate,Cnidaria
+69,Sessile epifauna,NA,Anthozoa
+69,Sessile epifauna,NA,Octocorallia
+69,Sessile epifauna,soft coral,Alcyonacea
+69,Sessile epifauna,NA,Alcyonium sp.
+69,Sessile epifauna,pink orange mushroom coral,Alcyonium sp. A (Clark 2006)
+69,Sessile epifauna,NA,Alcyonium sp. B (Clark 2006)
+69,Sessile epifauna,Bob mushroom coral,Cavernularia vansyoci
+69,Sessile epifauna,sea raspberry,Gersemia sp.
+69,Sessile epifauna,NA,Gersemia fruticosa
+69,Sessile epifauna,NA,Gersemia rubiformis
+69,Sessile epifauna,Lamb sea raspberry,Gersemia lambi
+69,Sessile epifauna,NA,Anthomastus sp.
+69,Sessile epifauna,red mushroom coral,Heteropolypus (=Anthomastus) sp. A
+69,Sessile epifauna,gray mushroom coral,Heteropolypus (=Anthomastus) sp. B
+69,Sessile epifauna,NA,Anthomastus sp. cf. japonicus (Bayer et al.)
+69,Sessile epifauna,gorgonian coral,Gorgonacea
+69,Sessile epifauna,NA,Ideogorgia sp.
+69,Sessile epifauna,primnoid coral,Primnoidae
+69,Sessile epifauna,NA,Primnoa sp.
+69,Sessile epifauna,NA,Primnoa pacifica
+69,Sessile epifauna,red tree coral,Primnoa willeyi
+69,Sessile epifauna,NA,Primnoa resedaeformis
+69,Sessile epifauna,black coral,Antipatharia
+69,Sessile epifauna,NA,Antipathes sp.
+69,Sessile epifauna,NA,Chrysopathes speciosa
+69,Sessile epifauna,NA,Chrysopathes sp.
+69,Sessile epifauna,NA,Bathypathes sp.
+69,Sessile epifauna,NA,Bathypathes patula
+69,Sessile epifauna,NA,Parantipathes sp.
+69,Sessile epifauna,NA,Lillipathes lilliei
+69,Sessile epifauna,NA,Lillipathes sp. A (Clark 2006)
+69,Sessile epifauna,NA,Lillipathes sp. B (Clark 2006)
+69,Sessile epifauna,NA,Swiftia sp.
+69,Sessile epifauna,NA,Swiftia pacifica
+69,Sessile epifauna,NA,Psammogorgia simplex
+69,Sessile epifauna,Bering red sea fan,Calcigorgia beringi
+69,Sessile epifauna,yellow sea fan,Alaskagorgia sp. 1 (Stone)
+69,Sessile epifauna,NA,Paragorgia sp.
+69,Sessile epifauna,NA,Paragorgiidae
+69,Sessile epifauna,Kamchatka coral,Paragorgia arborea
+69,Sessile epifauna,NA,Paragorgia pacifica
+69,Sessile epifauna,plexaurid corals,Plexauridae
+69,Sessile epifauna,NA,Euplexaura sp.
+69,Sessile epifauna,NA,Euplexaura marki
+69,Sessile epifauna,NA,Paragorgia nodosa
+69,Sessile epifauna,NA,Alaskagorgia sp.
+69,Sessile epifauna,NA,Alaskagorgia aleutiana
+69,Sessile epifauna,NA,Cryogorgia koolsae
+69,Sessile epifauna,NA,Callogorgia sp.
+69,Sessile epifauna,NA,Callogorgia kinoshitae
+69,Sessile epifauna,sugar coral,Parastenella sp. A (Clark 2006)
+69,Sessile epifauna,NA,Calcigorgia sp.
+69,Sessile epifauna,NA,Calcigorgia spiculifera
+69,Sessile epifauna,NA,Clavularia sp.
+69,Sessile epifauna,NA,Clavularia sp. cf. evagorgiacrustans (Bayer et al.)
+69,Sessile epifauna,encrusting coral,Clavularia incrustans
+69,Sessile epifauna,sea pen,Pennatulacea
+69,Sessile epifauna,smoothstem seawhip,Virgularia sp.
+69,Sessile epifauna,NA,Stylatula elongata
+69,Sessile epifauna,NA,Virgulariidae
+69,Sessile epifauna,slender seawhips,Stylatula sp.
+69,Sessile epifauna,roughstem seawhip,Stylatula gracile
+69,Sessile epifauna,NA,Balticina sp.
+69,Sessile epifauna,NA,Protoptilum sp.
+69,Sessile epifauna,NA,Halipteris sp.
+69,Sessile epifauna,maroon sea whip,Halipteris sp. A (Stone 2015)
+69,Sessile epifauna,NA,Halipteris finmarchia
+69,Sessile epifauna,NA,Halipteris willemoesi
+69,Sessile epifauna,NA,Halipteris californica
+69,Sessile epifauna,NA,Umbellula lindahli
+69,Sessile epifauna,NA,Umbellula sp.
+69,Sessile epifauna,NA,Ptilosarcus sp.
+69,Sessile epifauna,orange sea pen,Ptilosarcus gurneyi
+69,Sessile epifauna,pennatulid sea pens,Pennatulidae
+69,Sessile epifauna,deep-sea sea pen,Pennatula phosphorea
+69,Sessile epifauna,NA,Anthoptilum grandiflorum
+69,Sessile epifauna,Murray sea pen,Anthoptilum murrayi
+69,Sessile epifauna,sea anemone,Actiniaria
+69,Sessile epifauna,reticulate anemone,Actinauge verrilli
+69,Sessile epifauna,rough purple sea anemone,Actinostola faeculenta
+69,Sessile epifauna,NA,Actinoscyphia sp.
+69,Sessile epifauna,NA,Paraphelliactis pabista
+69,Sessile epifauna,NA,Actinernus sp.
+69,Sessile epifauna,purple striated sea anemone,NA
+69,Sessile epifauna,red striated sea anemone,NA
+69,Sessile epifauna,NA,Ptychodactis patula
+69,Sessile epifauna,NA,Corallimorphus sp.
+69,Sessile epifauna,NA,Metridium sp.
+69,Sessile epifauna,clonal plumose anemone,Metridium senile
+69,Sessile epifauna,gigantic anemone,Metridium farcimen
+69,Sessile epifauna,cowardly anemone,Stomphia didemon
+69,Sessile epifauna,NA,Stomphia sp.
+69,Sessile epifauna,swimming anemone,Stomphia coccinea
+69,Sessile epifauna,NA,Urticina sp.
+69,Sessile epifauna,leathery anemone,Urticina coriacea
+69,Sessile epifauna,mottled anemone,Urticina crassicornis
+69,Sessile epifauna,spotted red anemone,Urticina lofotensis
+69,Sessile epifauna,crusty red anemone,Urticina columbiana
+69,Sessile epifauna,hot dog zoanthid,Zoanthidae sp. A
+69,Sessile epifauna,grape anemone,Oceanactis diomedeae
+69,Sessile epifauna,NA,Oceanactis sp.
+69,Sessile epifauna,actinid sea anemones,Actiniidae
+69,Sessile epifauna,NA,Cribrinopsis sp.
+69,Sessile epifauna,chevron-tentacled anemone,Cribrinopsis fernaldi
+69,Sessile epifauna,tentacle-shedding anemone,Liponema brevicorne
+69,Sessile epifauna,NA,Actinostolidae
+69,Sessile epifauna,NA,Actinostola sp.
+69,Sessile epifauna,NA,Actinostola sp. A (Clark 2006)
+69,Sessile epifauna,NA,Actinostola sp. B (Clark 2006)
+69,Sessile epifauna,NA,Actinostola groenlandica
+69,Sessile epifauna,orange actinistolid,Sicyonis sp. A (Clark 2006)
+69,Sessile epifauna,tumbling anemone,NA
+69,Sessile epifauna,NA,Hormathiidae
+69,Sessile epifauna,pink hormathiid anemone,NA
+69,Sessile epifauna,orange zooanthid,Epizoanthus scotinus
+69,Sessile epifauna,NA,Zoanthus sp.
+69,Sessile epifauna,stony coral,Scleractinia
+69,Sessile epifauna,cup corals,Caryophylliidae
+69,Sessile epifauna,tan trumpet coral,Flabellum sp. A (Clark 2006)
+69,Sessile epifauna,flabellid trumpet corals,Flabellidae
+69,Sessile epifauna,Aleutian trumpet coral,Javania borealis
+69,Sessile epifauna,slender trumpet coral,Javania cailleti
+69,Sessile epifauna,NA,Javania sp.
+69,Sessile epifauna,NA,Desmophyllum dianthus
+69,Sessile epifauna,cup coral,Crispatotrochus foxi
+69,Sessile epifauna,NA,Caryophyllia sp.
+69,Sessile epifauna,NA,Caryophyllia sp. A
+69,Sessile epifauna,brown cup coral,Caryophyllia arnoldi
+69,Sessile epifauna,Alaska cup coral,Caryophyllia alaskensis
+69,Sessile epifauna,stylasterid corals,Stylasteridae
+69,Sessile epifauna,hydrocoral,Stylasterina
+69,Sessile epifauna,NA,Stylaster sp.
+69,Sessile epifauna,NA,Stylaster verrilli
+69,Sessile epifauna,rough orange hydrocoral,Stylaster brochi
+69,Sessile epifauna,NA,Stylaster cancellatus
+69,Sessile epifauna,smooth tube hydrocoral,Stylaster elassotomus
+69,Sessile epifauna,NA,Stylaster polyorchis
+69,Sessile epifauna,NA,Crypthelia trophostega
+69,Sessile epifauna,NA,Stylaster campylecus
+69,Sessile epifauna,NA,Crypthelia sp.
+69,Sessile epifauna,NA,Stylaster moseleyana
+69,Sessile epifauna,NA,Cyclohelia lamellata
+69,Sessile epifauna,NA,Cyclohelia sp.
+69,Sessile epifauna,undulate-fan hydrocoral,Errinopora undulata
+69,Sessile epifauna,Alaskan hydrocoral,Stylaster alaskanus
+69,Sessile epifauna,NA,Stylaster stejnegeri
+69,Sessile epifauna,NA,Stylaster venustus
+69,Sessile epifauna,undulate hydrocoral,Stylaster repandus
+69,Sessile epifauna,NA,Stylaster parageus
+69,Sessile epifauna,NA,Stylantheca petrograpta
+69,Sessile epifauna,NA,Stylaster trachystomus
+69,Sessile epifauna,NA,Stenohelia sp.
+69,Sessile epifauna,thick lamellar hydrocoral,Stylaster sp. B (Clark 2006)
+69,Sessile epifauna,NA,Distichopora sp.
+69,Sessile epifauna,NA,Distichopora borealis
+69,Sessile epifauna,NA,Corymorpha groenlandica
+69,Sessile epifauna,NA,Isidella tentaculum
+69,Sessile epifauna,NA,Thouarella trilineata
+69,Sessile epifauna,NA,Thouarella sp. 1 (Bayer et al.)
+69,Sessile epifauna,NA,Thouarella sp. 2 (Bayer et al.)
+69,Sessile epifauna,NA,Thouarella sp. 3 (Bayer et al.)
+69,Sessile epifauna,NA,Thouarella sp. 4 (Bayer et al.)
+69,Sessile epifauna,bushy coral,Plumarella superba
+69,Sessile epifauna,foliate hydrocoral,Errinopora disticha
+69,Sessile epifauna,pale-edged hydrocoral,Errinopora sp. B (Clark 2006)
+69,Sessile epifauna,enigmatic hydrocoral,Errinopora sp. C (Clark 2006)
+69,Sessile epifauna,NA,Errinopora pourtalesi
+69,Sessile epifauna,NA,Errinopora zarhyncha
+69,Sessile epifauna,NA,Errinopora sp.
+69,Sessile epifauna,NA,Errinopora nanneca
+69,Sessile epifauna,NA,Plumarella sp.
+69,Sessile epifauna,bamboo coral,Isididae
+69,Sessile epifauna,articulated bamboo coral,Isidella sp.
+69,Sessile epifauna,feathery Plumarella,Plumarella sp. 1 (Bayer)
+69,Sessile epifauna,NA,Thouarella sp.
+69,Sessile epifauna,nodal bamboo coral,Keratoisis sp.
+69,Sessile epifauna,NA,Fanellia sp.
+69,Sessile epifauna,NA,Fanellia compressa
+69,Sessile epifauna,NA,Fanellia fraseri
+69,Sessile epifauna,NA,Muriceides nigra
+69,Sessile epifauna,NA,Muriceides sp.
+69,Sessile epifauna,NA,Amphilaphis sp.
+69,Sessile epifauna,pale Plumarella,Plumarella sp. A
+69,Sessile epifauna,pinnate Plumarella,Plumarella sp. B
+69,Sessile epifauna,loose-branched Plumarella,Plumarella nuttingi
+69,Sessile epifauna,NA,Arthrogorgia sp.
+69,Sessile epifauna,NA,Arthrogorgia utinomi
+69,Sessile epifauna,NA,Acanthogorgia sp.
+69,Sessile epifauna,Aleutian Plumarella,Plumarella aleutiana
+69,Sessile epifauna,NA,Plumarella echinata
+69,Sessile epifauna,NA,Plumarella hapala
+69,Sessile epifauna,spiny Plumarella,Plumarella sp. D
+69,Sessile epifauna,NA,Anthothela grandiflora
+69,Sessile epifauna,bottlebrush coral,Thouarella cristata
+69,Sessile epifauna,NA,Primnoa wingi
+69,Sessile epifauna,NA,Primnoa sp. 1 (Clark 2006)
+69,Sessile epifauna,NA,Plumarella spicata
+69,Sessile epifauna,NA,Lepidisis sp.
+69,Sessile epifauna,NA,Plumarella robusta
+69,Sessile epifauna,NA,Arthrogorgia otsukai
+69,Sessile epifauna,NA,Arthrogorgia kinoshitai
+69,Sessile epifauna,NA,Acanthogorgiidae
+69,Sessile epifauna,NA,Errinopora fisheri
+69,Sessile epifauna,NA,Errinopora dichotoma
+69,Sessile epifauna,NA,Stylaster crassiseptum
+69,Sessile epifauna,NA,Stylaster leptostylus
+69,Sessile epifauna,NA,Cirripedia
+69,Sessile epifauna,barnacle,Thoracica
+69,Sessile epifauna,pelagic gooseneck barnacle,Lepas sp.
+69,Sessile epifauna,NA,Litoscalpellum ursum
+69,Sessile epifauna,NA,Balanus sp.
+69,Sessile epifauna,NA,Balanus balanus
+69,Sessile epifauna,giant barnacle,Chirona evermanni
+69,Sessile epifauna,crab barnacle,Balanus hesperius
+69,Sessile epifauna,beaked barnacle,Balanus rostratus
+69,Sessile epifauna,NA,Balanus nubilus
+69,Sessile epifauna,NA,Balanus crenatus
+69,Sessile epifauna,thatched barnacle,Semibalanus cariosus
+69,Sessile epifauna,NA,Scalpellum sp.
+69,Sessile epifauna,eared barnacle,Scalpellum cornutum
+69,Sessile epifauna,Columbian barnacle,Hamatoscalpellum columbianum
+69,Sessile epifauna,mussel,Mytilidae
+69,Sessile epifauna,northern horsemussel,Modiolus modiolus
+69,Sessile epifauna,NA,Mytilus sp.
+69,Sessile epifauna,California mussel,Mytilus californianus
+69,Sessile epifauna,foolish mussel,Mytilus trossulus
+69,Sessile epifauna,blue mussel,Mytilus edulis
+69,Sessile epifauna,sponge,Porifera
+69,Sessile epifauna,hairy lemon sponge,NA
+69,Sessile epifauna,vase sponge,NA
+69,Sessile epifauna,NA,Demospongiae
+69,Sessile epifauna,NA,Haliclona sp.
+69,Sessile epifauna,NA,Suberites sp.
+69,Sessile epifauna,NA,Suberites ficus
+69,Sessile epifauna,wax sponge,Suberites sp. A (Clark 2006)
+69,Sessile epifauna,peach sponge,Pseudosuberites montiniger
+69,Sessile epifauna,stinky sponge,Suberites montalbidus
+69,Sessile epifauna,hermit sponge,Suberites domuncula
+69,Sessile epifauna,clay pipe sponge,Aphrocallistes vastus
+69,Sessile epifauna,goblet sponge,Heterochone calyx
+69,Sessile epifauna,crusty tube sponge,Heterochone tenera
+69,Sessile epifauna,NA,Rhabdocalyptus mirabilis
+69,Sessile epifauna,NA,Phakellia sp.
+69,Sessile epifauna,NA,Mycale sp.
+69,Sessile epifauna,tree sponge,Mycale loveni
+69,Sessile epifauna,red mycale,Mycale sp. A (Clark 2006)
+69,Sessile epifauna,smooth scallop sponge,Mycale adhaerens
+69,Sessile epifauna,NA,Geodiidae
+69,Sessile epifauna,soccer ball sponge,Geodia mesotriaena
+69,Sessile epifauna,NA,Geodia sp.
+69,Sessile epifauna,NA,Acanthascus sp.
+69,Sessile epifauna,NA,Halichondria sp.
+69,Sessile epifauna,barrel sponge,Halichondria panicea
+69,Sessile epifauna,neon yellow vase sponge,NA
+69,Sessile epifauna,spiny vase sponge,Leucandra heathi
+69,Sessile epifauna,cloud sponge,Rhabdocalyptus sp.
+69,Sessile epifauna,lampshade sponge,Mycale bellabellensis
+69,Sessile epifauna,brain sponge,NA
+69,Sessile epifauna,funnel sponge,NA
+69,Sessile epifauna,scapula sponge,Stelodoryx oxeata
+69,Sessile epifauna,cat-o-nine-tails sponge,Semisuberites cribrosa
+69,Sessile epifauna,scallop sponge,Myxilla parasitica
+69,Sessile epifauna,sulfur sponge,Myxilla lacunosa
+69,Sessile epifauna,soft brown sponge,Crella brunnea
+69,Sessile epifauna,hat sponge,Echinoclathria beringensis
+69,Sessile epifauna,firm finger sponge,Axinella blanca
+69,Sessile epifauna,mushroom sponge,Pachastrellidae sp. 1
+69,Sessile epifauna,spud sponge,Histodermella kagigunensis
+69,Sessile epifauna,club sponge,Tedania kagalaskai
+69,Sessile epifauna,yellow leafy sponge,Monanchora pulchra
+69,Sessile epifauna,ball sponge,Tethya sp.
+69,Sessile epifauna,fiber optic sponge,Hyalonema sp.
+69,Sessile epifauna,staghorn sponge,NA
+69,Sessile epifauna,orange ball sponge,NA
+69,Sessile epifauna,NA,Leucosolenia sp.
+69,Sessile epifauna,NA,Polymastia sp.
+69,Sessile epifauna,orange nipple-ball sponge,Polymastia pacifica
+69,Sessile epifauna,orange sponge,NA
+69,Sessile epifauna,yellow bowl sponge,NA
+69,Sessile epifauna,black-orange spud sponge,Polymastia pachymastia
+69,Sessile epifauna,black papillate sponge,NA
+69,Sessile epifauna,yellow green papillate sponge,NA
+69,Sessile epifauna,yellow papillate sponge,NA
+69,Sessile epifauna,orange nipple ball sponge,Polymastia sp. B (Clark 2006)
+69,Sessile epifauna,orange encrusting sponge,NA
+69,Sessile epifauna,firm yellow green sponge,NA
+69,Sessile epifauna,hairy vase sponge,Leucandra sp. A (Clark 2006)
+69,Sessile epifauna,trumpet sponge,Mycale carlilei
+69,Sessile epifauna,NA,Leucandra tuba
+69,Sessile epifauna,orange finger sponge,Isodictya rigida
+69,Sessile epifauna,rough hat sponge,Cladocroce attu
+69,Sessile epifauna,orange papillate sponge,NA
+69,Sessile epifauna,NA,Neoesperiopsis sp.
+69,Sessile epifauna,cheesestick sponge,Esperiopsis flagrum
+69,Sessile epifauna,soft finger sponge,NA
+69,Sessile epifauna,slimy kelp sponge,Mycale tylota
+69,Sessile epifauna,slimy antler sponge,NA
+69,Sessile epifauna,NA,Leucandra sp.
+69,Sessile epifauna,NA,Myxilla pedunculata
+69,Sessile epifauna,NA,Cladocroce kiska
+69,Sessile epifauna,pita sponge,Geodia starki
+69,Sessile epifauna,NA,Phorbas paucistylifer
+69,Sessile epifauna,yellow ball sponge,Inflatella globosa
+69,Sessile epifauna,angel-hair vase sponge,Acanthascus sp. A
+69,Sessile epifauna,thin-lipped vase sponge,Acanthascus sp. B
+69,Sessile epifauna,stone sponge,Stelletta sp.
+69,Sessile epifauna,NA,Leucilla nuttingi
+69,Sessile epifauna,cotton ball sponge,Amphilectus lobatus
+69,Sessile epifauna,Flugel nippled sponge,Polymastia fluegeli
+69,Sessile epifauna,long nippled sponge,Polymastia robusta
+69,Sessile epifauna,pale mammilated sponge,Weberella bursa
+69,Sessile epifauna,prolific nipple sponge,Polymastia sp. A (Clark 2006)
+69,Sessile epifauna,red nipple sponge,Polymastia sp. C (Clark 2006)
+69,Sessile epifauna,NA,Phorbas sp.
+69,Sessile epifauna,fuzzy cratered sponge,Vulcanella sp. 1
+69,Sessile epifauna,NA,Vulcanella sp.
+69,Sessile epifauna,two nipple sponge,Tentorium semisuberites
+69,Sessile epifauna,tennis ball sponge,Craniella villosa
+69,Sessile epifauna,NA,Ancorina buldira
+69,Sessile epifauna,NA,Rhabdocalyptus dawsoni
+69,Sessile epifauna,NA,Stelodoryx jamesorri
+69,Sessile epifauna,NA,Stelodoryx strongyloxeata
+69,Sessile epifauna,hairy urn sponge,Sycon compactum
+69,Sessile epifauna,stalked ball sponge,Oscarella lobularis
+69,Sessile epifauna,slender stalked sponge,Stylocordyla borealis
+69,Sessile epifauna,NA,Stylocordyla eous
+69,Sessile epifauna,lollypop sponge,Stylocordyla sp.
+69,Sessile epifauna,white convoluted sponge,Plakina tanaga
+69,Sessile epifauna,red convoluted sponge,Plakina atka
+69,Sessile epifauna,rough bread crumb sponge,Tedania dirhaphis
+69,Sessile epifauna,NA,Tedania sp.
+69,Sessile epifauna,NA,Latrunculia velera
+69,Sessile epifauna,NA,Latrunculia sp.
+69,Sessile epifauna,green papillate sponge,Latrunculia oparinae
+69,Sessile epifauna,smooth green sponge,Latrunculia sp. B (Clark 2006)
+69,Sessile epifauna,coalescent finger sponge,Hymeniacidon assimilis
+69,Sessile epifauna,firm gray sponge,Axinella sp.
+69,Sessile epifauna,NA,Axinella rugosa
+69,Sessile epifauna,NA,Tretodictyum sp.
+69,Sessile epifauna,NA,Melonanchora globogilva
+69,Sessile epifauna,Alaskan lobed sponge,Stelodoryx alaskensis
+69,Sessile epifauna,fuzzy tree sponge,Echinoclathria sp. A (Clark 2006)
+69,Sessile epifauna,NA,Echinoclathria sp.
+69,Sessile epifauna,ginseng sponge,Halichondria oblonga
+69,Sessile epifauna,NA,Cladorhizidae
+69,Sessile epifauna,carnivorous cattail sponge,Chondrocladia gigantea
+69,Sessile epifauna,fuzzy sponge,Asbestopluma sp. A (Clark 2006)
+69,Sessile epifauna,NA,Asbestopluma ramosa
+69,Sessile epifauna,lattice sponge,Cornulum clathriata
+69,Sessile epifauna,NA,Isodictya sp.
+69,Sessile epifauna,prickly pear sponge,Isodictya palmata
+69,Sessile epifauna,lobed tree sponge,Chondrocladia concrescens
+69,Sessile epifauna,NA,Monanchora alaskensis
+69,Sessile epifauna,NA,Halichondria sitiens
+69,Sessile epifauna,NA,Monanchora laminachela
+69,Sessile epifauna,NA,"Haliclona sp. 2 (Stone et al., 2011)"
+69,Sessile epifauna,NA,Haliclona digitata
+69,Sessile epifauna,NA,Artemisina sp.
+69,Sessile epifauna,NA,Artemisina arcigera
+69,Sessile epifauna,NA,Artemisina amlia
+69,Sessile epifauna,stipitata,Artemisina stipitata
+69,Sessile epifauna,NA,Cladocroce ventilabrum
+69,Sessile epifauna,NA,Cladocroce infundibulum
+69,Sessile epifauna,NA,Haliclona primitiva
+69,Sessile epifauna,NA,Haliclona bucina
+69,Sessile epifauna,NA,Biemna sp.
+69,Sessile epifauna,glass sponge,Hexactinellida
+69,Sessile epifauna,NA,Staurocalyptus sp.
+69,Sessile epifauna,NA,Geodinella sp.
+69,Sessile epifauna,calcareous finger sponge,Geodinella lendenfeldi
+69,Sessile epifauna,vase sponge,Aulosaccus schulzei
+69,Sessile epifauna,NA,Farrea sp.
+69,Sessile epifauna,Bering lace sponge,Farrea beringiana
+69,Sessile epifauna,NA,Farrea occa
+69,Sessile epifauna,lacy basket sponge,Regadrella okinoseana
+69,Sessile epifauna,erect sponge morphotype,Porifera erect
+69,Sessile epifauna,encrusting sponge morphotype,Porifera encrusting
+69,Sessile epifauna,ball sponge morphotype,Porifera ball
+69,Sessile epifauna,tubular sponge morphotype,Porifera tubular
+69,Sessile epifauna,bryozoan sp.,NA
+69,Sessile epifauna,fluffy sponge,NA
+69,Sessile epifauna,lattice-work bryozoan,Phidolopora pacifica
+69,Sessile epifauna,NA,Bugula sp.
+69,Sessile epifauna,NA,Bugula pacifica
+69,Sessile epifauna,feathery bryozoan,Eucratea loricata
+69,Sessile epifauna,leafy bryozoan,Flustra serrulata
+69,Sessile epifauna,NA,Carbasea sp.
+69,Sessile epifauna,NA,Tegella magnipora
+69,Sessile epifauna,NA,Flustrellidra corniculata
+69,Sessile epifauna,fruit leather bryozoan,Alcyonidium pedunculatum
+69,Sessile epifauna,medusa bryozoan,Alcyonidium sp. A
+69,Sessile epifauna,NA,Alcyonidium sp.
+69,Sessile epifauna,disc bryozoan,Alcyonidium disciforme
+69,Sessile epifauna,NA,Myriapora subgracilis
+69,Sessile epifauna,noodle bryozoan,Alcyonidium enteromorpha
+69,Sessile epifauna,NA,Idmidronea sp.
+69,Sessile epifauna,flattened bryozoan,Porella compressa
+69,Sessile epifauna,NA,Porella sp.
+69,Sessile epifauna,NA,Escharopsis sarsi
+69,Sessile epifauna,ribbed bryozoan,Rhamphostomella costata
+69,Sessile epifauna,NA,Hippoporina insculpta
+69,Sessile epifauna,NA,Hippodiplosia sp.
+69,Sessile epifauna,coral bryozoan,Celleporina ventricosa
+69,Sessile epifauna,NA,Celleporina sp.
+69,Sessile epifauna,tubular bryozoan,Tubulipora sp.
+69,Sessile epifauna,NA,Membranipora sp.
+69,Sessile epifauna,NA,Microporina articulata
+69,Sessile epifauna,NA,Microporina sp.
+69,Sessile epifauna,lampshell,Brachiopoda
+69,Sessile epifauna,NA,Terebratulina sp.
+69,Sessile epifauna,common brachiopod,Terebratalia transversa
+69,Sessile epifauna,Hall lamp shell,Frieleia halli
+69,Sessile epifauna,snakeshead brachiopod,Terebratulina unguicula
+69,Sessile epifauna,California lamp shell,Laqueus californianus
+69,Sessile epifauna,Vancouver lampshell,Laqueus vancouverensis
+69,Sessile epifauna,black brachiopod,Hemithiris psittacea
+69,Sessile epifauna,tunicate,Ascidiacea
+69,Sessile epifauna,cow-eye tunicate,Ascidian n. sp. A
+69,Sessile epifauna,pineapple tunicate,NA
+69,Sessile epifauna,NA,Pelonaia corrugata
+69,Sessile epifauna,NA,Styela sp.
+69,Sessile epifauna,sea potato,Styela rustica
+69,Sessile epifauna,Aleutian long-stalked tunicate,Styela sp. A (Clark 2006)
+69,Sessile epifauna,hexagonal tunicate,Styela sp. B (Clark 2006)
+69,Sessile epifauna,NA,Dendrodoa aggregata
+69,Sessile epifauna,NA,Boltenia sp.
+69,Sessile epifauna,NA,Boltenia villosa
+69,Sessile epifauna,NA,Boltenia ecinata
+69,Sessile epifauna,sea onion,Boltenia ovifera
+69,Sessile epifauna,polycitorid tunicates,Polycitoridae
+69,Sessile epifauna,sea peach,Halocynthia sp.
+69,Sessile epifauna,bristly tunicate,Halocynthia igaboja
+69,Sessile epifauna,sea peach,Halocynthia aurantium
+69,Sessile epifauna,broad base tunicate,Cnemidocarpa finmarkiensis
+69,Sessile epifauna,wrinkled tunicate,Pyura haustor
+69,Sessile epifauna,NA,Pyura sp.
+69,Sessile epifauna,NA,Distaplia sp.
+69,Sessile epifauna,globular ascidian,Distaplia occidentalis
+69,Sessile epifauna,paddle ascidian,Distaplia smithi
+69,Sessile epifauna,peach ascidian,Distaplia sp. A (Clark 2006)
+69,Sessile epifauna,california sea pork,Aplidium californicum
+69,Sessile epifauna,NA,Botrylloides sp.
+69,Sessile epifauna,golden star ascidian,Botryllus schlosseri
+69,Sessile epifauna,compound ascidian,NA
+69,Sessile epifauna,NA,Amaroucium sp.
+69,Sessile epifauna,sand-grain imbedded ascidian,Amaroucium soldatovi
+69,Sessile epifauna,cionid tunicates,Cionidae
+69,Sessile epifauna,NA,Corella willmeriana
+69,Sessile epifauna,corellid tunicates,Corellidae
+69,Sessile epifauna,NA,Chelyosoma orientale
+69,Sessile epifauna,sea glob,Aplidium sp. A (Clark 2006)
+69,Sessile epifauna,orange Aplidium,Aplidium n. sp. A
+69,Sessile epifauna,NA,Aplidium sp.
+69,Sessile epifauna,NA,Trididemnum sp.
+69,Sessile epifauna,sea blob,Synoicum sp.
+69,Sessile epifauna,purple-gray ascidian,Trididemnum opacum
+69,Sessile epifauna,glassy tunicate,Ascidia paratropa
+69,Sessile epifauna,NA,Ciona savignyi
+69,Sessile epifauna,hairy tunicate,Halocynthia hispidus
+69,Sessile epifauna,NA,Didemnidae
+69,Sessile epifauna,brown leafy compound tunicate,NA
+69,Sessile epifauna,disc-top tunicate,Chelyosoma productum
+69,Sessile epifauna,NA,Chelyosoma macleayanum
+69,Sessile epifauna,NA,Polyclinum planum
+69,Sessile epifauna,NA,Molgula sp.
+69,Sessile epifauna,NA,Molgula citrina
+69,Sessile epifauna,sea grape,Molgula griffithsii
+69,Sessile epifauna,sea clod,Molgula retortiformis
+69,Sessile epifauna,neon yellow ascidian,NA
+69,Sessile epifauna,baseball sponge,Craniella craniana
+69,Sessile epifauna,furry ball sponge,Craniella spinosa
+69,Sessile epifauna,spiky ball sponge,Craniella sputnika
+69,Sessile epifauna,knobby ball sponge,Craniella sp. B
+69,Sessile epifauna,spiny ball sponge,Craniella sigmoancoratum
+69,Sessile epifauna,puffball sponges,Craniella sp.
+69,Sessile epifauna,NA,Craniella arb
+70,Infauna,polychaete worm ,Polychaeta
+70,Infauna,amphipod,Amphipoda
+70,Infauna,gammarid amphipod,Gammaridae
+70,Infauna,worm ,Annelida
+70,Infauna,iridescent tubeworm,Eunice valens
+70,Infauna,parchment tubeworms,Chaetopterus sp.
+70,Infauna,yellow sponge worm,Spinther alaskensis
+70,Infauna,pink sponge worm,Spinther sp. 
+70,Infauna,NA,Ampharetidae
+70,Infauna,NA,Oweniidae
+70,Infauna,sea mouse,Aphroditidae
+70,Infauna,NA,Aphrodita sp.
+70,Infauna,NA,Aphrodita japonica
+70,Infauna,NA,Aphrodita negligens
+70,Infauna,eighteen-scaled worm,Halosydna brevisetosa
+70,Infauna,porcupine worm,Euphrosine multibranchiata
+70,Infauna,gravel tube worm,Nothria conchylega
+70,Infauna,NA,Travisia sp.
+70,Infauna,pupa utility worm,Travisia pupa
+70,Infauna,red-banded commensal scale worm,Arctonoe vittata
+70,Infauna,NA,Glycera sp.
+70,Infauna,cat worm,Nephtyidae
+70,Infauna,NA,Nereididae
+70,Infauna,NA,Nereis sp.
+70,Infauna,NA,Amblyosyllis sp.
+70,Infauna,red and white banded sea nymph,Cheilonereis cyclurus
+70,Infauna,NA,Phyllodocidae
+70,Infauna,scale worm,Polynoidae
+70,Infauna,NA,Eunoe sp.
+70,Infauna,giant scale worm,Eunoe nodosa
+70,Infauna,depressed scale worm,Eunoe depressa
+70,Infauna,thorny scaleworm,Eunoe senta
+70,Infauna,ciliated scale worm,Gattyana ciliata
+70,Infauna,sabellid,Sabellidae
+70,Infauna,slime worm,Myxicola infundibulum
+70,Infauna,NA,Serpula vermicularis
+70,Infauna,red trumpet calcareous tubeworm,Serpula columbiana
+70,Infauna,serpulid worm,Serpula sp.
+70,Infauna,NA,Pectinaria sp.
+70,Infauna,tusk coneworm,Cistenides granulata
+70,Infauna,NA,Terebellidae
+70,Infauna,NA,Sternaspis buzhinskajae
+70,Infauna,NA,Sternaspis sp.
+70,Infauna,NA,Brada sachalina
+70,Infauna,NA,Brada granulata
+70,Infauna,NA,Stylaroides plumosa
+70,Infauna,rough brada,Brada sp. 
+70,Infauna,smooth brada,Brada sp. 
+70,Infauna,slimy brada,Brada sp. 
+70,Infauna,NA,Brada inhabilis
+70,Infauna,NA,Brada villosa
+70,Infauna,bristle worm,NA
+70,Infauna,leech,Hirudinea
+70,Infauna,NA,Notostomum sp.
+70,Infauna,striped sea leech,Notostomum cyclostomum
+70,Infauna,NA,Notostomobdella sp.
+70,Infauna,isopod,Isopoda
+70,Infauna,NA,Arcturidae
+70,Infauna,spiny arcturid,Arcturus sp. 
+70,Infauna,NA,Arcturus longispinis
+70,Infauna,NA,Livoneca sp.
+70,Infauna,NA,Idoteidae
+70,Infauna,pill bug isopod,Gnorimosphaeroma sp.
+70,Infauna,NA,Saduria sibirica
+70,Infauna,NA,Saduria entomon
+70,Infauna,gravel isopod,Synidotea sp.
+70,Infauna,NA,Synidotea bicuspida
+70,Infauna,sea cockroach,Rocinela angustata
+70,Infauna,giant isopod,Anuropus bathypelagica
+70,Infauna,cumacean,Cumacea
+70,Infauna,NA,Diastylis sp.
+70,Infauna,Alaskan cumacean,Diastylis alaskensis
+70,Infauna,NA,Diastylis dalli
+70,Infauna,bivalve,Bivalvia
+70,Infauna,NA,Acharax johnsoni
+70,Infauna,scallop,Pectinidae
+70,Infauna,white scallop,Chlamys albida
+70,Infauna,NA,Chlamys sp.
+70,Infauna,Bering scallop,Chlamys behringiana
+70,Infauna,reddish scallop,Chlamys rubida
+70,Infauna,spiny scallop,Chlamys hastata
+70,Infauna,NA,Chlamys erythocomata
+70,Infauna,false Iceland scallop,Chlamys pseudoislandica
+70,Infauna,weathervane scallop,Patinopecten caurinus
+70,Infauna,giant rock-scallop,Crassadoma gigantea
+70,Infauna,Vancouver scallop,Delectopecten vancouverensis
+70,Infauna,NA,Parvamussium sp.
+70,Infauna,Alaska glass-scallop,Parvamussium alaskense
+70,Infauna,NA,Cyclopecten sp.
+70,Infauna,salmon glass-scallop,Cyclopecten davidsoni
+70,Infauna,NA,Cyclopecten uschakovi
+70,Infauna,Pacific geoduck,Panopea generosa
+70,Infauna,NA,Hiatella sp.
+70,Infauna,Arctic Hiatella,Hiatella arctica
+70,Infauna,NA,Panomya arctica
+70,Infauna,NA,Panomya sp.
+70,Infauna,Arctic roughmya,Panomya norvegica
+70,Infauna,ample roughmya,Panomya ampla
+70,Infauna,awning clam,Solemya sp.
+70,Infauna,gutless awning clam,Solemya reidi
+70,Infauna,NA,Nucula sp.
+70,Infauna,smooth nutclam,Nucula tenuis
+70,Infauna,divaricate nutclam,Acila castrensis
+70,Infauna,NA,Megayoldia sp.
+70,Infauna,NA,Yoldia sp.
+70,Infauna,NA,Yoldia montereyensis
+70,Infauna,crisscrossed Yoldia,Yoldia seminuda
+70,Infauna,oval Yoldia,Yoldia myalis
+70,Infauna,broad Yoldia,Megayoldia thraciaeformis
+70,Infauna,northern Yoldia,Yoldia hyperborea
+70,Infauna,NA,Portlandia sp.
+70,Infauna,NA,Yoldiella sp.
+70,Infauna,NA,Nuculana sp.
+70,Infauna,northern nutclam,Nuculana pernula
+70,Infauna,NA,Nuculana taphria
+70,Infauna,NA,Propeleda conceptionis
+70,Infauna,trenched nutclam,Nuculana fossa
+70,Infauna,stout nutclam,Nuculana buccata
+70,Infauna,Akutan limops,Limopsis akutanica
+70,Infauna,vaginated limops,Empleconia vaginata
+70,Infauna,NA,Glycymeris septentrionalis
+70,Infauna,California bittersweet,Glycymeris subobsoleta
+70,Infauna,NA,Samacar sp.
+70,Infauna,NA,Lyonsia sp.
+70,Infauna,NA,Vilasina seminuda
+70,Infauna,British Columbia crenella,Solamen columbianum
+70,Infauna,NA,Musculus sp.
+70,Infauna,black mussel,Musculus niger
+70,Infauna,discordant mussel,Musculus discors
+70,Infauna,NA,Musculus olivaceus
+70,Infauna,partly-sculptured Crenella,Crenella seminuda
+70,Infauna,corrugate mussel,Musculus glacialis
+70,Infauna,NA,Limatula attenuata
+70,Infauna,NA,Limatula sp. 
+70,Infauna,crenulate Astarte,Astarte crenata
+70,Infauna,NA,Astarte sp.
+70,Infauna,boreal Astarte,Astarte borealis
+70,Infauna,polar Astarte,Astarte polaris
+70,Infauna,elliptical Astarte,Astarte elliptica
+70,Infauna,Rolland Tridonta,Tridonta rollandi
+70,Infauna,NA,Astarte compacta
+70,Infauna,NA,Astarte arctica
+70,Infauna,NA,Astarte montagui
+70,Infauna,NA,Astarte esquimalti
+70,Infauna,NA,Cardita sp.
+70,Infauna,NA,Carditidae
+70,Infauna,NA,Cyclocardia ovata
+70,Infauna,stout Cyclocardia,Cyclocardia ventricosa
+70,Infauna,thick carditid,Cyclocardia crassidens
+70,Infauna,many-rib Cyclocardia,Cyclocardia crebricostata
+70,Infauna,NA,Cyclocardia sp.
+70,Infauna,NA,Cyclocardia umnaka
+70,Infauna,northern carditid,Cyclocardia sp. cf. borealis (Clark 2006)
+70,Infauna,NA,Vesicomya pacifica
+70,Infauna,NA,Lasaeidae
+70,Infauna,suborbicular kellyclam,Kellia suborbicularis
+70,Infauna,La Perouse kellyclam,Kellia laperousii
+70,Infauna,NA,Conchocele bisecta
+70,Infauna,NA,Clinocardium sp.
+70,Infauna,cockle,NA
+70,Infauna,Nuttall cockle,Clinocardium nuttallii
+70,Infauna,hairy cockle,Ciliatoclinocardium ciliatum
+70,Infauna,California cockle,Clinocardium californiense
+70,Infauna,low-rib cockle,Clinocardium blandum
+70,Infauna,hundred-line cockle,Nemocardium centifilosum
+70,Infauna,milky venus,Compsomyax subdiaphanus
+70,Infauna,Washington clam,Saxidomus nuttalli
+70,Infauna,butter clam,Saxidomus gigantea
+70,Infauna,Kennerleys venus,Humilaria kennerleyi
+70,Infauna,Pacific littleneck,Leukoma staminea
+70,Infauna,NA,Protothaca sp.
+70,Infauna,wavy Liocyma,Liocyma fluctosa
+70,Infauna,Pacific gaper,Tresus nuttallii
+70,Infauna,fat gaper,Tresus capax
+70,Infauna,NA,Mactromeris sp.
+70,Infauna,Arctic surfclam,Mactromeris polynyma
+70,Infauna,NA,Gari californica
+70,Infauna,NA,Semele rubropicta
+70,Infauna,NA,Tellina sp.
+70,Infauna,carpenter tellin,Tellina carpenteri
+70,Infauna,salmon tellin,Tellina nuculoides
+70,Infauna,NA,Tellina modesta
+70,Infauna,Alaska great-tellin,Tellina lutea
+70,Infauna,NA,Tellina bodegensis
+70,Infauna,NA,Entodesma navicula
+70,Infauna,glacial Pandora,Pandora glacialis
+70,Infauna,NA,Pandora wardiana
+70,Infauna,bilirate Pandora,Pandora bilirata
+70,Infauna,threaded Pandora,Pandora filosa
+70,Infauna,bittersweets,Glycymeris sp.
+70,Infauna,NA,Macoma sp.
+70,Infauna,bent-nose Macoma,Macoma nasuta
+70,Infauna,chalky Macoma,Macoma calcarea
+70,Infauna,NA,Macoma yoldiformis
+70,Infauna,white-sand Macoma,Macoma secta
+70,Infauna,NA,Macoma carlottensis
+70,Infauna,NA,Macoma moesta
+70,Infauna,heavy Macoma,Macoma brota
+70,Infauna,pointed Macoma,Macoma inquinata
+70,Infauna,NA,Siliqua sp.
+70,Infauna,Pacific razor,Siliqua patula
+70,Infauna,Alaska razor,Siliqua alta
+70,Infauna,NA,Serripes sp.
+70,Infauna,Greenland cockle,Serripes groenlandicus
+70,Infauna,broad cockle,Serripes laperousii
+70,Infauna,oblique smoothcockle,Serripes notabilis
+70,Infauna,NA,Mya sp.
+70,Infauna,NA,Mya baxteri
+70,Infauna,softshell,Mya arenaria
+70,Infauna,truncate softshell,Mya truncata
+70,Infauna,false softshell,Mya pseudoarenaria
+70,Infauna,elegant soft shell,Mya elegans
+70,Infauna,NA,Thracia trapezoides
+70,Infauna,NA,Xylophaga californica
+70,Infauna,shipworm,Teredinidae
+70,Infauna,feathery shipworm,Bankia setacea
+70,Infauna,sandy Lyonsia,Lyonsia arenosa
+70,Infauna,ringed lucine,Lucinoma annulatum
+70,Infauna,NA,Cardiomya sp.
+70,Infauna,NA,Cuspidaria glacialis
+70,Infauna,NA,Halicardia perplicata
+70,Infauna,Alaska falsejingle,Pododesmus macrochisma
+70,Infauna,abalone jingle,Pododesmus cepio
+70,Infauna,NA,Pododesmus sp.
+70,Infauna,rock scallops,Hinnites sp.
+70,Infauna,NA,Anomia sp.
+70,Infauna,falsejingle,Anomiidae
+70,Infauna,scaphopod,Scaphopoda
+70,Infauna,NA,Dentaliidae
+70,Infauna,NA,Dentalium sp.
+70,Infauna,Dall tuskshell,Rhabdus dalli
+70,Infauna,NA,Gadilidae
+70,Infauna,Stearns toothshell,Compressidens stearnsii
+70,Infauna,flatworm,Platyhelminthes
+70,Infauna,polyclad flatworm,Polycladida
+70,Infauna,acoel turbellarian,Acoelida
+70,Infauna,nemertean worm,Nemertea
+70,Infauna,NA,Emplectonema sp.
+70,Infauna,black specked ribbon worm,Emplectonema sp. (Clark 2006)
+70,Infauna,NA,Tubulanus sp.
+70,Infauna,orange ribbon worm,Tubulanus polymorphus
+70,Infauna,red ribbon worm,Tubulanus sp. A (Clark 2006)
+70,Infauna,light-edged ribbon worm,Cerebratulus californienesis
+70,Infauna,bamboo worm,Maldanidae
+70,Infauna,priapulid worm,Priapulus sp.
+70,Infauna,NA,Priapulus caudatus
+70,Infauna,arrow worm,Chaetognatha
+70,Infauna,nematode worm,Nematoda
+70,Infauna,peanut worm,Sipuncula
+70,Infauna,NA,Golfingia margaritacea
+70,Infauna,NA,Phascolosomatidae
+70,Infauna,echiuroid worm,Echiura
+70,Infauna,NA,Bonelliopsis alaskana
+70,Infauna,NA,Hamingia arctica
+70,Infauna,phoronida tube worm,Phoronida
+70,Infauna,bryozoan,Bryozoa
+70,Infauna,NA,Leieschara sp.
+70,Infauna,NA,Myriapora sp. 
+70,Infauna,NA,Myriapora orientalis
+70,Infauna,NA,Dendrobeania sp.
+70,Infauna,Northern staghorn bryozoan,Heteropora pacifica
+71,Gelatinous carnivores,Sertularia robusta,Sertularia robusta
+71,Gelatinous carnivores,by-the-wind sailor,Velella velella
+71,Gelatinous carnivores,blob-top jelly,Neoturris breviconis
+71,Gelatinous carnivores,jellyfish,Scyphozoa
+71,Gelatinous carnivores,chrysaora jelly,Chrysaora sp.
+71,Gelatinous carnivores,Periphylla sp.,Periphylla sp.
+71,Gelatinous carnivores,helmet jelly,Periphylla periphylla
+71,Gelatinous carnivores,Chrysaora melanaster,Chrysaora melanaster
+71,Gelatinous carnivores,egg yolk jelly,Phacellophora camtschatica
+71,Gelatinous carnivores,Aequorea sp.,Aequorea sp.
+71,Gelatinous carnivores,Bolinopsis sp.,Bolinopsis sp.
+71,Gelatinous carnivores,Polyorchis sp.,Polyorchis sp.
+71,Gelatinous carnivores,Phacellophora sp.,Phacellophora sp.
+71,Gelatinous carnivores,Atolla sp.,Atolla sp.
+71,Gelatinous carnivores,Aurelia sp.,Aurelia sp.
+71,Gelatinous carnivores,Aurelia labiata,Aurelia labiata
+71,Gelatinous carnivores,Aurelia aurita,Aurelia aurita
+71,Gelatinous carnivores,sea nettle,Chrysaora fuscescens
+71,Gelatinous carnivores,whitecross jelly,Staurostoma mertensii
+71,Gelatinous carnivores,brown rimmed jelly,Aurelia limbata
+71,Gelatinous carnivores,Cyanea sp.,Cyanea sp.
+71,Gelatinous carnivores,lion's mane jelly,Cyanea capillata
+71,Gelatinous carnivores,comb jelly,Ctenophora
+71,Gelatinous carnivores,Beroe sp.,Beroe sp.
+71,Gelatinous carnivores,Beroe abyssicola,Beroe abyssicola
+72,Other gelatinous zooplankton,sea pickle,NA
+72,Other gelatinous zooplankton,orange compound tunicate,Ritterella pulchra
+72,Other gelatinous zooplankton,salp unid.,Thaliacea
+72,Other gelatinous zooplankton,NA,Pyrosoma atlanticum
+72,Other gelatinous zooplankton,common salp,Thetys vagina
+73,Mysids,opossum shrimps,Mysida
+73,Mysids,NA,Neognathophausia sp.
+73,Mysids,giant red mysid,Neognathophausia gigas
+73,Mysids,red mysid,Neognathophausia ingens
+73,Mysids,NA,Mysidae
+73,Mysids,NA,Neomysis awatschensis
+74,Pelagic amphipods,amphipods,amphipods
+75,Euphausiids,euphausiid ,Euphausiacea
+75,Euphausiids,euphausiid ,Thysanoessa sp.
+76,Large copepods,copepod,copepod
+77,Small copepods,copepod,copepod
+78,Large microzooplankton,microzooplankton,microzooplankton
+79,Small microzooplankton,microzooplankton,microzooplankton
+78,Large phytoplankton,phytoplankton,phytoplankton
+79,Small phytoplankton,phytoplankton,phytoplankton
+82,Macroalgae,macroalgae,macroalgae
+83,Benthic microbes,microbes,microbes
+84,Discards,discards,discards
+85,Offal,offal,offal
+86,Pelagic detritus,detritus,detritus
+87,Benthic detritus,detritus,detritus
