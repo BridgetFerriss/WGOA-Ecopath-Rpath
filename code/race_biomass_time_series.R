@@ -28,6 +28,7 @@ source("code/REEM_fooddata_functions.R")
 
 
 # Load all Race data and perform some preliminary cleanups/calculations
+# this takes a long time to run, but we only need to run once
 REEM.loadclean.RACE.googledrive("https://drive.google.com/drive/folders/1nIXG6ydT52bcy-UoEgFSjKYWUXvtx-JA")
 
 # Load strata table (linking models to strata)
@@ -66,7 +67,7 @@ race_lookup_col <- c("EBS" = "ebs_ecopath",
 # WGOA GUILDS -----------------------------------------------
 this.model  <- "WGOA"
 race_lookup      <- race_lookup_base %>% mutate(race_group  = .data[["final_wgoa"]])
-q_table          <- read.clean.csv("apps/ESR_guilds/GroupQ_2021_GOA.csv")
+q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
 domains_included <-  c(
   "Chirikof_shelf",
   "Chirikof_gully",
@@ -124,12 +125,38 @@ model_sum <- domain_sum %>%
     .groups = "keep"
   ) %>%
   mutate(
+    sd_bio_tons      = sqrt(var_bio_tons),
+    cv_bio           = sd_bio_tons / bio_tons,
     model_area       = tot_model_area,
     bio_tons_km2     = bio_tons / model_area,
     var_bio_tons_km2 = var_bio_tons / (model_area * model_area),
-    sd_bio_tons      = sqrt(var_bio_tons),
-    cv_bio           = sd_bio_tons / bio_tons
-  )
+    sd_bio_tons_km2  = sqrt(var_bio_tons_km2),
+    cv_bio_tons_km2  = sd_bio_tons_km2 / bio_tons_km2,
+  ) %>% 
+  filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>% 
+  ungroup() %>%
+  # expand to all years 1990–2023 for each model × race_group
+  complete(
+    year       = 1990:2023,
+    model,
+    race_group
+  ) %>%
+  group_by(model, race_group) %>%
+  fill(model_area, .direction = "down") %>%
+  ungroup()
+
+#wide format
+wgoa_race_b <- model_sum %>% 
+  select(year,model,race_group,bio_tons_km2,cv_bio_tons_km2) %>%
+  rename(mtkm2 = bio_tons_km2,
+         cv_mtkm2 = cv_bio_tons_km2) %>%
+  pivot_wider(names_from = race_group,
+              values_from = c(mtkm2,cv_mtkm2),
+              names_sep = "_", 
+              names_glue = "{race_group}_{.value}",
+              names_vary = 'slowest') #tidyr thing. 
+  
+
 
 
 # Following code does means but not sds
@@ -147,8 +174,8 @@ model_sum <- domain_sum %>%
 #              tot_bio_tkm2 = sum(bio_tons)/tot_model_area,
 #      .groups="keep")
 
-write.csv(model_sum,
-          "apps/ESR_guilds/WGOA_groundfish_bio.csv",
+write.csv(wgoa_race_b,
+          "WGOA_source_data/wgoa_groundfish_bio_mt_km2_wide.csv",
           row.names = F)
 
 
@@ -172,7 +199,7 @@ write.csv(model_sum,
 # EGOA GUILDS -----------------------------------------------
 this.model.e  <- "EGOA"
 race_lookup      <- race_lookup_base %>% mutate(race_group  = .data[["final_egoa"]])
-q_table          <- read.clean.csv("apps/ESR_guilds/GroupQ_2021_GOA.csv")
+q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
 domains_included_e <-  c(
   "Southeastern_shelf",
   "Southeastern_slope",
@@ -227,14 +254,44 @@ model_sum_e <- domain_sum_e %>%
     var_bio_tons = sum(var_bio_tons),
     .groups = "keep"
   ) %>%
-  mutate(
-    model_area       = tot_model_area_e,
-    bio_tons_km2     = bio_tons / model_area,
-    var_bio_tons_km2 = var_bio_tons / (model_area * model_area),
-    sd_bio_tons      = sqrt(var_bio_tons),
-    cv_bio           = sd_bio_tons / bio_tons
-  )  
+    mutate(
+      sd_bio_tons      = sqrt(var_bio_tons),
+      cv_bio           = sd_bio_tons / bio_tons,
+      model_area       = tot_model_area,
+      bio_tons_km2     = bio_tons / model_area,
+      var_bio_tons_km2 = var_bio_tons / (model_area * model_area),
+      sd_bio_tons_km2  = sqrt(var_bio_tons_km2),
+      cv_bio_tons_km2  = sd_bio_tons_km2 / bio_tons_km2,
+  ) %>% 
+    filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>% 
+  ungroup() %>%
+  # expand to all years 1990–2023 for each model × race_group
+  complete(
+    year       = 1990:2023,
+    model,
+    race_group
+  ) %>%
+  group_by(model, race_group) %>%
+  fill(model_area, .direction = "down") %>%
+  ungroup()
 
 write.csv(model_sum_e,
-          "apps/ESR_guilds/EGOA_groundfish_bio.csv",
+          "EGOA_source_data/EGOA_groundfish_bio.csv",
+          row.names = F)
+
+
+#wide format
+wgoa_race_b_e <- model_sum_e %>% 
+  select(year,model,race_group,bio_tons_km2,cv_bio_tons_km2) %>%
+  rename(mtkm2 = bio_tons_km2,
+         cv_mtkm2 = cv_bio_tons_km2) %>%
+  pivot_wider(names_from = race_group,
+              values_from = c(mtkm2,cv_mtkm2),
+              names_sep = "_", 
+              names_glue = "{race_group}_{.value}",
+              names_vary = 'slowest') #tidyr thing. 
+
+
+write.csv(wgoa_race_b_e,
+          "EGOA_source_data/egoa_groundfish_bio_mt_km2_wide.csv",
           row.names = F)
