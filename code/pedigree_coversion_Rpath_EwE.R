@@ -11,7 +11,7 @@ library(tidyverse)
 library(here)
 
 # Pedigree file updated on 4/28/2025
-GOA_ped<- read.csv("C:/Users/biadias/Dropbox/A_UW_CISCOES/MODELS/GOA Ecopath/RPath_pedigree.csv")
+GOA_ped<- read.csv("data/wgoa_rpath_pedigree.csv")
 
 GOA_ped_v2 <- GOA_ped %>%
   mutate(Biomass = case_when(Biomass =="8"~ "1",
@@ -56,5 +56,5 @@ GOA_ped_v2 <- GOA_ped %>%
                              Consumption_biomass =="3"~ "6",
                              Consumption_biomass =="2"~ "7",
                              Consumption_biomass =="1"~ "8"))
-write.csv(GOA_ped_v2,"C:/Users/biadias/Dropbox/A_UW_CISCOES/MODELS/GOA Ecopath/RPathtoEwE_pedigree.csv") 
+write.csv(GOA_ped_v2,"WGOA_source_data/wgoa_ewe_pedigree.csv") 
 # Pedigree file updated on 4/28/2025
