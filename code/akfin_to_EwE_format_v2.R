@@ -245,7 +245,6 @@ wgoa_catch_ts_w_mtkm2 <- read.csv("WGOA_source_data/wgoa_fed_catch_ts_wide_mtkm2
   mutate(year = as.numeric(year))
 
 wgoa_catch_state_ts_w_mtkm2 <- read.csv("WGOA_source_data/wgoa_state_catch_ts_wide_mtkm2.csv") %>%
-  select(-X) %>%
   mutate(year = as.numeric(year))
 
 wgoa_catch_ts_w_mtkm2_combined <- wgoa_catch_ts_w_mtkm2 %>%
@@ -258,4 +257,12 @@ wgoa_catch_ts_w_mtkm2_combined <- wgoa_catch_ts_w_mtkm2 %>%
   rename_all( ~ str_replace(., "__", "_")) %>%
   rename_all( ~ str_replace(., "_$", "")) %>%
   rename_all( ~ str_replace(., "^_", ""))
-#write.csv(wgoa_catch_ts_w_mtkm2_combined, "WGOA_source_data/wgoa_catch_ts_wide_mtkm2_combined.csv", row.names = FALSE)
+  
+wgoa_catches_ft_cas <- wgoa_catch_ts_w_mtkm2_combined %>% 
+  select(year, sort(tidyselect::peek_vars()))
+
+#write.csv(wgoa_catches_ft_cas, "WGOA_source_data/wgoa_catches_ft_cas_final_mtkm2.csv", row.names = FALSE)
+
+dt_1990 <- wgoa_catches_ft_cas %>% 
+  filter(year <= 1993) 
+#write.csv(dt_1990, "WGOA_source_data/wgoa_catches_ft_cas_1990_mean.csv", row.names = FALSE)
