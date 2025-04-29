@@ -1,5 +1,5 @@
 # Task 1: replicate design-based total biomass per stratum that's in the SQL table
-# AUTHORS: Matt Callahan
+# 
 # Data and script locations -----------------------------------------------
 # CPUE table to replicate
 # SQL Developer: AFSC--> Other Users --> AI --> Tables --> CPUE
