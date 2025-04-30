@@ -112,6 +112,7 @@ domain_sum <- haul_sum %>%
     var_wtcpue    = tot_wtcpue2 / stations - mean_wtcpue * mean_wtcpue,
     bio_t_km2     = mean_wtcpue / 1000,
     #WHY the cpue to mt/km2 conversion is 1:1000? ####
+    #units are kg/hectare and are transformed by the GAP_get_cpue.R function. here we are doing the final transformation from kg to mt
     bio_tons      = bio_t_km2 * area,
     var_bio_t_km2 = var_wtcpue / (1000 * 1000),
     var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000)
@@ -257,7 +258,7 @@ model_sum_e <- domain_sum_e %>%
     mutate(
       sd_bio_tons      = sqrt(var_bio_tons),
       cv_bio           = sd_bio_tons / bio_tons,
-      model_area       = tot_model_area,
+      model_area       = tot_model_area_e,
       bio_tons_km2     = bio_tons / model_area,
       var_bio_tons_km2 = var_bio_tons / (model_area * model_area),
       sd_bio_tons_km2  = sqrt(var_bio_tons_km2),
