@@ -582,8 +582,36 @@ REEM.loadclean.strata<-function(strata_lookup_file    = "lookups/combined_BTS_st
 }  
 
 ##########################################################################
+REEM.loadclean.strata.by.stratum<-function(strata_lookup_file    = "lookups/combined_BTS_strata.csv",
+                                stratum_bin_column    = "stratum"){
+  strata_lookup    <<- read.clean.csv(strata_lookup_file) %>% 
+    mutate(stratum_bin = .data[[stratum_bin_column]])
+  strat_areas <<- strata_lookup %>%
+    select(model,stratum_bin,area) %>%
+    group_by(model, stratum_bin) %>%
+    summarize(area=sum(area),.groups="keep")  
+} 
+
+##########################################################################
 REEM.loadclean.lookups<-function(strata_lookup_file    = "lookups/combined_BTS_strata.csv",
                                  stratum_bin_column    = "strat_groups",
+                                 preynames_lookup_file = "lookups/Alaska_PreyLookup_MASTER.csv",
+                                 prey_guild_column     = "ecopath_prey"){
+  
+  strata_lookup    <<- read.clean.csv(strata_lookup_file)    %>% mutate(stratum_bin = .data[[stratum_bin_column]])
+  preynames_lookup <<- read.clean.csv(preynames_lookup_file) %>% mutate(prey_guild  = .data[[prey_guild_column]])
+  strat_areas <<- strata_lookup %>%
+    select(model,stratum_bin,area) %>%
+    group_by(model, stratum_bin) %>%
+    summarize(area=sum(area),.groups="keep")
+  
+  #assign("strata_lookup",    value = strata_,    envir = .GlobalEnv)  
+  #assign("preynames_lookup", value = read.clean.csv(preynames_lookup_file), envir = .GlobalEnv)    
+}
+
+##########################################################################
+REEM.loadclean.lookups.by.stratum<-function(strata_lookup_file    = "lookups/combined_BTS_strata.csv",
+                                 stratum_bin_column    = "stratum",
                                  preynames_lookup_file = "lookups/Alaska_PreyLookup_MASTER.csv",
                                  prey_guild_column     = "ecopath_prey"){
   
