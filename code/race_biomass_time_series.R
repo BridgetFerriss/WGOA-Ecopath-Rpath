@@ -22,8 +22,6 @@ library("googledrive")
 #googledrive::drive_auth(email = "enter your email here!") #RUN THIS with your e-mail
 #READ https://lter.github.io/scicomp/tutorial_googledrive-pkg.html connect googledrive to R
 
-####################################################################
-
 source("code/REEM_fooddata_functions.R")
 
 
@@ -47,8 +45,6 @@ race_lookup_col <- c("EBS" = "ebs_ecopath",
                      "EGOA" = "egoa_ecopath")
 
 
-
-##############################################################################
 #  get_cpue_all() mirrors the RACE get_cpue function (returning by haul), except it gets
 # biomasses for all groups at once, binned by the race_lookup names (race_group column)
 # haul_stratum_summary() gets the total stations and area for each model domain.
@@ -62,7 +58,6 @@ race_lookup_col <- c("EBS" = "ebs_ecopath",
 #  left_join(race_lookup_older,by="species_code")
 #
 #write.csv(race_lookup_combined,"lookups/race_lookup_combined.csv",row.names=F)
-
 
 # WGOA GUILDS -----------------------------------------------
 this.model  <- "WGOA"
@@ -126,7 +121,7 @@ domain_sum <- haul_sum %>%
     mean_wtcpue   = tot_wtcpue / stations,
     var_wtcpue    = tot_wtcpue2 / stations - mean_wtcpue * mean_wtcpue,
     bio_t_km2     = mean_wtcpue / 1000,
-    #WHY the cpue to mt/km2 conversion is 1:1000? ####
+    #WHY the cpue to mt/km2 conversion is 1:1000? 
     #units are kg/hectare and are transformed by the GAP_get_cpue.R function. 
     #Here we are doing the final transformation from kg to mt
     bio_tons      = bio_t_km2 * area,
@@ -239,6 +234,8 @@ write.csv(bio_combined,
           row.names = F)
 
 #BIA YOU ARE HERE ####
+
+
 #wide format
 wgoa_race_b <- model_sum %>% 
   select(year,model,race_group,bio_tons_km2,cv_bio_tons_km2) %>%
