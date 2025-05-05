@@ -107,7 +107,7 @@ wgoa_catch_ts_v2 <- wgoa_catch_ts %>%
            node) %>%
   summarise(catch_mt = sum(catch_mt))
 
-#write.csv(wgoa_catch_ts, "WGOA_source_data/wgoa_catch_ts_long_v2.csv", row.names = FALSE)
+write.csv(wgoa_catch_ts, "WGOA_source_data/wgoa_catch_ts_long_v2.csv", row.names = FALSE)
 
 # Transform the data to wide format
 wgoa_catch_ts_w_mt <- wgoa_catch_ts_v2 %>%
@@ -142,13 +142,13 @@ wgoa_catch_ts_w_mtkm2 <- wgoa_catch_ts_v2 %>%
     names_sort = TRUE
   )
 
-#write.csv(wgoa_catch_ts_w_mtkm2, "WGOA_source_data/wgoa_fed_catch_ts_wide_mtkm2.csv")
+write.csv(wgoa_catch_ts_w_mtkm2, "WGOA_source_data/wgoa_fed_catch_ts_wide_mtkm2.csv")
 
 
 
 # STATE ####
 catch_data_state <- as_tibble(read.csv("data/2023/wgoa_catch_year_group_spec_ret_gear_state.csv")) %>%
-  filter(harvest_description == "State managed fishery") %>%
+  filter(harvest_description =="State managed fishery"| harvest_description == "State managed groundfish") %>%
   filter(conf_flag == "0") %>%  na.omit() %>%
   filter(!species_name %in% c("salmon roe, chum"))
 
@@ -202,6 +202,8 @@ wgoa_catch_state_ts <- df2 %>%
 wgoa_catch_state_ts_v2 <- wgoa_catch_state_ts %>%
   left_join(lookup_unique, by = c("wgoa_group_name" = "wgoa_group_name")) %>%
   mutate(harvest_description = case_when(harvest_description == "State managed fishery" ~
+                                           "state",
+                                         harvest_description == "State managed groundfish" ~
                                            "state"))
 
 colnames(wgoa_catch_state_ts_v2) <- c(
@@ -235,7 +237,7 @@ wgoa_catch_state_ts_w_mtkm2 <- wgoa_catch_state_ts_v2 %>%
     values_from = c(catch_mtkm2),
     names_sort = TRUE
   )
-#write.csv(wgoa_catch_state_ts_w_mtkm2, "WGOA_source_data/wgoa_state_catch_ts_wide_mtkm2.csv", row.names = FALSE)
+write.csv(wgoa_catch_state_ts_w_mtkm2, "WGOA_source_data/wgoa_state_catch_ts_wide_mtkm2.csv", row.names = FALSE)
 
 
 
@@ -261,8 +263,8 @@ wgoa_catch_ts_w_mtkm2_combined <- wgoa_catch_ts_w_mtkm2 %>%
 wgoa_catches_ft_cas <- wgoa_catch_ts_w_mtkm2_combined %>% 
   select(year, sort(tidyselect::peek_vars()))
 
-#write.csv(wgoa_catches_ft_cas, "WGOA_source_data/wgoa_catches_ft_cas_final_mtkm2.csv", row.names = FALSE)
+write.csv(wgoa_catches_ft_cas, "WGOA_source_data/wgoa_catches_ft_cas_final_mtkm2.csv", row.names = FALSE)
 
 dt_1990 <- wgoa_catches_ft_cas %>% 
   filter(year <= 1993) 
-#write.csv(dt_1990, "WGOA_source_data/wgoa_catches_ft_cas_1990_mean.csv", row.names = FALSE)
+write.csv(dt_1990, "WGOA_source_data/wgoa_catches_ft_cas_1990_mean.csv", row.names = FALSE)
