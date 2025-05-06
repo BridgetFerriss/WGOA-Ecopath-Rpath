@@ -8,6 +8,7 @@
 
 
 library(tidyverse)
+library(janitor)
 library(here)
 
 
@@ -147,10 +148,83 @@ write.csv(wgoa_catch_ts_w_mtkm2, "WGOA_source_data/wgoa_fed_catch_ts_wide_mtkm2.
 
 
 # STATE ####
-catch_data_state <- as_tibble(read.csv("data/2023/wgoa_catch_year_group_spec_ret_gear_state.csv")) %>%
-  filter(harvest_description =="State managed fishery"| harvest_description == "State managed groundfish") %>%
+# Lingcod, non-ground, Halibut, salmon, herring, 
+catch_data_state <- as_tibble(read.csv("data/2023/wgoa_catch_year_group_spec_ret_gear_state.csv")) %>% 
+  filter(harvest_description %in% c("State managed fishery","State managed groundfish",
+                                    "Federally managed (Groundfish) "
+                                    )) %>%
   filter(conf_flag == "0") %>%  na.omit() %>%
-  filter(!species_name %in% c("salmon roe, chum"))
+  filter(species_name %in% c("Blk hagfish",
+                              "clam, Pacific little-neck",          
+                              "crab, Dungeness",
+                              "crab, golden (brown) king",
+                              "crab, king (general)" ,            
+                              "crab, Tanner (general)",
+                              "crab, Tanner, bairdi"    ,
+                              "crab, Tanner, grooved (tanneri)",  
+                              "eels or eel-like fish" ,
+                              "flatfish, deep water"  ,
+                              "flatfish, shallow water",          
+                              "flounder, Alaska plaice",
+                              "flounder, general",                
+                              "flounder, starry",
+                              "greenling, atka mackerel",
+                              "grenadier (rattail)",              
+                              "groundfish, general" ,
+                              "halibut, Pacific",
+                              "herring, food" ,                   
+                              "herring, Pacific",
+                              "jellyfish",
+                              "lingcod",                          
+                              "octopus, North Pacific",                
+                              "prowfish",
+                              "rockfish, black",
+                              "rockfish, canary",                 
+                              "rockfish, china" ,
+                              "rockfish, copper",
+                              "rockfish, dark",                   
+                              "rockfish, dusky",
+                              "rockfish, northern",
+                              "rockfish, other",                  
+                              "rockfish, quillback" ,
+                              "rockfish, red" ,
+                              "rockfish, redbanded",              
+                              "rockfish, redstripe",
+                              "rockfish, rosethorn",
+                              "rockfish, rougheye",               
+                              "rockfish, sharpchin",
+                              "rockfish, shortraker" ,
+                              "rockfish, silvergray", 
+                              "rockfish, tiger",
+                              "rockfish, unspecified demersal",   
+                              "rockfish, unspecified pelagic",
+                              "rockfish, unspecified slope",
+                              "rockfish, widow",                  
+                              "rockfish, yelloweye (red snapper)",
+                              "rockfish, yellowtail" , 
+                              "salmon, chinook",
+                              "salmon, chum" ,                              
+                              "salmon, coho" ,
+                              "salmon, groundfish bycatch",
+                              "salmon, pink" ,                              
+                              "salmon, sockeye",
+                              "scallop, weathervane",
+                              "sculpin, coastrange",
+                              "sculpin, general",
+                              "sea cucumber",
+                              "sea urchin" ,
+                              "shark, other",
+                              "shark, spiny dogfish",
+                              "smelt, eulachon",
+                              "smelt, general",                  
+                              "sole, butter" ,
+                              "sole, dover"  ,
+                              "sole, English", 
+                              "sole, rock",                      
+                              "sole, sand",
+                              "sole, yellowfin",
+                              "squid, majestic",                 
+                              "turbot, Greenland"))
 
 
 # Pre-split each lookup pattern into its word‐token sto remove plural
@@ -202,9 +276,12 @@ wgoa_catch_state_ts <- df2 %>%
 wgoa_catch_state_ts_v2 <- wgoa_catch_state_ts %>%
   left_join(lookup_unique, by = c("wgoa_group_name" = "wgoa_group_name")) %>%
   mutate(harvest_description = case_when(harvest_description == "State managed fishery" ~
-                                           "state",
+                                           "state_ft",
                                          harvest_description == "State managed groundfish" ~
-                                           "state"))
+                                           "state_ft",
+                                         harvest_description == "Federally managed (Groundfish) "~
+                                           "fed_ft")) 
+  
 
 colnames(wgoa_catch_state_ts_v2) <- c(
   "year",
@@ -224,6 +301,8 @@ wgoa_catch_state_ts_w_mtkm2 <- wgoa_catch_state_ts_v2 %>%
            harvest_description,
            agency_gear_code,
            node) %>%
+  filter(!assigned_group %in% c("Shallow-water flatfish", "Demersal shelf rockfish", 
+                                "Slope rockfish", "Deep-water flatfish", "Pelagic shelf rockfish")) %>% 
   summarise(catch_mt = sum(catch_mt)) %>%
   mutate(catch_mtkm2 = catch_mt / 234769) %>%
   select(year,
