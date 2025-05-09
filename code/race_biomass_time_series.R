@@ -129,35 +129,6 @@ domain_sum <- haul_sum %>%
     var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000)
   )
 
-model_sum <- domain_sum %>%
-  group_by(year, model, race_group) %>%
-  summarize(
-    bio_tons     = sum(bio_tons),
-    var_bio_tons = sum(var_bio_tons),
-    .groups = "keep"
-  ) %>%
-  mutate(
-    sd_bio_tons      = sqrt(var_bio_tons),
-    cv_bio           = sd_bio_tons / bio_tons,
-    model_area       = tot_model_area,
-    bio_tons_km2     = bio_tons / model_area,
-    var_bio_tons_km2 = var_bio_tons / (model_area * model_area),
-    sd_bio_tons_km2  = sqrt(var_bio_tons_km2),
-    cv_bio_tons_km2  = sd_bio_tons_km2 / bio_tons_km2,
-  ) %>% 
-  filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>% 
-  ungroup() %>%
-  # expand to all years 1990–2023 for each model × race_group
-  complete(
-    year       = 1990:2023,
-    model,
-    race_group
-  ) %>%
-  group_by(model, race_group) %>%
-  fill(model_area, .direction = "down") %>%
-  ungroup()
-
-
 
 predlist <- read.clean.csv("lookups/Alaska_Multistanza_GOA_vonb_2025_04_30_v2.csv")
 #race_lookup <- read.clean.csv("lookups/race_lookup_base_v2.csv") %>% 
@@ -178,8 +149,6 @@ for (p in pred_names){
 }
 
 
-
-
 #Getting biomass-at-length and converting to split pool biomass
 # Loop through each predator.  the juv_adu_lencons splits out
 # length samples based on the length class divisions in the
@@ -188,12 +157,12 @@ for (p in pred_names){
 # for the predator calculated above, to calculate biomass in
 # each length class.  It is output into bio_combined as two biomass groupings
 # (juv and adu) where adu is the sum of all the adu size classes.
-
-
 bio_totals <- domain_sum %>%
   group_by(year, model, race_group) %>%
   summarize(bio_tons = sum(bio_tons),
-            bio_tkm2 = bio_tons/tot_model_area, .groups="keep")
+            bio_tkm2 = bio_tons/tot_model_area, 
+            var_bio_tons = sum(var_bio_tons), #FLAG  ####
+            .groups="keep")
 
 juv_combined <- NULL
 for (p in pred_names){
@@ -206,8 +175,9 @@ for (p in pred_names){
     summarize(strat_bio_sum = sum(tot_wlcpue_t_km2), .groups="keep") %>%
     left_join(haul_stratum_summary(this.model),by=c("year","model","stratum")) %>%
     mutate(bio_t_km2 = strat_bio_sum/stations,
-           bio_tons  = bio_t_km2 * area,
+           bio_tons  = bio_t_km2 * area, #area for each stratum/bins
            jcat      = ifelse(lbin==pred_params[[p]]$jsize,"juv","adu")) 
+  
   
   juv_proportions <- juv_adu_lencons %>%
     group_by(year,model,species_name,jcat) %>%
@@ -218,87 +188,120 @@ for (p in pred_names){
   juv_combined <- rbind(juv_combined,juv_proportions)
 } # end of pred_names loop
 
+
 bio_with_juvs <- bio_totals %>%
   left_join(juv_combined,by=c("year","model","race_group"="species_name")) %>%
   select(-c(juv,adu)) %>%
   mutate(juv_bio_prop  = replace_na(juv_bio_prop,0.0),
          adu_bio_tkm2  = (1.0-juv_bio_prop) * bio_tkm2,
-         juv_bio_tkm2  = juv_bio_prop       * bio_tkm2)
-
+         juv_bio_tkm2  = juv_bio_prop       * bio_tkm2,
+         var_bio_tkm2  = var_bio_tons / (tot_model_area^2), #FLAG ####
+         # propagate variance to each stanza #
+         adu_var_tkm2  = (1 - juv_bio_prop)^2 * var_bio_tkm2,
+         juv_var_tkm2  = juv_bio_prop^2      * var_bio_tkm2,
+         adu_sd_tkm2  = sqrt(adu_var_tkm2),
+         juv_sd_tkm2  = sqrt(juv_var_tkm2),
+         adu_cv_tkm2  = adu_sd_tkm2 / adu_bio_tkm2,
+         juv_cv_tkm2  = juv_sd_tkm2 / juv_bio_tkm2
+         )
+         
+         
 bio_combined <- NULL
 bio_combined <- rbind(bio_combined,bio_with_juvs)
 
 
-write.csv(bio_combined,
-          "WGOA_source_data/WGOA_groundfish_bio_juv_adu.csv",
-          row.names = F)
+#write.csv(bio_combined,
+#          "WGOA_source_data/WGOA_groundfish_bio_juv_adu.csv",
+#          row.names = F)
 
-#BIA YOU ARE HERE ####
+model_sum_comb <- bio_combined %>% 
+  select(c(year, model, race_group, adu_bio_tkm2, juv_bio_tkm2, adu_cv_tkm2, juv_cv_tkm2)) %>%
+  pivot_longer(!c(year, model, race_group), names_to= c("stanza", ".value"), names_sep = "_") %>% 
+  rename(bio_tkm2 = bio,
+         cv_tkm2 = cv) %>%
+  filter(bio_tkm2 != 0.000000e+00 & !is.na(cv_tkm2)) %>% 
+  filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>%
+  mutate(race_group=case_when((race_group=="Pacific halibut" & stanza== "juv")~ 
+                                "Pacific halibut juvenile",
+                              (race_group=="Arrowtooth flounder" & stanza== "juv")~ 
+                                "Arrowtooth flounder juvenile",
+                              (race_group=="Rex sole" & stanza== "juv")~ 
+                                "Rex sole juvenile", 
+                              (race_group=="Flathead sole" & stanza== "juv")~ 
+                                "Flathead sole juvenile",
+                              (race_group=="Pacific ocean perch" & stanza== "juv")~ 
+                                "Pacific ocean perch juvenile",
+                              (race_group=="Sablefish" & stanza== "juv")~ 
+                                "Sablefish juvenile",
+                              (race_group=="Pacific cod" & stanza== "juv")~ 
+                                "Pacific cod juvenile",
+                              (race_group=="Walleye pollock" & stanza== "juv")~ 
+                                "Walleye pollock juvenile",
+                              (race_group=="Pacific halibut" & stanza== "adu")~ 
+                                "Pacific halibut adult",
+                              (race_group=="Arrowtooth flounder" & stanza== "adu")~ 
+                                "Arrowtooth flounder adult",
+                              (race_group=="Rex sole" & stanza== "adu")~ 
+                                "Rex sole adult", 
+                              (race_group=="Flathead sole" & stanza== "adu")~ 
+                                "Flathead sole adult",
+                              (race_group=="Pacific ocean perch" & stanza== "adu")~ 
+                                "Pacific ocean perch adult",
+                              (race_group=="Sablefish" & stanza== "adu")~ 
+                                "Sablefish adult",
+                              (race_group=="Pacific cod" & stanza== "adu")~ 
+                                "Pacific cod adult",
+                              (race_group=="Walleye pollock" & stanza== "adu")~ 
+                                "Walleye pollock adult",
+                              TRUE ~ race_group)) %>% 
+  select(c(year, model, race_group, bio_tkm2, cv_tkm2))
+
+#write.csv(model_sum_comb,
+#          "WGOA_source_data/wgoa_groundfish_bio_mt_km2_long.csv",
+#          row.names = F)
 
 
-#wide format
-wgoa_race_b <- model_sum %>% 
-  select(year,model,race_group,bio_tons_km2,cv_bio_tons_km2) %>%
-  rename(mtkm2 = bio_tons_km2,
-         cv_mtkm2 = cv_bio_tons_km2) %>%
+# Now we need to calculate the means and cvs for the combined data
+wgoa_race_bio <- model_sum_comb %>%
+  group_by(model, race_group) %>%
+  # expand to all years 1990–2023 for each model × race_group
+  complete(
+    year= 1990:2023, fill = list(bio_tkm2=NA, cv_tkm2=NA)
+  )  %>%
   pivot_wider(names_from = race_group,
-              values_from = c(mtkm2,cv_mtkm2),
+              values_from = c(bio_tkm2,cv_tkm2),
               names_sep = "_", 
               names_glue = "{race_group}_{.value}",
               names_vary = 'slowest') #tidyr thing. 
   
-
-
-
-# Following code does means but not sds
-#  domain_sum <- cpue_dat %>%
-#    group_by(year, model, race_group, stratum_bin) %>%
-#    summarize(wgtcpue = sum(wgtcpue),
-#              numcpue = sum(numcpue),.groups="keep") %>%
-#    left_join(haul_domain_summary(this.model), by=c("year","model","stratum_bin")) %>%
-#    mutate(bio_t_km2 = wgtcpue/1000/stations,
-#           bio_tons  = bio_t_km2 * area)
-#
-#  model_sum <- domain_sum %>%
-#    group_by(year, model, race_group) %>%
-#    summarize(tot_bio_tons = sum(bio_tons),
-#              tot_bio_tkm2 = sum(bio_tons)/tot_model_area,
-#      .groups="keep")
-
-write.csv(wgoa_race_b,
+write.csv(wgoa_race_bio,
           "WGOA_source_data/wgoa_groundfish_bio_mt_km2_wide.csv",
           row.names = F)
 
 
-#cpue_test <- cpue_dat %>%
-#  filter(year==1982 & stratum==10 & race_group =="ak_plaice")
-# These two lines then sum stratsum to the total biomass and biomass density
-# for the entire model area
-#model_area <- sum(strata_lookup$area[strata_lookup$model==this.model])
-#bio_totals <- stratsum %>%
-#  group_by(year, model, race_group) %>%
-#  summarize(bio_tons = sum(bio_tons),
-#            bio_tkm2 = bio_tons/model_area, .groups="keep")
 
-# IF Looping through multiple ecosystems, need to save or rbind bio_totals
-# at the end of each loop here.
-#}
-
-#write.csv(bio_totals,"apps/ESR_guilds/bio_totals_2024test.csv",row.names=F)
 
 
 # EGOA GUILDS -----------------------------------------------
 this.model.e  <- "EGOA"
 race_lookup      <- race_lookup_base %>% mutate(race_group  = .data[["final_egoa"]])
-q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
-domains_included_e <-  c(
-  "Southeastern_shelf",
-  "Southeastern_slope",
-  "Southeastern_gully",
-  "Yakutat_shelf",
-  "Yakutat_gully",
-  "Yakutat_slope"
-)
+#q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
+#domains_included_e <-  c(
+#  "Southeastern_shelf",
+#  "Southeastern_slope",
+#  "Southeastern_gully",
+#  "Yakutat_shelf",
+#  "Yakutat_gully",
+#  "Yakutat_slope"
+#)
+
+domains_included_e <-  c("50", "150", "151",                     #  "Southeastern_shelf" 
+                       "250", "251","351","450","550",         #  "Southeastern_slope"
+                       "350",                                  #  "Southeastern_gully"
+                       "40", "41", "140","141", "142", "143",  #  "Yakutat_shelf"
+                       "240", "340",                           #  "Yakutat_gully"
+                       "241", "341", "440", "540"              #  "Yakutat_slope"
+                       )
 
 tot_model_area_e <- sum(strat_areas$area[strat_areas$model == this.model.e &
                                            strat_areas$stratum_bin %in% domains_included_e])
@@ -307,8 +310,6 @@ cpue_dat_e  <- get_cpue_all(model = this.model.e) %>%
 
 check_RACE_codes(cpue_dat_e)
 
-#stratsum_q <- get_stratsum_q(cpue_dat, q_table)
-#domain_sum_q <- get_domain_sum_q(cpue_dat, q_table)
 # Code to do means and sds
 domain_stats_e <- haul_domain_summary(this.model.e)
 
@@ -338,51 +339,150 @@ domain_sum_e <- haul_sum_e %>%
     var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000)
   )
 
-model_sum_e <- domain_sum_e %>%
+
+predlist <- read.clean.csv("lookups/Alaska_Multistanza_GOA_vonb_2025_04_30_v2.csv")
+
+preds_e <- predlist %>% filter(model==this.model.e)
+pred_names_e <- unique(preds_e$predator)
+pred_params=list()
+for (p in pred_names_e){
+  pdat_e <- as.list(preds_e[preds_e$predator==p,])
+  pred_params[[p]] <- pdat_e
+  pred_params[[p]]$LCLASS <- sort(unique(c(0,pdat_e$juv_cm, pdat_e$adu_1, pdat_e$adu_2, pdat_e$adu_3,9999)))
+  pred_params[[p]]$jsize  <- paste("[",pred_params[[p]]$LCLASS[1],",",pred_params[[p]]$LCLASS[2],")",sep='')
+  pred_params[[p]]$lw_b   <- pdat_e$b_l_mm_g
+  pred_params[[p]]$lw_a   <- pdat_e$a_l_mm_g*(10^pdat_e$b_l_mm_g)  
+  pred_params[[p]]$bioen  <- list(CA=pdat_e$ca, CB=pdat_e$cb, C_TM=pdat_e$c_tm, C_T0=pdat_e$c_t0, C_Q=pdat_e$c_q)
+  pred_params[[p]]$vonb <- list(h= pdat_e$vb_k, Linf  = pdat_e$vb_linf_mm, t0= pdat_e$vb_t0, rec_len=pdat_e$von_b_rec_len_cm)
+}
+
+
+#Getting biomass-at-length and converting to split pool biomass
+# Loop through each predator.  the juv_adu_lencons splits out
+# length samples based on the length class divisions in the
+# predator lookup, and converts to % by weight using the a and b LW
+# regression.  This % by weight is applied to the total biomass
+# for the predator calculated above, to calculate biomass in
+# each length class.  It is output into bio_combined as two biomass groupings
+# (juv and adu) where adu is the sum of all the adu size classes.
+bio_totals_e <- domain_sum_e %>%
   group_by(year, model, race_group) %>%
-  summarize(
-    bio_tons     = sum(bio_tons),
-    var_bio_tons = sum(var_bio_tons),
-    .groups = "keep"
-  ) %>%
-    mutate(
-      sd_bio_tons      = sqrt(var_bio_tons),
-      cv_bio           = sd_bio_tons / bio_tons,
-      model_area       = tot_model_area_e,
-      bio_tons_km2     = bio_tons / model_area,
-      var_bio_tons_km2 = var_bio_tons / (model_area * model_area),
-      sd_bio_tons_km2  = sqrt(var_bio_tons_km2),
-      cv_bio_tons_km2  = sd_bio_tons_km2 / bio_tons_km2,
-  ) %>% 
-    filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>% 
-  ungroup() %>%
+  summarize(bio_tons = sum(bio_tons),
+            bio_tkm2 = bio_tons/tot_model_area_e, 
+            var_bio_tons = sum(var_bio_tons), #FLAG  ####
+            .groups="keep")
+
+juv_combined_e <- NULL
+for (p in pred_names_e){
+  #p <- pred_names[1]
+  bio_pred_e <- bio_totals_e %>%
+    filter(race_group==p)
+  
+  juv_adu_lencons_e  <- get_stratum_length_cons(predator=p, model=this.model.e) %>%
+    group_by(year, model, species_name, stratum, lbin) %>%
+    summarize(strat_bio_sum = sum(tot_wlcpue_t_km2), .groups="keep") %>%
+    left_join(haul_stratum_summary(this.model.e),by=c("year","model","stratum")) %>%
+    mutate(bio_t_km2 = strat_bio_sum/stations,
+           bio_tons  = bio_t_km2 * area, #area for each stratum/bins
+           jcat      = ifelse(lbin==pred_params[[p]]$jsize,"juv","adu")) 
+  
+  juv_proportions_e <- juv_adu_lencons_e %>%
+    group_by(year,model,species_name,jcat) %>%
+    summarize(bio_tons = sum(bio_tons), .groups="keep") %>%
+    pivot_wider(names_from=jcat, values_from=bio_tons) %>%
+    mutate(juv_bio_prop = juv/(juv+adu))
+  
+  juv_combined_e <- rbind(juv_combined_e,juv_proportions_e)
+} # end of pred_names loop
+
+
+
+bio_with_juvs_e <- bio_totals_e %>%
+  left_join(juv_combined_e,by=c("year","model","race_group"="species_name")) %>%
+  select(-c(juv,adu)) %>%
+  mutate(juv_bio_prop  = replace_na(juv_bio_prop,0.0),
+         adu_bio_tkm2  = (1.0-juv_bio_prop) * bio_tkm2,
+         juv_bio_tkm2  = juv_bio_prop       * bio_tkm2,
+         var_bio_tkm2  = var_bio_tons / (tot_model_area_e^2), #FLAG ####
+         # propagate variance to each stanza #
+         adu_var_tkm2  = (1 - juv_bio_prop)^2 * var_bio_tkm2,
+         juv_var_tkm2  = juv_bio_prop^2      * var_bio_tkm2,
+         adu_sd_tkm2  = sqrt(adu_var_tkm2),
+         juv_sd_tkm2  = sqrt(juv_var_tkm2),
+         adu_cv_tkm2  = adu_sd_tkm2 / adu_bio_tkm2,
+         juv_cv_tkm2  = juv_sd_tkm2 / juv_bio_tkm2
+  )
+
+
+bio_combined_e <- NULL
+bio_combined_e <- rbind(bio_combined_e,bio_with_juvs_e)
+
+
+#write.csv(bio_combined_e,
+#          "EGOA_source_data/EGOA_groundfish_bio_juv_adu.csv",
+#          row.names = F)
+
+
+model_sum_comb_e <- bio_combined_e %>% 
+  select(c(year, model, race_group, adu_bio_tkm2, juv_bio_tkm2, adu_cv_tkm2, juv_cv_tkm2)) %>%
+  pivot_longer(!c(year, model, race_group), names_to= c("stanza", ".value"), names_sep = "_") %>% 
+  rename(bio_tkm2 = bio,
+         cv_tkm2 = cv) %>%
+  filter(bio_tkm2 != 0.000000e+00 & !is.na(cv_tkm2)) %>% 
+  filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>%
+  mutate(race_group=case_when((race_group=="Pacific halibut" & stanza== "juv")~ 
+                                "Pacific halibut juvenile",
+                              (race_group=="Arrowtooth flounder" & stanza== "juv")~ 
+                                "Arrowtooth flounder juvenile",
+                              (race_group=="Rex sole" & stanza== "juv")~ 
+                                "Rex sole juvenile", 
+                              (race_group=="Flathead sole" & stanza== "juv")~ 
+                                "Flathead sole juvenile",
+                              (race_group=="Pacific ocean perch" & stanza== "juv")~ 
+                                "Pacific ocean perch juvenile",
+                              (race_group=="Sablefish" & stanza== "juv")~ 
+                                "Sablefish juvenile",
+                              (race_group=="Pacific cod" & stanza== "juv")~ 
+                                "Pacific cod juvenile",
+                              (race_group=="Walleye pollock" & stanza== "juv")~ 
+                                "Walleye pollock juvenile",
+                              (race_group=="Pacific halibut" & stanza== "adu")~ 
+                                "Pacific halibut adult",
+                              (race_group=="Arrowtooth flounder" & stanza== "adu")~ 
+                                "Arrowtooth flounder adult",
+                              (race_group=="Rex sole" & stanza== "adu")~ 
+                                "Rex sole adult", 
+                              (race_group=="Flathead sole" & stanza== "adu")~ 
+                                "Flathead sole adult",
+                              (race_group=="Pacific ocean perch" & stanza== "adu")~ 
+                                "Pacific ocean perch adult",
+                              (race_group=="Sablefish" & stanza== "adu")~ 
+                                "Sablefish adult",
+                              (race_group=="Pacific cod" & stanza== "adu")~ 
+                                "Pacific cod adult",
+                              (race_group=="Walleye pollock" & stanza== "adu")~ 
+                                "Walleye pollock adult",
+                              TRUE ~ race_group)) %>% 
+  select(c(year, model, race_group, bio_tkm2, cv_tkm2))
+
+#write.csv(model_sum_comb_e,
+#          "EGOA_source_data/egoa_groundfish_bio_mt_km2_long.csv",
+#          row.names = F)
+
+
+# Now we need to calculate the means and cvs for the combined data
+egoa_race_bio <- model_sum_comb_e %>%
+  group_by(model, race_group) %>%
   # expand to all years 1990–2023 for each model × race_group
   complete(
-    year       = 1990:2023,
-    model,
-    race_group
-  ) %>%
-  group_by(model, race_group) %>%
-  fill(model_area, .direction = "down") %>%
-  ungroup()
-
-write.csv(model_sum_e,
-          "EGOA_source_data/EGOA_groundfish_bio.csv",
-          row.names = F)
-
-
-#wide format
-wgoa_race_b_e <- model_sum_e %>% 
-  select(year,model,race_group,bio_tons_km2,cv_bio_tons_km2) %>%
-  rename(mtkm2 = bio_tons_km2,
-         cv_mtkm2 = cv_bio_tons_km2) %>%
+    year= 1990:2023, fill = list(bio_tkm2=NA, cv_tkm2=NA)
+  )  %>%
   pivot_wider(names_from = race_group,
-              values_from = c(mtkm2,cv_mtkm2),
+              values_from = c(bio_tkm2,cv_tkm2),
               names_sep = "_", 
               names_glue = "{race_group}_{.value}",
               names_vary = 'slowest') #tidyr thing. 
 
-
-write.csv(wgoa_race_b_e,
+write.csv(egoa_race_bio,
           "EGOA_source_data/egoa_groundfish_bio_mt_km2_wide.csv",
           row.names = F)

@@ -43,6 +43,30 @@ get_stratum_length_cons <- function(
               .groups="keep")
 }
 
+#############################################################
+get_stratum_length_cons_v2 <- function(
+    racebase_tables = list(
+      cruisedat = cruisedat,
+      haul = haul,
+      catch = catch,
+      length = length),
+    predator = "P.cod", #speciescode = 30060, # POP
+    model    = "EBS"    #survey_area = "AI"
+){
+  
+  conslens <- get_cpue_length_cons(predator=predator, model=model)
+  
+  haul_sum <- conslens %>%
+    group_by(year,model,stratum_bin,species_name, hauljoin, 
+             stationid, stratum, lat, lon, bottom_temp, surface_temp, 
+             lbin) %>%
+    summarize(tot_wtcpue_t_km2       = mean(wgtcpue)/1000,
+              tot_wlcpue_t_km2       = sum(WgtLBin_CPUE_kg_km2)/1000, #WgtLBin_CPUE_kg_km2=NumLBin_CPUE_km2*body_wt/1000
+              f_t                    = mean(f_t),
+              tot_cons_t_km2_bioen   = sum(cons_kg_km2_bioen)/1000,
+              tot_cons_vonb_t_km2    = sum(cons_vonb_kg_km2)/1000,
+              .groups="keep")
+}
 
 #############################################################
 check_RACE_codes <- function(cpue_dat){
