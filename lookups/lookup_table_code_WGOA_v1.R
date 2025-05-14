@@ -27,7 +27,7 @@ race_lookup_base_v2 <- race_lookup_base %>%
       final_wgoa == "Other_skates"    ~ "Other skates",
       final_wgoa == "Big_skate"       ~ "Big skate",
       final_wgoa == "Longnose_skate"  ~ "Longnose skate",
-      final_wgoa == "Spotted_ratfish" ~ "MISC_NA", # 
+      final_wgoa == "Spotted_ratfish" ~ "MISC_NA", #changed back to unassigned 
       final_wgoa == "Shallow_water_flatfish" ~ "Shallow-water flatfish",
       final_wgoa == "Arrowtooth_flounder"    ~ "Arrowtooth flounder",
       final_wgoa == "Pacific_halibut"        ~ "Pacific halibut",
@@ -85,17 +85,17 @@ race_lookup_base_v2 <- race_lookup_base %>%
       final_egoa == "Shelf_demersals" ~ "Shelf demersal fish",
       final_egoa == "ZERO"            ~ "ZERO",
       final_egoa == "Sharks_demersal" ~ "Pacific sleeper shark",
-      final_egoa == "Salmon_shark"    ~ "Salmon shark", # FLAGGED BY SZYMON #####
+      final_egoa == "Salmon_shark"    ~ "Salmon shark", 
       final_egoa == "Pacific_dogfish" ~ "Pacific dogfish",
       final_egoa == "Other_skates"    ~ "Other skates",
       final_egoa == "Big_skate"       ~ "Big skate",
       final_egoa == "Longnose_skate"  ~ "Longnose skate", 
-      final_egoa == "Spotted_ratfish" ~ "MISC_NA", 
+      final_egoa == "Spotted_ratfish" ~ "MISC_NA", #changed back to unassigned 
       final_egoa == "Shallow_water_flatfish" ~ "Shallow-water flatfish",
       final_egoa == "Arrowtooth_flounder"    ~"Arrowtooth flounder",
       final_egoa == "Pacific_halibut"        ~ "Pacific halibut",
-      final_egoa == "Flathead_sole"          ~ "Flathead sole"  , # FLAGGED BY SZYMON #####
-      final_egoa == "Deep_water_flatfish"    ~ "Deep-water flatfish" , # FLAGGED BY SZYMON #####
+      final_egoa == "Flathead_sole"          ~ "Flathead sole"  , 
+      final_egoa == "Deep_water_flatfish"    ~ "Deep-water flatfish" , 
       final_egoa == "Rex_sole"               ~"Rex sole",
       final_egoa == "NA"                    ~ "NA",
       final_egoa == "Miscellaneous_deep_sea_fish" ~"Miscellaneous deep-sea fish",
@@ -111,7 +111,7 @@ race_lookup_base_v2 <- race_lookup_base %>%
       final_egoa == "Walleye_pollock"       ~ "Walleye pollock",
       final_egoa == "Lingcod"               ~"Lingcod",
       final_egoa == "Atka_mackerel"         ~ "ZERO",
-      final_egoa == "Pacific_hake"          ~"Pacific hake", # FLAGGED BY SZYMON #####
+      final_egoa == "Pacific_hake"          ~"Pacific hake", 
       final_egoa == "Eulachon"              ~ "Shelf forage fish",
       final_egoa == "Pacific_capelin"       ~"Pacific capelin",
       final_egoa == "Chinook_salmon"  ~ "Chinook (king) salmon",
@@ -120,14 +120,14 @@ race_lookup_base_v2 <- race_lookup_base %>%
       final_egoa == "Chum_salmon"     ~ "Chum (dog) salmon",
       final_egoa == "Sockeye_salmon"  ~ "Sockeye (red) salmon",
       final_egoa == "Pacific_saury"   ~ "MISC_NA",
-      final_egoa == "Thornyheads"     ~ "Thornyheads", # FLAGGED BY SZYMON #####
+      final_egoa == "Thornyheads"     ~ "Thornyheads",
       final_egoa == "Slope_rockfish"  ~ "Slope rockfish",
       final_egoa == "POP"             ~ "Pacific ocean perch",
       final_egoa == "Demersal_shelf_rockfish" ~ "Demersal shelf rockfish",
       final_egoa == "Pelagic_shelf_rockfish"  ~ "Pelagic shelf rockfish",
       final_egoa == "Unlisted_rockfish"       ~ "Demersal shelf rockfish",
       final_egoa == "Black_rockfish"          ~ "MISC_NA", #dropped from model 
-      final_egoa == "Sessile_epifauna"        ~ "Sessile epifauna", # FLAGGED BY SZYMON #####
+      final_egoa == "Sessile_epifauna"        ~ "Sessile epifauna", 
       final_egoa == "Gelatinous_carnivores"   ~ "Gelatinous carnivores",
       final_egoa == "Infauna"                 ~ "Infauna",
       final_egoa == "Motile_epifauna"         ~ "Motile epifauna",
