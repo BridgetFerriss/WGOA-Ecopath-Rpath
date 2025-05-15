@@ -43,6 +43,30 @@ get_stratum_length_cons <- function(
               .groups="keep")
 }
 
+#############################################################
+get_stratum_length_cons_v2 <- function(
+    racebase_tables = list(
+      cruisedat = cruisedat,
+      haul = haul,
+      catch = catch,
+      length = length),
+    predator = "P.cod", #speciescode = 30060, # POP
+    model    = "EBS"    #survey_area = "AI"
+){
+  
+  conslens <- get_cpue_length_cons(predator=predator, model=model)
+  
+  haul_sum <- conslens %>%
+    group_by(year,model,stratum_bin,species_name, hauljoin, 
+             stationid, stratum, lat, lon, bottom_temp, surface_temp, 
+             lbin) %>%
+    summarize(tot_wtcpue_t_km2       = mean(wgtcpue)/1000,
+              tot_wlcpue_t_km2       = sum(WgtLBin_CPUE_kg_km2)/1000, #WgtLBin_CPUE_kg_km2=NumLBin_CPUE_km2*body_wt/1000
+              f_t                    = mean(f_t),
+              tot_cons_t_km2_bioen   = sum(cons_kg_km2_bioen)/1000,
+              tot_cons_vonb_t_km2    = sum(cons_vonb_kg_km2)/1000,
+              .groups="keep")
+}
 
 #############################################################
 check_RACE_codes <- function(cpue_dat){
@@ -582,8 +606,36 @@ REEM.loadclean.strata<-function(strata_lookup_file    = "lookups/combined_BTS_st
 }  
 
 ##########################################################################
+REEM.loadclean.strata.by.stratum<-function(strata_lookup_file    = "lookups/combined_BTS_strata.csv",
+                                stratum_bin_column    = "stratum"){
+  strata_lookup    <<- read.clean.csv(strata_lookup_file) %>% 
+    mutate(stratum_bin = .data[[stratum_bin_column]])
+  strat_areas <<- strata_lookup %>%
+    select(model,stratum_bin,area) %>%
+    group_by(model, stratum_bin) %>%
+    summarize(area=sum(area),.groups="keep")  
+} 
+
+##########################################################################
 REEM.loadclean.lookups<-function(strata_lookup_file    = "lookups/combined_BTS_strata.csv",
                                  stratum_bin_column    = "strat_groups",
+                                 preynames_lookup_file = "lookups/Alaska_PreyLookup_MASTER.csv",
+                                 prey_guild_column     = "ecopath_prey"){
+  
+  strata_lookup    <<- read.clean.csv(strata_lookup_file)    %>% mutate(stratum_bin = .data[[stratum_bin_column]])
+  preynames_lookup <<- read.clean.csv(preynames_lookup_file) %>% mutate(prey_guild  = .data[[prey_guild_column]])
+  strat_areas <<- strata_lookup %>%
+    select(model,stratum_bin,area) %>%
+    group_by(model, stratum_bin) %>%
+    summarize(area=sum(area),.groups="keep")
+  
+  #assign("strata_lookup",    value = strata_,    envir = .GlobalEnv)  
+  #assign("preynames_lookup", value = read.clean.csv(preynames_lookup_file), envir = .GlobalEnv)    
+}
+
+##########################################################################
+REEM.loadclean.lookups.by.stratum<-function(strata_lookup_file    = "lookups/combined_BTS_strata.csv",
+                                 stratum_bin_column    = "stratum",
                                  preynames_lookup_file = "lookups/Alaska_PreyLookup_MASTER.csv",
                                  prey_guild_column     = "ecopath_prey"){
   
