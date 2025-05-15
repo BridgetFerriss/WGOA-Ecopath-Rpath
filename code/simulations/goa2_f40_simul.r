@@ -29,10 +29,16 @@
 
 # Sum of squares F40: minimize difference between end biomass and *B40*
 sumsq <- function(sim) {
-  ss <- sum(log(target_bio[managed_sp,"B40"]/end_biomass(sim)[managed_sp])^2)
+  ss <- sum(log(target_bio[managed_sp,"B40"]/end_cent_biomass(sim)[managed_sp])^2)
   print(ss)
   return(ss)
 }
+# Sum of squares F40: minimize difference between end biomass and *B40*
+# sumsq <- function(sim) {
+#   ss <- sum(log(target_bio[managed_sp,"B40"]/end_biomass(sim)[managed_sp])^2)
+#   print(ss)
+#   return(ss)
+# }
 
 # Solve for F
 obj <- function(pars) {
