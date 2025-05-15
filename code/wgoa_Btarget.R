@@ -60,7 +60,8 @@ for (i in managed_sp) {
   # run the sim
   B0.sim_Fmeanlast5 <- rsim.run(scene, method = 'AB', years = all_years)
   # store end_biomass for i
-  B0_Fmeanlast5[i] <- end_biomass(B0.sim_Fmeanlast5)[i]
+  # B0_Fmeanlast5[i]  <- end_biomass(B0.sim_Fmeanlast5)[i]
+  B0_Fmeanlast5[i]  <- end_cent_biomass(B0.sim_Fmeanlast5)[i,]
   # reset the Frates to F_equil[i]
   for (j in 32:110) {
     scene$fishing$ForcedFRate[j, managed_sp] <- F_meanlast5
