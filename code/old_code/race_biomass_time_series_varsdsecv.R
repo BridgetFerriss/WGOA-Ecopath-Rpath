@@ -178,13 +178,13 @@ bio_totals2 <- domain_sum %>%
     # total and sum‐of‐squares of your per‐station density
     sum_bio_station  = sum(bio_t_km2,      na.rm = TRUE),
     sum_sq_bio_station = sum(bio_t_km2^2,    na.rm = TRUE),
-    n = sum(stations),           #  how many “observations” went into those sums
+    n_stations = sum(stations),           #  how many “observations” went into those sums
     area = first(tot_model_area),     # the total area over which you want to scale up
-    mean_bio = sum_bio / n, #the mean density across all stations
-    var_t2km2 = ifelse(n > 1, #the sample variance of those station densities: Var = [Σ x² − (Σ x)²/n] / (n − 1)
-                     (sum_sq_bio_station - sum_bio_station^2 / n) / (n - 1),NA_real_), #sample variance
+    mean_bio = sum_bio_station / n_stations, #the mean density across all stations
+    var_t2km2 = ifelse(n_stations > 1, #the sample variance of those station densities: Var = [Σ x² − (Σ x)²/n] / (n − 1)
+                     (sum_sq_bio_station - sum_bio_station^2 / n_stations) / (n_stations - 1),NA_real_), #sample variance
     sd_bio = sqrt(var_t2km2),
-    se_bio = sd_bio / sqrt(n),
+    se_bio = sd_bio / sqrt(n_stations),
     cv_bio = ifelse(mean_bio > 0, sd_bio / mean_bio, NA_real_),
     bio_tons = sum(bio_tons),
     bio_tkm2 = bio_tons/tot_model_area, 
@@ -215,13 +215,13 @@ for (p in pred_names) {
     group_by(year, model, species_name, stratum, lbin) %>%
     summarise(sum_den = sum(tot_wlcpue_t_km2, na.rm = TRUE),#total “density” summed over all stations
               sum_sq_den = sum(tot_wlcpue_t_km2^2, na.rm = TRUE),#sum of squares
-              n = first(stations),#station count
+              n_stations = first(stations),#station count
               area = first(area),#stratum area
-              mean_den = sum_den / n,# mean density
-              var_den = ifelse(n > 1, 
-                               (sum_sq_den - sum_den^2 / n) / (n - 1), NA_real_), # sample variance (n–1 denominator)
+              mean_den = sum_den / n_stations,# mean density
+              var_den = ifelse(n_stations > 1, 
+                               (sum_sq_den - sum_den^2 / n_stations) / (n_stations - 1), NA_real_), # sample variance (n–1 denominator)
               sd_den = sqrt(var_den),# sample SD
-              se_den = sd_den / sqrt(n), # standard error of the mean density
+              se_den = sd_den / sqrt(n_stations), # standard error of the mean density
               cv_den = ifelse(mean_den > 0, sd_den / mean_den, NA_real_),# coefficient of variation of the density
               .groups = "keep") %>%
     mutate(bio_t_km2 = mean_den,# mean biomass density (t/km2)
@@ -232,7 +232,7 @@ for (p in pred_names) {
       bio_tons = bio_t_km2 * area,# now multiply by area to get total biomass (tons) in that stratum–lbin
       var_tons = var_tkm2 * area^2,
       sd_tons = sqrt(var_tons),
-      se_tons = sd_tons / sqrt(n),
+      se_tons = sd_tons / sqrt(n_stations),
       cv_tons = ifelse(bio_tons > 0, sd_tons / bio_tons, NA_real_),
       jcat = ifelse(lbin == pred_params[[p]]$jsize, "juv", "adu") # juvenile, adult id
     )
@@ -243,7 +243,7 @@ for (p in pred_names) {
     summarise(
       bio_tons = sum(bio_tons, na.rm = TRUE),
       var_tons = sum(var_tons, na.rm = TRUE),
-      n_obs    = sum(n, na.rm = TRUE),
+      n_obs    = sum(n_stations, na.rm = TRUE),
       .groups  = "drop"
     ) %>%
     complete(year,model,species_name,jcat = c("juv", "adu"),
@@ -263,7 +263,7 @@ for (p in pred_names) {
 }
 
 
-bio_with_juvs2 <- bio_totals %>%
+bio_with_juvs2 <- bio_totals2 %>%
   left_join(juv_combined2,
             by = c("year", "model", "race_group" = "species_name")) %>%
   mutate(juv_bio_prop = coalesce(juv_bio_prop, NA_real_)) %>%  # fill missing prop → NA
