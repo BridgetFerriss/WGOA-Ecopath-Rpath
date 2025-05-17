@@ -212,7 +212,7 @@ strata_long <- stratsum_jad %>%
                               TRUE ~ race_group)) %>% 
   select(c(-stanza,-bio_t_km2,-bottom_temp_mean,-surface_temp_mean))
 
-write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
+#write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
 
 bio_summary <- strata_long %>%
   group_by(year, model, race_group) %>%
@@ -237,3 +237,4 @@ bio_summary <- strata_long %>%
          bio_mt, bio_mt_km2,
          var_mt_km2, sd, se, cv)
 
+write.csv(bio_summary, file="WGOA_EwE_files/wgoa_race_biomass_ts.csv", row.names=FALSE)
