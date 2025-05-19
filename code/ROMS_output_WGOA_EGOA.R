@@ -24,8 +24,8 @@ source("code/Delta_correction.R")
 nep_vars <- read.csv("data/NEP_variable_names.csv")
 kable(nep_vars)
 
-region <- "EGOA"
-depth <- "300"
+#region <- "EGOA"
+#depth <- "300"
 
 
 # Define regions 
@@ -200,32 +200,32 @@ for (region in regions) {
     summarise(biomass_tonnes_km2 = mean(biomass_tonnes_km2),
               .groups = 'drop')
   
-#  # Write biomass output
-#  write.csv(
-#    biomass_summary,
-#    paste0(
-#      out_folder,
-#      "/Long_",
-#      region,
-#      "_B_summary_",
-#      depth,
-#      "_v2_corrected.csv"
-#    ),
-#    row.names = FALSE
-#  )
-#  
-#  write.csv(
-#    biomass_summary_mo,
-#    paste0(
-#      out_folder,
-#      "/Long_",
-#      region,
-#      "_B_summary_month",
-#      depth,
-#      "_v2_corrected.csv"
-#    ),
-#    row.names = FALSE
-#  )
+  # Write biomass output
+  write.csv(
+    biomass_summary,
+    paste0(
+      out_folder,
+      "/Long_",
+      region,
+      "_B_summary_",
+      depth,
+      "_v2_corrected.csv"
+    ),
+    row.names = FALSE
+  )
+  
+  write.csv(
+    biomass_summary_mo,
+    paste0(
+      out_folder,
+      "/Long_",
+      region,
+      "_B_summary_month",
+      depth,
+      "_v2_corrected.csv"
+    ),
+    row.names = FALSE
+  )
   
   # Production ####
   # For PP the results are in Carbon, since the forcing for Ecopath will be in anomaly centered at 1. 
