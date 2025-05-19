@@ -214,6 +214,7 @@ strata_long <- stratsum_jad %>%
 
 #write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
 
+#QUESTION: what to do with years that have only one station? #####
 bio_summary <- strata_long %>%
   group_by(year, model, race_group) %>%
   summarise(
