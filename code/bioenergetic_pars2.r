@@ -222,7 +222,7 @@ rc_scaled_b[is.nan(rc_scaled_b)] <- 1e-08
 #**historical**: representing model spinup (1980 to 2014).
 
  
-roms_hind_temp <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_temp_monthly_300.csv", 
+roms_hind_temp <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_temp_monthly_1000.csv", 
                            header=TRUE, sep=',', dec='.') %>% 
   filter(simulation=="ssp126", year>=1990 & year<2021) %>% 
   select(c( year, month, depthclass,area_weighted_temp)) %>% 
@@ -230,11 +230,11 @@ roms_hind_temp <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_temp_month
   rename(temp_b5=Bottom,  temp_s5=Surface)
 roms_hind_temp$tstep <- 1:372
 
-roms_hind_npz <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_B_summary_month300_v2_corrected.csv", 
+roms_hind_npz <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_B_summary_month1000_v2_corrected.csv", 
                            header=TRUE, sep=',', dec='.') %>% 
   filter(simulation=="ssp126", year>=1990 & year<2021) %>% 
-  select(c( year, month, varname,biomass_tonnes)) %>% 
-  pivot_wider(names_from = varname, values_from = biomass_tonnes) %>% 
+  select(c( year, month, varname,biomass_tonnes_km2)) %>% 
+  pivot_wider(names_from = varname, values_from = biomass_tonnes_km2) %>% 
   rename(cop=Cop, eup=Eup, mzl=MZL, mzs=MZS, nca=NCa, phl=PhL, phs=PhS)  
   #select(cop, eup, mzl, phl, phs) #to match aclim_rpath
 roms_hind_npz$tstep <- 1:372

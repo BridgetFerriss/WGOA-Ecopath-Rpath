@@ -365,6 +365,7 @@ wgoa_catch_ts_long <- wgoa_catches_ft_cas %>%
   # if you want node as an integer:
   mutate(node = as.integer(node)) %>%
   select(year, species_name, node, harvest_description, agency_gear_code, catch_mtkm2) %>% 
+  filter(!harvest_description %in% "fed_ft") %>%
   group_by(year,
            species_name,
            node) %>%

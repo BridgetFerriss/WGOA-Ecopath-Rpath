@@ -51,6 +51,7 @@ for (region in regions) {
       }
       region_areas <- c("610", "620", "630")
       out_folder <- "WGOA_source_data/ROMSOutputWGOA"
+      out_folder2 <- "wgoa_data_rpath_fitting/"
     } else if (region == "EGOA") {
       if (depth == 300) {
         area_df <- data.frame(
@@ -65,6 +66,7 @@ for (region in regions) {
       }
       region_areas <- c("640", "650")
       out_folder <- "EGOA_source_data/ROMSOutputEGOA"
+      out_folder2 <- "egoa_data_rpath_fitting/"
     }
     
     
@@ -201,32 +203,66 @@ for (region in regions) {
               .groups = 'drop')
   
   # Write biomass output
-  write.csv(
-    biomass_summary,
-    paste0(
-      out_folder,
-      "/Long_",
-      region,
-      "_B_summary_",
-      depth,
-      "_v2_corrected.csv"
-    ),
-    row.names = FALSE
-  )
+#  write.csv(
+#    biomass_summary,
+#    paste0(
+#      out_folder,
+#      "/Long_",
+#      region,
+#      "_B_summary_",
+#      depth,
+#      "_v2_corrected.csv"
+#    ),
+#    row.names = FALSE
+#  )
+#  
+#  write.csv(
+#    biomass_summary_mo,
+#    paste0(
+#      out_folder,
+#      "/Long_",
+#      region,
+#      "_B_summary_month",
+#      depth,
+#      "_v2_corrected.csv"
+#    ),
+#    row.names = FALSE
+#  )
+
+  ## Biomass Anomaly calculation ##### 
+  # Calculate the mean biomass for the hindcast period (1991-2020)- my climatology
   
-  write.csv(
-    biomass_summary_mo,
-    paste0(
-      out_folder,
-      "/Long_",
-      region,
-      "_B_summary_month",
-      depth,
-      "_v2_corrected.csv"
-    ),
-    row.names = FALSE
-  )
+  climatology <- biomass_summary_mo %>%
+    filter(year >= 1991, year <= 2020) %>%
+    group_by(varname, simulation, month) %>%
+    summarise(
+      month_mean_mtkm2 = mean(biomass_tonnes_km2, na.rm = TRUE),
+      .groups = "drop"
+    )  
   
+  biomass_anomalies <- biomass_summary_mo %>%
+    left_join(climatology, by = c("varname", "simulation", "month")) %>%
+    mutate(
+      anomaly_ratio_mtkm2 = biomass_tonnes_km2 / month_mean_mtkm2
+    )
+  
+  biomass_anomalies %>%
+    select(varname, simulation, year, month, biomass_tonnes_km2, month_mean_mtkm2, anomaly_ratio_mtkm2) %>%
+    slice_head(n = 12)
+  
+    write.csv(
+      biomass_anomalies,
+      paste0(
+        out_folder2,
+        "/Long_",
+        region,
+        "_NPZ_B_monthly_anomalies_",
+        depth,
+        "_v2_corrected.csv"
+      ),
+      row.names = FALSE
+    )  
+   
   # Production ####
   # For PP the results are in Carbon, since the forcing for Ecopath will be in anomaly centered at 1. 
   # FLAG #### 
@@ -251,7 +287,42 @@ for (region in regions) {
 #    paste0(out_folder, "/Long_", region, "_prod_", depth, ".csv"),
 #    row.names = FALSE
 #  )
+  ## Production Anomaly calculation #####
+    # Calculate the mean production for the hindcast period (1991-2020)- my climatology
+  climatology_prod <- prod_data %>%
+    filter(year >= 1991, year <= 2020) %>%
+    group_by(varname, simulation, month) %>%
+    summarise(
+      month_mean = mean(prod_biom_month, na.rm = TRUE),
+      .groups = "drop"
+    )
+  # Calculate anomalies
+  prod_anomalies <- prod_data %>%
+    left_join(climatology_prod, by = c("varname", "simulation", "month")) %>%
+    mutate(
+      anomaly_ratio = prod_biom_month / month_mean
+    )
+  prod_anomalies %>%
+    select(varname, simulation, year, month, prod_biom_month, month_mean, anomaly_ratio) %>%
+    slice_head(n = 12)
   
+  
+  
+  write.csv(
+    prod_anomalies,
+    paste0(
+      out_folder2,
+      "/Long_",
+      region,
+      "_NPZ_PP_monthly_anomalies_",
+      depth,
+      "_v2_corrected.csv"
+    ),
+    row.names = FALSE
+  )
+    
+    
+    
   # Temperature ####
   
   # Load Data and Combine for the given depth
@@ -353,13 +424,13 @@ for (region in regions) {
               .groups = 'drop')
   
   # Save the temperature weighted and annual files
- # write.csv(temp_weighted,
- #           paste0(out_folder, "/Long_", region, "_temp_monthly_", depth, ".csv"),
- #           row.names = FALSE)
- # write.csv(temp_annual,
- #           paste0(out_folder, "/Long_", region, "_temp_annual_", depth, ".csv"),
- #           row.names = FALSE)
- # 
+  write.csv(temp_weighted,
+            paste0(out_folder2, "/Long_", region, "_temp_monthly_", depth, ".csv"),
+            row.names = FALSE)
+  write.csv(temp_annual,
+            paste0(out_folder2, "/Long_", region, "_temp_annual_", depth, ".csv"),
+            row.names = FALSE)
+  
   cat("Processing complete for region:", region, "at depth:", depth, "m\n")
   }
 }
