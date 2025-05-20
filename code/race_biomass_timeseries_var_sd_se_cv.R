@@ -77,17 +77,18 @@ q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
 #Explanation of the domains included: Here we are using the stratum bins instead of the full domain, since with have higher confidence in the data for doing so.
 #However, for temperature guilds and diet we are going with the main domains. 
 
-#domains_included <-  c("20", "21", "22", "121", "122",    #  "Chirikof_shelf" 
-#                       "120", "220",                      #  "Chirikof_gully"
-#                       "221", "320", "420", "520",        #  "Chirikof_slope"
-#                       "130", "230", "232",               #  "Kodiak_shelf"
-#                       "30", "31","32", "33", "35","131", "132", "133", "134", #  "Kodiak_gully"
-#                       "231", "330", "430", "530",        #  "Kodiak_slope"
-#                       "10", "11", "12", "13","111",      #  "Shumagin_shelf"
-#                       "110", "112",                      #  "Shumagin_gully"
-#                       "210", "310", "410", "510"         #  "Shumagin_slope"
-#)
+domains_included <-  c("20", "21", "22", "121", "122",    #  "Chirikof_shelf" 
+                       "120", "220",                      #  "Chirikof_gully"
+                       "221", "320", "420", "520",        #  "Chirikof_slope"
+                       "130", "230", "232",               #  "Kodiak_shelf"
+                       "30", "31","32", "33", "35","131", "132", "133", "134", #  "Kodiak_gully"
+                       "231", "330", "430", "530",        #  "Kodiak_slope"
+                       "10", "11", "12", "13","111",      #  "Shumagin_shelf"
+                       "110", "112",                      #  "Shumagin_gully"
+                       "210", "310", "410", "510"         #  "Shumagin_slope"
+)
 
+n_stratum <- length(domains_included)
 
 #tot_model_area <- sum(strat_areas$area[strat_areas$model == this.model &
 #                                         strat_areas$stratum_bin %in% domains_included])
@@ -95,11 +96,11 @@ q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
 #check_RACE_codes(cpue_dat)
 
 
-# Build your stratum‐level biomass
+# Build stratum‐level biomass
 stratsum <- get_cpue_all(model = this.model) %>%
   group_by(year, model, race_group, stratum) %>%
   summarise(
-    wgtcpue  = sum(wgtcpue,  na.rm = TRUE),
+    wgtcpue  = sum(wgtcpue),
     .groups   = "drop") %>%
   left_join(haul_stratum_summary(this.model),
             by = c("year","model","stratum")) %>%
@@ -174,8 +175,8 @@ strata_long <- stratsum_jad %>%
   mutate(stanza = recode(stanza,
                         juv_bio_tkm2 = "juv",
                         adu_bio_tkm2 = "adu")) %>%
-  select(-juv, -adu) %>% 
   filter(!bio_tkm2==0) %>% 
+  select(-juv, -adu) %>% 
   filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>%
   mutate(race_group=case_when((race_group=="Pacific halibut" & stanza== "juv")~ 
                                 "Pacific halibut juvenile",
@@ -212,14 +213,14 @@ strata_long <- stratsum_jad %>%
                               TRUE ~ race_group)) %>% 
   select(c(-stanza,-bio_t_km2,-bottom_temp_mean,-surface_temp_mean))
 
-#write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
+write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
 
 #QUESTION: what to do with years that have only one station? #####
 bio_summary <- strata_long %>%
   group_by(year, model, race_group) %>%
   summarise(
     # number of strata (replicates)
-    n_stations = n(),
+    n_stations = n_stratum, #station the actual number of stations (total number)
     sum_bio_station = sum(bio_tkm2,    na.rm = TRUE),
     sum_sq_bio_station = sum(bio_tkm2^2,  na.rm = TRUE),
     # total area of those strata
@@ -229,7 +230,7 @@ bio_summary <- strata_long %>%
     # (1b) mean density (t/km2)
     bio_mt_km2 = bio_mt / total_area,
     var_mt_km2 = ifelse(
-      n_stations > 0,
+      n_stations > 1,
       (sum_sq_bio_station - sum_bio_station^2 / n_stations) /(n_stations - 1),0),
     sd = sqrt(var_mt_km2),
     se = sd / sqrt(n_stations),
@@ -238,4 +239,19 @@ bio_summary <- strata_long %>%
          bio_mt, bio_mt_km2,
          var_mt_km2, sd, se, cv)
 
-write.csv(bio_summary, file="WGOA_EwE_files/wgoa_race_biomass_ts.csv", row.names=FALSE)
+#write.csv(bio_summary, file="WGOA_source_data/wgoa_race_biomass_ts.csv", row.names=FALSE)
+
+bio_summary[,"Type"] <- NA
+bio_summary[,"Scale"] <- 1
+bio_summary[,"Species"] <- ""
+bio_summary[,"Loc"] <- ""
+bio_summary[,"n"] <- ""
+bio_summary[,"Source"] <- "race_wgoa"
+  
+bio_summary_v2 <-  bio_summary %>% 
+  select(c(year, race_group, Type, sd, se, bio_mt_km2, Scale, cv, Species, Loc, n, Source))
+
+ colnames(bio_summary_v2) <- c("Year", "Group", "Type", "Stdev", "SE", 
+           "Value", "Scale", "CV",  "Species", 
+            "Loc", "n", "Source") 
+write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index.csv", row.names=FALSE)

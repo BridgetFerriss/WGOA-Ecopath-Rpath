@@ -109,6 +109,8 @@ wgoa_catch_ts_v2 <- wgoa_catch_ts %>%
   summarise(catch_mt = sum(catch_mt))
 
 write.csv(wgoa_catch_ts, "WGOA_source_data/wgoa_catch_ts_long_v2.csv", row.names = FALSE)
+#Group, Years, Value, Scale=1, Stdev= Value*0.1
+#Value=R+D
 
 # Transform the data to wide format
 wgoa_catch_ts_w_mt <- wgoa_catch_ts_v2 %>%
@@ -143,7 +145,9 @@ wgoa_catch_ts_w_mtkm2 <- wgoa_catch_ts_v2 %>%
     names_sort = TRUE
   )
 
-write.csv(wgoa_catch_ts_w_mtkm2, "WGOA_source_data/wgoa_fed_catch_ts_wide_mtkm2.csv")
+#write.csv(wgoa_catch_ts_w_mtkm2, "WGOA_source_data/wgoa_fed_catch_ts_wide_mtkm2.csv")
+
+
 
 
 
@@ -316,7 +320,7 @@ wgoa_catch_state_ts_w_mtkm2 <- wgoa_catch_state_ts_v2 %>%
     values_from = c(catch_mtkm2),
     names_sort = TRUE
   )
-write.csv(wgoa_catch_state_ts_w_mtkm2, "WGOA_source_data/wgoa_state_catch_ts_wide_mtkm2.csv", row.names = FALSE)
+#write.csv(wgoa_catch_state_ts_w_mtkm2, "WGOA_source_data/wgoa_state_catch_ts_wide_mtkm2.csv", row.names = FALSE)
 
 
 
@@ -342,8 +346,39 @@ wgoa_catch_ts_w_mtkm2_combined <- wgoa_catch_ts_w_mtkm2 %>%
 wgoa_catches_ft_cas <- wgoa_catch_ts_w_mtkm2_combined %>% 
   select(year, sort(tidyselect::peek_vars()))
 
-write.csv(wgoa_catches_ft_cas, "WGOA_source_data/wgoa_catches_ft_cas_final_mtkm2.csv", row.names = FALSE)
+#write.csv(wgoa_catches_ft_cas, "WGOA_source_data/wgoa_catches_ft_cas_final_mtkm2.csv", row.names = FALSE)
 
-dt_1990 <- wgoa_catches_ft_cas %>% 
-  filter(year <= 1993) 
-write.csv(dt_1990, "WGOA_source_data/wgoa_catches_ft_cas_1990_mean.csv", row.names = FALSE)
+#dt_1990 <- wgoa_catches_ft_cas %>% 
+#  filter(year <= 1993) 
+#write.csv(dt_1990, "WGOA_source_data/wgoa_catches_ft_cas_1990_mean.csv", row.names = FALSE)
+
+
+#Long format for Rpath
+
+wgoa_catch_ts_long <- wgoa_catches_ft_cas %>%
+  pivot_longer(
+    cols = -year,
+    names_to = c("species_name", "node", "harvest_description", "agency_gear_code"),
+    names_pattern = "^(.*)_(\\d+)_(.*)_(.*)$",
+    values_to  = "catch_mtkm2"
+  ) %>%
+  # if you want node as an integer:
+  mutate(node = as.integer(node)) %>%
+  select(year, species_name, node, harvest_description, agency_gear_code, catch_mtkm2) %>% 
+  group_by(year,
+           species_name,
+           node) %>%
+  summarise(catch_mtkm2 = sum(catch_mtkm2, na.rm = TRUE)) %>%
+  mutate(catch_mtkm2 = na_if(catch_mtkm2, 0))
+
+wgoa_catch_ts_long[,"Stdev"] <- NA
+wgoa_catch_ts_long[,"Scale"] <- 1
+
+colnames(wgoa_catch_ts_long) <- c("Year", "Group", "Node", "Value", "Stdev", "Scale")
+
+#Values are in t_km2
+wgoa_catch_ts_long_v2 <-wgoa_catch_ts_long %>% 
+  mutate(Stdev = Value * 0.1) %>% 
+  select(Group, Year, Value,  Scale, Stdev, Node)
+
+write.csv(wgoa_catch_ts_long_v2, "wgoa_data_rpath_fitting/wgoa_catches_ft_cas_long.csv", row.names = FALSE)
