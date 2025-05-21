@@ -11,7 +11,7 @@ library(tidyverse)
 library(here)
 
 # Pedigree file updated on 4/28/2025
-GOA_ped<- read.csv("data/wgoa_rpath_pedigree.csv")
+GOA_ped<- read.csv("wgoa_data_rpath_fitting/wgoa_rpath_pedigree.csv")
 
 GOA_ped_v2 <- GOA_ped %>%
   mutate(Biomass = case_when(Biomass =="8"~ "1",
