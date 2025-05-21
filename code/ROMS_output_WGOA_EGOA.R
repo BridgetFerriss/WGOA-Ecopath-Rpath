@@ -31,7 +31,7 @@ kable(nep_vars)
 # Define regions 
 regions <- c("WGOA", "EGOA")
 # Define the depth values you want to process
-depth_list <- c(300, 1000)
+depth_list <- c(1000)
 
 for (region in regions) {
   for (depth in depth_list) {
@@ -239,17 +239,19 @@ for (region in regions) {
       month_mean_mtkm2 = mean(biomass_tonnes_km2, na.rm = TRUE),
       .groups = "drop"
     )  
-  
+  # Check for negative values and correct it by 1e-15*1.01 same used on EBS aclim2
   biomass_anomalies <- biomass_summary_mo %>%
     left_join(climatology, by = c("varname", "simulation", "month")) %>%
     mutate(
-      anomaly_ratio_mtkm2 = biomass_tonnes_km2 / month_mean_mtkm2
-    )
+      anomaly_ratio_mtkm2 = biomass_tonnes_km2 / month_mean_mtkm2,
+      anomaly_ratio_mtkm2 = if_else(anomaly_ratio_mtkm2 < 0, 
+                                    abs(anomaly_ratio_mtkm2)*1.01 * 1e-15, 
+                                    anomaly_ratio_mtkm2))
+  #biomass_anomalies %>%
+  #  select(varname, simulation, year, month, biomass_tonnes_km2, month_mean_mtkm2, anomaly_ratio_mtkm2) %>%
+  #  slice_head(n = 12)
   
-  biomass_anomalies %>%
-    select(varname, simulation, year, month, biomass_tonnes_km2, month_mean_mtkm2, anomaly_ratio_mtkm2) %>%
-    slice_head(n = 12)
-  
+
     write.csv(
       biomass_anomalies,
       paste0(
@@ -300,13 +302,14 @@ for (region in regions) {
   prod_anomalies <- prod_data %>%
     left_join(climatology_prod, by = c("varname", "simulation", "month")) %>%
     mutate(
-      anomaly_ratio = prod_biom_month / month_mean
+      anomaly_ratio = prod_biom_month / month_mean,
+      anomaly_ratio = if_else(anomaly_ratio < 0, 
+                              abs(anomaly_ratio)*1.01 * 1e-15, 
+                              anomaly_ratio)
     )
-  prod_anomalies %>%
-    select(varname, simulation, year, month, prod_biom_month, month_mean, anomaly_ratio) %>%
-    slice_head(n = 12)
-  
-  
+  #prod_anomalies %>%
+  #  select(varname, simulation, year, month, prod_biom_month, month_mean, anomaly_ratio) %>%
+  #  slice_head(n = 12)
   
   write.csv(
     prod_anomalies,
