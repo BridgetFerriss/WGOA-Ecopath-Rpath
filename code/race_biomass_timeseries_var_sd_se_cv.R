@@ -213,14 +213,14 @@ strata_long <- stratsum_jad %>%
                               TRUE ~ race_group)) %>% 
   select(c(-stanza,-bio_t_km2,-bottom_temp_mean,-surface_temp_mean))
 
-write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
+#write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
 
 #QUESTION: what to do with years that have only one station? #####
-bio_summary <- strata_long %>%
+bio_summary2 <- strata_long %>%
   group_by(year, model, race_group) %>%
   summarise(
     # number of strata (replicates)
-    n_stations = n_stratum, #station the actual number of stations (total number)
+    n_stations = n(), #n_stratum station the actual number of stations (total number)
     sum_bio_station = sum(bio_tkm2,    na.rm = TRUE),
     sum_sq_bio_station = sum(bio_tkm2^2,  na.rm = TRUE),
     # total area of those strata
@@ -241,15 +241,19 @@ bio_summary <- strata_long %>%
 
 #write.csv(bio_summary, file="WGOA_source_data/wgoa_race_biomass_ts.csv", row.names=FALSE)
 
-bio_summary[,"Type"] <- NA
-bio_summary[,"Scale"] <- 1
-bio_summary[,"Species"] <- ""
-bio_summary[,"Loc"] <- ""
-bio_summary[,"n"] <- ""
-bio_summary[,"Source"] <- "race_wgoa"
+bio_summary2[,"Type"] <- NA
+bio_summary2[,"Scale"] <- 1
+bio_summary2[,"Species"] <- ""
+bio_summary2[,"Loc"] <- ""
+bio_summary2[,"n"] <- ""
+bio_summary2[,"Source"] <- "race_wgoa"
   
-bio_summary_v2 <-  bio_summary %>% 
-  select(c(year, race_group, Type, sd, se, bio_mt_km2, Scale, cv, Species, Loc, n, Source))
+bio_summary_v2 <-  bio_summary2 %>% 
+  select(c(year, race_group, Type, sd, se, bio_mt_km2, Scale, cv, Species, Loc, n, Source)) %>% 
+  mutate(race_group=case_when(race_group=="Pacific herring"~ 
+                                "Pacific herring adult", TRUE~race_group))
+
+bio_summary_v2$race_group<-make_clean_names(bio_summary_v2$race_group, allow_dupes = TRUE)
 
  colnames(bio_summary_v2) <- c("Year", "Group", "Type", "Stdev", "SE", 
            "Value", "Scale", "CV",  "Species", 
