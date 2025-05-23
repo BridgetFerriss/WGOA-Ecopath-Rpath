@@ -77,35 +77,53 @@ q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
 #Explanation of the domains included: Here we are using the stratum bins instead of the full domain, since with have higher confidence in the data for doing so.
 #However, for temperature guilds and diet we are going with the main domains. 
 
-domains_included <-  c("20", "21", "22", "121", "122",    #  "Chirikof_shelf" 
-                       "120", "220",                      #  "Chirikof_gully"
-                       "221", "320", "420", "520",        #  "Chirikof_slope"
-                       "130", "230", "232",               #  "Kodiak_shelf"
-                       "30", "31","32", "33", "35","131", "132", "133", "134", #  "Kodiak_gully"
-                       "231", "330", "430", "530",        #  "Kodiak_slope"
-                       "10", "11", "12", "13","111",      #  "Shumagin_shelf"
-                       "110", "112",                      #  "Shumagin_gully"
-                       "210", "310", "410", "510"         #  "Shumagin_slope"
-)
+#domains_included <-  c("20", "21", "22", "121", "122",    #  "Chirikof_shelf" 
+#                       "120", "220",                      #  "Chirikof_gully"
+#                       "221", "320", "420", "520",        #  "Chirikof_slope"
+#                       "130", "230", "232",               #  "Kodiak_shelf"
+#                       "30", "31","32", "33", "35","131", "132", "133", "134", #  "Kodiak_gully"
+#                       "231", "330", "430", "530",        #  "Kodiak_slope"
+#                       "10", "11", "12", "13","111",      #  "Shumagin_shelf"
+#                       "110", "112",                      #  "Shumagin_gully"
+#                       "210", "310", "410", "510"         #  "Shumagin_slope"
+#)
 
-n_stratum <- length(domains_included)
+#n_stratum <- length(domains_included)
 
-#tot_model_area <- sum(strat_areas$area[strat_areas$model == this.model &
-#                                         strat_areas$stratum_bin %in% domains_included])
+tot_model_area <- sum(strat_areas$area[strat_areas$model == this.model &
+                                         strat_areas$stratum_bin %in% domains_included])
 #cpue_dat  <- get_cpue_all(model = this.model)
 #check_RACE_codes(cpue_dat)
 
 
 # Build stratum‐level biomass
 stratsum <- get_cpue_all(model = this.model) %>%
+  group_by(year, model, race_group, stratum, hauljoin) %>%
+  summarize(
+    haul_wgtcpue = sum(wgtcpue),
+    haul_numcpue = sum(numcpue),
+    .groups = "keep"
+  )%>%
   group_by(year, model, race_group, stratum) %>%
-  summarise(
-    wgtcpue  = sum(wgtcpue),
-    .groups   = "drop") %>%
+  summarize(
+    tot_wtcpue  = sum(haul_wgtcpue),
+    tot_wtcpue2 = sum(haul_wgtcpue * haul_wgtcpue),
+    #squared needed for var calculation
+    .groups = "keep"
+  )  %>%
   left_join(haul_stratum_summary(this.model),
             by = c("year","model","stratum")) %>%
-  mutate(bio_t_km2 = wgtcpue / 1000 / stations,
-         bio_tons  = bio_t_km2 * area)
+  mutate(
+    mean_wtcpue   = tot_wtcpue / stations,
+    var_wtcpue    = tot_wtcpue2 / stations - mean_wtcpue * mean_wtcpue,
+    bio_t_km2     = mean_wtcpue / 1000,
+    #WHY the cpue to mt/km2 conversion is 1:1000? 
+    #units are kg/hectare and are transformed by the GAP_get_cpue.R function. 
+    #Here we are doing the final transformation from kg to mt
+    bio_tons      = bio_t_km2 * area,
+    var_bio_t_km2 = var_wtcpue / (1000 * 1000),
+    var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000)
+  )
 
 predlist <- read.clean.csv("lookups/Alaska_Multistanza_GOA_vonb_2025_04_30_v2.csv")
 #race_lookup <- read.clean.csv("lookups/race_lookup_base_v2.csv") %>% 
@@ -129,7 +147,10 @@ model_area <- sum(strata_lookup$area[strata_lookup$model==this.model])
 bio_totals <- stratsum %>%
   group_by(year, model, race_group) %>%
   summarize(bio_tons = sum(bio_tons),
-            bio_tkm2 = bio_tons/model_area, .groups="keep")
+            bio_tkm2 = bio_tons/model_area,
+            var_bio_tons = sum(var_bio_tons),
+            var_bio_t_km2= sum(var_bio_t_km2),
+            .groups="keep")
 
 # Juvenile and Adult bio proportions using Kerim's get_stratum_length_cons
 juv_combined <- NULL
@@ -143,17 +164,19 @@ for (p in pred_names){
     summarize(strat_bio_sum = sum(tot_wlcpue_t_km2), .groups="keep") %>%
     left_join(haul_stratum_summary(this.model),by=c("year","model","stratum")) %>%
     mutate(bio_t_km2 = strat_bio_sum/stations,
-           bio_tons  = bio_t_km2 * area,
+           bio_tons  = bio_t_km2 * area, #area for each stratum/bins
            jcat      = ifelse(lbin==pred_params[[p]]$jsize,"juv","adu")) 
+  
   
   juv_proportions <- juv_adu_lencons %>%
     group_by(year,model,species_name,jcat) %>%
     summarize(bio_tons = sum(bio_tons), .groups="keep") %>%
     pivot_wider(names_from=jcat, values_from=bio_tons) %>%
     mutate(juv_bio_prop = juv/(juv+adu))
-  
-  juv_combined <- rbind(juv_combined,juv_proportions)
+
+  juv_combined <- bind_rows(juv_combined, juv_proportions)
 }
+  
 
 juv_props <- juv_combined %>%
   rename(race_group = species_name)
@@ -165,16 +188,19 @@ stratsum_jad <- stratsum %>%
   mutate(
     juv_bio_prop = coalesce(juv_bio_prop, 0),
     juv_bio_tkm2 = bio_t_km2 * juv_bio_prop,
-    adu_bio_tkm2 = bio_t_km2 * (1 - juv_bio_prop)
+    adu_bio_tkm2 = bio_t_km2 * (1 - juv_bio_prop),
+    juv_bio_tons = bio_tons * juv_bio_prop,
+    adu_bio_tons = bio_tons * (1 - juv_bio_prop)
   )
 #write.csv(stratsum_jad, file="WGOA_source_data/stratsum_jad.csv", row.names=FALSE)
 
 strata_long <- stratsum_jad %>%
-  pivot_longer(cols = c(juv_bio_tkm2, adu_bio_tkm2), names_to = "stanza",
-    values_to = "bio_tkm2") %>%
-  mutate(stanza = recode(stanza,
-                        juv_bio_tkm2 = "juv",
-                        adu_bio_tkm2 = "adu")) %>%
+  select(-bio_tons) %>% 
+  pivot_longer(  cols       = c(juv_bio_tkm2, adu_bio_tkm2,
+                                juv_bio_tons, adu_bio_tons),
+                 names_to   = c("stanza", ".value"),
+                 names_pattern = "(juv|adu)_(bio_tkm2|bio_tons)"
+  )  %>%
   filter(!bio_tkm2==0) %>% 
   select(-juv, -adu) %>% 
   filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>%
@@ -216,28 +242,29 @@ strata_long <- stratsum_jad %>%
 #write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
 
 #QUESTION: what to do with years that have only one station? #####
+#BIA YOU ARE HERE ####
+# You have to FIX the bio_mt and bio_mt_km2 calculations
 bio_summary2 <- strata_long %>%
   group_by(year, model, race_group) %>%
   summarise(
-    # number of strata (replicates)
-    n_stations = n(), #n_stratum station the actual number of stations (total number)
-    sum_bio_station = sum(bio_tkm2,    na.rm = TRUE),
-    sum_sq_bio_station = sum(bio_tkm2^2,  na.rm = TRUE),
-    # total area of those strata
-    total_area = model_area,
-    # (1) total biomass (t) = sum(density × area)
-    bio_mt = sum(bio_tkm2 * area, na.rm = TRUE),
-    # (1b) mean density (t/km2)
-    bio_mt_km2 = bio_mt / total_area,
-    var_mt_km2 = ifelse(
-      n_stations > 1,
-      (sum_sq_bio_station - sum_bio_station^2 / n_stations) /(n_stations - 1),0),
-    sd = sqrt(var_mt_km2),
-    se = sd / sqrt(n_stations),
-    cv = sd / bio_mt_km2,.groups = "drop") %>%
-  select(year, model, race_group,
+    n_stations   = n(),
+    total_area   = first(model_area),             # grab the one model_area per group
+    bio_mt       = sum(bio_tons),
+    bio_mt_km2   = bio_mt / total_area,
+    var_mt_km2  = sum((area/total_area)^2 * var_bio_t_km2, na.rm = TRUE),
+    sd_mt_km2   = sqrt(var_mt_km2),
+    cv_mt_km2   = sd_mt_km2 / bio_mt_km2,
+    
+    # 2) total‐biomass variance & CV
+    #var_tons     = sum(var_bio_t_km2 * area^2, na.rm = TRUE),
+    #sd_tons      = sqrt(var_tons),
+    #cv_tons      = sd_tons / bio_mt,
+    .groups = "drop"
+  ) %>%
+  select(year, model, race_group,total_area,
          bio_mt, bio_mt_km2,
-         var_mt_km2, sd, se, cv)
+         var_mt_km2, sd_mt_km2, cv_mt_km2)
+
 
 #write.csv(bio_summary, file="WGOA_source_data/wgoa_race_biomass_ts.csv", row.names=FALSE)
 
@@ -247,9 +274,10 @@ bio_summary2[,"Species"] <- ""
 bio_summary2[,"Loc"] <- ""
 bio_summary2[,"n"] <- ""
 bio_summary2[,"Source"] <- "race_wgoa"
+bio_summary2[,"SE"] <- NA
   
 bio_summary_v2 <-  bio_summary2 %>% 
-  select(c(year, race_group, Type, sd, se, bio_mt_km2, Scale, cv, Species, Loc, n, Source)) %>% 
+  select(c(year, race_group, Type, sd_mt_km2, SE, bio_mt_km2, Scale, cv_mt_km2, Species, Loc, n, Source)) %>% 
   mutate(race_group=case_when(race_group=="Pacific herring"~ 
                                 "Pacific herring adult", TRUE~race_group))
 
@@ -258,4 +286,4 @@ bio_summary_v2$race_group<-make_clean_names(bio_summary_v2$race_group, allow_dup
  colnames(bio_summary_v2) <- c("Year", "Group", "Type", "Stdev", "SE", 
            "Value", "Scale", "CV",  "Species", 
             "Loc", "n", "Source") 
-write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index.csv", row.names=FALSE)
+write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2.csv", row.names=FALSE)

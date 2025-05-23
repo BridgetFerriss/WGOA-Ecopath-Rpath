@@ -496,3 +496,80 @@ egoa_race_bio <- model_sum_comb_e %>%
 write.csv(egoa_race_bio,
           "EGOA_source_data/egoa_groundfish_bio_mt_km2_wide.csv",
           row.names = F)
+
+
+
+#NOT USED CODE FROM THE race_biomass_timeseries_var_sd_se_cv.R
+#QUESTION: what to do with years that have only one station? #####
+#BIA YOU ARE HERE ####
+bio_summary2 <- strata_long %>%
+  group_by(year, model, race_group) %>%
+  summarise(
+    # number of strata (replicates)
+    n_stations = n(), #n_stratum station the actual number of stations (total number)
+    sum_bio_station = sum(bio_tkm2,    na.rm = TRUE),
+    sum_sq_bio_station = sum(bio_tkm2^2,  na.rm = TRUE),
+    # total area of those strata
+    total_area = model_area,
+    # (1) total biomass (t) = sum(density × area)
+    bio_mt = sum(bio_tkm2 * area, na.rm = TRUE),
+    # (1b) mean density (t/km2)
+    bio_mt_km2 = bio_mt / total_area,
+    var_mt_km2 = ifelse(
+      n_stations > 1,
+      (sum_sq_bio_station - sum_bio_station^2 / n_stations) /(n_stations - 1),0),
+    sd = sqrt(var_mt_km2),
+    se = sd / sqrt(n_stations),
+    cv = sd / (sum_bio_station/n_stations),.groups = "drop") %>%
+  select(year, model, race_group,
+         bio_mt, bio_mt_km2,
+         var_mt_km2, sd, se, cv)
+
+#Alternative approach to calculate the standard deviation and standard error
+stratum_stats <- strata_long %>%
+  group_by(year, model, race_group, stratum) %>%
+  summarise(
+    A_h = unique(area),         # total stratum area
+    n_h = n(),                  # number of stations in stratum
+    y_bar_h = mean(bio_tkm2, na.rm = TRUE),  # mean density
+    s2_h = ifelse(n_h > 1, var(bio_tkm2, na.rm = TRUE), 0),  # sample variance
+    .groups = "drop"
+  )
+
+# Step 2: Aggregate to total estimates per group and stanza
+bio_summary2 <- stratum_stats %>%
+  group_by(year, model, race_group, stanza) %>%
+  summarise(
+    total_area     = sum(A_h),
+    bio_mt         = sum(A_h * y_bar_h),                     # total biomass (t)
+    bio_mt_km2     = bio_mt / total_area,                   # mean density
+    var_mt_km2     = sum((A_h^2 * s2_h) / n_h),              # variance of mean density
+    sd             = sqrt(var_mt_km2),
+    se             = sd / sqrt(sum(n_h)),                   # optional: based on total n
+    cv             = sd / bio_mt_km2,
+    ci_lwr         = bio_mt_km2 - 1.96 * se,                 # 95% CI lower
+    ci_upr         = bio_mt_km2 + 1.96 * se,                 # 95% CI upper
+    .groups = "drop"
+  )
+
+
+
+#write.csv(bio_summary, file="WGOA_source_data/wgoa_race_biomass_ts.csv", row.names=FALSE)
+
+bio_summary2[,"Type"] <- NA
+bio_summary2[,"Scale"] <- 1
+bio_summary2[,"Species"] <- ""
+bio_summary2[,"Loc"] <- ""
+bio_summary2[,"n"] <- ""
+bio_summary2[,"Source"] <- "race_wgoa"
+
+bio_summary_v2 <-  bio_summary2 %>% 
+  select(c(year, race_group, Type, sd, se, bio_mt_km2, Scale, cv, Species, Loc, n, Source)) %>% 
+  mutate(race_group=case_when(race_group=="Pacific herring"~ 
+                                "Pacific herring adult", TRUE~race_group))
+
+bio_summary_v2$race_group<-make_clean_names(bio_summary_v2$race_group, allow_dupes = TRUE)
+
+colnames(bio_summary_v2) <- c("Year", "Group", "Type", "Stdev", "SE", 
+                              "Value", "Scale", "CV",  "Species", 
+                              "Loc", "n", "Source") 
