@@ -376,10 +376,21 @@ wgoa_catch_ts_long[,"Stdev"] <- NA
 wgoa_catch_ts_long[,"Scale"] <- 1
 
 colnames(wgoa_catch_ts_long) <- c("Year", "Group", "Node", "Value", "Stdev", "Scale")
+wgoa_catch_ts_long$Group<-make_clean_names(wgoa_catch_ts_long$Group, allow_dupes = TRUE)
 
 #Values are in t_km2
 wgoa_catch_ts_long_v2 <-wgoa_catch_ts_long %>% 
   mutate(Stdev = Value * 0.1) %>% 
-  select(Group, Year, Value,  Scale, Stdev, Node)
+  select(Group, Year, Value,  Scale, Stdev, Node) %>% 
+  mutate(Group=case_when(Group=="arrowtooth_flounder"~ "arrowtooth_flounder_adult",
+                              Group=="rex_sole"~"rex_sole_adult", 
+                              Group=="flathead_sole"~ "flathead_sole_adult",
+                              Group=="pacific_ocean_perch"~ "pacific_ocean_perch_adult",
+                              Group=="sablefish"~ "sablefish_adult",
+                              Group=="pacific_cod"~"pacific_cod_adult",
+                              Group=="walleye_pollock"~ "walleye_pollock_adult",
+                              Group=="pacific_halibut"~ "pacific_halibut_adult",
+                              Group=="pacific_herring"~ "pacific_herring_adult",
+                              TRUE ~ Group))
 
 write.csv(wgoa_catch_ts_long_v2, "wgoa_data_rpath_fitting/wgoa_catches_ft_cas_long.csv", row.names = FALSE)
