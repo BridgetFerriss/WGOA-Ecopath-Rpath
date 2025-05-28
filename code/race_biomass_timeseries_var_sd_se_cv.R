@@ -126,6 +126,7 @@ stratsum <- get_cpue_all(model = this.model) %>% #FUNCTION ####
     bio_tons      = bio_t_km2 * area,
     var_bio_t_km2 = var_wtcpue / (1000 * 1000),
     var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000),
+    var_est_bio_tons = var_bio_tons / n_stations,
     var_est_bio_t_km2 = var_bio_t_km2/n_stations,
     sd_bio_tons = sqrt(var_bio_tons),
     cv_bio_tons = sd_bio_tons / bio_tons,
@@ -163,6 +164,7 @@ bio_totals <- stratsum %>%
   summarize(bio_tons = sum(bio_tons),
             bio_tkm2 = bio_tons/model_area,
             se_tkm2  = sqrt(sum(var_est_bio_t_km2)),
+            se_tons  = sqrt(sum(var_est_bio_tons)),
             var_bio_tons = sum(var_bio_tons),
             var_bio_t_km2= sum(var_bio_t_km2),
             .groups="keep")
@@ -197,26 +199,29 @@ juv_props <- juv_combined %>%
   rename(race_group = species_name)
 
 # Attach the juv‐prop to every stratum, compute stratum‐level adu/juv bio
-stratsum_jad <- stratsum %>%
+stratsum_jad <- bio_totals %>%
   left_join(juv_props, by = c("year","model","race_group")) %>%
   # wherever a species had no juvs, we’ll get NA; that’s okay
   mutate(
     juv_bio_prop = coalesce(juv_bio_prop, 0),
-    juv_bio_tkm2 = bio_t_km2 * juv_bio_prop,
-    adu_bio_tkm2 = bio_t_km2 * (1 - juv_bio_prop),
+    juv_bio_t_km2 = bio_tkm2 * juv_bio_prop,
+    adu_bio_t_km2 = bio_tkm2 * (1 - juv_bio_prop),
     juv_bio_tons = bio_tons * juv_bio_prop,
-    adu_bio_tons = bio_tons * (1 - juv_bio_prop)
+    adu_bio_tons = bio_tons * (1 - juv_bio_prop), 
+    juv_se_bio_tons  = se_tons * juv_bio_prop,
+    adu_se_bio_tons  = se_tons * (1 - juv_bio_prop)
   )
 #write.csv(stratsum_jad, file="WGOA_source_data/stratsum_jad.csv", row.names=FALSE)
 
 strata_long <- stratsum_jad %>%
   select(-bio_tons) %>% 
-  pivot_longer(  cols       = c(juv_bio_tkm2, adu_bio_tkm2,
-                                juv_bio_tons, adu_bio_tons),
+  pivot_longer(  cols       = c(juv_bio_t_km2, adu_bio_t_km2,
+                                juv_bio_tons, adu_bio_tons, 
+                                juv_se_bio_tons, adu_se_bio_tons),
                  names_to   = c("stanza", ".value"),
-                 names_pattern = "(juv|adu)_(bio_tkm2|bio_tons)"
+                 names_pattern = "(juv|adu)_(bio_t_km2|bio_tons|se_bio_tons)" # this is the regex that separates the stanza from the value
   )  %>%
-  filter(!bio_tkm2==0) %>% 
+  filter(!bio_t_km2==0) %>% 
   select(-juv, -adu) %>% 
   filter(!race_group %in% c("ZERO", "MISC_NA", "MISC_SHELLS")) %>%
   mutate(race_group=case_when((race_group=="Pacific halibut" & stanza== "juv")~ 
@@ -252,7 +257,7 @@ strata_long <- stratsum_jad %>%
                               (race_group=="Walleye pollock" & stanza== "adu")~ 
                                 "Walleye pollock adult",
                               TRUE ~ race_group)) %>% 
-  select(c(-stanza,-bio_t_km2,-bottom_temp_mean,-surface_temp_mean))
+  select(c(-stanza, -bio_tkm2, -se_tons))
 
 #write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
 
@@ -262,40 +267,53 @@ strata_long <- stratsum_jad %>%
 bio_summary2 <- strata_long %>%
   group_by(year, model, race_group) %>%
   summarise(
-    n_stations   = n(),
-    total_area   = first(model_area),             # grab the one model_area per group
-    bio_mt       = sum(bio_tons),
-    bio_mt_km2   = bio_mt / total_area,
-    var_mt_km2  = sum(var_bio_t_km2),
-    #var_est_mt_km2  = sqrt(var_mt_km2),
-    #se_mt_km2   = sqrt(sum(var_est_bio_t_km2)),
-    sd_mt_km2   = sqrt(var_mt_km2),
-    cv_mt_km2   = sd_mt_km2 / bio_mt_km2,
+    total_area = model_area,
+    # grab the one model_area per group
+    bio_tons  = bio_tons,
+    var_tons  = var_bio_tons,
+    se_tons   = se_bio_tons,
+    sd_tons   = sqrt(var_tons),
+    cv_tons   = sd_tons / bio_tons,
     
-    # 2) total‐biomass variance & CV
-    #var_tons     = sum(var_bio_t_km2 * area^2, na.rm = TRUE),
-    #sd_tons      = sqrt(var_tons),
-    #cv_tons      = sd_tons / bio_mt,
+    bio_mt_km2   = bio_t_km2,
+    var_mt_km2   = var_bio_t_km2,
+    se_mt_km2 = se_bio_tons / total_area,
+    sd_mt_km2    = sqrt(var_mt_km2),
+    cv_mt_km2    = sd_mt_km2 / bio_mt_km2,
     .groups = "drop"
   ) %>%
-  select(year, model, race_group,total_area,
-         bio_mt, bio_mt_km2,
-         var_mt_km2, sd_mt_km2, cv_mt_km2)
+  select(
+    year,
+    model,
+    total_area,
+    race_group,
+    bio_tons,
+    var_tons,
+    se_tons ,
+    sd_tons ,
+    cv_tons ,
+    bio_mt_km2,
+    var_mt_km2,
+    se_mt_km2,
+    sd_mt_km2,
+    cv_mt_km2
+  )
+ 
 
 
-
-#write.csv(bio_summary, file="WGOA_source_data/wgoa_race_biomass_ts.csv", row.names=FALSE)
+#write.csv(bio_summary2, file="WGOA_source_data/wgoa_race_biomass_ts.csv", row.names=FALSE)
 
 bio_summary2[,"Type"] <- NA
-bio_summary2[,"Scale"] <- 1
+bio_summary2[,"Scale1"] <- 1
+bio_summary2[,"Scale2"] <- model_area
 bio_summary2[,"Species"] <- ""
 bio_summary2[,"Loc"] <- ""
 bio_summary2[,"n"] <- ""
 bio_summary2[,"Source"] <- "race_wgoa"
-bio_summary2[,"SE"] <- NA
+#bio_summary2[,"SE"] <- NA
   
 bio_summary_v2 <-  bio_summary2 %>% 
-  select(c(year, race_group, Type, sd_mt_km2, SE, bio_mt_km2, Scale, cv_mt_km2, Species, Loc, n, Source)) %>% 
+  select(c(year, race_group, Type, sd_mt_km2, se_mt_km2, bio_mt_km2, Scale1, cv_mt_km2, Species, Loc, n, Source)) %>% 
   mutate(race_group=case_when(race_group=="Pacific herring"~ 
                                 "Pacific herring adult", TRUE~race_group))
 
@@ -304,4 +322,17 @@ bio_summary_v2$race_group<-make_clean_names(bio_summary_v2$race_group, allow_dup
  colnames(bio_summary_v2) <- c("Year", "Group", "Type", "Stdev", "SE", 
            "Value", "Scale", "CV",  "Species", 
             "Loc", "n", "Source") 
-write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2.csv", row.names=FALSE)
+#write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2.csv", row.names=FALSE)
+
+
+bio_summary_v2_tons <-  bio_summary2 %>% 
+  select(c(year, race_group, Type, sd_tons, se_tons, bio_tons, Scale2, cv_tons, Species, Loc, n, Source)) %>% 
+  mutate(race_group=case_when(race_group=="Pacific herring"~ 
+                                "Pacific herring adult", TRUE~race_group))
+
+bio_summary_v2_tons$race_group<-make_clean_names(bio_summary_v2$race_group, allow_dupes = TRUE)
+
+colnames(bio_summary_v2_tons) <- c("Year", "Group", "Type", "Stdev", "SE", 
+                              "Value", "Scale", "CV",  "Species", 
+                              "Loc", "n", "Source") 
+write.csv(bio_summary_v2_tons, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2_tons.csv", row.names=FALSE)
