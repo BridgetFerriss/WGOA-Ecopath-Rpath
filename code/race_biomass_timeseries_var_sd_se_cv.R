@@ -90,14 +90,15 @@ q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
 
 #n_stratum <- length(domains_included)
 
-tot_model_area <- sum(strat_areas$area[strat_areas$model == this.model &
-                                         strat_areas$stratum_bin %in% domains_included])
+#tot_model_area <- sum(strat_areas$area[strat_areas$model == this.model &
+#                                         strat_areas$stratum_bin %in% domains_included])
+
 #cpue_dat  <- get_cpue_all(model = this.model)
 #check_RACE_codes(cpue_dat)
 
 
 # Build stratum‐level biomass
-stratsum <- get_cpue_all(model = this.model) %>%
+stratsum <- get_cpue_all(model = this.model) %>% #FUNCTION ####
   group_by(year, model, race_group, stratum, hauljoin) %>%
   summarize(
     haul_wgtcpue = sum(wgtcpue),
@@ -108,22 +109,34 @@ stratsum <- get_cpue_all(model = this.model) %>%
   summarize(
     tot_wtcpue  = sum(haul_wgtcpue),
     tot_wtcpue2 = sum(haul_wgtcpue * haul_wgtcpue),
+    #var_wtcpue = tot_wtcpue2 - (tot_wtcpue * tot_wtcpue) / n(), #variance of wtcpue
     #squared needed for var calculation
     .groups = "keep"
   )  %>%
-  left_join(haul_stratum_summary(this.model),
+  left_join(haul_stratum_summary(this.model), #FUNCTION ####
             by = c("year","model","stratum")) %>%
   mutate(
-    mean_wtcpue   = tot_wtcpue / stations,
-    var_wtcpue    = tot_wtcpue2 / stations - mean_wtcpue * mean_wtcpue,
+    n_stations= sum(stations),
+    mean_wtcpue   = tot_wtcpue / n_stations,
+    var_wtcpue    = tot_wtcpue2 - (tot_wtcpue * tot_wtcpue) / n_stations, #tot_wtcpue2 / stations - mean_wtcpue * mean_wtcpue,
     bio_t_km2     = mean_wtcpue / 1000,
     #WHY the cpue to mt/km2 conversion is 1:1000? 
     #units are kg/hectare and are transformed by the GAP_get_cpue.R function. 
     #Here we are doing the final transformation from kg to mt
     bio_tons      = bio_t_km2 * area,
     var_bio_t_km2 = var_wtcpue / (1000 * 1000),
-    var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000)
+    var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000),
+    sd_bio_tons = sqrt(var_bio_tons),
+    cv_bio_tons = sd_bio_tons / bio_tons,
   )
+
+# 2024-04-30: BIA - I added the following line to get the stations with species present
+#test_sum <- stratsum %>% 
+#  group_by(year, model, race_group) %>% 
+#  sumarize(bio_tons=sum(var_bio_tons),
+#           stations_with_sp=sum(stations_sp),
+#           stations_all=sum(stations),
+#           cv=sqrt(var_bio_tons)/bio_tons,.groups="keep")
 
 predlist <- read.clean.csv("lookups/Alaska_Multistanza_GOA_vonb_2025_04_30_v2.csv")
 #race_lookup <- read.clean.csv("lookups/race_lookup_base_v2.csv") %>% 
@@ -159,10 +172,10 @@ for (p in pred_names){
   bio_pred <- bio_totals %>%
     filter(race_group==p)
   
-  juv_adu_lencons  <- get_stratum_length_cons(predator=p, model=this.model) %>%
+  juv_adu_lencons  <- get_stratum_length_cons(predator=p, model=this.model) %>% #FUNCTION ####
     group_by(year, model, species_name, stratum, lbin) %>%
     summarize(strat_bio_sum = sum(tot_wlcpue_t_km2), .groups="keep") %>%
-    left_join(haul_stratum_summary(this.model),by=c("year","model","stratum")) %>%
+    left_join(haul_stratum_summary(this.model),by=c("year","model","stratum")) %>% #FUNCTION ####
     mutate(bio_t_km2 = strat_bio_sum/stations,
            bio_tons  = bio_t_km2 * area, #area for each stratum/bins
            jcat      = ifelse(lbin==pred_params[[p]]$jsize,"juv","adu")) 
@@ -251,7 +264,8 @@ bio_summary2 <- strata_long %>%
     total_area   = first(model_area),             # grab the one model_area per group
     bio_mt       = sum(bio_tons),
     bio_mt_km2   = bio_mt / total_area,
-    var_mt_km2  = sum((area/total_area)^2 * var_bio_t_km2, na.rm = TRUE),
+    var_mt_km2  = sum(var_bio_t_km2),
+    #var_est_mt_km2  = sqrt(var_mt_km2),
     sd_mt_km2   = sqrt(var_mt_km2),
     cv_mt_km2   = sd_mt_km2 / bio_mt_km2,
     
@@ -264,6 +278,7 @@ bio_summary2 <- strata_long %>%
   select(year, model, race_group,total_area,
          bio_mt, bio_mt_km2,
          var_mt_km2, sd_mt_km2, cv_mt_km2)
+
 
 
 #write.csv(bio_summary, file="WGOA_source_data/wgoa_race_biomass_ts.csv", row.names=FALSE)
