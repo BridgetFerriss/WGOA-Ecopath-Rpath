@@ -273,13 +273,13 @@ bio_summary2 <- strata_long %>%
     var_tons  = var_bio_tons,
     se_tons   = se_bio_tons,
     sd_tons   = sqrt(var_tons),
-    cv_tons   = sd_tons / bio_tons,
+    cv_tons   = se_tons / bio_tons,
     
     bio_mt_km2   = bio_t_km2,
     var_mt_km2   = var_bio_t_km2,
     se_mt_km2 = se_bio_tons / total_area,
     sd_mt_km2    = sqrt(var_mt_km2),
-    cv_mt_km2    = sd_mt_km2 / bio_mt_km2,
+    cv_mt_km2    = se_mt_km2 / bio_mt_km2,
     .groups = "drop"
   ) %>%
   select(
@@ -322,7 +322,7 @@ bio_summary_v2$race_group<-make_clean_names(bio_summary_v2$race_group, allow_dup
  colnames(bio_summary_v2) <- c("Year", "Group", "Type", "Stdev", "SE", 
            "Value", "Scale", "CV",  "Species", 
             "Loc", "n", "Source") 
-#write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2.csv", row.names=FALSE)
+write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2.csv", row.names=FALSE)
 
 
 bio_summary_v2_tons <-  bio_summary2 %>% 
@@ -330,7 +330,7 @@ bio_summary_v2_tons <-  bio_summary2 %>%
   mutate(race_group=case_when(race_group=="Pacific herring"~ 
                                 "Pacific herring adult", TRUE~race_group))
 
-bio_summary_v2_tons$race_group<-make_clean_names(bio_summary_v2$race_group, allow_dupes = TRUE)
+bio_summary_v2_tons$race_group <-make_clean_names(bio_summary_v2_tons$race_group, allow_dupes = TRUE)
 
 colnames(bio_summary_v2_tons) <- c("Year", "Group", "Type", "Stdev", "SE", 
                               "Value", "Scale", "CV",  "Species", 
