@@ -126,6 +126,7 @@ stratsum <- get_cpue_all(model = this.model) %>% #FUNCTION ####
     bio_tons      = bio_t_km2 * area,
     var_bio_t_km2 = var_wtcpue / (1000 * 1000),
     var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000),
+    var_est_bio_t_km2 = var_bio_t_km2/n_stations,
     sd_bio_tons = sqrt(var_bio_tons),
     cv_bio_tons = sd_bio_tons / bio_tons,
   )
@@ -266,6 +267,7 @@ bio_summary2 <- strata_long %>%
     bio_mt_km2   = bio_mt / total_area,
     var_mt_km2  = sum(var_bio_t_km2),
     #var_est_mt_km2  = sqrt(var_mt_km2),
+    se_mt_km2   = sqrt(sum(var_est_bio_t_km2)),
     sd_mt_km2   = sqrt(var_mt_km2),
     cv_mt_km2   = sd_mt_km2 / bio_mt_km2,
     
