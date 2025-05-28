@@ -162,6 +162,7 @@ bio_totals <- stratsum %>%
   group_by(year, model, race_group) %>%
   summarize(bio_tons = sum(bio_tons),
             bio_tkm2 = bio_tons/model_area,
+            se_tkm2  = sqrt(sum(var_est_bio_t_km2)),
             var_bio_tons = sum(var_bio_tons),
             var_bio_t_km2= sum(var_bio_t_km2),
             .groups="keep")
@@ -267,7 +268,7 @@ bio_summary2 <- strata_long %>%
     bio_mt_km2   = bio_mt / total_area,
     var_mt_km2  = sum(var_bio_t_km2),
     #var_est_mt_km2  = sqrt(var_mt_km2),
-    se_mt_km2   = sqrt(sum(var_est_bio_t_km2)),
+    #se_mt_km2   = sqrt(sum(var_est_bio_t_km2)),
     sd_mt_km2   = sqrt(var_mt_km2),
     cv_mt_km2   = sd_mt_km2 / bio_mt_km2,
     
