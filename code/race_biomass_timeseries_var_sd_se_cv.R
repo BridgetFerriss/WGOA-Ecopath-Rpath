@@ -98,7 +98,7 @@ q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
 
 
 # Build stratum‐level biomass
-stratsum <- get_cpue_all(model = this.model) %>% #FUNCTION ####
+stratsum <- get_cpue_all(model = this.model) %>% 
   group_by(year, model, race_group, stratum, hauljoin) %>%
   summarize(
     haul_wgtcpue = sum(wgtcpue),
@@ -113,7 +113,7 @@ stratsum <- get_cpue_all(model = this.model) %>% #FUNCTION ####
     #squared needed for var calculation
     .groups = "keep"
   )  %>%
-  left_join(haul_stratum_summary(this.model), #FUNCTION ####
+  left_join(haul_stratum_summary(this.model), 
             by = c("year","model","stratum")) %>%
   mutate(
     n_stations= sum(stations),
@@ -124,12 +124,12 @@ stratsum <- get_cpue_all(model = this.model) %>% #FUNCTION ####
     #units are kg/hectare and are transformed by the GAP_get_cpue.R function. 
     #Here we are doing the final transformation from kg to mt
     bio_tons      = bio_t_km2 * area,
-    var_bio_t_km2 = var_wtcpue / (1000 * 1000),
-    var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000),
-    var_est_bio_tons = var_bio_tons / n_stations,
-    var_est_bio_t_km2 = var_bio_t_km2/n_stations,
-    sd_bio_tons = sqrt(var_bio_tons),
-    cv_bio_tons = sd_bio_tons / bio_tons,
+    var_bio_t_km2 = var_wtcpue / (1000 * 1000), #FLAG ####
+    var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000), #FLAG ####
+    var_est_bio_tons = var_bio_tons / n_stations, #FLAG ####
+    var_est_bio_t_km2 = var_bio_t_km2/n_stations, #FLAG ####
+    sd_bio_tons = sqrt(var_bio_tons), #FLAG ####
+    cv_bio_tons = sd_bio_tons / bio_tons, #FLAG ####
   )
 
 # 2024-04-30: BIA - I added the following line to get the stations with species present
@@ -176,10 +176,10 @@ for (p in pred_names){
   bio_pred <- bio_totals %>%
     filter(race_group==p)
   
-  juv_adu_lencons  <- get_stratum_length_cons(predator=p, model=this.model) %>% #FUNCTION ####
+  juv_adu_lencons  <- get_stratum_length_cons(predator=p, model=this.model) %>% 
     group_by(year, model, species_name, stratum, lbin) %>%
     summarize(strat_bio_sum = sum(tot_wlcpue_t_km2), .groups="keep") %>%
-    left_join(haul_stratum_summary(this.model),by=c("year","model","stratum")) %>% #FUNCTION ####
+    left_join(haul_stratum_summary(this.model),by=c("year","model","stratum")) %>% 
     mutate(bio_t_km2 = strat_bio_sum/stations,
            bio_tons  = bio_t_km2 * area, #area for each stratum/bins
            jcat      = ifelse(lbin==pred_params[[p]]$jsize,"juv","adu")) 
@@ -208,8 +208,8 @@ stratsum_jad <- bio_totals %>%
     adu_bio_t_km2 = bio_tkm2 * (1 - juv_bio_prop),
     juv_bio_tons = bio_tons * juv_bio_prop,
     adu_bio_tons = bio_tons * (1 - juv_bio_prop), 
-    juv_se_bio_tons  = se_tons * juv_bio_prop,
-    adu_se_bio_tons  = se_tons * (1 - juv_bio_prop)
+    juv_se_bio_tons  = se_tons * juv_bio_prop, #FLAG ####
+    adu_se_bio_tons  = se_tons * (1 - juv_bio_prop) #FLAG ####
   )
 #write.csv(stratsum_jad, file="WGOA_source_data/stratsum_jad.csv", row.names=FALSE)
 
@@ -262,24 +262,23 @@ strata_long <- stratsum_jad %>%
 #write.csv(strata_long, file="WGOA_source_data/strata_long.csv", row.names=FALSE)
 
 #QUESTION: what to do with years that have only one station? #####
-#BIA YOU ARE HERE ####
-# You have to FIX the bio_mt and bio_mt_km2 calculations
+
 bio_summary2 <- strata_long %>%
   group_by(year, model, race_group) %>%
   summarise(
     total_area = model_area,
     # grab the one model_area per group
     bio_tons  = bio_tons,
-    var_tons  = var_bio_tons,
-    se_tons   = se_bio_tons,
-    sd_tons   = sqrt(var_tons),
-    cv_tons   = se_tons / bio_tons,
+    var_tons  = var_bio_tons, #FLAG ####
+    se_tons   = se_bio_tons, #FLAG ####
+    sd_tons   = sqrt(var_tons), #FLAG ####
+    cv_tons   = se_tons / bio_tons, #FLAG ####
     
     bio_mt_km2   = bio_t_km2,
-    var_mt_km2   = var_bio_t_km2,
-    se_mt_km2 = se_bio_tons / total_area,
-    sd_mt_km2    = sqrt(var_mt_km2),
-    cv_mt_km2    = se_mt_km2 / bio_mt_km2,
+    var_mt_km2   = var_bio_t_km2, #FLAG ####
+    se_mt_km2 = se_bio_tons / total_area, #FLAG ####
+    sd_mt_km2    = sqrt(var_mt_km2), #FLAG ####
+    cv_mt_km2    = se_mt_km2 / bio_mt_km2, #FLAG ####
     .groups = "drop"
   ) %>%
   select(
