@@ -109,36 +109,64 @@ stratsum <- get_cpue_all(model = this.model) %>%
   summarize(
     tot_wtcpue  = sum(haul_wgtcpue),
     tot_wtcpue2 = sum(haul_wgtcpue * haul_wgtcpue),
-    #var_wtcpue = tot_wtcpue2 - (tot_wtcpue * tot_wtcpue) / n(), #variance of wtcpue
-    #squared needed for var calculation
     .groups = "keep"
   )  %>%
   left_join(haul_stratum_summary(this.model), 
             by = c("year","model","stratum")) %>%
   mutate(
-    n_stations= sum(stations),
-    mean_wtcpue   = tot_wtcpue / n_stations,
-    var_wtcpue    = tot_wtcpue2 - (tot_wtcpue * tot_wtcpue) / n_stations, #tot_wtcpue2 / stations - mean_wtcpue * mean_wtcpue,
-    bio_t_km2     = mean_wtcpue / 1000,
-    #WHY the cpue to mt/km2 conversion is 1:1000? 
-    #units are kg/hectare and are transformed by the GAP_get_cpue.R function. 
-    #Here we are doing the final transformation from kg to mt
-    bio_tons      = bio_t_km2 * area,
-    var_bio_t_km2 = var_wtcpue / (1000 * 1000), #FLAG ####
-    var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000), #FLAG ####
-    var_est_bio_tons = var_bio_tons / n_stations, #FLAG ####
-    var_est_bio_t_km2 = var_bio_t_km2/n_stations, #FLAG ####
-    sd_bio_tons = sqrt(var_bio_tons), #FLAG ####
-    cv_bio_tons = sd_bio_tons / bio_tons, #FLAG ####
+    # stations comes from the haul_stratum_summary function so includes
+    # stations with 0 biomass.
+      n_stations= sum(stations),
+      mean_wtcpue   = tot_wtcpue / n_stations,
+    # CHANGED below line, was missing a division by n-1 ###
+      var_wtcpue    = (tot_wtcpue2 - ((tot_wtcpue * tot_wtcpue) / n_stations))/(n_stations-1),  #tot_wtcpue2 / stations - mean_wtcpue * mean_wtcpue,
+    # Convert to variance of mean estimate by dividing by n_stations,
+    # replace varest with 0 at this stage if it would be NA (due to 1 station only) 
+      varest_wtcpue = ifelse(is.na(var_wtcpue), 0, var_wtcpue/n_stations),
+    # Units of wtcpue as returned by get_cpue_all() are kg/km2, convert to t/km2
+    # by dividing by 1000, then scale up to tons by multiplying by stratum area.
+    # Scale up to tons by stratum area
+      bio_tons      = mean_wtcpue   * area / 1000,
+      varest_tons   = varest_wtcpue * area * area / (1000*1000)
+    ## KYA 5/29/31 ONLY TONS should be added without weighting by area, so 
+    ## dropping t_km2 calculations from this object - can be added in 
+    ## to final sums later.
+      #bio_t_km2     = mean_wtcpue   / 1000,
+      #varest_t_km2  = varest_wtcpue /(1000 * 1000),
+      #var_bio_t_km2 = var_wtcpue / (1000 * 1000), #FLAG ####
+      #var_bio_tons  = var_wtcpue * (area / 1000) * (area / 1000), #FLAG ####
+      #var_est_bio_tons = var_bio_tons / n_stations, #FLAG ####
+      #var_est_bio_t_km2 = var_bio_t_km2/n_stations, #FLAG ####
+      #sd_bio_tons = sqrt(var_bio_tons), #FLAG ####
+      #cv_bio_tons = sd_bio_tons / bio_tons, #FLAG ####
   )
 
-# 2024-04-30: BIA - I added the following line to get the stations with species present
-#test_sum <- stratsum %>% 
-#  group_by(year, model, race_group) %>% 
-#  sumarize(bio_tons=sum(var_bio_tons),
-#           stations_with_sp=sum(stations_sp),
-#           stations_all=sum(stations),
-#           cv=sqrt(var_bio_tons)/bio_tons,.groups="keep")
+# Summing these means and variances should match outputs from GAP method
+# prior to applying juvenile/adult calculations
+model_area <- sum(strata_lookup$area[strata_lookup$model==this.model])
+
+bio_totals <- stratsum %>%
+  group_by(year, model, race_group) %>%
+  summarize( tot_bio_tons    = sum(bio_tons),
+             tot_varest_tons = sum(varest_tons),
+             .groups="keep"
+           ) %>%
+  # This mutation and select function is to rename variables in bio_totals to
+  # match the remainder of the code below.
+  mutate(bio_tons      = tot_bio_tons,
+         bio_tkm2      = bio_tons/model_area,
+         se_tkm2       = sqrt(tot_varest_tons)/model_area,
+         se_tons       = sqrt(tot_varest_tons),
+         var_bio_tons  = tot_varest_tons,
+         var_bio_t_km2 = tot_varest_tons/(model_area*model_area),
+         cv            = se_tons/bio_tons
+         ) %>%
+  select(-tot_bio_tons,-tot_varest_tons)
+
+## KYA 5/29/25 Tested above code against GAP surveyindex - bio_totals 
+## bio_tons and se_tons match GAP results (to 3 decimal places) for
+## Arrowtooth, Big skate, Atka mackerel, and pollock.  Yay!!!
+
 
 predlist <- read.clean.csv("lookups/Alaska_Multistanza_GOA_vonb_2025_04_30_v2.csv")
 #race_lookup <- read.clean.csv("lookups/race_lookup_base_v2.csv") %>% 
@@ -158,16 +186,17 @@ for (p in pred_names){
   pred_params[[p]]$vonb <- list(h= pdat$vb_k, Linf  = pdat$vb_linf_mm, t0= pdat$vb_t0, rec_len=pdat$von_b_rec_len_cm)
 }
 
-model_area <- sum(strata_lookup$area[strata_lookup$model==this.model])
-bio_totals <- stratsum %>%
-  group_by(year, model, race_group) %>%
-  summarize(bio_tons = sum(bio_tons),
-            bio_tkm2 = bio_tons/model_area,
-            se_tkm2  = sqrt(sum(var_est_bio_t_km2)),
-            se_tons  = sqrt(sum(var_est_bio_tons)),
-            var_bio_tons = sum(var_bio_tons),
-            var_bio_t_km2= sum(var_bio_t_km2),
-            .groups="keep")
+#KYA - moved this section up - can be removed after confirming everything.
+#model_area <- sum(strata_lookup$area[strata_lookup$model==this.model])
+#bio_totals <- stratsum %>%
+#  group_by(year, model, race_group) %>%
+#  summarize(bio_tons = sum(bio_tons),
+#            bio_tkm2 = bio_tons/model_area,
+#            se_tkm2  = sqrt(sum(var_est_bio_t_km2)),
+#            se_tons  = sqrt(sum(var_est_bio_tons)),
+#            var_bio_tons = sum(var_bio_tons),
+#            var_bio_t_km2= sum(var_bio_t_km2),
+#            .groups="keep")
 
 # Juvenile and Adult bio proportions using Kerim's get_stratum_length_cons
 juv_combined <- NULL
@@ -321,7 +350,7 @@ bio_summary_v2$race_group<-make_clean_names(bio_summary_v2$race_group, allow_dup
  colnames(bio_summary_v2) <- c("Year", "Group", "Type", "Stdev", "SE", 
            "Value", "Scale", "CV",  "Species", 
             "Loc", "n", "Source") 
-write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2.csv", row.names=FALSE)
+write.csv(bio_summary_v2, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2_ka.csv", row.names=FALSE)
 
 
 bio_summary_v2_tons <-  bio_summary2 %>% 
@@ -334,4 +363,4 @@ bio_summary_v2_tons$race_group <-make_clean_names(bio_summary_v2_tons$race_group
 colnames(bio_summary_v2_tons) <- c("Year", "Group", "Type", "Stdev", "SE", 
                               "Value", "Scale", "CV",  "Species", 
                               "Loc", "n", "Source") 
-write.csv(bio_summary_v2_tons, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2_tons.csv", row.names=FALSE)
+write.csv(bio_summary_v2_tons, file="wgoa_data_rpath_fitting/wgoa_race_biomass_ts_fitting_index_v2_tons_ka.csv", row.names=FALSE)
