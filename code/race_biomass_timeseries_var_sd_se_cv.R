@@ -186,18 +186,73 @@ for (p in pred_names){
   pred_params[[p]]$vonb <- list(h= pdat$vb_k, Linf  = pdat$vb_linf_mm, t0= pdat$vb_t0, rec_len=pdat$von_b_rec_len_cm)
 }
 
-#KYA - moved this section up - can be removed after confirming everything.
-#model_area <- sum(strata_lookup$area[strata_lookup$model==this.model])
-#bio_totals <- stratsum %>%
-#  group_by(year, model, race_group) %>%
-#  summarize(bio_tons = sum(bio_tons),
-#            bio_tkm2 = bio_tons/model_area,
-#            se_tkm2  = sqrt(sum(var_est_bio_t_km2)),
-#            se_tons  = sqrt(sum(var_est_bio_tons)),
-#            var_bio_tons = sum(var_bio_tons),
-#            var_bio_t_km2= sum(var_bio_t_km2),
-#            .groups="keep")
+# KYA 30-May-25 AN ATTEMPT AT STRAIGHT Juv/Adu biomass and se estimation
+# from length data 
 
+# Loop through predators and get all the length data, add juv/adu categories
+  len_dat <- NULL
+  for(p in pred_names){
+    len_dat=rbind(len_dat,
+                get_stratum_length_cons(predator=p, model=this.model) %>%
+                  mutate(jcat=ifelse(lbin==pred_params[[p]]$jsize,"juv","adu"))
+    )
+  }
+
+# Sum length classes to juv/adu by-haul biomass (biomass from l/w regressions)
+ juv_adu_lencons  <- len_dat %>%
+   group_by(year, model, species_name, stratum, hauljoin, jcat) %>%
+   summarize(haul_wlcpue_tkm2 = sum(tot_wlcpue_t_km2), .groups="keep")
+
+# Go to stratum level calculating variance of estimate per stratum
+ juv_adu_strat <- juv_adu_lencons %>%
+   group_by(year, model, species_name, stratum, jcat) %>%
+   summarize(
+     tot_wtlcpue_tkm2  = sum(haul_wlcpue_tkm2),
+     tot_wtlcpue2_tkm2 = sum(haul_wlcpue_tkm2 * haul_wlcpue_tkm2),
+     .groups = "keep"
+   )  %>%
+   left_join(haul_stratum_summary(this.model), 
+             by = c("year","model","stratum")) %>%
+   mutate(
+     # stations comes from the haul_stratum_summary function so includes
+     # stations with 0 biomass.
+     n_stations= sum(stations),
+     mean_wtlcpue_tkm2   = tot_wtlcpue_tkm2 / n_stations,
+     # CHANGED below line, was missing a division by n-1 ###
+     var_wtlcpue_tkm2    = (tot_wtlcpue2_tkm2 - ((tot_wtlcpue_tkm2 * tot_wtlcpue_tkm2) / n_stations))/(n_stations-1),  #tot_wtcpue2 / stations - mean_wtcpue * mean_wtcpue,
+     # Convert to variance of mean estimate by dividing by n_stations,
+     # replace varest with 0 at this stage if it would be NA (due to 1 station only) 
+     varest_wtlcpue_tkm2 = ifelse(is.na(var_wtlcpue_tkm2), 0, var_wtlcpue_tkm2/n_stations),
+     # Units of wtcpue as returned by get_cpue_all() are kg/km2, convert to t/km2
+     # by dividing by 1000, then scale up to tons by multiplying by stratum area.
+     # Scale up to tons by stratum area
+     bio_l_tons      = mean_wtlcpue_tkm2   * area,
+     varest_l_tons   = varest_wtlcpue_tkm2 * area * area 
+   ) 
+
+# sum to ecosystem level
+ juvadu_totals <- juv_adu_strat %>%
+   group_by(year, model, species_name, jcat) %>%
+   summarize( bio_tons    = sum(bio_l_tons),
+              varest_tons = sum(varest_l_tons),
+              se_tons     = sqrt(varest_tons),
+              bio_tkm2    = bio_tons/model_area,
+              se_tkm2     = se_tons/model_area,
+              cv          = se_tons/bio_tons,
+              .groups="keep"
+   )   
+   
+## AT THIS POINT, ALL CALCULATIONS SHOULD BE DONE, Everything else is
+## renaming and formatting.  
+## We want to use bio_tons for Value and se_tons for StDev read into Rpath
+## (or if preferred bio_tkm2 and se_tkm2, but keeping it in tons is easier to
+## compare to other data sources.
+## These two files contain the non-stanzas and stanza results before any formatting.
+ write.csv(bio_totals,    file="wgoa_data_rpath_fitting/wgoa_race_bio_totals.csv", row.names=FALSE) 
+ write.csv(juvadu_totals, file="wgoa_data_rpath_fitting/wgoa_race_juvadu_totals.csv", row.names=FALSE)
+
+ 
+################################################################################
 # Juvenile and Adult bio proportions using Kerim's get_stratum_length_cons
 juv_combined <- NULL
 for (p in pred_names){
