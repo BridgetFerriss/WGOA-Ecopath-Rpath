@@ -231,7 +231,7 @@ for (region in regions) {
 
   ## Biomass Anomaly calculation ##### 
   # Calculate the mean biomass for the hindcast period (1991-2020)- my climatology
-  
+  ### Month Bio anomaly ####
   climatology <- biomass_summary_mo %>%
     filter(year >= 1991, year <= 2020) %>%
     group_by(varname, simulation, month) %>%
@@ -247,24 +247,53 @@ for (region in regions) {
       anomaly_ratio_mtkm2 = if_else(anomaly_ratio_mtkm2 < 0, 
                                     abs(anomaly_ratio_mtkm2)*1.01 * 1e-15, 
                                     anomaly_ratio_mtkm2))
-  #biomass_anomalies %>%
-  #  select(varname, simulation, year, month, biomass_tonnes_km2, month_mean_mtkm2, anomaly_ratio_mtkm2) %>%
-  #  slice_head(n = 12)
+  biomass_anomalies %>%
+    select(varname, simulation, year, month, biomass_tonnes_km2, month_mean_mtkm2, anomaly_ratio_mtkm2) %>%
+    slice_head(n = 12)
   
 
+    #write.csv(
+    #  biomass_anomalies,
+    #  paste0(
+    #    out_folder2,
+    #    "/Long_",
+    #    region,
+    #    "_NPZ_B_monthly_anomalies_",
+    #    depth,
+    #    "_v2_corrected.csv"
+    #  ),
+    #  row.names = FALSE
+    #)  
+
+    ### Annual Bio anomaly ####   
+    climatology <- biomass_summary %>%
+      filter(year >= 1991, year <= 2020) %>%
+      group_by(varname, simulation) %>%
+      summarise(
+        annual_mean_mtkm2 = mean(biomass_tonnes_km2, na.rm = TRUE),
+        .groups = "drop"
+      )  
+    # Check for negative values and correct it by 1e-15*1.01 same used on EBS aclim2
+    biomass_anomalies_annual <- biomass_summary %>%
+      left_join(climatology, by = c("varname", "simulation")) %>%
+      mutate(
+        anomaly_ratio_mtkm2 = biomass_tonnes_km2 / annual_mean_mtkm2,
+        anomaly_ratio_mtkm2 = if_else(anomaly_ratio_mtkm2 < 0, 
+                                      abs(anomaly_ratio_mtkm2)*1.01 * 1e-15, 
+                                      anomaly_ratio_mtkm2))
     write.csv(
-      biomass_anomalies,
+      biomass_anomalies_annual,
       paste0(
         out_folder2,
         "/Long_",
         region,
-        "_NPZ_B_monthly_anomalies_",
+        "_NPZ_B_annual_anomalies_",
         depth,
         "_v2_corrected.csv"
       ),
       row.names = FALSE
     )  
-   
+    
   # Production ####
   # For PP the results are in Carbon, since the forcing for Ecopath will be in anomaly centered at 1. 
   # FLAG #### 
@@ -311,18 +340,18 @@ for (region in regions) {
   #  select(varname, simulation, year, month, prod_biom_month, month_mean, anomaly_ratio) %>%
   #  slice_head(n = 12)
   
-  write.csv(
-    prod_anomalies,
-    paste0(
-      out_folder2,
-      "/Long_",
-      region,
-      "_NPZ_PP_monthly_anomalies_",
-      depth,
-      "_v2_corrected.csv"
-    ),
-    row.names = FALSE
-  )
+  #write.csv(
+  #  prod_anomalies,
+  #  paste0(
+  #    out_folder2,
+  #    "/Long_",
+  #    region,
+  #    "_NPZ_PP_monthly_anomalies_",
+  #    depth,
+  #    "_v2_corrected.csv"
+  #  ),
+  #  row.names = FALSE
+  #)
     
     
     
