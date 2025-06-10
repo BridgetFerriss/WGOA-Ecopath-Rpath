@@ -3,7 +3,8 @@
 #AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
 #E-MAIL OF CORRESPONDENCE AUTHOR: bia.dias@noaa.gov
 #
-#Quick anomaly generation code for primary produuction
+#Quick anomaly generation code for primary produuction, this code was replaced by
+#ROMS_output_WGOA_EGOA.R
 #------------------------------------------------------------------------------#
 
 
