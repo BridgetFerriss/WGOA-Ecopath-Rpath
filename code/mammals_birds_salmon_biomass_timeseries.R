@@ -42,6 +42,7 @@ df_long <- data %>%
     value = parse_double(value)
   )
 
+
 #creating the new columns to match with race biomass timeseries
 df_long[,"Type"] <- NA
 df_long[,"Scale1"] <- 1
@@ -62,7 +63,27 @@ bio_summary_non_race <-  df_long %>%
 colnames(bio_summary_non_race) <- c("Year", "Group", "Type", "Stdev", "SE",
                               "Value", "Scale", "CV",  "Species", 
                               "Loc", "n", "Source") 
-#write the file
+
+# Pedigree ####
+# Here we are adding the biomass pedigree to the file. 
+# Pedigrees are translated into CVs
+ped <- read_csv("wgoa_data_rpath_fitting/wgoa_ewe_pedigree_cv.csv",
+                col_names = TRUE) %>% 
+  rename(Group = Group_name, CV= Biomass) %>% 
+  select(Group, CV)
+ped$Group<-make_clean_names(ped$Group, allow_dupes = TRUE)
+
+bio_summary_non_race_ped <- bio_summary_non_race %>% 
+  select(-CV) %>% 
+  left_join(ped %>% select(Group, CV), 
+            by = "Group") %>% 
+  select(c(Year, Group, Type, Stdev, SE,
+           Value, Scale, CV,  Species, 
+           Loc, n, Source)) 
+
+
+
+# Write the file ####
 
 write.csv(bio_summary_non_race, 
           file="wgoa_data_rpath_fitting/wgoa_nonrace_biomass_ts_fitting_index.csv", row.names=FALSE)
