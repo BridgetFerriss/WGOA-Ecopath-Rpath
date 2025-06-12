@@ -12,7 +12,7 @@
 
 # Load necessary library
 library(dplyr)
-
+library(here)
 # Load the dataset (assuming the dataset is in a CSV file)
 pp <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_prod_300.csv")
 
@@ -53,7 +53,7 @@ write.csv(pp_trans_ssp2, "WGOA_source_data/ROMSOutputWGOA/ssp585_wide_WGOA_prod_
 #Temperature
 
 # Load the dataset (assuming the dataset is in a CSV file)
-temp_roms <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_temp_monthly_1000.csv") %>% 
+temp_roms <- read.csv("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_temp_monthly_1000.csv")
   
   
 temp_roms_ssp1 <-   temp_roms %>% 
@@ -65,6 +65,7 @@ temp_roms_ssp1 <- temp_roms_ssp1 %>%
   rename(btemp=Bottom, stemp= Surface) %>% 
   select(tstep, year, month, btemp, stemp)
 write.csv(temp_roms_ssp1, "WGOA_source_data/ROMSOutputWGOA/ssp126_wide_WGOA_temp_1000.csv", row.names = FALSE)
+write.csv(temp_roms_ssp1, "wgoa_data_rpath_fitting/ssp126_wide_WGOA_temp_1000.csv", row.names = FALSE)
 
 temp_roms_ssp2 <-   temp_roms %>% 
   filter(simulation == "ssp245") %>% 
@@ -74,7 +75,8 @@ temp_roms_ssp2$tstep <- 1:1440
 temp_roms_ssp2 <- temp_roms_ssp2 %>% 
   rename(btemp=Bottom, stemp= Surface) %>% 
   select(tstep, year, month, btemp, stemp)
-write.csv(temp_roms_ssp1, "WGOA_source_data/ROMSOutputWGOA/ssp245_wide_WGOA_temp_1000.csv", row.names = FALSE)
+write.csv(temp_roms_ssp2, "WGOA_source_data/ROMSOutputWGOA/ssp245_wide_WGOA_temp_1000.csv", row.names = FALSE)
+write.csv(temp_roms_ssp2, "wgoa_data_rpath_fitting/ssp245_wide_WGOA_temp_1000.csv", row.names = FALSE)
 
 temp_roms_ssp5 <-   temp_roms %>% 
   filter(simulation == "ssp585") %>% 
@@ -84,4 +86,5 @@ temp_roms_ssp5$tstep <- 1:1440
 temp_roms_ssp5 <- temp_roms_ssp5 %>%
   rename(btemp=Bottom, stemp= Surface) %>% 
   select(tstep, year, month, btemp, stemp)
-write.csv(temp_roms_ssp1, "WGOA_source_data/ROMSOutputWGOA/ssp585_wide_WGOA_temp_1000.csv", row.names = FALSE)
+write.csv(temp_roms_ssp5, "WGOA_source_data/ROMSOutputWGOA/ssp585_wide_WGOA_temp_1000.csv", row.names = FALSE)
+write.csv(temp_roms_ssp5, "wgoa_data_rpath_fitting/ssp585_wide_WGOA_temp_1000.csv", row.names = FALSE)
