@@ -252,7 +252,7 @@ bio_summary2 <- strata_long %>%
 
 bio_summary2[,"Type"] <- NA
 bio_summary2[,"Scale1"] <- 1
-bio_summary2[,"Scale2"] <- model_area
+bio_summary2[,"Scale2"] <- 1/model_area
 bio_summary2[,"Species"] <- ""
 bio_summary2[,"SE"] <- NA
 bio_summary2[,"Loc"] <- ""

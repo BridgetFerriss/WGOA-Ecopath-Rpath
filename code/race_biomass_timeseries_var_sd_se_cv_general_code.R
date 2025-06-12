@@ -244,11 +244,21 @@ bio_summary2 <- strata_long %>%
 #}
 
 bio_summary2[, c("Type", "Scale1", "Scale2", "Species", "SE", "Loc", "n", "Source")] <-
-  list(NA, 1, model_area, "", NA, "", "", paste0("race_", tolower(this.model)))
+  list(NA, 1, 1 / model_area, "", NA, "", "", paste0("race_", tolower(this.model)))
 
 # Now choose where to write:
-out_fn_km2  <- paste0(tolower(this.model), "_data_rpath_fitting/", tolower(this.model), "_race_biomass_ts_km2.csv")
-out_fn_tons <- paste0(tolower(this.model), "_data_rpath_fitting/", tolower(this.model), "_race_biomass_ts_tons.csv")
+out_fn_km2  <- paste0(
+  tolower(this.model),
+  "_data_rpath_fitting/",
+  tolower(this.model),
+  "_race_biomass_ts_km2.csv"
+)
+out_fn_tons <- paste0(
+  tolower(this.model),
+  "_data_rpath_fitting/",
+  tolower(this.model),
+  "_race_biomass_ts_tons.csv"
+)
 
 bio_summary_v2_km2 <- bio_summary2 %>%
   ungroup() %>%
