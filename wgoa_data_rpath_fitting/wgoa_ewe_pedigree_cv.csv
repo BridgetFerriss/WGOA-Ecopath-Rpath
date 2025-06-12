@@ -1,0 +1,84 @@
+"Node","Group_name","Biomass","Production_biomass","Consumption_biomass","Diet","Catch"
+1,"Transient killer whales","0.1","0.3","0.6","0.8",NA
+2,"Resident killer whales","0.1","0.2","0.5","0.7",NA
+3,"Offshore killer whales","0.1","0.3","0.6","0.8","0.1"
+4,"Other toothed whales","0.5","0.6","0.4","0.6",NA
+5,"Humpback whale","0.5","0.2","0.5","0.6",NA
+6,"Other baleen whales","0.5","0.5","0.6","0.8","0.1"
+7,"Dolphins & porpoises","0.5","0.6","0.6","0.8","0.1"
+8,"Northern Elephant seals","0.5","0.4","0.5","0.8",NA
+9,"N. fur seal adult","0.5","0.4","0.5","0.7","0.1"
+10,"N.fur seal juv","0.5","0.4","0.7","0.7",NA
+11,"Steller sea lion","0.1","0.4","0.5","0.6","0.1"
+12,"Harbor seal","0.1","0.4","0.5","0.6","0.1"
+13,"Sea otter","0.5","0.4","0.5","0.6","0.1"
+14,"Piscivorous surface birds","0.5","0.6","0.6","0.8","0.1"
+15,"Planktivorous surface birds","0.5","0.6","0.6","0.8","0.1"
+16,"Piscivorous diving birds","0.5","0.6","0.6","0.8","0.1"
+17,"Planktivorous diving birds","0.5","0.6","0.6","0.8","0.1"
+18,"Salmon returning","0.8","0.5","0.5","0.7","0.1"
+19,"Salmon outgoing","0.8","0.6","0.6","0.8","0.1"
+20,"Pacific hake","0.8","0.7","0.7","0.8",NA
+21,"Pacific herring adult","0.1","0.6","0.6","0.7","0.1"
+22,"Pacific herring juv","0.5","0.4","0.4","0.8",NA
+23,"Pacific sandlance","0.8","0.7","0.7","0.8","0.1"
+24,"Pacific capelin","0.8","0.7","0.7","0.8","0.1"
+25,"Shelf forage fish","0.8","0.7","0.7","0.8","0.1"
+26,"Slope forage fish","0.8","0.7","0.7","0.8",NA
+27,"Pacific dogfish","0.8","0.7","0.7","0.8","0.1"
+28,"Salmon shark","0.5","0.7","0.7","0.8","0.1"
+29,"Pacific sleeper shark","0.5","0.7","0.7","0.6","0.1"
+30,"Big skate","0.5","0.7","0.7","0.6","0.1"
+31,"Longnose skate","0.5","0.7","0.7","0.6","0.1"
+32,"Other skates","0.1","0.7","0.7","0.6","0.1"
+33,"Pacific halibut adult","0.1","0.3","0.3","0.1","0.1"
+34,"Pacific halibut juv","0.5","0.4","0.4","0.1",NA
+35,"Arrowtooth flounder adult","0.1","0.3","0.3","0.1","0.1"
+36,"Arrowtooth flounder juv","0.5","0.4","0.4","0.1",NA
+37,"Rex sole adult","0.5","0.6","0.6","0.3","0.1"
+38,"Rex sole juv","0.8","0.6","0.6","0.3",NA
+39,"Flathead sole adult","0.1","0.3","0.3","0.1","0.1"
+40,"Flathead sole juv","0.8","0.4","0.4","0.1",NA
+41,"Shallow-water flatfish","0.8","0.6","0.6","0.1","0.1"
+42,"Deep-water flatfish","0.5","0.6","0.6","0.3","0.1"
+43,"Pacific ocean perch adult","0.1","0.3","0.3","0.1","0.1"
+44,"Pacific ocean perch juv","0.5","0.4","0.4","0.1",NA
+45,"Slope rockfish","0.8","0.6","0.6","0.3","0.1"
+46,"Demersal shelf rockfish","0.8","0.6","0.6","0.6","0.1"
+47,"Pelagic shelf rockfish","0.5","0.6","0.6","0.3","0.1"
+48,"Thornyhead adult","0.5","0.3","0.3","0.3","0.1"
+49,"Sablefish adult","0.5","0.5","0.5","0.3","0.1"
+50,"Sablefish juv","0.8","0.6","0.6","0.3",NA
+51,"Pacific cod adult","0.1","0.3","0.3","0.1","0.1"
+52,"Pacific cod juv","0.8","0.4","0.4","0.1",NA
+53," Walleye pollock adult","0.1","0.4","0.4","0.1","0.1"
+54,"Walleye pollock juv","0.8","0.4","0.4","0.1",NA
+55,"Large sculpins","0.1","0.7","0.7","0.6",NA
+56,"Lingcod","0.5","0.7","0.7","0.8","0.1"
+57,"Atka mackerel","0.5","0.5","0.5","0.6",NA
+58,"Shelf demersal","0.8","0.7","0.7","0.7",NA
+59,"Slope demersal fish","0.8","0.7","0.7","0.8","0.1"
+60,"Miscellaneous deep-sea fish","0.8","0.7","0.7","0.8",NA
+61,"Squid","0.8","0.7","0.7","0.8","0.1"
+62,"Octopus","0.8","0.7","0.7","0.8","0.1"
+63,"Tanner crab","0.8","0.6","0.5","0.8","0.1"
+64,"King crab","0.5","0.6","0.5","0.8","0.1"
+65,"Pandalid shrimp","0.8","0.5","0.6","0.8","0.1"
+66,"Nonpandalid shrimp","0.8","0.6","0.6","0.8",NA
+67,"Motile epifauna","0.8","0.6","0.7","0.8","0.1"
+68,"Benthic zooplankton","0.8","0.6","0.7","0.8",NA
+69,"Sessile epifauna","0.8","0.6","0.7","0.8","0.1"
+70,"Infauna","0.8","0.6","0.7","0.8","0.1"
+71,"Geltatinous carnivores","0.8","0.6","0.6","0.8",NA
+72,"Gelatinous omnivores","0.8","0.7","0.7","0.8",NA
+73,"Mysids","0.8","0.7","0.7","0.8",NA
+74,"Pelagic amphipods","0.8","0.6","0.6","0.8",NA
+75,"Euphausiids","0.8","0.6","0.6","0.8",NA
+76,"Large copepods","0.8","0.7","0.6","0.8",NA
+77,"Small copepods","0.8","0.7","0.6","0.8",NA
+78,"Large microzooplankton","0.8","0.7","0.7","0.8",NA
+79,"Small microzooplankton","0.8","0.7","0.7","0.8",NA
+80,"Large phytoplankton","0.8","0.5",NA,NA,NA
+81,"Small phytoplankton","0.8","0.5",NA,NA,NA
+82,"Macroalgae","0.8",NA,NA,NA,NA
+83,"Benthic microbes","0.8","0.7","0.7","0.1",NA
