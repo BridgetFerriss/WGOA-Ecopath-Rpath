@@ -85,5 +85,5 @@ bio_summary_non_race_ped <- bio_summary_non_race %>%
 
 # Write the file ####
 
-write.csv(bio_summary_non_race, 
+write.csv(bio_summary_non_race_ped, 
           file="wgoa_data_rpath_fitting/wgoa_nonrace_biomass_ts_fitting_index.csv", row.names=FALSE)
