@@ -1,0 +1,27 @@
+---
+title: "Code"
+author: "Bia Dias"
+format: html
+editor: visual
+---
+
+## Code
+
+Here we have all the code associated with the data wrangling.
+
+## Folder structure
+
+Scripts are separated by their main function:
+
+```{r list_r_files}
+r_files <- list.files(path = "~/WGOA-Ecopath-Rpath/code", pattern = "\\.R$", full.names = FALSE)
+
+cat(paste0("- ", r_files, collapse = "
+"))
+```
+
+-   AKFIN:
+
+    ```         
+    akfin_to_EwE_format_v2.R 
+    ```

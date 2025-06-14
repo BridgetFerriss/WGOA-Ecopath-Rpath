@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to the documentation for the WGOA repository. This site describes the structure, data sources, and workflows used in this project."
+  },
+  {
+    "objectID": "index.html#wgoa-repository",
+    "href": "index.html#wgoa-repository",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to the documentation for the WGOA repository. This site describes the structure, data sources, and workflows used in this project."
+  },
+  {
+    "objectID": "index.html#sections",
+    "href": "index.html#sections",
+    "title": "Home",
+    "section": "Sections",
+    "text": "Sections\n\ncode: Scripts for data wrangling and manipulation.\ndata: Raw input data used in analyses.\nlookups: Tables and scripts for building lookup tables.\nWGOA_source_data: Original datasets from the WGOA survey.\nwgoa_data_rpath_fitting: Processed data ready for RPath model fitting."
+  },
+  {
+    "objectID": "code.html",
+    "href": "code.html",
+    "title": "Code",
+    "section": "",
+    "text": "Here we have all the code associated with the data wrangling."
+  },
+  {
+    "objectID": "code.html#code",
+    "href": "code.html#code",
+    "title": "Code",
+    "section": "",
+    "text": "Here we have all the code associated with the data wrangling."
+  },
+  {
+    "objectID": "code.html#folder-structure",
+    "href": "code.html#folder-structure",
+    "title": "Code",
+    "section": "Folder structure",
+    "text": "Folder structure\nScripts are separated by their main function:\n\nr_files &lt;- list.files(path = \"~/WGOA-Ecopath-Rpath/code\", pattern = \"\\\\.R$\", full.names = FALSE)\n\ncat(paste0(\"- \", r_files, collapse = \"\n\"))\n\n- akfin_to_EwE_format_v2.R\n- akfin_wgoa_catch_2023.R\n- bioenergetic_GOA_Q10_aveTemp_script.R\n- Delta_correction.R\n- FourSystems_comp.R\n- FourSystems_functions.R\n- GAP_get_biomass_stratum.R\n- GAP_get_cpue.R\n- GAP_get_cpue_guild.R\n- ggraph_webplot_Rpath.R\n- GOA_rpath_setup.R\n- mammals_birds_salmon_biomass_timeseries.R\n- multistanza_maturity_proportions.R\n- pedigree_coversion_Rpath_EwE.R\n- race_biomass_timeseries_var_sd_se_cv.R\n- race_biomass_timeseries_var_sd_se_cv_general_code.R\n- REEM_download_functions.R\n- REEM_fooddata_functions.R\n- ROMS_data_transformation_anomaly.R\n- ROMS_output_WGOA_EGOA.R\n- rpath_graphs.R\n- rsim.plot.interactive.R\n- running_ecopath_network_plot.R\n- wgoa_Btarget.R\n- WGOA_EGOA_comp.R\n- WGOA_guilds_temp.R\n\n\n\nAKFIN:\nakfin_to_EwE_format_v2.R"
+  }
+]

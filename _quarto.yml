@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "WGOA Repository Documentation"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Code
+        href: code.qmd
+      - text: Data
+        href: data.qmd
+      - text: Lookups
+        href: lookups.qmd
+      - text: WGOA Source Data
+        href: WGOA_source_data.qmd
+      - text: WGOA Data RPath Fitting
+        href: wgoa_data_rpath_fitting.qmd
+output-dir: docs
