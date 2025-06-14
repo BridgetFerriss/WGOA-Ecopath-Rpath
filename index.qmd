@@ -1,0 +1,18 @@
+---
+title: "Home"
+author: "Bia Dias"
+format: html
+editor: visual
+---
+
+## WGOA Repository
+
+Welcome to the documentation for the WGOA repository. This site describes the structure, data sources, and workflows used in this project.
+
+## Sections
+
+-   **code**: Scripts for data wrangling and manipulation.
+-   **data**: Raw input data used in analyses.
+-   **lookups**: Tables and scripts for building lookup tables.
+-   **WGOA_source_data**: Original datasets from the WGOA survey.
+-   **wgoa_data_rpath_fitting**: Processed data ready for RPath model fitting.
