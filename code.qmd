@@ -14,14 +14,17 @@ Here we have all the code associated with the data wrangling.
 Scripts are separated by their main function:
 
 ```{r list_r_files}
-r_files <- list.files(path = "~/WGOA-Ecopath-Rpath/code", pattern = "\\.R$", full.names = FALSE)
+r_files <- list.files(path = "~/WGOA-Ecopath-Rpath/code", pattern = "\\.R$", 
+                      full.names = FALSE)
 
 cat(paste0("- ", r_files, collapse = "
 "))
 ```
 
-akfin_wgoa_catch_2023.R
+-   **AKFIN**:
 
--   AKFIN:
+    -   `akfin_wgoa_catch_2023.R`: This script retrieves and processes catch data from the AKFIN database for the WGOA region.
 
-    -   akfin_to_EwE_format_v2.R This script enables the transformation of data Query results from akfin_wgoa_catch_2023.R into the proper format for Rpath.
+    -   `akfin_to_EwE_format_v2.R`: This script transforms the data retrieved from `akfin_wgoa_catch_2023.R` into a format suitable for Rpath.
+
+

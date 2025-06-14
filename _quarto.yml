@@ -18,3 +18,4 @@ website:
       - text: WGOA Data RPath Fitting
         href: wgoa_data_rpath_fitting.qmd
 output-dir: docs
+
