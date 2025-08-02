@@ -296,7 +296,6 @@ for (region in regions) {
     
   # Production ####
   # For PP the results are in Carbon, since the forcing for Ecopath will be in anomaly centered at 1. 
-  # FLAG #### 
   # check if in Rpath we will need the value in Carbon or wet weight
   
   # Filter data for varnames containing 'prod_Ph' (phytoplankton production only), depthclass 'All', and NMFS_AREA 640 and 650
@@ -508,4 +507,30 @@ for (depth in depth_list) {
  # ggsave(paste0("WGOA_source_data/ROMSOutputWGOA/WGOA_temp_annual_", depth, ".png"), p_temp_annual, width = 10, height = 6)
   
  # cat("Plots saved for depth:", depth, "m\n")
+}
+
+
+
+#Production 
+
+for (depth in depth_list) {
+  # Read in the data needed for plotting
+  prod_weighted <- read.csv(paste0("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_prod_", depth, ".csv"))
+  #temp_annual <- read.csv(paste0("WGOA_source_data/ROMSOutputWGOA/Long_WGOA_temp_annual_", depth, ".csv"))
+  
+  # Convert date if needed
+  prod_weighted$date = as.Date(paste(prod_weighted$year, prod_weighted$month, 01), "%Y %m %d")
+  #prod_weighted$date <- as.Date(prod_weighted$date)
+  
+  # Plot the time-series of area-weighted temperature
+  p_prod_time <- ggplot(prod_weighted,
+                        aes(x = date, y = prod_biom_month, colour = simulation)) +
+    geom_line() +
+    #facet_wrap(~ depthclass, ncol = 1, scales = "free_y") +
+    ylab("Biomass mt*km^-2") +
+    xlab("Date") +
+    theme_minimal() +
+    ggtitle(paste("WGOA Production L and S", depth))
+  print(p_prod_time)
+  
 }
