@@ -4,7 +4,7 @@
 #AFFILIATIONS: CICOES University of Washington/ Alaska Fisheries Science Center
 #E-MAIL OF CORRESPONDENCE AUTHOR: bia.dias@noaa.gov and andy.whitehouse@noaa.gov
 #
-# Interactive rsim.plot transalated from rsim.plot function from Rpath
+# Interactive rsim.plot translated from rsim.plot function from Rpath
 #------------------------------------------------------------------------------#
 
 
