@@ -97,3 +97,19 @@ cat(paste0("- ", r_files, collapse = "
 -   **PEDIGREE:**
 
     -   `pedigree_conversion_Rpath_EwE.R`: This script will read the rpath pedigree file to create a EwE pedigree file.
+
+
+-   **PLOTS**
+
+    -   `ggraph_webplot_Rpath.R`: Network plot for object Rpath. This function is part of the rpathviz:: package developed by Bia Dias.
+    -   `rsim.plot.interactive.R`: Plot for showing the relative biomass plot for Rsim objectm, using plotly::. This function is part of the rpathviz:: package. 
+    -   `rpath_graphs.R`: first version of the `rsim.plot.interactive()` funtion. Deprecated. 
+    
+    
+-   **EXPERIMENTAL CODE**
+
+    - `wgoa_Btarget.R`: This code was developed by Andy W. to find B0. Please refer to the script for more details.
+    
+  
+    - 
+      
