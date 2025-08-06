@@ -8,7 +8,7 @@
 
 <meta name="author" content="Bia Dias">
 
-<title>Home – WGOA Repository Documentation</title>
+<title>Lookups – WGOA Repository Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -102,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./lookups.html"> 
+    <a class="nav-link active" href="./lookups.html" aria-current="page"> 
 <span class="menu-text">Lookups</span></a>
   </li>  
   <li class="nav-item">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Home</h1>
+<h1 class="title">Lookups</h1>
 </div>
 
 
@@ -153,18 +153,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="wgoa-repository" class="level2">
-<h2 class="anchored" data-anchor-id="wgoa-repository">WGOA Repository</h2>
-<p>Welcome to the documentation for the WGOA repository. This site describes the structure, data sources, and workflows used in this project.</p>
-</section>
-<section id="sections" class="level2">
-<h2 class="anchored" data-anchor-id="sections">Sections</h2>
+<section id="lookups-directory" class="level2">
+<h2 class="anchored" data-anchor-id="lookups-directory">Lookups Directory</h2>
+<p>This directory contains lookup tables and scripts used to facilitate queries and data processing in the WGOA project. The lookups are essential for mapping species, gear types, and other categorical variables to their respective codes and names.</p>
 <ul>
-<li><strong>code</strong>: Scripts for data wrangling and manipulation.</li>
-<li><strong>data</strong>: Raw input data used in analyses.</li>
-<li><strong>lookups</strong>: Tables and scripts for building lookup tables.</li>
-<li><strong>WGOA_source_data</strong>: Original datasets from the WGOA survey.</li>
-<li><strong>wgoa_data_rpath_fitting</strong>: Processed data ready for RPath model fitting.</li>
+<li><p><strong>RACE lookup</strong></p>
+<ul>
+<li><code>lookup_table_code_WGOA_v1.R</code>: This script generates the lookup tables for the WGOA project. It clean the species names and maps them to the functional groups used in the model. It uses the file “<em>lookups/race_lookup_combined.csv</em>” to generate the file “<em>lookups/race_lookup_base_v2.csv</em>” used in the race codes. The script will also clean the file “<em>lookups/Alaska_Multistanza_GOA_vonb_2025_04_30.csv</em>” into the “<em>lookups/Alaska_Multistanza_GOA_vonb_2025_04_30_v2.csv</em>” file to be used in the multistanza biomass timeseries estimation from the <code>race_biomass_timeseries_var_sd_se_cv_general_code.R</code> and <code>race_biomass_timeseries_var_sd_se_cv.R</code> scripts.</li>
+<li><code>Alaska_PreyLookup_MASTER.csv</code>: This file contains the master lookup table for prey species in the Alaska ecosystem, including their functional groups and other relevant information. It is used to map species to their respective groups in the model.This file is used for guild and diet extraction from the bottom trawl survey.</li>
+<li><code>combined_BTS_strata.csv</code>: This file contains the combined bottom trawl survey strata information.</li>
+</ul></li>
+<li><p><strong>AKFIN lookup</strong></p>
+<ul>
+<li><code>model_species_for_ft_cas_akfin.csv</code>: This file contains functional group names for WGOA model and the species names used in the AKFIN fish ticket and CAS data.</li>
+</ul></li>
+<li><p><strong>Miscellaneous lookup</strong></p>
+<ul>
+<li><p><code>Group_Q_2021_WGOA.csv</code>: This file contains the QQ for most of the funtional groups in the WGOA model.</p></li>
+<li><p><code>predlist_v2.csv</code>: This file contains the predator list used in the WGOA and EGOA models, including their functional groups and other relevant information to be used in the multstanza Biomass timeseries extraction. We no longer use this, since it was replaced by “<em>lookups/Alaska_Multistanza_GOA_vonb_2025_04_30_v2.csv</em>”</p></li>
+</ul></li>
 </ul>
 
 

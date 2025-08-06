@@ -1,0 +1,36 @@
+---
+title: "Data"
+author: "Bia Dias"
+format: html
+editor: visual
+---
+
+## Data Directory
+
+This directory contains the raw input data used in the analyses. The data is organized into subdirectories based on the source and type of data.
+
+### Subdirectories
+
+-   **AKFIN**: Folders associated with akfin query.
+
+    -   **2023**: Contains AKFIN data (fish ticket and CAS) processed by the script `akfin_wgoa_catch_2023.R`. Refer to the script for details on how the data was processed.
+    -   **metadata**: tables to facilitate query and lookups.
+
+-   **ROMS**: Contains the data from ROMS NEP 10k GOA
+
+    -   **NEP_10k_revised_indices** folder: Contains the revised indices for the NEP 10k ROMS, averages and the sums. Please refer to the `ROMS_output_WGOA_EGOA.R` to see how the data is used.
+    -   *"NEP_variable_names.cvs"*: Contains the variable names used in the GOA ROMS data.
+
+-   **Time series before processing**:
+
+    -   `bioenergetic_EBS_ACLIM2_bioen.cvs`: bioenergetic information for EBS model
+    -   `GOA_BTS-size-Composition-by-Stratum.csv`: GOA bottom trawl survey size composition by stratum
+    -   `mammals_bird_salmon_time_series_raw_v2.csv`: time series of mammals, birds, and salmon
+    -   `non_race_species.csv`: all the species not sampled by the bottom trawl survey
+    -   `wgoa_catch_ts_raw_test.csv`: akin catches
+    -   `WGOAfg_lookout.csv`: deprecated lookoup table for WGOA fishery groups
+
+-   **EwE models**
+
+    -   EGOA_20250514.eiixml: deprecated
+    -   WGOA_9May2025.eiixml: deprecated

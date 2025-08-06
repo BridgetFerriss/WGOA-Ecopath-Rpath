@@ -8,7 +8,7 @@
 
 <meta name="author" content="Bia Dias">
 
-<title>Home – WGOA Repository Documentation</title>
+<title>Data – WGOA Repository Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Code</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data.html"> 
+    <a class="nav-link active" href="./data.html" aria-current="page"> 
 <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Home</h1>
+<h1 class="title">Data</h1>
 </div>
 
 
@@ -153,21 +153,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="wgoa-repository" class="level2">
-<h2 class="anchored" data-anchor-id="wgoa-repository">WGOA Repository</h2>
-<p>Welcome to the documentation for the WGOA repository. This site describes the structure, data sources, and workflows used in this project.</p>
-</section>
-<section id="sections" class="level2">
-<h2 class="anchored" data-anchor-id="sections">Sections</h2>
+<section id="data-directory" class="level2">
+<h2 class="anchored" data-anchor-id="data-directory">Data Directory</h2>
+<p>This directory contains the raw input data used in the analyses. The data is organized into subdirectories based on the source and type of data.</p>
+<section id="subdirectories" class="level3">
+<h3 class="anchored" data-anchor-id="subdirectories">Subdirectories</h3>
 <ul>
-<li><strong>code</strong>: Scripts for data wrangling and manipulation.</li>
-<li><strong>data</strong>: Raw input data used in analyses.</li>
-<li><strong>lookups</strong>: Tables and scripts for building lookup tables.</li>
-<li><strong>WGOA_source_data</strong>: Original datasets from the WGOA survey.</li>
-<li><strong>wgoa_data_rpath_fitting</strong>: Processed data ready for RPath model fitting.</li>
+<li><p><strong>AKFIN</strong>: Folders associated with akfin query.</p>
+<ul>
+<li><strong>2023</strong>: Contains AKFIN data (fish ticket and CAS) processed by the script <code>akfin_wgoa_catch_2023.R</code>. Refer to the script for details on how the data was processed.</li>
+<li><strong>metadata</strong>: tables to facilitate query and lookups.</li>
+</ul></li>
+<li><p><strong>ROMS</strong>: Contains the data from ROMS NEP 10k GOA</p>
+<ul>
+<li><strong>NEP_10k_revised_indices</strong> folder: Contains the revised indices for the NEP 10k ROMS, averages and the sums. Please refer to the <code>ROMS_output_WGOA_EGOA.R</code> to see how the data is used.</li>
+<li><em>“NEP_variable_names.cvs”</em>: Contains the variable names used in the GOA ROMS data.</li>
+</ul></li>
+<li><p><strong>Time series before processing</strong>:</p>
+<ul>
+<li><code>bioenergetic_EBS_ACLIM2_bioen.cvs</code>: bioenergetic information for EBS model</li>
+<li><code>GOA_BTS-size-Composition-by-Stratum.csv</code>: GOA bottom trawl survey size composition by stratum</li>
+<li><code>mammals_bird_salmon_time_series_raw_v2.csv</code>: time series of mammals, birds, and salmon</li>
+<li><code>non_race_species.csv</code>: all the species not sampled by the bottom trawl survey</li>
+<li><code>wgoa_catch_ts_raw_test.csv</code>: akin catches</li>
+<li><code>WGOAfg_lookout.csv</code>: deprecated lookoup table for WGOA fishery groups</li>
+</ul></li>
+<li><p><strong>EwE models</strong></p>
+<ul>
+<li>EGOA_20250514.eiixml: deprecated</li>
+<li>WGOA_9May2025.eiixml: deprecated</li>
+</ul></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
