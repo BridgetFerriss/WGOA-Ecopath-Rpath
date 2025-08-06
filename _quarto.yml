@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "WGOA Repository Documentation"
@@ -17,5 +18,5 @@ website:
         href: WGOA_source_data.qmd
       - text: WGOA Data RPath Fitting
         href: wgoa_data_rpath_fitting.qmd
-output-dir: docs
+
 
