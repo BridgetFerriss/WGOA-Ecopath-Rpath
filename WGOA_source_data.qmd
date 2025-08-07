@@ -1,55 +1,55 @@
 ---
-title: "wgoa source data"
+title: "WGOA Source Data"
 author: "Bia Dias"
 format: html
 editor: visual
 ---
 
-This folder has all the processed data for the WGOA in formats for rpath and formats for EwE software. 
+This folder has all the processed data for the WGOA in formats for rpath and formats for EwE software.
 
 Please refer to the file names for the data source and the year of the data.
 
-- **ROMS**
+```{r list_r_files}         
+r_files <- list.files(path = "~/WGOA-Ecopath-Rpath/WGOA_source_data", pattern = "\\.csv$", full.names = FALSE, ignore.case=TRUE)
 
-    - all files containing `_ROMS_` are the detrended ROMS data, which is the model output from the WGOA ROMS model.
-    the files are for 300 m and 1000 m depth, and contain the data for the entire WGOA region.
-    ppS and ppL are primary production for small and large copepods.
-    - The folder **ROMSOutputWGOA** contains all the ROMS outputs in long and wide formats, it also has files for production anommaly.
-    The wide files contain the temperatures for each distinct ssps (126, 245 and 585). 
-       - `B_summary_` are the yearly biomass for ROMS NPZ model
-       - `B_summary_month` are the monthly biomass ROMS NPZ model
+cat(paste0("- ", r_files, collapse = "
+"))
+```
 
-- **AKFIN**
+-   **ROMS**
 
-    - `wgoa_state_catch_ts_wide_mtkm2.csv`: this file has the fish ticket timeseries from AKFIN
-    - `wgoa_catch` files are also from AKFIN, they contain both fish ticket (mainly state) and CAS (federally managed) data. 
-    The file `_1990_mean.csv` is the mean between years 1990-1993, the baseline inputs for our Ecopath model. 
-    The files are also in wide and long formats.
-    - EwE_wgoa_.xlsx are the files queried by Jean Lee (AKFIN) 
+    -   all files containing `_ROMS_` are the detrended ROMS data, which is the model output from the WGOA ROMS model. the files are for 300 m and 1000 m depth, and contain the data for the entire WGOA region. ppS and ppL are primary production for small and large copepods.
+    -   The folder **ROMSOutputWGOA** contains all the ROMS outputs in long and wide formats, it also has files for production anommaly. The wide files contain the temperatures for each distinct ssps (126, 245 and 585).
+        -   `B_summary_` are the yearly biomass for ROMS NPZ model
+        -   `B_summary_month` are the monthly biomass ROMS NPZ model
 
-- **RACE REEM**
+-   **AKFIN**
 
-    - `wgoa_race_biomass_ts.csv`: is the file derived from race REEM data. 
-    - `species_weighted_temp_WGOA.csv`: This is from the guild calculations for the bioenergetics.
-    - `species_weighted_thermal_envelopes_WGOA.csv`: similar thing here. 
-    - `goa_maturity_proportions.csv`: Maturity proportions for the multistanza groups, resulting from the bottom trawl survey data. This information is used in the input of the multistanza groups in EwE software.
-    - `domain_sum.csv`: is the biomass timeseries for the WGOA region
-    - 
+    -   `wgoa_state_catch_ts_wide_mtkm2.csv`: this file has the fish ticket timeseries from AKFIN
+    -   `wgoa_catch` files are also from AKFIN, they contain both fish ticket (mainly state) and CAS (federally managed) data. The file `_1990_mean.csv` is the mean between years 1990-1993, the baseline inputs for our Ecopath model. The files are also in wide and long formats.
+    -   EwE_wgoa\_.xlsx are the files queried by Jean Lee (AKFIN)
 
-- **NON-RACE TIME SERIES FILES**
+-   **RACE REEM**
 
-    - `gak_zooplankton_B_time_series.csv`: GAK zooplankton biomass time series. 
-    - `goa_Zoop_TS-ECOFoci_data_v2`: ECOFoci data for zooplankton time series in the GOA region.
-    - `Seabirds.xlsx`: Seabird data for the GOA region.This has the information of all the colonies around GOA region.
-    - `WGOA_full_time_series_v5.csv`: Deprecated. This file needs to be updated, it is an older version. 
-    
+    -   `wgoa_race_biomass_ts.csv`: is the file derived from race REEM data.
+    -   `species_weighted_temp_WGOA.csv`: This is from the guild calculations for the bioenergetics.
+    -   `species_weighted_thermal_envelopes_WGOA.csv`: similar thing here.
+    -   `goa_maturity_proportions.csv`: Maturity proportions for the multistanza groups, resulting from the bottom trawl survey data. This information is used in the input of the multistanza groups in EwE software.
+    -   `domain_sum.csv`: is the biomass timeseries for the WGOA region
+    -   
 
-- **SIMULATION RUN FILES**
+-   **NON-RACE TIME SERIES FILES**
+
+    -   `gak_zooplankton_B_time_series.csv`: GAK zooplankton biomass time series.
+    -   `goa_Zoop_TS-ECOFoci_data_v2`: ECOFoci data for zooplankton time series in the GOA region.
+    -   `Seabirds.xlsx`: Seabird data for the GOA region.This has the information of all the colonies around GOA region.
+    -   `mammals_birds_salmon_biomass_timeseries.R`: This file contains the biomass time series for mammals, birds and salmon in the GOA region. 
+    -   `WGOA_full_time_series_v5.csv`: Deprecated. This file needs to be updated, it is an older version.
+
+-   **SIMULATION RUN FILES**
 
     These files were used for setting up the simulations to test some hypothesis. We will use them after the fitting.
 
-    - `F40_opt.csv`: this file presents the F40 values for target species, it was used in the excersise presented at ACLIM GOACLIM joint meeting. 
-    - `B_target`: The Biomass target for the key species. 
-    - `WGOA_bioen.csv`: this file contains the input parameters for the bioenergetics for the WGOA region. 
-
-
+    -   `F40_opt.csv`: this file presents the F40 values for target species, it was used in the excersise presented at ACLIM GOACLIM joint meeting.
+    -   `B_target`: The Biomass target for the key species.
+    -   `WGOA_bioen.csv`: this file contains the input parameters for the bioenergetics for the WGOA region.

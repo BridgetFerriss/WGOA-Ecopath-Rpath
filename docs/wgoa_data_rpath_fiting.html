@@ -8,7 +8,7 @@
 
 <meta name="author" content="Bia Dias">
 
-<title>WGOA-Ecopath-Rpath Model Documentation – WGOA Repository Documentation</title>
+<title>WGOA Data Rpath Fitting – WGOA Repository Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./code.html" aria-current="page"> 
+    <a class="nav-link" href="./code.html"> 
 <span class="menu-text">Code</span></a>
   </li>  
   <li class="nav-item">
@@ -165,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">WGOA-Ecopath-Rpath Model Documentation</h1>
+<h1 class="title">WGOA Data Rpath Fitting</h1>
 </div>
 
 
@@ -188,118 +188,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="code" class="level2">
-<h2 class="anchored" data-anchor-id="code">Code</h2>
-<p>Here we have all the code associated with the data wrangling.</p>
-</section>
-<section id="folder-structure" class="level2">
-<h2 class="anchored" data-anchor-id="folder-structure">Folder structure</h2>
-<p>Scripts are separated by their main function:</p>
+<p>This folder has all the processed data for the WGOA in formats for rpath. These are the files used for fitting. It is important to note that we also have a similar folder for the EGOA model, since the files are processed in a batch. I will not replicate the explanations of the files for EGOA, since they are similar to the ones for WGOA.</p>
+<section id="list-of-files-in-the-wgoa-data-rpath-fitting-folder" class="level1">
+<h1>List of files in the WGOA Data Rpath Fitting folder</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>r_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"~/WGOA-Ecopath-Rpath/code"</span>, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.r$"</span>, <span class="at">full.names =</span> <span class="cn">FALSE</span>, <span class="at">ignore.case=</span><span class="cn">TRUE</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>r_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"~/WGOA-Ecopath-Rpath/wgoa_data_rpath_fitting/"</span>, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>, <span class="at">full.names =</span> <span class="cn">FALSE</span>, <span class="at">ignore.case=</span><span class="cn">TRUE</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">"- "</span>, r_files, <span class="at">collapse =</span> <span class="st">"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>- akfin_to_EwE_format_v2.R
-- akfin_wgoa_catch_2023.R
-- bioenergetic_GOA_Q10_aveTemp_script.R
-- bioenergetic_pars2.r
-- bioenergetic_projections.r
-- Delta_correction.R
-- FourSystems_comp.R
-- FourSystems_functions.R
-- GAP_get_biomass_stratum.R
-- GAP_get_cpue.R
-- GAP_get_cpue_guild.R
-- ggraph_webplot_Rpath.R
-- GOA_rpath_setup.R
-- mammals_birds_salmon_biomass_timeseries.R
-- multistanza_maturity_proportions.R
-- pedigree_coversion_Rpath_EwE.R
-- race_biomass_timeseries_var_sd_se_cv.R
-- race_biomass_timeseries_var_sd_se_cv_general_code.R
-- REEM_download_functions.R
-- REEM_fooddata_functions.R
-- ROMS_data_transformation_anomaly.R
-- ROMS_output_WGOA_EGOA.R
-- rpath_graphs.R
-- rsim.plot.interactive.R
-- running_ecopath_network_plot.R
-- wgoa_Btarget.R
-- WGOA_EGOA_comp.R
-- WGOA_guilds_temp.R
-- xml_convert.r</code></pre>
+<pre><code>- gak_zooplankton_b_ts_v2.csv
+- goaecofoci_zooplankton_b_ts_v2.csv
+- Long_WGOA_NPZ_B_annual_anomalies_1000_v2_corrected.csv
+- Long_WGOA_NPZ_B_monthly_anomalies_1000_v2_corrected.csv
+- Long_WGOA_NPZ_PP_monthly_anomalies_1000_v2_corrected.csv
+- Long_WGOA_temp_annual_1000.csv
+- Long_WGOA_temp_monthly_1000.csv
+- ssp126_wide_WGOA_temp_1000.csv
+- ssp245_wide_WGOA_temp_1000.csv
+- ssp585_wide_WGOA_temp_1000.csv
+- wgoa_catches_ft_cas_long.csv
+- wgoa_ewe_pedigree_cv.csv
+- wgoa_nonrace_biomass_ts_fitting_index.csv
+- wgoa_race_bio_totals.csv
+- wgoa_race_biomass_ts_fitting_index_v2_ka.csv
+- wgoa_race_biomass_ts_fitting_index_v2_tons_ka.csv
+- wgoa_race_juvadu_totals.csv
+- wgoa_rpath_pedigree.csv</code></pre>
 </div>
 </div>
 <ul>
-<li><p><strong>AKFIN</strong>:</p>
+<li><p><strong>Zooplankton from GAK and ECOFoci surveys</strong></p>
 <ul>
-<li><p><code>akfin_wgoa_catch_2023.R</code>: This script retrieves and processes catch data from the AKFIN database for the WGOA region.</p></li>
-<li><p><code>akfin_to_EwE_format_v2.R</code>: This script transforms the data retrieved from <code>akfin_wgoa_catch_2023.R</code> into a format suitable for Rpath.</p></li>
+<li><code>gak_zooplankton_b_ts_v2.csv</code>: GAK zooplankton biomass time series.</li>
+<li><code>goaecofoci_zooplankton_b_ts_v2.csv</code>: ECOFoci data for zooplankton time series in the GOA region.</li>
 </ul></li>
-<li><p><strong>BIOENERGETICS:</strong></p>
-<ul>
-<li><p><code>bioenergetic_GOA_Q10_aveRTemp_script.R</code>: Script to update the group names of the <em>“bioenergetic_EBS_ACLIM2_bioen.csv”</em> file #to match WGOA names.</p></li>
-<li><p><code>bioenergetic_pars2.r</code>: Bioenergetic params for GOACLIM. Uses the <em>“WGOA_source_data/WGOA_bioen.csv”</em> lookup file generated by the script above. It also uses the <em>“WGOA_source_data/species_weighted_temp_WGOA.csv”</em> file generated by the script <code>WGOA_guilds_temp.</code></p></li>
-<li><p><code>bioenergetic_projections.r</code>: This script will source the <code>bioenergetic_pars2.r</code> and apply the function bioen_params() that apply the consumption modifiers and respiration modifiers.</p>
-<ul>
-<li><code>WGOA_guilds_temp</code>: This script was created to generate the temperature guild derived from the bottom trawl survey. It generates biomass-weighted average surface and bottom temperatures. This scripts relies on the files stored in google drive. The out files are: <em>“WGOA_source_data/species_weighted_thermal_envelopes_WGOA.csv”</em> and <em>“WGOA_source_data/species_weighted_temp_WGOA.csv”</em></li>
-</ul></li>
-</ul></li>
-<li><p><strong>ROMS Climate Projections:</strong></p>
-<ul>
-<li><p><code>Delta_correction.R</code>: Script to update the group names of the bioenergetic_EBS_ACLIM2_bioen.csv file #to match WGOA names.</p></li>
-<li><p><code>ROMS_output_WGOA_EGOA.R</code>: Script for ROMS data collection # <a href="https://github.com/GOA-CLIM/ROMS_to_Index/blob/main/ROMS%20index%20generation%20example.qmd" class="uri">https://github.com/GOA-CLIM/ROMS_to_Index/blob/main/ROMS%20index%20generation%20example.qmd</a>. This script sources the delta correction function, gathers the data for the different ssps, then will extract the Biomass and Production.</p>
-<p>For biomass data transformation into EwE/Rpath input, filter data for depthclass “All” and NMFS_AREA 640,650 EGOA and 610-630 WGOA only.</p>
-<p>Carbon to wet weight conversions (B_ww_mg) can be found at:</p>
-<p>Table 1 (bottom explanation) from Pauly &amp; Christensen 1995 for phytoplankton</p>
-<p>9: 1 ratio for the conversion of wet weight to carbon (Lockhart. A. &amp; Cross. R. A. 1994. EMBO J. 13, 751-757)</p>
-<p>Table 2. from Kiorboe 2013 for the zooplankton</p>
-<p>Log(C mass)= a+b<em>log(wet mass)</em></p>
-<p><em>C_to_ww &lt;- 10^((log10(value) - a) / b)</em></p>
-<p><em>Units of Cop in the</em> sum* files are mg C m^-2 of water column. Since the unit is already by area the conversion from mg<em>m^-2 to mt</em>km^-2 will be *1e-3.</p>
-<p>The script uses the files in ~/Data/NEP_10K_revised_indices/</p>
-<p>to produce the files in</p>
-<pre><code>  out_folder &lt;- "WGOA_source_data/ROMSOutputWGOA"
-  out_folder2 &lt;- "wgoa_data_rpath_fitting/"</code></pre>
-<p>File names example: “/Long_”, region, “<em>temp_monthly</em>”, depth, “.csv”</p>
-<p>The final formatted time-series files are saved in <code>/wgoa_data_rpath_fitting/,</code> and detailed monthly data is saved in <code>/WGOA_source_data/ROMSOutputWGOA/</code>.</p></li>
-<li><p><code>ROMS_data_transformation_anomaly.R</code>: is a retired code basis for the anomaly transformation that we see in <code>ROMS_output_WGOA_EGOA.R</code></p></li>
-</ul></li>
-<li><p><strong>RACE GAP data:</strong></p>
-<ul>
-<li><code>race_biomass_timeseries_var_sd_se_cv_general_code.R</code>: This script was written to gather race data. At the moment the full race data sets are in the googledrive. The function REEM.loadclean.RACE.googledrive() found in the <code>REEM_fooddata_fuctions.R</code> script will load the data from the googledrive and clean it. Here we are using</li>
+<li><p><strong>ROMS data</strong></p></li>
 </ul>
-<pre><code>REEM.loadclean.strata.by.stratum(strata_lookup_file    = "lookups/combined_BTS_strata.csv",
-                             stratum_bin_column    = "stratum")</code></pre>
-<p>to load the strata lookup file, which is used to filter the data by stratum.</p>
-<p>For multistanza groups: One extra step is needed to calculate biomasses by juvenile and adult stages. We need the <em>“lookups/Alaska_Multistanza_GOA_vonb_2025_04_30_v2.csv”</em> file to do this. The script will use the <code>read.clean.csv()</code> function to load the VB file, which has all the information about cut-off length and growth rates for each species. The script will then use the <code>read.clean.csv()</code> function to load the strata lookup file, which is used to filter the data by stratum. The file has to be replaced to accomodate the different models.</p>
-<p>The output file will be in the <code>/wgoa_data_rpath_fitting/</code> folder, with the name <em>“race_biomass_ts.csv”</em> This file relies on the functions from the following scripts:</p>
+<p>For the ROMS data we are only using the 1000m depth contour. We calculated the anomalies, which are in the script <code>ROMS_output_WGOA_EGOA.R</code>, please refer to the code section for more explanation regarding the script.</p>
+<pre><code>- `Long_WGOA_NPZ_B_annual_anomalies_1000_v2_corrected.csv`
+- `Long_WGOA_NPZ_B_monthly_anomalies_1000_v2_corrected.csv`
+- `Long_WGOA_NPZ_PP_monthly_anomalies_1000_v2_corrected.csv`
+- `Long_WGOA_temp_annual_1000.csv`
+- `Long_WGOA_temp_monthly_1000.csv`
+- `ssp126_wide_WGOA_temp_1000.csv`: Climate projections for the WGOA region under SSP126 scenario.
+- `ssp245_wide_WGOA_temp_1000.csv`: Climate projections for the WGOA region under SSP245 scenario.
+- `ssp585_wide_WGOA_temp_1000.csv`: Climate projections for the WGOA region under SSP585 scenario.</code></pre>
 <ul>
-<li><code>REEM_download_functions.R</code>: This script contains the functions used to download the data from the ORACLE database.</li>
-<li><code>REEM_fooddata_fuctions.R</code>: This script contains the functions used to load and clean the data from the googledrive or can be modified to load data from a local folder. This code sources three other scripts with functions:
+<li><p><strong>AKFIN data</strong></p>
 <ul>
-<li><code>GAP_get_cpue.R</code></li>
-<li><code>GAP_get_biomass_stratum.R</code></li>
-<li><code>GAP_get_cpue_guild.R</code></li>
+<li><code>wgoa_catches_ft_cas_long.csv</code>: This file has the fish ticket timeseries from AKFIN, it is in long format.</li>
 </ul></li>
-</ul>
-<p>Refer to the scripts to get familiarized with the functions.</p></li>
-<li><p><strong>PEDIGREE:</strong></p>
+<li><p><strong>Data Pedigree</strong></p>
 <ul>
-<li><code>pedigree_conversion_Rpath_EwE.R</code>: This script will read the rpath pedigree file to create a EwE pedigree file.</li>
+<li><code>wgoa_ewe_pedigree_cv.csv</code>: This file contains the data pedigree in EwE format.</li>
+<li><code>wgoa_rpath_pedigree.csv</code>: This file contains the data pedigree in Rpath format, we transformed from EwE to Rpath format using the script <code>pedigree_conversion_Rpath_EwE.R</code>. Refer to the script for more details.</li>
 </ul></li>
-<li><p><strong>PLOTS</strong></p>
+<li><p><strong>Biomass time series</strong></p>
 <ul>
-<li><code>ggraph_webplot_Rpath.R</code>: Network plot for object Rpath. This function is part of the rpathviz:: package developed by Bia Dias.</li>
-<li><code>rsim.plot.interactive.R</code>: Plot for showing the relative biomass plot for Rsim objectm, using plotly::. This function is part of the rpathviz:: package.</li>
-<li><code>rpath_graphs.R</code>: first version of the <code>rsim.plot.interactive()</code> funtion. Deprecated.</li>
-</ul></li>
-<li><p><strong>EXPERIMENTAL CODE</strong></p>
-<ul>
-<li><p><code>wgoa_Btarget.R</code>: This code was developed by Andy W. to find B0. Please refer to the script for more details.</p></li>
-<li><p><code>xml_converter.r</code>: This script is used to convert the xml files from the EwE model to a format that can be read by Rpath. It uses the <code>xml2</code> package to read the xml files and convert them to a data frame.</p></li>
+<li><code>wgoa_nonrace_biomass_ts_fitting_index.csv</code>: All the species not surveyed by BTS.</li>
+<li><code>wgoa_race_biomass_ts_fitting_index_v2_ka.csv</code>: BTS biomass time series in mt*km^-2</li>
+<li><code>wgoa_race_biomass_ts_fitting_index_v2_tons_ka.csv</code>: BTS biomass time series in mt</li>
+<li><code>wgoa_race_bio_totals.csv</code>: This file is the non-Rpath formated output. It won’t be read by Rpath, but I kept it for a sanity check.</li>
+<li><code>wgoa_race_juvadu_totals.csv</code>: This file contains the juveniles and adult proportions and biomass time series. It won’t be read by Rpath, but I kept it for a sanity check.</li>
 </ul></li>
 </ul>
 

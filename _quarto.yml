@@ -16,7 +16,7 @@ website:
         href: lookups.qmd
       - text: WGOA Source Data
         href: WGOA_source_data.qmd
-      - text: WGOA Data RPath Fitting
+      - text: WGOA Data Rpath Fitting
         href: wgoa_data_rpath_fitting.qmd
 
 

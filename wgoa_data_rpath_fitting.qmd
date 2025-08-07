@@ -1,0 +1,56 @@
+---
+title: "WGOA Data Rpath Fitting"
+author: "Bia Dias"
+format: html
+editor: visual
+---
+
+This folder has all the processed data for the WGOA in formats for rpath. These are the files used for fitting. 
+It is important to note that we also have a similar folder for the EGOA model, since the files are processed in a batch. I will not replicate the explanations of the files for EGOA, since they are similar to the ones for WGOA. 
+
+# List of files in the WGOA Data Rpath Fitting folder
+
+```{r list_r_files}
+
+r_files <- list.files(path = "~/WGOA-Ecopath-Rpath/wgoa_data_rpath_fitting/", pattern = "\\.csv$", full.names = FALSE, ignore.case=TRUE)
+
+cat(paste0("- ", r_files, collapse = "
+"))
+
+```
+
+- **Zooplankton from GAK and ECOFoci surveys**
+
+    -   `gak_zooplankton_b_ts_v2.csv`: GAK zooplankton biomass time series. 
+    -   `goaecofoci_zooplankton_b_ts_v2.csv`: ECOFoci data for zooplankton time series in the GOA region.
+
+- **ROMS data**
+
+For the ROMS data we are only using the 1000m depth contour. We calculated the anomalies, which are in the script `ROMS_output_WGOA_EGOA.R`, please refer to the code section for more explanation regarding the script. 
+    
+    - `Long_WGOA_NPZ_B_annual_anomalies_1000_v2_corrected.csv`
+    - `Long_WGOA_NPZ_B_monthly_anomalies_1000_v2_corrected.csv`
+    - `Long_WGOA_NPZ_PP_monthly_anomalies_1000_v2_corrected.csv`
+    - `Long_WGOA_temp_annual_1000.csv`
+    - `Long_WGOA_temp_monthly_1000.csv`
+    - `ssp126_wide_WGOA_temp_1000.csv`: Climate projections for the WGOA region under SSP126 scenario.
+    - `ssp245_wide_WGOA_temp_1000.csv`: Climate projections for the WGOA region under SSP245 scenario.
+    - `ssp585_wide_WGOA_temp_1000.csv`: Climate projections for the WGOA region under SSP585 scenario.
+    
+- **AKFIN data**
+
+    - `wgoa_catches_ft_cas_long.csv`: This file has the fish ticket timeseries from AKFIN, it is in long format.
+    
+- **Data Pedigree**
+
+    - `wgoa_ewe_pedigree_cv.csv`: This file contains the data pedigree in EwE format. 
+    - `wgoa_rpath_pedigree.csv`: This file contains the data pedigree in Rpath format, we transformed from EwE to Rpath format using the script `pedigree_conversion_Rpath_EwE.R`. Refer to the script for more details. 
+    
+- **Biomass time series**    
+
+    - `wgoa_nonrace_biomass_ts_fitting_index.csv`: All the species not surveyed by BTS. 
+    - `wgoa_race_biomass_ts_fitting_index_v2_ka.csv`: BTS biomass time series in mt*km^-2
+    - `wgoa_race_biomass_ts_fitting_index_v2_tons_ka.csv`: BTS biomass time series in mt
+    - `wgoa_race_bio_totals.csv`: This file is the non-Rpath formated output. It won't be read by Rpath, but I kept it for a sanity check. 
+    - `wgoa_race_juvadu_totals.csv`: This file contains the juveniles and adult proportions and biomass time series. It won't be read by Rpath, but I kept it for a sanity check. 
+

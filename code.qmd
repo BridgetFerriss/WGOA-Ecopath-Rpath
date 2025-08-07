@@ -74,7 +74,7 @@ cat(paste0("- ", r_files, collapse = "
 
         The final formatted time-series files are saved in `/wgoa_data_rpath_fitting/,` and detailed monthly data is saved in `/WGOA_source_data/ROMSOutputWGOA/`.
 
-    -   `ROMS_data_transformation_anomaly.R`: is a retired code basis for the anomaly transformation that we see in `ROMS_output_WGOA_EGOA.`
+    -   `ROMS_data_transformation_anomaly.R`: is a retired code basis for the anomaly transformation that we see in `ROMS_output_WGOA_EGOA.R`
 
 -   **RACE GAP data:**
 

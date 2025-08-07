@@ -8,7 +8,7 @@
 
 <meta name="author" content="Bia Dias">
 
-<title>wgoa source data – WGOA Repository Documentation</title>
+<title>WGOA Source Data – WGOA Repository Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -110,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">WGOA Source Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./wgoa_data_rpath_fitting.qmd"> 
+    <a class="nav-link" href="./wgoa_data_rpath_fitting.html"> 
 <span class="menu-text">WGOA Data RPath Fitting</span></a>
   </li>  
 </ul>
@@ -130,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">wgoa source data</h1>
+<h1 class="title">WGOA Source Data</h1>
 </div>
 
 
@@ -155,6 +190,38 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This folder has all the processed data for the WGOA in formats for rpath and formats for EwE software.</p>
 <p>Please refer to the file names for the data source and the year of the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>r_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"~/WGOA-Ecopath-Rpath/WGOA_source_data"</span>, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>, <span class="at">full.names =</span> <span class="cn">FALSE</span>, <span class="at">ignore.case=</span><span class="cn">TRUE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">"- "</span>, r_files, <span class="at">collapse =</span> <span class="st">"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- B_target.csv
+- domain_sum.csv
+- F40_opt.csv
+- gak_zooplankton_B_time_series.csv
+- goa_bio_bystrat_2025_5_13.csv
+- goa_maturity_proportions.csv
+- goa_Zoop_TS_ECOFoci_data_v2.csv
+- species_weighted_temp_WGOA.csv
+- species_weighted_thermal_envelopes_WGOA.csv
+- WGOA_bioen.csv
+- wgoa_catch_ts_long_v2.csv
+- wgoa_catches_ft_cas_1990_mean.csv
+- wgoa_catches_ft_cas_final_mtkm2.csv
+- wgoa_ewe_pedigree.csv
+- wgoa_fed_catch_ts_wide_mt.csv
+- wgoa_fed_catch_ts_wide_mtkm2.csv
+- WGOA_full_time_series_v5.csv
+- wgoa_race_biomass_ts.csv
+- WGOA_ROMS_1000_ppL_detrended.csv
+- WGOA_ROMS_1000_ppS_detrended.csv
+- WGOA_ROMS_300_ppL_detrended.csv
+- WGOA_ROMS_300_ppS_detrended.csv
+- WGOA_ROMSpp_detrended.csv
+- wgoa_state_catch_ts_wide_mtkm2.csv</code></pre>
+</div>
+</div>
 <ul>
 <li><p><strong>ROMS</strong></p>
 <ul>
@@ -185,6 +252,7 @@ ul.task-list li input[type="checkbox"] {
 <li><code>gak_zooplankton_B_time_series.csv</code>: GAK zooplankton biomass time series.</li>
 <li><code>goa_Zoop_TS-ECOFoci_data_v2</code>: ECOFoci data for zooplankton time series in the GOA region.</li>
 <li><code>Seabirds.xlsx</code>: Seabird data for the GOA region.This has the information of all the colonies around GOA region.</li>
+<li><code>mammals_birds_salmon_biomass_timeseries.R</code>: This file contains the biomass time series for mammals, birds and salmon in the GOA region.</li>
 <li><code>WGOA_full_time_series_v5.csv</code>: Deprecated. This file needs to be updated, it is an older version.</li>
 </ul></li>
 <li><p><strong>SIMULATION RUN FILES</strong></p>
