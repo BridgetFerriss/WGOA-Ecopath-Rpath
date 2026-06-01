@@ -1,0 +1,25 @@
+"Species","Tmax_orig","Topt_orig","Q10","race_group","variant","Topt_new","Topt_lo","Topt_hi","Tmax_new","Tmax_lo","Tmax_hi"
+"arrowtooth_flounder_juvenile",26,20.512,2.497,"Arrowtooth flounder adult",NA,NA,NA,NA,NA,NA,NA
+"arrowtooth_flounder_adult",26,20.512,2.497,"Arrowtooth flounder adult",NA,NA,NA,NA,NA,NA,NA
+"atka_mackerel",19.06,17.154,2.3,"Atka mackerel","with_replacement",4.76890188407097,4.58782619520384,4.97763898097739,7.9,7.7,7.9
+"atka_mackerel",19.06,17.154,2.3,"Atka mackerel","without_replacement",4.76293896691122,4.67806725885438,4.87125499787198,7.9,7.7,7.9
+"flathead_sole_adult",19.06,17.154,2.3,"Flathead sole adult",NA,NA,NA,NA,NA,NA,NA
+"octopus",20,18,2.3,"Octopus","with_replacement",5.75490991645542,5.62462147161885,5.88069173304456,10.2,9.2,10.2
+"octopus",20,18,2.3,"Octopus","without_replacement",5.75722428919159,5.68912271884052,5.82040197232249,10.2,9.2,10.2
+"pacific_cod_juvenile",21,13.7,2.41,"Pacific cod adult",NA,NA,NA,NA,NA,NA,NA
+"pacific_cod_adult",21,13.7,2.41,"Pacific cod adult",NA,NA,NA,NA,NA,NA,NA
+"pacific_ocean_perch_adult",19.06,17.154,2.3,"Pacific ocean perch adult",NA,NA,NA,NA,NA,NA,NA
+"walleye_pollock_juvenile",15,10,2.6,"Walleye pollock adult",NA,NA,NA,NA,NA,NA,NA
+"walleye_pollock_adult",15,10,2.6,"Walleye pollock adult",NA,NA,NA,NA,NA,NA,NA
+"sablefish_adult",22.4,17.6,2.2,"Sablefish adult",NA,NA,NA,NA,NA,NA,NA
+"pacific_sleeper_shark",19.99,17.991,2.3,"Pacific sleeper shark","with_replacement",5.32663060455609,5.091943283957,5.52479968051336,7.6,6.9,7.6
+"pacific_sleeper_shark",19.99,17.991,2.3,"Pacific sleeper shark","without_replacement",5.31813467989655,5.21328205569518,5.44480721021532,7.6,6.9,7.6
+"pacific_herring_adult",19.9,17.91,2.3,"Pacific herring adult",NA,NA,NA,NA,NA,NA,NA
+"pacific_halibut_juvenile",18,12.97,3.084,"Pacific halibut adult",NA,NA,NA,NA,NA,NA,NA
+"pacific_halibut_adult",18,12.97,3.084,"Pacific halibut adult",NA,NA,NA,NA,NA,NA,NA
+"squid",23.18,20.862,2.3,"Squid","with_replacement",4.9252376442511,4.85577694411631,4.99321289634097,9.2,8.7,9.2
+"squid",23.18,20.862,2.3,"Squid","without_replacement",4.92299795649817,4.89072906933035,4.9613363401428,9.2,8.8,9.2
+"pacific_capelin",19.06,17.154,2.3,"Pacific capelin","with_replacement",6.91495637639187,6.60206500323074,7.22767546642296,11.9,10.9,11.9
+"pacific_capelin",19.06,17.154,2.3,"Pacific capelin","without_replacement",6.92891085651328,6.73630258592121,7.07293994044831,11.9,11,11.9
+"pacific_sandlance",20.63,18.567,2.3,"Pacific sandlance","with_replacement",7.17618930911982,6.4825171735008,7.71624604958205,11,10.1,11
+"pacific_sandlance",20.63,18.567,2.3,"Pacific sandlance","without_replacement",7.26811260315518,6.68202160714937,7.44393364698184,11,10.2,11

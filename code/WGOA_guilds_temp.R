@@ -66,7 +66,7 @@ race_lookup_col <- c(
 # WGOA GUILDS ------------------------------------------------------------------
 this.model  <- "WGOA"
 race_lookup      <- race_lookup_base %>% mutate(race_group  = .data[["final_wgoa"]])
-q_table          <- read.clean.csv("lookups/GroupQ_2021_GOA.csv")
+q_table          <- read.clean.csv("lookups/GroupQ_2021_WGOA.csv")
 domains_included <-  c(
   "Chirikof_shelf",
   "Chirikof_gully",
@@ -125,6 +125,7 @@ thermal_envelopes <- station_summary %>%
   )
 
 write.csv(thermal_envelopes, "WGOA_source_data/species_weighted_thermal_envelopes_WGOA.csv")
+write.csv(station_summary,   "WGOA_source_data/station_summary_WGOA.csv", row.names = FALSE)
 
 #-------------------------------------------------------------------------------
 

@@ -32,7 +32,7 @@ pollock_shelikof[,"Source"] <- "shelikof_winter_acoustic_survey"
 
 pollock_shelikof_v2 <-  pollock_shelikof %>% 
   ungroup() %>% 
-  select(c(year, Group, Type, Stdev, SE, winter_shelikof_strait_acoustic_survey_pollock_biomass_t, Scale2, cv, Species, Loc, n, Source)) 
+  select(c(year, Group, Type, Stdev, SE, winter_shelikof_strait_acoustic_survey_pollock_biomass_t, Scale2, cv_scale_0_2, Species, Loc, n, Source)) 
  
 
 colnames(pollock_shelikof_v2) <- c("Year", "Group", "Type", "Stdev", "SE",
