@@ -30,7 +30,7 @@ subsample_frac <- 0.80   # fraction of stations for without-replacement draws
 ci_probs       <- c(0.025, 0.25, 0.50, 0.75, 0.975)  # quantiles to report
 
 # ── 1. Load data --------------------------------------------------------------
-
+species_weighted_thermal_envelopes_WGOA <- read.csv("WGOA_source_data/species_weighted_thermal_envelopes_WGOA.csv")
 station_summary <- read.csv("WGOA_source_data/station_summary_WGOA.csv")
 bioen_orig      <- read.csv("WGOA_source_data/WGOA_bioen.csv")
 
@@ -189,7 +189,7 @@ empirical <- species_weighted_thermal_envelopes_WGOA |>
  
    comparison <- bioen_map |>
      left_join(empirical, by = "race_group") |>
-     left_join(WGOA_bioen, by = "Species") |>
+     left_join(bioen_orig, by = "Species") |>
      rename(Topt_lit = Topt, Tmax_lit = Tmax) |>
      mutate(
          Topt_diff = Topt_empirical - Topt_lit,

@@ -6,7 +6,7 @@ library(dplyr)
 
 # load models into w.unbal, w.bal for west, e.unbal and e.bal for east.
 # File names are used in GOA_rpath_setup.R source call
-  WGOA_EwE_file <- "rpath_files/WGOA_17March25_simpleDet.eiixml"
+  WGOA_EwE_file <- "rpath_files/WGOA_19March2026_simpleDet.eiixml"
   EGOA_EwE_file <- "rpath_files/EGOA_20250317_simpleDet.eiixml"
   source("code/GOA_rpath_setup.R")
 
@@ -46,10 +46,10 @@ library(dplyr)
 w.scene0 <- rsim.scenario(w.bal, w.unbal, years=1990:2089)
 e.scene0 <- rsim.scenario(e.bal, e.unbal, years=1990:2089)
   
-w.run0   <- rsim.run(w.scene0, method="RK4", years = 1990:2089)
+w.run0   <- rsim.run(w.scene0, method="AB", years = 1990:2089)
 rsim.plot(w.run0)
 
-e.run0   <- rsim.run(e.scene0, method="RK4", years = 1990:2089)
+e.run0   <- rsim.run(e.scene0, method="AB", years = 1990:2089)
 rsim.plot(e.run0)
 
 w.scene1 <- adjust.fishing(w.scene0, "ForcedFRate", "sablefish_adult", sim.year=1995:2000, value=0.2)

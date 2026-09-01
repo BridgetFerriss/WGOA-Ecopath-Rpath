@@ -83,8 +83,8 @@ tot_model_area <- sum(strat_areas$area[strat_areas$model == this.model &
                                          strat_areas$stratum_bin %in% domains_included])
 cpue_dat  <- get_cpue_all(model = this.model)
 check_RACE_codes(cpue_dat)
-cpue_dt <- na.omit(cpue_dat) %>%
-  filter(number_fish > 0)
+cpue_dt <- cpue_dat %>% 
+  filter(!is.na(Bottom_temp), !is.na(Surface_temp), number_fish > 0)
 
 
 
